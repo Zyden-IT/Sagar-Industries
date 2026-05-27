@@ -1,0 +1,13 @@
+const ThemeToggle = () => {
+  const toggleTheme = () => {
+    document.documentElement.classList.toggle("dark");
+  };
+
+  return (
+    <button onClick={toggleTheme} className="btn-primary">
+      Toggle Theme
+    </button>
+  );
+};
+
+export default ThemeToggle;
