@@ -25,7 +25,7 @@
 
   /* Fonts */
 
-  --font-heading: "Saira";
+  --font-heading: "Inter";
   --font-body: "Inter", sans-serif;
 
   --font-stats: "Space Grotesk", sans-serif;
@@ -259,17 +259,20 @@ h6 {
 }
 
 
-p,
-a {
+/* In @layer base so Tailwind text utilities (text-sm, text-[15px], text-primary…)
+   override these defaults WITHOUT needing the `!` important hack. */
+@layer base {
+  p,
+  a {
+    font-size: clamp(0.9375rem, 0.875rem + 0.2vw, 1rem);
+    /* 15px (mobile) → 16px (desktop) */
 
-  font-size: clamp(0.9375rem, 0.825rem + 0.65vw, 1.25rem);
-  /* 15px (mobile) → 20px (≥1920px) */
+    line-height: 1.6;
 
-  line-height: 1.65;
+    font-weight: 400;
 
-  font-weight: 400;
-
-  color: var(--color-text-secondary);
+    color: var(--color-text-secondary);
+  }
 }
 
 

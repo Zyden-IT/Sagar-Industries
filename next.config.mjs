@@ -41,10 +41,10 @@ const nextConfig = {
       { source: "/page-not-found", destination: "/404" },
       { source: "/about", destination: "/about/About" },
       { source: "/products", destination: "/products/Products" },
-      { source: "/contact", destination: "/contact/Contact" },
       { source: "/industries", destination: "/industries/Industries" },
-      { source: "/knowledge", destination: "/knowledge/Knowledge" },
       { source: "/smartTools", destination: "/smartTools/SmartTools" },
+      { source: "/knowledge", destination: "/knowledge/Knowledge" },
+      { source: "/contact", destination: "/contact/Contact" },
     ];
   },
 };

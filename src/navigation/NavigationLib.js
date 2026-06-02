@@ -23,15 +23,15 @@ export const Routes = {
     isQueryParams: true,
     isEncryptParams: false,
   },
-  contact: {
-    rawPath: "/contact/Contact",
-    urlPath: "/contact",
-    isQueryParams: true,
-    isEncryptParams: false,
-  },
   industries: {
     rawPath: "/industries/Industries",
     urlPath: "/industries",
+    isQueryParams: true,
+    isEncryptParams: false,
+  },
+  smartTools: {
+    rawPath: "/smartTools/SmartTools",
+    urlPath: "/smartTools",
     isQueryParams: true,
     isEncryptParams: false,
   },
@@ -41,9 +41,9 @@ export const Routes = {
     isQueryParams: true,
     isEncryptParams: false,
   },
-  smartTools: {
-    rawPath: "/smartTools/SmartTools",
-    urlPath: "/smartTools",
+  contact: {
+    rawPath: "/contact/Contact",
+    urlPath: "/contact",
     isQueryParams: true,
     isEncryptParams: false,
   },

@@ -26,7 +26,7 @@ export const PAGE_SEO = {
     home: {
         title: 'TMT Bars & Structural Steel Supplier',
         description:
-            'Bhavyam Metals is a trusted steel supplier in Gujarat, India. We offer TMT bars, structural steel, MS pipes, and industrial steel for building and industry projects. Get a quote within 2 hours.',
+            'Bhavyam Metals is a trusted steel supplier in Gujarat, India. We offer TMT bars, structural steel, MS pipes, and industrial steel for building and industry projects. Get Quote within 2 hours.',
         ogImage: '/og/home.jpg',
         jsonLd: [organizationSchema(), websiteSchema(), localBusinessSchema()],
     },
@@ -60,34 +60,6 @@ export const PAGE_SEO = {
         ],
     },
 
-    // ─── Industries ──────────────────────────────────────────────────
-    industries: {
-        title: 'Industries We Serve in India',
-        description:
-            'We supply steel to many industries across India — including building construction, bridges and roads, factories, power plants, shipyards, automotive, and prefab buildings.',
-        ogImage: '/og/industries.jpg',
-        jsonLd: [
-            breadcrumbSchema([
-                { name: 'Home', path: '/' },
-                { name: 'Industries', path: '/industries' },
-            ]),
-        ],
-    },
-
-    // ─── Knowledge Hub ───────────────────────────────────────────────
-    knowledge: {
-        title: 'Steel Knowledge — Grades & Guides',
-        description:
-            'Learn before you buy. Compare TMT grades, understand steel standards, spot fake TMT, and pick the right steel for earthquake zones — all explained in simple terms.',
-        ogImage: '/og/knowledge.jpg',
-        jsonLd: [
-            breadcrumbSchema([
-                { name: 'Home', path: '/' },
-                { name: 'Knowledge Hub', path: '/knowledge' },
-            ]),
-        ],
-    },
-
     // ─── Smart Tools ─────────────────────────────────────────────────
     smartTools: {
         title: 'Free Steel Calculators & Tools',
@@ -98,6 +70,34 @@ export const PAGE_SEO = {
             breadcrumbSchema([
                 { name: 'Home', path: '/' },
                 { name: 'Smart Tools', path: '/smartTools' },
+            ]),
+        ],
+    },
+
+    // ─── Industries ──────────────────────────────────────────────────
+    industries: {
+        title: 'Industries We Serve',
+        description:
+            'Sagar Industries builds machines for the paper, packaging, printing and converting industries. See the sectors and applications our machines power across India and abroad.',
+        ogImage: '/og/industries.jpg',
+        jsonLd: [
+            breadcrumbSchema([
+                { name: 'Home', path: '/' },
+                { name: 'Industries', path: '/industries' },
+            ]),
+        ],
+    },
+
+    // ─── Knowledge ───────────────────────────────────────────────────
+    knowledge: {
+        title: 'Knowledge Hub — Guides, FAQs & Resources',
+        description:
+            'Learn about paper, packaging and printing machinery. Buying guides, machine FAQs, maintenance tips and resources from the Sagar Industries engineering team.',
+        ogImage: '/og/knowledge.jpg',
+        jsonLd: [
+            breadcrumbSchema([
+                { name: 'Home', path: '/' },
+                { name: 'Knowledge', path: '/knowledge' },
             ]),
         ],
     },
