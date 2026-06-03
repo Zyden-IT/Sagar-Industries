@@ -69,7 +69,7 @@ const FacilityPreview = () => {
 
         {/* CTA */}
         <div className="mt-10 flex justify-center">
-          <Link href={`${Routes.about.urlPath}#facility`} className="btn-primary btn-lg">
+          <Link href={`${Routes.about.urlPath}#facility`} className="btn-orange btn-lg">
             Explore Our Facility <ArrowRight size={18} weight="bold" />
           </Link>
         </div>

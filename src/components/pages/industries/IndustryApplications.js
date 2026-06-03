@@ -81,7 +81,7 @@ const Step = ({ m, n }) => {
       <div className="relative h-16 w-16">
         <div className="absolute inset-0 bg-accent/40 transition-colors duration-300 group-hover:bg-accent" style={HEX} />
         <div
-          className="absolute inset-[1.5px] grid place-items-center bg-card text-accent transition-colors duration-300 group-hover:bg-[#FF6B1A] group-hover:text-white"
+          className="absolute inset-[1.5px] grid place-items-center bg-card text-accent transition-colors duration-300 group-hover:bg-[#ff6a0d] group-hover:text-white"
           style={HEX}
         >
           <Icon size={26} weight="regular" />

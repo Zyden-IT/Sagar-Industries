@@ -44,7 +44,7 @@ const CategoryShowcase = () => {
               <div className="flex flex-col gap-3 p-6">
                 <h3 className="text-[18px]! font-semibold sm:text-[20px]!">{c.name}</h3>
                 <p className="text-sm text-secondary">{c.short}</p>
-                <Link href="#featured" className="btn-primary btn-block mt-2">
+                <Link href="#featured" className="btn-orange btn-block mt-2">
                   Explore Category <ArrowRight size={16} weight="bold" />
                 </Link>
               </div>

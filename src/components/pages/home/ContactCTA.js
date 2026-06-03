@@ -1,20 +1,32 @@
-// ─────────────────────────────────────────────────────────────────────
-// Home › Contact CTA — dark industrial closing call-to-action.
-// Dark gradient background + faded machine image + accent glow.
-// Heading, subtitle, two CTAs, and three checkmark trust points.
-// ─────────────────────────────────────────────────────────────────────
-
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Check } from "@phosphor-icons/react";
+import { ArrowUpRight } from "@phosphor-icons/react";
 import { Routes } from "@/navigation/NavigationLib";
 
-const TRUST = [
-  "Manufacturer & Exporter",
-  "Custom Machine Solutions",
-  "After-Sales Support",
-];
+// Concentric rounded squares — equal opacity per ring so they stack into
+// smooth nested bands (brightest at the centre, fading outward).
+const Squares = ({ side }) => (
+  <div
+    aria-hidden
+    className={`pointer-events-none absolute top-1/2 hidden -translate-y-1/2 md:block ${
+      side === "left" ? "-left-[170px]" : "-right-[170px]"
+    }`}
+  >
+    <div className="relative h-[300px] w-[300px]">
+      {[0, 1, 2, 3, 4, 5].map((i) => {
+        const size = 380 - i * 62;
+
+        return (
+          <div
+            key={i}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white"
+            style={{ width: size, height: size, opacity: 0.06 }}
+          />
+        );
+      })}
+    </div>
+  </div>
+);
 
 const ContactCTA = () => {
   return (
@@ -25,66 +37,34 @@ const ContactCTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-[var(--radius-card)] px-6 py-14 text-center md:px-12 md:py-20"
-          style={{ background: "var(--hero-gradient)" }}
+          className="relative overflow-hidden rounded-[var(--radius-card)] px-6 py-16 text-center shadow-orange md:px-12 md:py-24"
+          style={{ background: "var(--orange-gradient)" }}
         >
-          {/* Faded machine image */}
-          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 opacity-[0.08] lg:block">
-            <Image
-              src="/hero.png"
-              alt=""
-              fill
-              className="object-contain object-right"
-            />
-            {/* fade the image into the dark background */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to right, rgba(13,13,13,1), rgba(13,13,13,0) 40%)",
-              }}
-            />
-          </div>
-          {/* Accent glow */}
-          <div className="pointer-events-none absolute -left-16 -top-16 h-72 w-72 rounded-full bg-accent/20 blur-3xl" />
+          <Squares side="left" />
+          <Squares side="right" />
 
-          {/* Content */}
-          <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-5">
-            <h2 className="text-[26px]! font-semibold leading-[1.2] tracking-[-0.01em] text-white! sm:text-[32px]! lg:text-[36px]!">
+          <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-4">
+            <h2 className="text-[26px]! font-bold leading-[1.15] tracking-[-0.01em] text-white! sm:text-[32px]! lg:whitespace-nowrap lg:text-[40px]!">
               Ready to Upgrade Your Production?
             </h2>
-            <p className="text-white/75">
-              Get expert guidance &amp; a customized quotation for your machinery
+
+            <p className="text-[15px] text-white/85 lg:whitespace-nowrap">
+              Get expert guidance and a customized quotation for your machinery
               needs.
             </p>
 
-            {/* Buttons */}
-            <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
-              <Link href={Routes.contact.urlPath} className="btn-primary btn-lg">
-                Get Free Quote
-                <ArrowRight size={16} weight="bold" />
-              </Link>
-              <Link
-                href={Routes.contact.urlPath}
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-4 text-xs font-bold uppercase tracking-[1.4px] text-white! transition hover:bg-white hover:text-[#1A1A1A]"
-              >
-                Book Factory Visit
-                <ArrowRight size={16} weight="bold" />
-              </Link>
-            </div>
+            <Link
+              href={Routes.contact.urlPath}
+              className="group mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-[13px] font-bold uppercase tracking-[1.2px] text-primary shadow-card transition-transform duration-300 hover:-translate-y-0.5"
+            >
+              Get Free Quote
 
-            {/* Trust points */}
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
-              {TRUST.map((t) => (
-                <span
-                  key={t}
-                  className="inline-flex items-center gap-2 text-sm text-white/90"
-                >
-                  <Check size={16} weight="bold" className="text-accent" />
-                  {t}
-                </span>
-              ))}
-            </div>
+              <ArrowUpRight
+                size={16}
+                weight="bold"
+                className="text-accent transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </Link>
           </div>
         </motion.div>
       </div>

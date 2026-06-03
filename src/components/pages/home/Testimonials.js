@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────
-// About › Testimonials — client quotes in a responsive carousel.
+// Home › Testimonials — client quotes in a responsive carousel.
 // Shows 3 cards on lg / 2 on sm / 1 on mobile, with prev-next arrows and
 // dots. Each card: quote mark, text, 5 stars, author + company. A stats bar
 // (Happy Clients / Retention / Machines / Support) sits below.

@@ -23,21 +23,9 @@ export const Routes = {
     isQueryParams: true,
     isEncryptParams: false,
   },
-  industries: {
-    rawPath: "/industries/Industries",
-    urlPath: "/industries",
-    isQueryParams: true,
-    isEncryptParams: false,
-  },
-  smartTools: {
-    rawPath: "/smartTools/SmartTools",
-    urlPath: "/smartTools",
-    isQueryParams: true,
-    isEncryptParams: false,
-  },
-  knowledge: {
-    rawPath: "/knowledge/Knowledge",
-    urlPath: "/knowledge",
+  solutions: {
+    rawPath: "/solutions/Solutions",
+    urlPath: "/solutions",
     isQueryParams: true,
     isEncryptParams: false,
   },

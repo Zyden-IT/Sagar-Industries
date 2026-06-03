@@ -100,7 +100,7 @@ const TeamCard = ({ team, withConnector, index }) => {
 const Hub = ({ circleClass }) => (
   <div className="flex flex-col items-center gap-6">
     <div
-      className={`relative aspect-square overflow-hidden rounded-full border-[6px] border-white shadow-[0_0_0_2px_#FF6B1A,0_20px_45px_rgba(0,0,0,0.18)] ${circleClass}`}
+      className={`relative aspect-square overflow-hidden rounded-full border-[6px] border-white shadow-[0_0_0_2px_#ff6a0d,0_20px_45px_rgba(0,0,0,0.18)] ${circleClass}`}
     >
       <Image
         src="/gallery10.jpg"

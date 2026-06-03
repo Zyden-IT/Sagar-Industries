@@ -44,7 +44,7 @@ const toneText = (tone, side) =>
   tone === "green" ? "" : tone === "accent" ? "text-accent" : "text-primary";
 const toneStyle = (tone) => (tone === "green" ? { color: GREEN } : undefined);
 const checkColor = (tone, side) =>
-  tone === "green" ? GREEN : tone === "accent" ? "#FF6B1A" : side === "manual" ? "#FF6B1A" : GREEN;
+  tone === "green" ? GREEN : tone === "accent" ? "#ff6a0d" : side === "manual" ? "#ff6a0d" : GREEN;
 
 const ValueCell = ({ data, side, highlight, borderB }) => (
   <div

@@ -70,7 +70,7 @@ const InteractiveMap = () => {
               </div>
             </div>
 
-            <a href={DIRECTIONS} target="_blank" rel="noreferrer" className="btn-primary btn-lg shrink-0">
+            <a href={DIRECTIONS} target="_blank" rel="noreferrer" className="btn-orange btn-lg shrink-0">
               <NavigationArrow size={16} weight="bold" />
               Get Directions
             </a>

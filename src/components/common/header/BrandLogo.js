@@ -10,6 +10,7 @@ const BrandLogo = () => {
         width={140}
         height={40}
         priority
+        className="h-8 w-auto sm:h-9 lg:h-10"
       />
     </Link>
   );

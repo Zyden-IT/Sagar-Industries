@@ -112,7 +112,7 @@ const KnowledgeFaq = () => {
                   <div className="text-sm text-secondary">Talk to our team for details and quotes.</div>
                 </div>
               </div>
-              <Link href={Routes.contact.urlPath} className="btn-primary shrink-0">
+              <Link href={Routes.contact.urlPath} className="btn-orange shrink-0">
                 Contact Us <ArrowRight size={16} weight="bold" />
               </Link>
             </div>

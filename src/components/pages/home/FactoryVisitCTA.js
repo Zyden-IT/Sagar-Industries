@@ -50,7 +50,7 @@ const FactoryVisitCTA = () => {
             </ul>
 
             <div className="mt-2 flex flex-wrap items-center gap-4">
-              <Link href={Routes.contact.urlPath} className="btn-primary btn-lg">
+              <Link href={Routes.contact.urlPath} className="btn-orange btn-lg">
                 <CalendarCheck size={18} weight="bold" /> Book a Factory Visit
               </Link>
               <Link href={Routes.about.urlPath} className="btn-outline btn-lg">

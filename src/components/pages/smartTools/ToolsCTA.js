@@ -36,14 +36,14 @@ const ToolsCTA = () => {
               machine configuration with detailed specifications and pricing.
             </p>
             <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
-              <Link href={Routes.contact.urlPath} className="btn-primary btn-lg">
+              <Link href={Routes.contact.urlPath} className="btn-orange btn-lg">
                 Get Quote <ArrowRight size={16} weight="bold" />
               </Link>
               <a
                 href={WA}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-4 text-xs font-bold uppercase tracking-[1.4px] text-white! transition hover:bg-white hover:text-[#1A1A1A]"
+                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-4 text-xs font-bold uppercase tracking-[1.4px] text-white! transition hover:bg-white hover:text-[#161000]"
               >
                 <WhatsappLogo size={18} weight="fill" /> WhatsApp Us
               </a>

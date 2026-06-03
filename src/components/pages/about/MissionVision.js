@@ -126,8 +126,8 @@ const MissionVision = () => {
           >
             {LINKS.map(([d, x, y], i) => (
               <g key={i}>
-                <path d={d} fill="none" stroke="#FF6B1A" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
-                <circle cx={x} cy={y} r="5" fill="#FF6B1A" />
+                <path d={d} fill="none" stroke="#ff6a0d" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
+                <circle cx={x} cy={y} r="5" fill="#ff6a0d" />
               </g>
             ))}
             {/* dashed links to the bottom pill */}

@@ -188,12 +188,12 @@ const TechnologyShowcase = () => {
                   y1={y1}
                   x2={x2}
                   y2={y2}
-                  stroke="#FF6B1A"
+                  stroke="#ff6a0d"
                   strokeOpacity="0.35"
                   strokeWidth="2"
                   vectorEffect="non-scaling-stroke"
                 />
-                <circle cx={x2} cy={y2} r="4" fill="#FF6B1A" />
+                <circle cx={x2} cy={y2} r="4" fill="#ff6a0d" />
               </g>
             ))}
           </svg>

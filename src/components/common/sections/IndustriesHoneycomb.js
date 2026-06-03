@@ -40,10 +40,10 @@ const Hex = ({ icon: Icon, label, sub, index }) => (
     className="group relative h-[184px] w-[160px] transition-transform duration-300 hover:-translate-y-1.5"
   >
     {/* border layer — visible hex border, fills orange on hover */}
-    <div className="absolute inset-0 bg-[var(--color-border)] transition-colors duration-300 group-hover:bg-[#FF6B1A]" style={HEX} />
+    <div className="absolute inset-0 bg-[var(--color-border)] transition-colors duration-300 group-hover:bg-[#ff6a0d]" style={HEX} />
     {/* face */}
     <div
-      className="absolute inset-[2px] flex flex-col items-center justify-center gap-2 bg-card px-4 text-center transition-colors duration-300 group-hover:bg-[#FF6B1A]"
+      className="absolute inset-[2px] flex flex-col items-center justify-center gap-2 bg-card px-4 text-center transition-colors duration-300 group-hover:bg-[#ff6a0d]"
       style={HEX}
     >
       <span className="grid h-11 w-11 place-items-center rounded-full bg-accent-soft text-accent transition-colors duration-300 group-hover:bg-white/20 group-hover:text-white">

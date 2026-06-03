@@ -41,10 +41,18 @@ const nextConfig = {
       { source: "/page-not-found", destination: "/404" },
       { source: "/about", destination: "/about/About" },
       { source: "/products", destination: "/products/Products" },
-      { source: "/industries", destination: "/industries/Industries" },
-      { source: "/smartTools", destination: "/smartTools/SmartTools" },
-      { source: "/knowledge", destination: "/knowledge/Knowledge" },
+      { source: "/solutions", destination: "/solutions/Solutions" },
       { source: "/contact", destination: "/contact/Contact" },
+    ];
+  },
+
+  // The old Industries / Smart Tools / Knowledge pages were merged into
+  // /solutions — keep old links and bookmarks working.
+  async redirects() {
+    return [
+      { source: "/industries", destination: "/solutions", permanent: false },
+      { source: "/smartTools", destination: "/solutions", permanent: false },
+      { source: "/knowledge", destination: "/solutions", permanent: false },
     ];
   },
 };

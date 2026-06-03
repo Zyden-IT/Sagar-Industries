@@ -36,7 +36,7 @@ const DownloadBrochure = () => {
           <a
             href="/Sagar-Industries-Brochure.pdf"
             download
-            className="btn-primary btn-lg shrink-0"
+            className="btn-orange btn-lg shrink-0"
           >
             <DownloadSimple size={18} weight="bold" />
             Download Brochure

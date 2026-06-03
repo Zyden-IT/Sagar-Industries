@@ -14,7 +14,7 @@ const CTASection = ({ title, subtitle, primary, secondary }) => {
             {(primary || secondary) && (
               <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
                 {primary && (
-                  <Link href={primary.href} className="btn-primary btn-lg">
+                  <Link href={primary.href} className="btn-orange btn-lg">
                     {primary.label}
                   </Link>
                 )}

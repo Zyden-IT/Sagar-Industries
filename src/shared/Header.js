@@ -4,7 +4,7 @@ import Navbar from "@/components/common/header/Navbar";
 function Header() {
   return (
     <>
-      <TopBar />
+      {/* <TopBar /> */}
       <Navbar />
     </>
   );

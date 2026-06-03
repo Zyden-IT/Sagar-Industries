@@ -60,44 +60,16 @@ export const PAGE_SEO = {
         ],
     },
 
-    // ─── Smart Tools ─────────────────────────────────────────────────
-    smartTools: {
-        title: 'Free Steel Calculators & Tools',
+    // ─── Solutions (Industries + Smart Tools + Knowledge merged) ──────
+    solutions: {
+        title: 'Solutions — Industries, Smart Tools & Knowledge',
         description:
-            'Free online steel calculators for builders and homeowners. Quickly find TMT weight, plate and pipe weight, project cost, bulk discounts, and unit conversions in seconds.',
-        ogImage: '/og/smart-tools.jpg',
-        jsonLd: [
-            breadcrumbSchema([
-                { name: 'Home', path: '/' },
-                { name: 'Smart Tools', path: '/smartTools' },
-            ]),
-        ],
-    },
-
-    // ─── Industries ──────────────────────────────────────────────────
-    industries: {
-        title: 'Industries We Serve',
-        description:
-            'Sagar Industries builds machines for the paper, packaging, printing and converting industries. See the sectors and applications our machines power across India and abroad.',
+            'Explore the industries Sagar Industries serves, use our free smart calculators to plan your investment, and browse buying guides, FAQs and resources — all in one place.',
         ogImage: '/og/industries.jpg',
         jsonLd: [
             breadcrumbSchema([
                 { name: 'Home', path: '/' },
-                { name: 'Industries', path: '/industries' },
-            ]),
-        ],
-    },
-
-    // ─── Knowledge ───────────────────────────────────────────────────
-    knowledge: {
-        title: 'Knowledge Hub — Guides, FAQs & Resources',
-        description:
-            'Learn about paper, packaging and printing machinery. Buying guides, machine FAQs, maintenance tips and resources from the Sagar Industries engineering team.',
-        ogImage: '/og/knowledge.jpg',
-        jsonLd: [
-            breadcrumbSchema([
-                { name: 'Home', path: '/' },
-                { name: 'Knowledge', path: '/knowledge' },
+                { name: 'Solutions', path: '/solutions' },
             ]),
         ],
     },

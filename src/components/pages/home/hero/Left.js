@@ -27,7 +27,7 @@ const Left = () => {
 
       {/* CTAs */}
       <div className="mt-3 flex flex-wrap items-center gap-4">
-        <Link href={Routes.products.urlPath} className="btn-primary btn-lg">
+        <Link href={Routes.products.urlPath} className="btn-orange btn-lg">
           Explore Machines
           <ArrowRight size={16} weight="bold" />
         </Link>

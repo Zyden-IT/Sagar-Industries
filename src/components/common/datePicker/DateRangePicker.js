@@ -42,7 +42,7 @@ const DateRangePickerSelect = ({
             ranges={value}
             onChange={(item) => onSelect([item.selection])}
             moveRangeOnFirstSelection={false}
-            rangeColors={["#FF6B1A"]}
+            rangeColors={["#ff6a0d"]}
           />
         </div>
       )}

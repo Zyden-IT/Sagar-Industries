@@ -29,7 +29,7 @@ import {
   Info,
 } from "@phosphor-icons/react";
 
-const ACCENT = "#FF6B1A";
+const ACCENT = "#ff6a0d";
 const num = (v) => (isNaN(parseFloat(v)) ? 0 : parseFloat(v));
 const money = (n) => "₹" + Math.round(n).toLocaleString("en-IN");
 const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
@@ -286,7 +286,7 @@ const RoiCost = () => {
           <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
             <Headset size={20} weight="bold" className="text-accent" /> Need exact pricing for your production?
           </span>
-          <a href="/contact#inquiry" className="btn-primary inline-flex items-center gap-2">
+          <a href="/contact#inquiry" className="btn-orange inline-flex items-center gap-2">
             Get Exact Pricing <ArrowRight size={16} weight="bold" />
           </a>
         </div>

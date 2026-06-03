@@ -50,7 +50,7 @@ const FaqPreview = () => {
               </span>
               <h3 className="mt-4 text-[16px]! font-semibold">Still have questions?</h3>
               <p className="mt-1 text-sm text-secondary">Talk to our team for machine details and quotes.</p>
-              <Link href={Routes.contact.urlPath} className="btn-primary mt-4 w-fit">
+              <Link href={Routes.contact.urlPath} className="btn-orange mt-4 w-fit">
                 Contact Us <ArrowRight size={16} weight="bold" />
               </Link>
             </div>

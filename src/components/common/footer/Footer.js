@@ -32,18 +32,17 @@ const COLUMNS = [
     links: [
       { label: "Home", href: Routes.home.urlPath },
       { label: "About", href: Routes.about.urlPath },
-      { label: "Smart Tools", href: Routes.smartTools.urlPath },
-      { label: "Knowledge", href: Routes.knowledge.urlPath },
+      { label: "Solutions", href: Routes.solutions.urlPath },
       { label: "Contact", href: Routes.contact.urlPath },
     ],
   },
   {
     title: "Industries",
     links: [
-      { label: "Paper", href: Routes.industries.urlPath },
-      { label: "Packaging", href: Routes.industries.urlPath },
-      { label: "Printing", href: Routes.industries.urlPath },
-      { label: "Corrugated Board", href: Routes.industries.urlPath },
+      { label: "Paper", href: Routes.solutions.urlPath },
+      { label: "Packaging", href: Routes.solutions.urlPath },
+      { label: "Printing", href: Routes.solutions.urlPath },
+      { label: "Corrugated Board", href: Routes.solutions.urlPath },
     ],
   },
 ];

@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────
-// Home › Product Categories Overview — the two core machine lines as cards.
+// Products › Product Categories Overview — the two core machine lines as cards.
 // Centered header + 2 cards (badge, image placeholder, title, desc, tags,
 // checkmarked feature list, "View Specifications" CTA). Theme colours.
 // ─────────────────────────────────────────────────────────────────────
@@ -132,7 +132,7 @@ const ProductCategories = () => {
                 {/* CTA */}
                 <Link
                   href={Routes.products.urlPath}
-                  className="btn-primary btn-block mt-auto"
+                  className="btn-orange btn-block mt-auto"
                 >
                   View Specifications
                 </Link>

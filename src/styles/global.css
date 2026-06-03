@@ -6,26 +6,26 @@
 
   /* Colors */
 
-  --color-primary: #1A1A1A;
-  --color-accent: #FF6B1A;
+  --color-primary: #161000;
+  --color-accent: #ff6a0d;
   --color-secondary: #C0C5CE;
 
-  --color-bg: #F8F8F8;
+  --color-bg: #fdf9f6;
   --color-card: #FFFFFF;
-  --color-soft: #F3F4F6;
+  --color-soft: #f6f3ee;
 
-  --color-text-primary: #1A1A1A;
+  --color-text-primary: #161000;
   --color-text-secondary: #6B7280;
 
   --color-success: #2E5C8A;
-  --color-warning: #FFB800;
+  --color-warning: #d40e14;
 
   --color-border: #D6D9DE;
   --primary-shadow: 0 10px 30px rgba(26, 26, 26, 0.12);
 
   /* Fonts */
 
-  --font-heading: "Inter";
+  --font-heading: "Montserrat", sans-serif;
   --font-body: "Inter", sans-serif;
 
   --font-stats: "Space Grotesk", sans-serif;
@@ -48,8 +48,7 @@
     linear-gradient(135deg, #1A1A1A, #2A2A2A);
 
   --orange-gradient:
-    linear-gradient(135deg, #FF6B1A, #FFB800);
-
+    linear-gradient(135deg, #ff6a0d, #d40e14);
   /* Theme-aware decorative assets */
 
   --city-sketch: url('/city-sketch-light.svg');
@@ -163,7 +162,7 @@ h4,
 h5,
 h6 {
 
-  font-family: "Saira", sans-serif;
+  font-family: var(--font-heading);
 
   text-transform: uppercase;
 
@@ -262,6 +261,7 @@ h6 {
 /* In @layer base so Tailwind text utilities (text-sm, text-[15px], text-primary…)
    override these defaults WITHOUT needing the `!` important hack. */
 @layer base {
+
   p,
   a {
     font-size: clamp(0.9375rem, 0.875rem + 0.2vw, 1rem);
@@ -346,16 +346,18 @@ input[type='number'] {
 
 /* ===============================
    BUTTONS
-   Two archetypes used across the site (excluding tabs):
-     .btn-primary   — solid orange gradient pill, high-intent CTAs
-     .btn-outline   — bordered pill, fills with accent on hover
-   Modifiers (optional):
-     .btn-sm / .btn-lg   — size variants (default is medium)
-     .btn-block          — full container width
+
+   Standard 3-button set (use these going forward):
+     .btn-orange  — solid orange (#ff6a0d), hover → orange→red gradient
+     .btn-black   — solid black (#161000), hover → #2d2623
+     .btn-white   — white (#ffffff) w/ faint border, hover → #f7f2ee
+   All three: 12px 24px padding · 100px radius · 14px / 600 · 18px line-height.
+
+   Legacy (still used by older sections): .btn-orange, .btn-outline
+   Modifiers: .btn-block (full width). Definitions below.
    =============================== */
 
-.btn-primary,
-.btn-outline {
+.btn-orange {
 
   display: inline-flex;
 
@@ -371,7 +373,7 @@ input[type='number'] {
 
   border: 1px solid transparent;
 
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
 
   font-size: 13px;
 
@@ -402,7 +404,7 @@ input[type='number'] {
 
 /* Primary — solid orange gradient */
 
-.btn-primary {
+.btn-orange {
 
   background: var(--orange-gradient);
 
@@ -412,7 +414,7 @@ input[type='number'] {
 }
 
 
-.btn-primary:hover {
+.btn-orange:hover {
 
   transform: translateY(-2px);
 
@@ -420,7 +422,7 @@ input[type='number'] {
 }
 
 
-.btn-primary:active {
+.btn-orange:active {
 
   transform: translateY(0);
 
@@ -430,7 +432,7 @@ input[type='number'] {
 
 /* Legacy alias used in older files — same as :hover */
 
-.btn-primary-hover:hover {
+.btn-orange-hover:hover {
 
   transform: translateY(-2px);
 
@@ -438,35 +440,152 @@ input[type='number'] {
 }
 
 
-/* Outline — neutral bordered pill that fills on hover */
+/* Outline — defined with the standard buttons below (theme-adaptive) */
+
+
+/* ── Standard buttons: orange / black / white ─────────────────────────
+   The 3-button set. Add the class to any <a> or <button>:
+     <a className="btn-orange">Get Quote</a>
+     <button className="btn-black">Learn More</button>
+     <a className="btn-white">View Details</a>
+   Shared: 12px 24px padding · 100px radius · 14px / 600 · 18px line-height.
+   ------------------------------------------------------------------- */
+
+.btn-orange,
+.btn-black,
+.btn-white,
+.btn-outline {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px 24px;
+
+  border-radius: 100px;
+
+  border: 1px solid transparent;
+
+  font-family: var(--font-heading);
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 18px;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+
+/* Orange */
+
+.btn-orange {
+
+  background: #ff6a0d;
+
+  color: #ffffff;
+}
+
+
+.btn-orange:hover {
+
+  background: linear-gradient(135deg, #ff6a0d, #d40e14);
+}
+
+
+/* Black */
+
+.btn-black {
+
+  background: #161000;
+
+  color: #ffffff;
+}
+
+
+.btn-black:hover {
+
+  background: #2d2623;
+}
+
+
+/* White */
+
+.btn-white {
+
+  background: #ffffff;
+
+  color: #161000;
+
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+
+.btn-white:hover {
+
+  background: #f7f2ee;
+}
+
+
+/* Shared press feedback */
+
+.btn-orange:active,
+.btn-black:active,
+.btn-white:active,
+.btn-outline:active {
+
+  transform: scale(0.98);
+}
+
+
+/* Outline — theme-adaptive: looks like btn-white in light, btn-black in dark */
 
 .btn-outline {
 
-  background: var(--color-bg);
+  background: #ffffff;
 
-  color: var(--color-text-primary);
+  color: #161000;
 
-  border-color: var(--color-border);
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 
 .btn-outline:hover {
 
-  background: var(--color-accent);
-
-  color: #FFFFFF;
-
-  border-color: var(--color-accent);
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 12px 30px rgba(255, 107, 26, 0.30);
+  background: #f7f2ee;
 }
 
 
-.btn-outline:active {
+html.dark .btn-outline {
 
-  transform: translateY(0);
+  background: #161000;
+
+  color: #ffffff;
+
+  border-color: transparent;
+}
+
+
+html.dark .btn-outline:hover {
+
+  background: #2d2623;
 }
 
 
@@ -506,8 +625,10 @@ input[type='number'] {
 
 /* Focus */
 
-.btn-primary:focus-visible,
-.btn-outline:focus-visible {
+.btn-orange:focus-visible,
+.btn-outline:focus-visible,
+.btn-black:focus-visible,
+.btn-white:focus-visible {
 
   outline: 2px solid var(--color-accent);
 
@@ -517,8 +638,10 @@ input[type='number'] {
 
 /* Disabled */
 
-.btn-primary:disabled,
-.btn-outline:disabled {
+.btn-orange:disabled,
+.btn-outline:disabled,
+.btn-black:disabled,
+.btn-white:disabled {
 
   opacity: 0.6;
 

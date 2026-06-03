@@ -1,75 +1,75 @@
 // ─────────────────────────────────────────────────────────────────────
-// Home › Why Choose Us — cards with a hexagon badge floating over the top
-// edge. Centered header, light theme, faint dotted texture. Hover lifts the
-// card, fills the accent border and scales the badge. Same content.
+// Home › Why Choose Us — editorial hairline-grid layout.
+// Original centered header, then a 6-cell hairline-bordered grid. Each cell:
+// a small accent icon + spec tag, a bold title, a muted description, and an
+// accent underline that draws in on hover. Theme-token driven (light/dark).
 // ─────────────────────────────────────────────────────────────────────
 
 import { motion } from "framer-motion";
 import {
   Factory,
-  Gear,
   Gauge,
-  Globe,
+  Gear,
   Headset,
-  Truck,
+  SlidersHorizontal,
+  Coins,
 } from "@phosphor-icons/react";
-
-const HEX = { clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)" };
 
 const REASONS = [
   {
     icon: Factory,
-    title: "In-House Manufacturing",
+    num: "01",
+    tag: "Design · Fabrication · Assembly",
+    title: "In-house engineering",
     description:
-      "Every machine is designed, fabricated and assembled at our own facility for complete quality control.",
-  },
-  {
-    icon: Gear,
-    title: "Custom-Built Machines",
-    description:
-      "Machines configured to your size, capacity and production needs — not one-size-fits-all.",
+      "Every machine is designed, fabricated and assembled under our own roof — no outsourced black boxes, no compromise on quality.",
   },
   {
     icon: Gauge,
-    title: "Precision Engineering",
+    num: "02",
+    tag: "Full-load tested",
+    title: "Built to run, not to sell",
     description:
-      "Accurate cutting, uniform printing and reliable performance, run after run.",
+      "Each machine is run-tested at full load before it leaves the floor. Dependable, run-after-run performance is the spec.",
   },
   {
-    icon: Globe,
-    title: "Export Quality",
+    icon: Gear,
+    num: "03",
+    tag: "Trusted brands",
+    title: "Quality components",
     description:
-      "Built to international standards and shipped to clients across India and overseas.",
+      "Reliable drives, bearings and controls from proven brands. We over-spec where it matters so your line keeps running.",
   },
   {
     icon: Headset,
-    title: "After-Sales Support",
+    num: "04",
+    tag: "Pan India · Exports",
+    title: "Lifetime partnership",
     description:
-      "Installation, training, spare parts and responsive technical support whenever you need it.",
+      "Installation, training, spare parts and responsive technical support — long after your machine is on the floor.",
   },
   {
-    icon: Truck,
-    title: "Timely Delivery",
+    icon: SlidersHorizontal,
+    num: "05",
+    tag: "Made to order",
+    title: "Tailored configurations",
     description:
-      "Dependable lead times and on-time dispatch so your production stays on schedule.",
+      "Cutting length, colour stations, speed and automation — configured to your production line, not pulled from a catalogue.",
+  },
+  {
+    icon: Coins,
+    num: "06",
+    tag: "Low TCO · Uptime",
+    title: "Honest economics",
+    description:
+      "Efficient power draw, fewer wear parts and predictable maintenance windows — engineered for total cost of ownership.",
   },
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="section-py relative overflow-hidden bg-soft">
-      {/* faint dotted texture */}
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.5]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px)",
-          backgroundSize: "22px 22px",
-        }}
-      />
-
-      <div className="container relative">
+    <section className="section-py bg-soft">
+      <div className="container">
         {/* ── Header ─────────────────────────────────────────────── */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
           <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[3px] text-accent">
@@ -87,34 +87,43 @@ const WhyChooseUs = () => {
           </p>
         </div>
 
-        {/* ── Cards ──────────────────────────────────────────────── */}
-        <div className="mt-20 grid gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-          {REASONS.map((r, i) => (
-            <motion.div
-              key={r.title}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: (i % 3) * 0.1, ease: "easeOut" }}
-              className="group relative rounded-[var(--radius-card)] border border-theme bg-card px-6 pb-7 pt-12 text-center shadow-card transition duration-300 hover:-translate-y-2 hover:border-accent hover:shadow-orange"
-            >
-              {/* hexagon badge straddling the top edge */}
-              <span className="absolute -top-8 left-1/2 -translate-x-1/2 [filter:drop-shadow(0_10px_18px_rgba(255,107,26,0.35))]">
-                <span
-                  className="grid h-16 w-16 place-items-center bg-orange-gradient text-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
-                  style={HEX}
-                >
-                  <r.icon size={28} weight="bold" />
-                </span>
-              </span>
+        {/* ── Hairline grid ──────────────────────────────────────── */}
+        <div className="mt-14 overflow-hidden rounded-[var(--radius-card)] border-l border-t border-theme lg:mt-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3">
+            {REASONS.map((r, i) => (
+              <motion.article
+                key={r.num}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.1, ease: "easeOut" }}
+                className="group relative flex min-h-[230px] flex-col border-b border-r border-theme p-7 transition-colors duration-300 hover:bg-card lg:min-h-[260px] lg:p-9"
+              >
+                {/* top row — icon + spec tag */}
+                <div className="flex items-start justify-between gap-4">
+                  <span className="grid h-10 w-10 place-items-center rounded-lg bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
+                    <r.icon size={20} weight="bold" />
+                  </span>
+                  <span className="text-right text-[10px] font-medium uppercase tracking-[0.18em] text-secondary/70">
+                    {r.tag}
+                  </span>
+                </div>
 
-              <h3 className="text-[17px]! font-bold! leading-snug sm:text-[18px]!">
-                {r.title}
-              </h3>
-              <span className="mx-auto mt-3 block h-[3px] w-9 rounded-full bg-orange-gradient" />
-              <p className="mt-3 text-sm leading-relaxed text-secondary">{r.description}</p>
-            </motion.div>
-          ))}
+                {/* title + description, pushed toward the lower half */}
+                <div className="mt-auto pt-10">
+                  <h3 className="text-[19px]! font-bold! leading-snug text-primary">
+                    {r.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-secondary">
+                    {r.description}
+                  </p>
+                </div>
+
+                {/* accent underline drawing in on hover */}
+                <span className="pointer-events-none absolute bottom-0 left-0 h-[2px] w-0 bg-orange-gradient transition-all duration-300 group-hover:w-full" />
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

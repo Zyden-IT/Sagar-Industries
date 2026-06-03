@@ -193,7 +193,7 @@ const MachineCatalog = () => {
                     </div>
                   </div>
 
-                  <Link href={Routes.contact.urlPath} className="btn-primary btn-block mt-1">
+                  <Link href={Routes.contact.urlPath} className="btn-orange btn-block mt-1">
                     Request Quotation <ArrowRight size={16} weight="bold" />
                   </Link>
                 </div>

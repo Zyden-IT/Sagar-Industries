@@ -30,7 +30,7 @@ export const SITE = {
         instagram: 'https://www.instagram.com/bhavyammetals',
         youtube: 'https://www.youtube.com/@bhavyammetals',
     },
-    themeColor: '#FF6B1A',
+    themeColor: '#ff6a0d',
 }
 
 // ─── JSON-LD schema helpers ──────────────────────────────────────────

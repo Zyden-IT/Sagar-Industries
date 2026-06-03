@@ -153,7 +153,7 @@ const FactoryVisitBooking = () => {
                 <p className="max-w-xs text-sm text-secondary">
                   Send it on WhatsApp and we&apos;ll confirm your slot.
                 </p>
-                <a href={waLink} target="_blank" rel="noreferrer" className="btn-primary btn-lg">
+                <a href={waLink} target="_blank" rel="noreferrer" className="btn-orange btn-lg">
                   Confirm on WhatsApp <WhatsappLogo size={18} weight="fill" />
                 </a>
                 <button

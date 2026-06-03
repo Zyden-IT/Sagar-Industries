@@ -1,6 +1,7 @@
 import React from "react";
 import PageSEO from "@/components/common/metaData/PageSEO";
 import Breadcrumb from "@/components/common/ui/Breadcrumb";
+import ProductCategories from "@/components/pages/products/ProductCategories";
 import MachineCatalog from "@/components/pages/products/MachineCatalog";
 import MachineComparison from "@/components/pages/products/MachineComparison";
 import SelectionGuide from "@/components/pages/products/SelectionGuide";
@@ -17,6 +18,7 @@ function Products() {
         title="Products"
         trail={[{ label: "Home", href: "/" }, { label: "Products" }]}
       />
+      <ProductCategories />
       <MachineCatalog />
       <MachineRecommender />
       <MachineComparison />

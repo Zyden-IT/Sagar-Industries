@@ -165,7 +165,7 @@ const InquiryForm = () => {
                   Your inquiry is ready. Send it straight to our team on WhatsApp
                   for the fastest response.
                 </p>
-                <a href={waLink} target="_blank" rel="noreferrer" className="btn-primary btn-lg">
+                <a href={waLink} target="_blank" rel="noreferrer" className="btn-orange btn-lg">
                   Send on WhatsApp <WhatsappLogo size={18} weight="fill" />
                 </a>
                 <button onClick={() => setSent(false)} className="text-xs font-semibold uppercase tracking-wide text-secondary hover:text-accent">
