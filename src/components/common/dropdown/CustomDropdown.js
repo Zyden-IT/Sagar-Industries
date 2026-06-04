@@ -5,7 +5,7 @@ const DropdownIndicator = (props) => {
   return (
     components.DropdownIndicator && (
       <components.DropdownIndicator {...props}>
-        <CaretDownIcon size={16} weight="bold" className="text-text" />
+        <CaretDownIcon size={16} weight="bold" className="text-text-primary" />
       </components.DropdownIndicator>
     )
   );

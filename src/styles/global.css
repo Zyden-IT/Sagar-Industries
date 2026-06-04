@@ -2,7 +2,7 @@
 
 /* Theme Colors */
 
-:root {
+@theme {
 
   /* Colors */
 
@@ -12,9 +12,28 @@
   --color-bglight: #fdf9f6;
   --color-bgdark: #f6f3ee;
   --color-bghover: #f7f2ee;
-
+  --color-white: #FFFFFF;
   --color-card: #FFFFFF;
   --color-border: #D6D9DE;
+
+  /* Derived semantic tokens — consumed by the .bg-* / .text-* / .border-*
+     utility layer further down. Defining them here is what makes the palette
+     actually reach every section in light mode. (Dark overrides live in
+     `html.dark` below.) */
+
+  --color-bg: var(--color-bglight);
+  /* page background           */
+  --color-soft: var(--color-bgdark);
+  /* soft / inset surface      */
+  --color-accent: #F5842A;
+  /* brand orange — kept constant in light & dark */
+  --color-text-primary: var(--color-dark);
+  /* headings & strong text    */
+  --color-text-secondary: #6B6157;
+  /* body & muted text (warm)  */
+  --color-warning: var(--color-secondary);
+  /* brand red                 */
+  --primary-shadow: 0 10px 30px rgba(22, 16, 12, 0.10);
 
   --font-heading: "Montserrat", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -26,7 +45,7 @@
   --shadow-card:
     0 4px 20px rgba(0, 0, 0, 0.06);
   --shadow-orange:
-    0 0 20px rgba(255, 107, 26, 0.25);
+    0 0 20px rgba(245, 132, 42, 0.25);
 
   --hero-gradient:
     linear-gradient(135deg, #1A1A1A, #2A2A2A);
@@ -64,23 +83,29 @@ html.dark .cta-inner {
 
 html.dark {
 
-  --color-primary: #F8F8F8;
+  --color-primary: #F3F4F6;
 
-  --color-bg: #0D0D0D;
-  --color-card: #161616;
-  --color-soft: #1E1E1E;
+  /* Soft, elevated charcoal scale — deliberately NOT pure black. Lightness
+     ramps so surfaces read with depth: page < inset(soft) is darker, cards
+     sit lighter (elevated), mirroring the light theme's white-on-cream feel. */
+  --color-bglight: #1B1C22;                 /* page / default section surface */
+  --color-bg: var(--color-bglight);
+  --color-bgdark: #15161B;                  /* darker alternating section      */
+  --color-soft: var(--color-bgdark);        /* inset / soft surface, inputs    */
+  --color-bghover: #2A2C36;                 /* hover surface                   */
+  --color-card: #24262F;                    /* elevated cards — lightest tone  */
 
-  --color-text-primary: #F8F8F8;
-  --color-text-secondary: #A1A1AA;
-  --primary-shadow: 0 10px 30px rgba(248, 248, 248, 0.08);
+  --color-text-primary: #F3F4F6;
+  --color-text-secondary: #9BA1AC;
+  --primary-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 
-  --color-border: #2A2A2A;
+  --color-border: #2F313B;
 
   --shadow-card:
-    0 4px 20px rgba(0, 0, 0, 0.45);
+    0 4px 20px rgba(0, 0, 0, 0.4);
 
   --hero-gradient:
-    linear-gradient(135deg, #0D0D0D, #1A1A1A);
+    linear-gradient(135deg, #1B1C22, #24262F);
 
   --city-sketch: url('/city-sketch-dark.svg');
 }
@@ -586,6 +611,15 @@ html.dark .btn-outline:hover {
   transition:
     background 0.3s ease,
     border 0.3s ease;
+}
+
+/* Opacity modifiers used in markup (kept theme-adaptive via color-mix) */
+.bg-accent\/50 {
+  background: color-mix(in srgb, var(--color-accent) 50%, transparent);
+}
+
+.bg-accent\/15 {
+  background: color-mix(in srgb, var(--color-accent) 15%, transparent);
 }
 
 
