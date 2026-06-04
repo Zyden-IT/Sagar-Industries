@@ -10,9 +10,9 @@ import { Coins, TrendUp, ClockCountdown, ChartLineUp } from "@phosphor-icons/rea
 
 const Field = ({ label, value, onChange, min, max, step = 1, prefix, suffix }) => (
   <div className="flex flex-col gap-2">
-    <label className="text-sm font-semibold text-primary">{label}</label>
+    <label className="text-sm font-semibold text-text-primary">{label}</label>
     <div className="flex items-center gap-2">
-      {prefix && <span className="text-sm text-secondary">{prefix}</span>}
+      {prefix && <span className="text-sm text-text-secondary">{prefix}</span>}
       <input
         type="number"
         value={value}
@@ -21,7 +21,7 @@ const Field = ({ label, value, onChange, min, max, step = 1, prefix, suffix }) =
         step={step}
         onChange={(e) => onChange(Number(e.target.value))}
       />
-      {suffix && <span className="whitespace-nowrap text-sm text-secondary">{suffix}</span>}
+      {suffix && <span className="whitespace-nowrap text-sm text-text-secondary">{suffix}</span>}
     </div>
     <input
       type="range"
@@ -69,14 +69,14 @@ const RoiCalculator = () => {
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <span className="eyebrow">
             ROI Calculator
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             Estimate Your Return on Investment
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Adjust the figures to see your expected profit and how quickly a
             machine pays for itself.
           </p>
@@ -88,7 +88,7 @@ const RoiCalculator = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mx-auto mt-12 grid max-w-5xl gap-8 rounded-[var(--radius-card)] border border-theme bg-card p-6 shadow-card md:p-8 lg:grid-cols-2"
+          className="mx-auto mt-12 grid max-w-5xl gap-8 rounded-[var(--radius-card)] border border-border bg-card p-6 shadow-card md:p-8 lg:grid-cols-2"
         >
           {/* Inputs */}
           <div className="flex flex-col gap-6">
@@ -134,9 +134,9 @@ const RoiCalculator = () => {
             {RESULTS.map((r) => (
               <div
                 key={r.label}
-                className="rounded-[var(--radius-card)] border border-theme bg-soft p-5"
+                className="rounded-[var(--radius-card)] border border-border bg-soft p-5"
               >
-                <span className="grid h-10 w-10 place-items-center rounded-lg bg-accent-soft text-accent">
+                <span className="grid h-10 w-10 place-items-center rounded-lg bg-accent/10 text-accent">
                   <r.icon size={20} weight="bold" />
                 </span>
                 <div
@@ -145,13 +145,13 @@ const RoiCalculator = () => {
                 >
                   {r.value}
                 </div>
-                <p className="mt-1 text-xs text-secondary">{r.label}</p>
+                <p className="mt-1 text-xs text-text-secondary">{r.label}</p>
               </div>
             ))}
           </div>
         </motion.div>
 
-        <p className="mx-auto mt-4 max-w-5xl text-center text-xs text-secondary">
+        <p className="mx-auto mt-4 max-w-5xl text-center text-xs text-text-secondary">
           * Estimates only. Actual results depend on material, run time and
           market conditions.
         </p>

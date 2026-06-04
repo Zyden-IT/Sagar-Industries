@@ -94,17 +94,17 @@ const FeatureCard = ({ feature, index, absolute }) => {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
       whileHover={{ y: -6 }}
-      className={`group rounded-[var(--radius-card)] border border-theme bg-card p-4 shadow-card transition-colors duration-300 hover:border-accent hover:shadow-orange ${
+      className={`group rounded-[var(--radius-card)] border border-border bg-card p-4 shadow-card transition-colors duration-300 hover:border-accent hover:shadow-orange ${
         absolute ? `absolute z-20 w-[230px] ${POS[feature.pos]}` : ""
       }`}
     >
       <div className="flex items-start gap-3">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-orange-gradient text-white shadow-orange transition-transform duration-300 group-hover:scale-110">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary text-white shadow-orange transition-transform duration-300 group-hover:scale-110">
           <Icon size={20} weight="bold" />
         </span>
         <div className="flex-1">
           <h3 className="text-[13px]! font-bold! leading-tight">{feature.title}</h3>
-          <p className="mt-1 line-clamp-3 text-[12px]! leading-snug text-secondary">{feature.desc}</p>
+          <p className="mt-1 line-clamp-3 text-[12px]! leading-snug text-text-secondary">{feature.desc}</p>
         </div>
       </div>
       <div className="relative mt-3 h-[72px] w-full overflow-hidden rounded-lg">
@@ -153,14 +153,14 @@ const TechnologyShowcase = () => {
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <span className="eyebrow">
             Smart Tools
           </span>
           <h2 className="text-[22px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:whitespace-nowrap sm:text-[28px]! lg:text-[34px]!">
             Technology That Powers Every Machine
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Advanced tools. Seamless integration. Smarter manufacturing.
           </p>
         </div>
@@ -227,19 +227,19 @@ const TechnologyShowcase = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mt-12 grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-theme bg-theme shadow-card sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-12 grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-border bg-bg shadow-card sm:grid-cols-2 lg:grid-cols-4"
         >
           {BENEFITS.map((b) => (
             <div
               key={b.title}
               className="group flex items-center gap-4 bg-card p-6 transition-colors duration-300 hover:bg-soft"
             >
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110">
                 <b.icon size={24} weight="regular" />
               </span>
               <div>
                 <h3 className="text-[15px]! font-semibold! leading-tight">{b.title}</h3>
-                <p className="mt-1 text-[12px]! leading-snug text-secondary">{b.sub}</p>
+                <p className="mt-1 text-[12px]! leading-snug text-text-secondary">{b.sub}</p>
               </div>
             </div>
           ))}

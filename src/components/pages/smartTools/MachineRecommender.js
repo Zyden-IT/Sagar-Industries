@@ -37,11 +37,11 @@ const NAME = Object.fromEntries(MATERIALS.map((m) => [m.key, m.name]));
 const DELICATE = ["wood-veneer", "sponge", "epe-foam", "rexine"];
 
 const selectCls =
-  "w-full rounded-[10px] border-[1.5px] border-theme bg-soft px-4 py-3 text-primary outline-none transition focus:border-accent";
+  "w-full rounded-[10px] border-[1.5px] border-border bg-soft px-4 py-3 text-text-primary outline-none transition focus:border-accent";
 
 const Field = ({ label, children }) => (
   <div className="flex flex-col gap-2">
-    <label className="text-sm font-semibold text-primary">{label}</label>
+    <label className="text-sm font-semibold text-text-primary">{label}</label>
     {children}
   </div>
 );
@@ -106,18 +106,16 @@ const MachineRecommender = () => {
   };
 
   return (
-    <section id="recommender" className="section-py scroll-mt-20 bg-theme">
+    <section id="recommender" className="section-py scroll-mt-20 bg-bg">
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[2px] text-accent">
-            <Robot size={16} weight="bold" /> Machine Recommender
-          </span>
+          <span className="eyebrow">Machine Recommender</span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             Find Your Best-Fit Machine
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Tell us your material, size and volume — we&apos;ll recommend a
             manual or automatic machine for your production.
           </p>
@@ -134,7 +132,7 @@ const MachineRecommender = () => {
           {/* ── Form ──────────────────────────────────────────────────── */}
           <form
             onSubmit={calculate}
-            className="flex flex-col gap-5 rounded-[var(--radius-card)] border border-theme bg-card p-6 shadow-card md:p-7"
+            className="flex flex-col gap-5 rounded-[var(--radius-card)] border border-border bg-card p-6 shadow-card md:p-7"
           >
             <Field label="Material Type">
               <select className={selectCls} value={material} onChange={(e) => setMaterial(e.target.value)}>
@@ -211,7 +209,7 @@ const MachineRecommender = () => {
                     </div>
                     <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
                       <div
-                        className={`h-full rounded-full transition-all duration-500 ${res.isAuto ? "bg-orange-gradient" : "bg-white/60"}`}
+                        className={`h-full rounded-full transition-all duration-500 ${res.isAuto ? "bg-gradient-to-br from-primary to-secondary" : "bg-white/60"}`}
                         style={{ width: `${res.meter}%` }}
                       />
                     </div>

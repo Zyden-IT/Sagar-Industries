@@ -36,14 +36,14 @@ const MaintenanceTips = () => {
             transition={{ duration: 0.55, ease: "easeOut" }}
             className="flex flex-col gap-4 text-center lg:text-left"
           >
-            <span className="mx-auto text-xs font-bold uppercase tracking-[2px] text-accent lg:mx-0">
+            <span className="eyebrow mx-auto lg:mx-0">
               Maintenance
             </span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
               Keep Your Machine in Top Shape
             </h2>
-            <span className="mx-auto h-[3px] w-16 rounded-full bg-orange-gradient lg:mx-0" />
-            <p className="text-secondary">
+            <span className="mx-auto h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary lg:mx-0" />
+            <p className="text-text-secondary">
               A few minutes of regular care prevents costly downtime and keeps
               output consistent. Follow this simple routine and reach out to our
               service team whenever you need a hand.
@@ -59,14 +59,14 @@ const MaintenanceTips = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.45, delay: (i % 2) * 0.1, ease: "easeOut" }}
-                className="group flex items-start gap-4 rounded-[var(--radius-card)] border border-theme bg-card p-5 shadow-card transition duration-300 hover:border-accent hover:shadow-orange"
+                className="group flex items-start gap-4 rounded-[var(--radius-card)] border border-border bg-card p-5 shadow-card transition duration-300 hover:border-accent hover:shadow-orange"
               >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110">
                   <t.icon size={22} weight="regular" />
                 </span>
                 <div>
                   <h3 className="text-[15px]! font-semibold leading-tight">{t.title}</h3>
-                  <p className="mt-1.5 text-[13px]! leading-snug text-secondary">{t.desc}</p>
+                  <p className="mt-1.5 text-[13px]! leading-snug text-text-secondary">{t.desc}</p>
                 </div>
               </motion.div>
             ))}

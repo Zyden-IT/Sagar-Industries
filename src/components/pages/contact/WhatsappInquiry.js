@@ -19,7 +19,7 @@ const WhatsappInquiry = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-[var(--radius-card)] border border-theme bg-card p-8 text-center shadow-card md:p-10"
+          className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-[var(--radius-card)] border border-border bg-card p-8 text-center shadow-card md:p-10"
         >
           <span className="grid h-16 w-16 place-items-center rounded-2xl bg-[#25D366]/10 text-[#25D366]">
             <WhatsappLogo size={36} weight="fill" />
@@ -27,7 +27,7 @@ const WhatsappInquiry = () => {
           <h2 className="text-[22px]! font-semibold leading-[1.2] sm:text-[26px]!">
             Need a Quick Answer?
           </h2>
-          <p className="max-w-md text-secondary">
+          <p className="max-w-md text-text-secondary">
             Message our team on WhatsApp for instant help with machine details,
             pricing or availability.
           </p>

@@ -20,18 +20,18 @@ const Card = ({ item, index }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.2 }}
     transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-    className="group relative overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card p-7 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
+    className="group relative overflow-hidden rounded-[var(--radius-card)] border border-border bg-card p-7 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
   >
     {/* top accent line that grows on hover */}
-    <span className="absolute inset-x-0 top-0 h-[3px] w-0 bg-orange-gradient transition-all duration-300 group-hover:w-full" />
+    <span className="absolute inset-x-0 top-0 h-[3px] w-0 bg-gradient-to-br from-primary to-secondary transition-all duration-300 group-hover:w-full" />
 
     {/* ghost index */}
-    <span className="stats-font pointer-events-none absolute right-4 top-3 select-none text-5xl font-bold leading-none text-primary opacity-[0.05] transition-opacity duration-300 group-hover:opacity-10">
+    <span className="stats-font pointer-events-none absolute right-4 top-3 select-none text-5xl font-bold leading-none text-text-primary opacity-[0.05] transition-opacity duration-300 group-hover:opacity-10">
       0{index + 1}
     </span>
 
     {/* icon badge */}
-    <span className="grid h-14 w-14 place-items-center rounded-2xl bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-105 group-hover:bg-accent group-hover:text-white">
+    <span className="grid h-14 w-14 place-items-center rounded-2xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-105 group-hover:bg-accent group-hover:text-white">
       <item.icon size={28} weight="bold" />
     </span>
 
@@ -42,16 +42,16 @@ const Card = ({ item, index }) => (
     </div>
 
     {/* title + desc */}
-    <h3 className="mt-3 text-[15px]! font-bold! uppercase leading-tight text-primary">
+    <h3 className="mt-3 text-[15px]! font-bold! uppercase leading-tight text-text-primary">
       {item.title}
     </h3>
-    <p className="mt-2 text-[13px]! leading-relaxed text-secondary">{item.desc}</p>
+    <p className="mt-2 text-[13px]! leading-relaxed text-text-secondary">{item.desc}</p>
   </motion.div>
 );
 
 const WhyChooseMachines = () => {
   return (
-    <section className="section-py relative overflow-hidden bg-theme">
+    <section className="section-py relative overflow-hidden bg-bg">
       {/* blueprint texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
@@ -67,14 +67,14 @@ const WhyChooseMachines = () => {
       <div className="container relative">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-[2px] text-accent">Why Choose Us</span>
+          <div className="flex flex-col items-center gap-3">
+            <span className="eyebrow">Why Choose Us</span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
               Why Choose Our Machines
             </h2>
           </div>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Built with precision. Trusted worldwide. Designed for your success.
           </p>
         </div>

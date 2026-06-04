@@ -57,11 +57,11 @@ const Guide = ({ g, index }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.2 }}
     transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
-    className="flex flex-col rounded-[var(--radius-card)] border border-theme bg-card p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange md:p-8"
+    className="flex flex-col rounded-[var(--radius-card)] border border-border bg-card p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange md:p-8"
   >
     {/* Header */}
     <div className="flex items-start gap-4">
-      <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-accent-soft text-accent">
+      <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-accent/10 text-accent">
         <g.icon size={28} weight="bold" />
       </span>
       <div>
@@ -70,7 +70,7 @@ const Guide = ({ g, index }) => (
           <span className="text-accent">{g.titleAccent}</span>
           {g.titleTail}
         </h3>
-        <span className="mt-2 block h-[3px] w-10 rounded-full bg-orange-gradient" />
+        <span className="mt-2 block h-[3px] w-10 rounded-full bg-gradient-to-br from-primary to-secondary" />
       </div>
     </div>
 
@@ -79,31 +79,31 @@ const Guide = ({ g, index }) => (
       {g.points.map((p) => (
         <li
           key={p.text}
-          className="flex items-center gap-3 border-b border-dashed border-theme py-3.5 last:border-0"
+          className="flex items-center gap-3 border-b border-dashed border-border py-3.5 last:border-0"
         >
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent-soft text-accent">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
             <p.icon size={18} weight="bold" />
           </span>
-          <span className="text-sm text-secondary">{p.text}</span>
+          <span className="text-sm text-text-secondary">{p.text}</span>
         </li>
       ))}
     </ul>
 
     {/* Best For */}
-    <div className="mt-5 flex items-center gap-4 rounded-2xl bg-accent-soft p-4">
+    <div className="mt-5 flex items-center gap-4 rounded-2xl bg-accent/10 p-4">
       <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-card text-accent shadow-card">
         <Medal size={24} weight="fill" />
       </span>
       <div>
         <div className="text-[13px] font-bold text-accent">Best For</div>
-        <p className="mt-0.5 text-[13px]! leading-snug text-secondary">{g.bestFor}</p>
+        <p className="mt-0.5 text-[13px]! leading-snug text-text-secondary">{g.bestFor}</p>
       </div>
     </div>
 
     {/* CTA */}
     <Link
       href={Routes.contact.urlPath}
-      className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-gradient py-4 text-[13px] font-bold uppercase tracking-wide text-white! shadow-orange transition hover:scale-[1.02]"
+      className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-br from-primary to-secondary py-4 text-[13px] font-bold uppercase tracking-wide text-white! shadow-orange transition hover:scale-[1.02]"
     >
       Inquire Now
       <ArrowRight size={16} weight="bold" className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -117,16 +117,12 @@ const SelectionGuide = () => {
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[2px] text-accent">
-            <span className="h-px w-8 bg-accent/50" />
-            Selection Guide
-            <span className="h-px w-8 bg-accent/50" />
-          </span>
+          <span className="eyebrow">Selection Guide</span>
           <h2 className="text-[24px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[30px]! lg:text-[36px]!">
             Which Machine Is Right For You?
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Answer a few simple needs and we&apos;ll help you choose the perfect
             solution for your business.
           </p>

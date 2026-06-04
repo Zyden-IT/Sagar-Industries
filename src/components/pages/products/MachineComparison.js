@@ -41,7 +41,7 @@ const ROWS = [
 ];
 
 const toneText = (tone, side) =>
-  tone === "green" ? "" : tone === "accent" ? "text-accent" : "text-primary";
+  tone === "green" ? "" : tone === "accent" ? "text-accent" : "text-text-primary";
 const toneStyle = (tone) => (tone === "green" ? { color: GREEN } : undefined);
 const checkColor = (tone, side) =>
   tone === "green" ? GREEN : tone === "accent" ? "#ff6a0d" : side === "manual" ? "#ff6a0d" : GREEN;
@@ -49,7 +49,7 @@ const checkColor = (tone, side) =>
 const ValueCell = ({ data, side, highlight, borderB }) => (
   <div
     className={`flex items-center gap-2.5 px-5 py-4 text-sm ${borderB} ${
-      highlight ? "border-x border-theme bg-card" : "bg-card"
+      highlight ? "border-x border-border bg-card" : "bg-card"
     }`}
   >
     <CheckCircle size={18} weight="fill" className="shrink-0" style={{ color: checkColor(data.tone, side) }} />
@@ -65,16 +65,12 @@ const MachineComparison = () => {
       <div className="container">
         {/* ── Header ─────────────────────────────────────────────── */}
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 text-center">
-          <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[2px] text-accent">
-            <span className="h-px w-8 bg-accent/50" />
-            Quick Comparison
-            <span className="h-px w-8 bg-accent/50" />
-          </span>
+          <span className="eyebrow">Quick Comparison</span>
           <h2 className="text-[24px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[30px]! md:whitespace-nowrap lg:text-[34px]!">
             Manual vs Automatic at a Glance
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Compare key features side-by-side to choose the right solution for
             your production needs.
           </p>
@@ -88,14 +84,14 @@ const MachineComparison = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mx-auto mt-12 max-w-5xl overflow-x-auto"
         >
-          <div className="min-w-[680px] overflow-hidden rounded-2xl border border-theme shadow-card">
+          <div className="min-w-[680px] overflow-hidden rounded-2xl border border-border shadow-card">
             <div className="grid grid-cols-[1.2fr_1fr_1fr]">
               {/* Header row */}
               <div className="flex items-center gap-2.5 bg-primary px-5 py-4 text-white">
                 <ListChecks size={20} weight="bold" className="text-accent" />
                 <span className="font-bold uppercase tracking-wide">Feature</span>
               </div>
-              <div className="flex items-center gap-2.5 bg-orange-gradient px-5 py-4 text-white">
+              <div className="flex items-center gap-2.5 bg-gradient-to-br from-primary to-secondary px-5 py-4 text-white">
                 <HandTap size={20} weight="bold" />
                 <span className="font-bold uppercase tracking-wide">Manual Machine</span>
               </div>
@@ -106,15 +102,15 @@ const MachineComparison = () => {
 
               {/* Body rows */}
               {ROWS.map((r, i) => {
-                const borderB = i === ROWS.length - 1 ? "" : "border-b border-theme";
+                const borderB = i === ROWS.length - 1 ? "" : "border-b border-border";
                 return (
                   <div key={r.feature} className="contents">
                     {/* Feature cell */}
                     <div className={`flex items-center gap-3 bg-card px-5 py-4 ${borderB}`}>
-                      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-accent-soft text-accent">
+                      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-accent/10 text-accent">
                         <r.icon size={18} weight="bold" />
                       </span>
-                      <span className="text-sm font-bold text-primary">{r.feature}</span>
+                      <span className="text-sm font-bold text-text-primary">{r.feature}</span>
                     </div>
                     {/* Manual cell (highlighted column) */}
                     <ValueCell data={r.manual} side="manual" highlight borderB={borderB} />
@@ -138,22 +134,22 @@ const MachineComparison = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mx-auto mt-6 flex max-w-5xl flex-col items-center justify-between gap-4 rounded-[var(--radius-card)] border border-theme bg-card p-5 shadow-card sm:flex-row sm:px-7"
+          className="mx-auto mt-6 flex max-w-5xl flex-col items-center justify-between gap-4 rounded-[var(--radius-card)] border border-border bg-card p-5 shadow-card sm:flex-row sm:px-7"
         >
           <div className="flex items-center gap-4 text-center sm:text-left">
-            <span className="hidden h-12 w-12 shrink-0 place-items-center rounded-full bg-accent-soft text-accent sm:grid">
+            <span className="hidden h-12 w-12 shrink-0 place-items-center rounded-full bg-accent/10 text-accent sm:grid">
               <Sparkle size={24} weight="bold" />
             </span>
             <div>
               <h3 className="text-[15px]! font-bold! leading-tight sm:text-[16px]!">Not sure which fits?</h3>
-              <p className="mt-0.5 text-sm text-secondary">
+              <p className="mt-0.5 text-sm text-text-secondary">
                 Get a personalized recommendation from our experts.
               </p>
             </div>
           </div>
           <Link
             href="#recommender"
-            className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-orange-gradient px-6 py-3.5 text-[12px] font-bold uppercase tracking-wide text-white! shadow-orange transition hover:scale-105"
+            className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-br from-primary to-secondary px-6 py-3.5 text-[12px] font-bold uppercase tracking-wide text-white! shadow-orange transition hover:scale-105"
           >
             Use the Machine Recommender
             <ArrowRight size={16} weight="bold" className="transition-transform duration-300 group-hover:translate-x-1" />

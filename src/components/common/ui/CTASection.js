@@ -9,7 +9,7 @@ const CTASection = ({ title, subtitle, primary, secondary }) => {
         <div className="rounded-[var(--radius-card)] bg-primary px-6 py-12 md:px-12 md:py-16 text-center">
           <div className="mx-auto flex max-w-2xl flex-col items-center gap-5">
             {title && <h2 className="text-white">{title}</h2>}
-            {subtitle && <p className="text-secondary">{subtitle}</p>}
+            {subtitle && <p className="text-text-secondary">{subtitle}</p>}
 
             {(primary || secondary) && (
               <div className="mt-2 flex flex-wrap items-center justify-center gap-4">

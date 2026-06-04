@@ -36,7 +36,7 @@ const fade = (x = 0) => ({
 
 const AboutIntro = () => {
   return (
-    <section className="section-py bg-theme">
+    <section className="section-py bg-bg">
       <div className="container">
         {/* ── Top: collage + copy ────────────────────────────────── */}
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -70,22 +70,19 @@ const AboutIntro = () => {
             {/* small accent square behind */}
             <span
               aria-hidden
-              className="absolute -left-4 -top-4 -z-10 hidden h-24 w-24 rounded-xl bg-orange-gradient opacity-20 blur-md lg:block"
+              className="absolute -left-4 -top-4 -z-10 hidden h-24 w-24 rounded-xl bg-gradient-to-br from-primary to-secondary opacity-20 blur-md lg:block"
             />
           </motion.div>
 
           {/* Right — copy */}
           <motion.div {...fade(30)} className="flex flex-col gap-5">
-            <span className="inline-flex w-fit items-center gap-2 text-[12px] font-bold uppercase tracking-[2.5px] text-accent">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              About Us
-            </span>
+            <span className="eyebrow">About Us</span>
 
             <h2 className="text-[26px]! font-bold leading-[1.15] tracking-[-0.01em] sm:text-[32px]! lg:text-[40px]!">
               Trusted Manufacturer of Paper Cutting &amp; Flexo Printing Machines
             </h2>
 
-            <p className="max-w-xl text-secondary">
+            <p className="max-w-xl text-text-secondary">
               Sagar Industries specializes in manufacturing advanced Paper Reel
               to Sheet Cutting Machines and Flexo Printing Machines engineered
               for performance, reliability, and long-term value. From packaging
@@ -93,7 +90,7 @@ const AboutIntro = () => {
               processing, our machines help businesses streamline operations and
               achieve superior results.
             </p>
-            <p className="max-w-xl text-secondary">
+            <p className="max-w-xl text-text-secondary">
               Built with precision and backed by industry expertise, every
               machine reflects our commitment to innovation, quality, and
               customer success.
@@ -110,7 +107,7 @@ const AboutIntro = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
-              className="group rounded-[var(--radius-card)] border border-theme bg-card p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
+              className="group rounded-[var(--radius-card)] border border-border bg-card p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
             >
               <div className="flex items-start justify-between gap-4">
                 <h3 className="max-w-[70%] text-[18px]! font-bold! leading-snug sm:text-[20px]!">
@@ -122,8 +119,8 @@ const AboutIntro = () => {
                   className="shrink-0 text-accent transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <span className="mt-5 block h-[3px] w-10 rounded-full bg-orange-gradient" />
-              <p className="mt-4 text-sm leading-relaxed text-secondary">{c.text}</p>
+              <span className="mt-5 block h-[3px] w-10 rounded-full bg-gradient-to-br from-primary to-secondary" />
+              <p className="mt-4 text-sm leading-relaxed text-text-secondary">{c.text}</p>
             </motion.div>
           ))}
         </div>

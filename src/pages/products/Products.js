@@ -5,7 +5,7 @@ import ProductCategories from "@/components/pages/products/ProductCategories";
 import MachineComparison from "@/components/pages/products/MachineComparison";
 import SelectionGuide from "@/components/pages/products/SelectionGuide";
 import SpecBuilder from "@/components/pages/smartTools/SpecBuilder";
-import QuotationCTA from "@/components/pages/products/QuotationCTA";
+import ContactCTA from "@/components/pages/home/ContactCTA";
 
 function Products() {
   return (
@@ -22,7 +22,7 @@ function Products() {
       <SelectionGuide />
       {/* <WhyChooseMachines /> */}
       <SpecBuilder />
-      <QuotationCTA />
+      <ContactCTA />
     </>
   );
 }

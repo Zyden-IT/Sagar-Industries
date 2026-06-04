@@ -28,13 +28,11 @@ const FactoryVisitCTA = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex flex-col gap-5"
           >
-            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-accent-soft px-3 py-1.5 text-[11px] font-bold uppercase tracking-[2px] text-accent">
-              Factory Visit
-            </span>
+            <span className="eyebrow">Factory Visit</span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
               See Our Machines in Action
             </h2>
-            <p className="max-w-md text-secondary">
+            <p className="max-w-md text-text-secondary">
               The best way to choose a machine is to see it run. Visit our
               Ahmedabad facility for a live demo — or take a virtual tour from
               wherever you are.
@@ -42,7 +40,7 @@ const FactoryVisitCTA = () => {
 
             <ul className="flex flex-col gap-3">
               {PERKS.map((p) => (
-                <li key={p} className="flex items-center gap-3 text-primary">
+                <li key={p} className="flex items-center gap-3 text-text-primary">
                   <CheckCircle size={22} weight="fill" className="shrink-0 text-accent" />
                   {p}
                 </li>
@@ -68,7 +66,7 @@ const FactoryVisitCTA = () => {
             className="relative"
           >
             {/* accent shape behind */}
-            <div className="absolute -right-5 -top-5 hidden h-32 w-32 rounded-2xl bg-orange-gradient opacity-90 shadow-orange sm:block" />
+            <div className="absolute -right-5 -top-5 hidden h-32 w-32 rounded-2xl bg-gradient-to-br from-primary to-secondary opacity-90 shadow-orange sm:block" />
 
             {/* main image + play */}
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-card)] shadow-card">
@@ -103,7 +101,7 @@ const FactoryVisitCTA = () => {
             {/* floating badge */}
             <div className="absolute -bottom-6 right-4 hidden rounded-2xl bg-card px-5 py-4 shadow-card sm:block">
               <span className="stats-font block text-2xl font-bold text-accent">Mon–Sat</span>
-              <span className="text-xs text-secondary">Visitors Welcome</span>
+              <span className="text-xs text-text-secondary">Visitors Welcome</span>
             </div>
           </motion.div>
         </div>

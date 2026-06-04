@@ -81,7 +81,7 @@ const Footer = () => {
           {COLUMNS.map((col) => (
             <div key={col.title} className="lg:col-span-2">
               <div className="text-base font-bold text-white">{col.title}</div>
-              <span className="mt-2 block h-[3px] w-8 rounded-full bg-orange-gradient" />
+              <span className="mt-2 block h-[3px] w-8 rounded-full bg-gradient-to-br from-primary to-secondary" />
 
               <ul className="mt-5 flex flex-col gap-3 text-white/55">
                 {col.links.map((l) => (

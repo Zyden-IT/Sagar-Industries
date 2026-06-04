@@ -69,11 +69,11 @@ const TRUST = [
 ];
 
 const fieldCls =
-  "w-full rounded-[12px] border-[1.5px] border-theme bg-soft py-3.5! pl-11! pr-4! text-primary outline-none transition focus:border-accent";
+  "w-full rounded-[12px] border-[1.5px] border-border bg-soft py-3.5! pl-11! pr-4! text-text-primary outline-none transition focus:border-accent";
 
 const IconField = ({ icon: Icon, children }) => (
   <div className="relative">
-    <Icon size={18} className="pointer-events-none absolute left-4 top-1/2 z-10 -translate-y-1/2 text-secondary" />
+    <Icon size={18} className="pointer-events-none absolute left-4 top-1/2 z-10 -translate-y-1/2 text-text-secondary" />
     {children}
   </div>
 );
@@ -164,44 +164,42 @@ const InquiryForm = () => {
             </div> */}
 
             <div className="relative z-10 flex flex-col gap-6">
-              <span className="inline-flex w-fit items-center gap-2 rounded-md border border-accent/30 bg-accent-soft px-3 py-1.5 text-[11px] font-bold uppercase tracking-[2px] text-accent">
-                <PaperPlaneTilt size={14} weight="fill" /> Request a Quote
-              </span>
+              <span className="eyebrow">Request a Quote</span>
 
               <div>
                 <h2 className="text-[30px]! font-bold uppercase leading-[1.05] tracking-[-0.01em] sm:text-[38px]! lg:text-[44px]!">
                   Tell Us What <br className="hidden sm:block" />
                   You <span className="text-accent">Need</span>
                 </h2>
-                <span className="mt-4 block h-[3px] w-16 rounded-full bg-orange-gradient" />
+                <span className="mt-4 block h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
               </div>
 
-              <p className="max-w-md text-secondary">
+              <p className="max-w-md text-text-secondary">
                 Share a few details about your production and the machine
                 you&apos;re interested in. Our team will get back to you with the
                 right recommendation and a quotation.
               </p>
 
               {/* Stats strip */}
-              {/* <div className="grid max-w-md grid-cols-2 gap-px overflow-hidden rounded-[14px] border border-theme bg-theme sm:grid-cols-4">
+              {/* <div className="grid max-w-md grid-cols-2 gap-px overflow-hidden rounded-[14px] border border-border bg-bg sm:grid-cols-4">
                 {STATS.map((s) => (
                   <div key={s.l1} className="flex flex-col items-center gap-1.5 bg-card px-3 py-4 text-center">
                     <s.icon size={24} weight="duotone" className="text-accent" />
-                    <div className="stats-font text-[18px] font-bold leading-none text-primary">{s.value}</div>
-                    <div className="text-[11px]! font-bold uppercase leading-tight text-primary">{s.l1}</div>
-                    <div className="text-[10px]! uppercase leading-tight text-secondary">{s.l2}</div>
+                    <div className="stats-font text-[18px] font-bold leading-none text-text-primary">{s.value}</div>
+                    <div className="text-[11px]! font-bold uppercase leading-tight text-text-primary">{s.l1}</div>
+                    <div className="text-[10px]! uppercase leading-tight text-text-secondary">{s.l2}</div>
                   </div>
                 ))}
               </div> */}
 
               {/* WhatsApp assist card */}
-              <div className="flex max-w-md items-center gap-4 rounded-[14px] border border-accent/25 bg-accent-soft/60 p-4">
+              <div className="flex max-w-md items-center gap-4 rounded-[14px] border border-accent/25 bg-accent/10 p-4">
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-accent shadow-card">
                   <WhatsappLogo size={26} weight="fill" />
                 </span>
                 <div>
-                  <p className="font-bold text-primary">Need immediate assistance?</p>
-                  <p className="text-[13px]! text-secondary">Chat with our experts on WhatsApp</p>
+                  <p className="font-bold text-text-primary">Need immediate assistance?</p>
+                  <p className="text-[13px]! text-text-secondary">Chat with our experts on WhatsApp</p>
                   <a
                     href={`https://wa.me/${WHATSAPP}`}
                     target="_blank"
@@ -221,20 +219,20 @@ const InquiryForm = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="rounded-[24px] border border-theme bg-card p-6 shadow-[0_30px_60px_rgba(0,0,0,0.1)] sm:p-8"
+            className="rounded-[24px] border border-border bg-card p-6 shadow-[0_30px_60px_rgba(0,0,0,0.1)] sm:p-8"
           >
             {sent ? (
               <div className="flex min-h-[420px] flex-col items-center justify-center gap-4 text-center">
                 <CheckCircle size={56} weight="fill" className="text-accent" />
                 <h3 className="text-[20px]! font-semibold!">Thank you, {form.name || "there"}!</h3>
-                <p className="max-w-xs text-sm text-secondary">
+                <p className="max-w-xs text-sm text-text-secondary">
                   Your inquiry is ready. Send it straight to our team on WhatsApp
                   for the fastest response.
                 </p>
                 <a href={waLink} target="_blank" rel="noreferrer" className="btn-orange btn-lg">
                   Send on WhatsApp <WhatsappLogo size={18} weight="fill" />
                 </a>
-                <button onClick={() => setSent(false)} className="btn text-xs font-semibold uppercase tracking-wide text-secondary hover:text-accent">
+                <button onClick={() => setSent(false)} className="btn text-xs font-semibold uppercase tracking-wide text-text-secondary hover:text-accent">
                   Edit details
                 </button>
               </div>
@@ -331,10 +329,10 @@ const InquiryForm = () => {
                   <div className="relative">
                     <PencilSimple
                       size={18}
-                      className="pointer-events-none absolute left-4 top-4 z-10 text-secondary"
+                      className="pointer-events-none absolute left-4 top-4 z-10 text-text-secondary"
                     />
                     <textarea
-                      className="w-full rounded-[12px] border-[1.5px] border-theme bg-soft py-3.5! pl-11! pr-4! text-primary outline-none transition focus:border-accent"
+                      className="w-full rounded-[12px] border-[1.5px] border-border bg-soft py-3.5! pl-11! pr-4! text-text-primary outline-none transition focus:border-accent"
                       rows={5}
                       placeholder="Your message / requirement"
                       value={form.message}
@@ -348,20 +346,20 @@ const InquiryForm = () => {
 
                 <button
                   type="submit"
-                  className="btn group relative mt-1 flex w-full items-center justify-center rounded-[14px] bg-orange-gradient py-4 text-sm font-bold uppercase tracking-[1.5px] text-white shadow-orange transition hover:shadow-[0_18px_40px_rgba(255,107,26,0.45)]"
+                  className="btn group relative mt-1 flex w-full items-center justify-center rounded-[14px] bg-gradient-to-br from-primary to-secondary py-4 text-sm font-bold uppercase tracking-[1.5px] text-white shadow-orange transition hover:shadow-[0_18px_40px_rgba(255,107,26,0.45)]"
                 >
                   Submit Inquiry
                   <ArrowRight size={20} weight="bold" className="absolute right-6 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
 
                 {/* Trust badges */}
-                <div className="mt-2 grid grid-cols-3 gap-2 border-t border-theme pt-5">
+                <div className="mt-2 grid grid-cols-3 gap-2 border-t border-border pt-5">
                   {TRUST.map((t) => (
                     <div key={t.title} className="flex items-center gap-2">
                       <t.icon size={20} weight="regular" className="shrink-0 text-accent" />
                       <div className="leading-tight">
-                        <div className="text-[12px]! font-bold text-primary">{t.title}</div>
-                        <div className="text-[11px]! text-secondary">{t.sub}</div>
+                        <div className="text-[12px]! font-bold text-text-primary">{t.title}</div>
+                        <div className="text-[11px]! text-text-secondary">{t.sub}</div>
                       </div>
                     </div>
                   ))}

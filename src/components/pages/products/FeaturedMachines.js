@@ -11,14 +11,14 @@ const FeaturedMachines = () => {
     <section id="featured" className="section-py bg-soft">
       <div className="container">
         <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-[2px] text-accent">Our Range</span>
+          <div className="flex flex-col items-center gap-3">
+            <span className="eyebrow">Our Range</span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
               Featured Machines
             </h2>
           </div>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="max-w-xl text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="max-w-xl text-text-secondary">
             Ten machines across our two core categories — built to your
             production requirements.
           </p>
@@ -32,7 +32,7 @@ const FeaturedMachines = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.45, delay: (i % 4) * 0.08, ease: "easeOut" }}
-              className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
+              className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-card shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
             >
               <div className="relative h-44 overflow-hidden">
                 <Image
@@ -48,7 +48,7 @@ const FeaturedMachines = () => {
               </div>
               <div className="flex flex-1 flex-col gap-2 p-5">
                 <h3 className="text-[15px]! font-semibold leading-snug sm:text-[16px]!">{m.name}</h3>
-                <p className="text-sm text-secondary">{m.short}</p>
+                <p className="text-sm text-text-secondary">{m.short}</p>
                 <Link
                   href={Routes.contact.urlPath}
                   className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-semibold text-accent transition-colors hover:gap-3"

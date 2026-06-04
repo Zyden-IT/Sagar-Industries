@@ -64,17 +64,17 @@ const TeamCard = ({ team, withConnector, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-      className="group relative overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card shadow-card transition duration-300 hover:border-accent hover:shadow-orange"
+      className="group relative overflow-hidden rounded-[var(--radius-card)] border border-border bg-card shadow-card transition duration-300 hover:border-accent hover:shadow-orange"
     >
       <div className="p-6">
         <div className="flex items-start gap-4">
-          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110">
             <Icon size={26} weight="regular" />
           </span>
           <div className="flex-1">
             <h3 className="text-[15px]! font-semibold! leading-snug">{team.title}</h3>
-            <span className="mt-2 block h-[3px] w-9 rounded-full bg-orange-gradient" />
-            <p className="mt-2.5 text-[13px]! leading-relaxed text-secondary">
+            <span className="mt-2 block h-[3px] w-9 rounded-full bg-gradient-to-br from-primary to-secondary" />
+            <p className="mt-2.5 text-[13px]! leading-relaxed text-text-secondary">
               {team.desc}
             </p>
           </div>
@@ -110,12 +110,12 @@ const Hub = ({ circleClass }) => (
         className="object-cover"
       />
     </div>
-    <div className="flex items-center gap-3 rounded-2xl border border-theme bg-card px-5 py-3 shadow-card">
-      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-accent-soft text-accent">
+    <div className="flex items-center gap-3 rounded-2xl border border-border bg-card px-5 py-3 shadow-card">
+      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-accent/10 text-accent">
         <UsersThree size={22} weight="regular" />
       </span>
       <div className="text-left leading-tight">
-        <p className="text-[13px]! font-bold! text-primary">
+        <p className="text-[13px]! font-bold! text-text-primary">
           One Team. One Standard.
         </p>
         <p className="text-[13px]! font-bold! text-accent">Every Machine.</p>
@@ -133,16 +133,16 @@ const LeadershipTeam = () => {
       <div className="container">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <div className="flex flex-col items-center gap-3">
+            <span className="eyebrow">
               Our Team
             </span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
               The People Behind Every Machine
             </h2>
           </div>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="max-w-xl text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="max-w-xl text-text-secondary">
             A dedicated team across production, engineering, quality and support
             works together to deliver machines you can rely on.
           </p>

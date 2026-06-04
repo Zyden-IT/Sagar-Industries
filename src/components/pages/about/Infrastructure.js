@@ -24,27 +24,27 @@ const STATS = [
 
 const Infrastructure = () => {
   return (
-    <section className="section-py bg-theme">
+    <section className="section-py bg-bg">
       <div className="container">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <div className="flex flex-col items-center gap-3">
+            <span className="eyebrow">
               Infrastructure
             </span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
               A Facility Built for Precision
             </h2>
           </div>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="max-w-xl text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="max-w-xl text-text-secondary">
             Every stage of machine-building happens across dedicated, well-equipped
             units within our manufacturing facility.
           </p>
         </div>
 
         {/* Stats strip */}
-        <div className="mx-auto mt-10 flex w-fit max-w-full flex-wrap items-center justify-center gap-x-10 gap-y-4 rounded-[var(--radius-card)] border border-theme bg-card px-8 py-6 shadow-card">
+        <div className="mx-auto mt-10 flex w-fit max-w-full flex-wrap items-center justify-center gap-x-10 gap-y-4 rounded-[var(--radius-card)] border border-border bg-card px-8 py-6 shadow-card">
           {STATS.map((s) => (
             <div key={s.label} className="text-center">
               <div
@@ -53,7 +53,7 @@ const Infrastructure = () => {
               >
                 {s.value}
               </div>
-              <div className="text-sm text-secondary">{s.label}</div>
+              <div className="text-sm text-text-secondary">{s.label}</div>
             </div>
           ))}
         </div>
@@ -67,14 +67,14 @@ const Infrastructure = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45, delay: (i % 3) * 0.08, ease: "easeOut" }}
-              className="group flex items-center gap-4 rounded-[var(--radius-card)] border border-theme bg-card p-5 shadow-card transition duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-orange"
+              className="group flex items-center gap-4 rounded-[var(--radius-card)] border border-border bg-card p-5 shadow-card transition duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-orange"
             >
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110">
                 <a.icon size={24} weight="bold" />
               </span>
               <div>
                 <h3 className="text-[15px]! font-bold! leading-tight">{a.label}</h3>
-                <p className="mt-1 text-[13px]! leading-snug text-secondary">{a.sub}</p>
+                <p className="mt-1 text-[13px]! leading-snug text-text-secondary">{a.sub}</p>
               </div>
             </motion.div>
           ))}

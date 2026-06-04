@@ -66,23 +66,23 @@ const Card = ({ sector, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.1, ease: "easeOut" }}
-      className="group relative flex min-h-[220px] overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
+      className="group relative flex min-h-[220px] overflow-hidden rounded-[var(--radius-card)] border border-border bg-card shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
     >
       {/* Left — content */}
       <div className="relative z-10 flex w-[58%] flex-col p-6">
-        <span className="mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-accent-soft text-accent shadow-[0_6px_14px_rgba(255,107,26,0.15)] transition-transform duration-300 group-hover:scale-110">
+        <span className="mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-accent/10 text-accent shadow-[0_6px_14px_rgba(255,107,26,0.15)] transition-transform duration-300 group-hover:scale-110">
           <Icon size={26} weight="regular" />
         </span>
 
         <h3 className="text-[16px]! font-bold! leading-tight sm:text-[17px]!">{title}</h3>
-        <span className="mt-2 block h-[3px] w-9 rounded-full bg-orange-gradient" />
+        <span className="mt-2 block h-[3px] w-9 rounded-full bg-gradient-to-br from-primary to-secondary" />
 
-        <p className="mt-3 text-[13px]! leading-snug text-secondary">{desc}</p>
+        <p className="mt-3 text-[13px]! leading-snug text-text-secondary">{desc}</p>
       </div>
 
       {/* Right — diagonal photo with accent edge */}
       <div className="absolute right-0 top-0 h-full w-[46%]">
-        <div className="absolute inset-0 bg-orange-gradient" style={ACCENT_CLIP} />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary" style={ACCENT_CLIP} />
         <div className="absolute inset-0 overflow-hidden" style={IMAGE_CLIP}>
           <Image
             src={img}
@@ -103,16 +103,12 @@ const IndustriesIntro = () => {
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[2px] text-accent">
-            <span className="h-px w-8 bg-accent/50" />
-            Industries
-            <span className="h-px w-8 bg-accent/50" />
-          </span>
+          <span className="eyebrow">Industries</span>
           <h2 className="text-[24px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[30px]! lg:text-[38px]!">
             Industries <span className="text-accent">We Serve</span>
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             From paper mills to packaging plants, our machines run across a wide
             range of industries — built to each sector&apos;s needs.
           </p>

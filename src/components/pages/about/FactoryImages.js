@@ -31,20 +31,20 @@ const stripes = {
 
 const FactoryImages = () => {
   return (
-    <section id="facility" className="section-py scroll-mt-20 bg-theme">
+    <section id="facility" className="section-py scroll-mt-20 bg-bg">
       <div className="container">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <div className="flex flex-col items-center gap-3">
+            <span className="eyebrow">
               Factory Images
             </span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
               Inside Our Facility
             </h2>
           </div>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="max-w-xl text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="max-w-xl text-text-secondary">
             A look inside the units where every Sagar Industries machine is built,
             tested and shipped.
           </p>
@@ -59,7 +59,7 @@ const FactoryImages = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45, delay: (i % 4) * 0.08, ease: "easeOut" }}
-              className={`group relative overflow-hidden rounded-[var(--radius-card)] border border-theme shadow-card `}
+              className={`group relative overflow-hidden rounded-[var(--radius-card)] border border-border shadow-card `}
             >
               <div className={`relative w-full ${img.feature ? "aspect-square sm:aspect-[4/3] lg:aspect-auto lg:h-full" : "aspect-[4/3]"}`}>
                 {img.src ? (
@@ -72,8 +72,8 @@ const FactoryImages = () => {
                   />
                 ) : (
                   <div className="flex h-full min-h-[150px] w-full flex-col items-center justify-center gap-2 bg-soft" style={stripes}>
-                    <ImageSquare size={32} weight="duotone" className="text-secondary" />
-                    <span className="text-xs text-secondary">Photo</span>
+                    <ImageSquare size={32} weight="duotone" className="text-text-secondary" />
+                    <span className="text-xs text-text-secondary">Photo</span>
                   </div>
                 )}
               </div>

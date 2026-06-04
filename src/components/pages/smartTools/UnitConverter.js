@@ -30,7 +30,7 @@ const bevel = (c) => ({
 });
 
 const inputCls =
-  "w-[88px] rounded-[10px] border-[1.5px] border-theme bg-white px-3 py-2.5 text-center text-lg font-bold text-primary outline-none transition focus:border-accent";
+  "w-[88px] rounded-[10px] border-[1.5px] border-border bg-white px-3 py-2.5 text-center text-lg font-bold text-text-primary outline-none transition focus:border-accent";
 
 // A small machine screw for the panel corners.
 const Screw = ({ className }) => (
@@ -59,7 +59,7 @@ const Side = ({ value, onChange, unit, readOnly }) => (
       readOnly={readOnly}
       className={`${inputCls} ${readOnly ? "cursor-default border-accent/60 text-accent" : ""}`}
     />
-    <span className="text-[11px] font-semibold uppercase tracking-wide text-secondary">
+    <span className="text-[11px] font-semibold uppercase tracking-wide text-text-secondary">
       {unit}
     </span>
   </div>
@@ -73,7 +73,7 @@ const Column = ({ icon: Icon, title, children, note, index }) => (
     transition={{ duration: 0.45, delay: index * 0.12, ease: "easeOut" }}
     className="flex flex-1 flex-col items-center px-4 py-2 text-center"
   >
-    <span className="grid h-16 w-16 place-items-center rounded-full border border-theme bg-white text-accent shadow-[0_6px_14px_rgba(0,0,0,0.08)]">
+    <span className="grid h-16 w-16 place-items-center rounded-full border border-border bg-white text-accent shadow-[0_6px_14px_rgba(0,0,0,0.08)]">
       <Icon size={30} weight="regular" />
     </span>
     <h3 className="mt-4 text-[13px]! font-bold! tracking-wide">{title}</h3>
@@ -108,18 +108,16 @@ const UnitConverter = () => {
   );
 
   return (
-    <section id="converter" className="section-py bg-theme">
+    <section id="converter" className="section-py bg-bg">
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[2px] text-accent">
-            <ArrowsLeftRight size={16} weight="bold" /> Engineer&apos;s Toolkit
-          </span>
+          <span className="eyebrow">Engineer&apos;s Toolkit</span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
             Quick <span className="text-accent">Unit Converter</span>
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Convert the units you use every day — type in either box and the
             other updates instantly.
           </p>
@@ -143,7 +141,7 @@ const UnitConverter = () => {
               className="flex items-center gap-2 bg-gradient-to-b from-white to-[#eef0f3] px-4 py-2"
             >
               <CircleNotch size={16} weight="bold" className="animate-spin text-accent" />
-              <span className="text-[12px] font-bold uppercase tracking-[1.5px] text-primary">
+              <span className="text-[12px] font-bold uppercase tracking-[1.5px] text-text-primary">
                 Live Converter
               </span>
               <span className="ml-1 h-2 w-2 rounded-full bg-accent" />
@@ -164,20 +162,20 @@ const UnitConverter = () => {
               <Screw className="bottom-3 right-3" />
 
               {/* side accents — orange bars + vents */}
-              <span className="absolute left-1.5 top-1/2 z-10 h-16 w-1.5 -translate-y-1/2 rounded-full bg-orange-gradient shadow-orange" />
-              <span className="absolute right-1.5 top-1/2 z-10 h-16 w-1.5 -translate-y-1/2 rounded-full bg-orange-gradient shadow-orange" />
+              <span className="absolute left-1.5 top-1/2 z-10 h-16 w-1.5 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary to-secondary shadow-orange" />
+              <span className="absolute right-1.5 top-1/2 z-10 h-16 w-1.5 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary to-secondary shadow-orange" />
               <Vents className="bottom-10 left-3" />
               <Vents className="bottom-10 right-3" />
 
               {/* top-right: auto update + reset */}
               <div className="absolute right-12 top-6 flex items-center gap-4">
-                <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wide text-secondary">
+                <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wide text-text-secondary">
                   <span className="h-2 w-2 rounded-full bg-[#2ECC71]" /> Auto Update
                 </span>
                 <button
                   onClick={reset}
                   aria-label="Reset converter"
-                  className="btn grid h-8 w-8 cursor-pointer place-items-center rounded-full border border-theme bg-white text-secondary transition hover:rotate-180 hover:border-accent hover:text-accent"
+                  className="btn grid h-8 w-8 cursor-pointer place-items-center rounded-full border border-border bg-white text-text-secondary transition hover:rotate-180 hover:border-accent hover:text-accent"
                 >
                   <ArrowsClockwise size={16} weight="bold" />
                 </button>
@@ -206,7 +204,7 @@ const UnitConverter = () => {
                   title="GSM ⇄ MICRON"
                   index={2}
                   note={
-                    <div className="mt-4 rounded-full border border-theme bg-white px-3 py-1 text-[10px] font-medium text-secondary">
+                    <div className="mt-4 rounded-full border border-border bg-white px-3 py-1 text-[10px] font-medium text-text-secondary">
                       Density: <span className="text-accent font-semibold">0.8 g/cm³</span>
                     </div>
                   }

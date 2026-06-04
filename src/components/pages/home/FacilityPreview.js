@@ -24,16 +24,12 @@ const FacilityPreview = () => {
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[2px] text-accent">
-            <span className="h-px w-8 bg-accent/50" />
-            Our Facility
-            <span className="h-px w-8 bg-accent/50" />
-          </span>
+          <span className="eyebrow">Our Facility</span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             Inside Our Facility
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             A quick look inside the units where every Sagar Industries machine is
             built, tested and shipped.
           </p>
@@ -48,7 +44,7 @@ const FacilityPreview = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45, delay: (i % 5) * 0.07, ease: "easeOut" }}
-              className={`group relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] border border-theme shadow-card sm:aspect-auto ${
+              className={`group relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] border border-border shadow-card sm:aspect-auto ${
                 img.span || ""
               }`}
             >

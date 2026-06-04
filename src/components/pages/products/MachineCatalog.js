@@ -35,18 +35,18 @@ const MachineCatalog = () => {
   }, [selected]);
 
   return (
-    <section id="featured" className="section-py bg-theme">
+    <section id="featured" className="section-py bg-bg">
       <div className="container">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-[2px] text-accent">Our Machines</span>
+          <div className="flex flex-col items-center gap-3">
+            <span className="eyebrow">Our Machines</span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
               Explore Our Range
             </h2>
           </div>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="max-w-xl text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="max-w-xl text-text-secondary">
             Choose a category, then click any machine to view its full details.
           </p>
         </div>
@@ -61,8 +61,8 @@ const MachineCatalog = () => {
                 onClick={() => setTab(t.id)}
                 className={`btn rounded-full px-6 py-3 text-sm font-semibold transition ${
                   active
-                    ? "bg-orange-gradient text-white shadow-orange"
-                    : "border border-theme bg-card text-primary hover:border-accent"
+                    ? "bg-gradient-to-br from-primary to-secondary text-white shadow-orange"
+                    : "border border-border bg-card text-text-primary hover:border-accent"
                 }`}
               >
                 {t.label}
@@ -85,7 +85,7 @@ const MachineCatalog = () => {
               <button
                 key={m.slug}
                 onClick={() => setSelected(m)}
-                className="btn group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card text-left shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
+                className="btn group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-card text-left shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
@@ -97,14 +97,14 @@ const MachineCatalog = () => {
                   />
                   {/* hover overlay */}
                   <div className="absolute inset-0 flex items-center justify-center bg-primary/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-wide text-text-primary">
                       <MagnifyingGlassPlus size={16} weight="bold" /> 
                     </span>
                   </div>
                 </div>
                 <div className="flex flex-1 flex-col gap-2 p-5">
                   <h3 className="text-[15px]! font-semibold leading-snug sm:text-[16px]!">{m.name}</h3>
-                  <p className="text-sm text-secondary">{m.short}</p>
+                  <p className="text-sm text-text-secondary">{m.short}</p>
                 </div>
               </button>
             ))}
@@ -135,7 +135,7 @@ const MachineCatalog = () => {
               <button
                 onClick={() => setSelected(null)}
                 aria-label="Close"
-                className="btn absolute right-4 top-4 z-10 grid h-9 w-9 place-items-center rounded-full bg-card/90 text-primary shadow-card transition hover:bg-accent hover:text-white"
+                className="btn absolute right-4 top-4 z-10 grid h-9 w-9 place-items-center rounded-full bg-card/90 text-text-primary shadow-card transition hover:bg-accent hover:text-white"
               >
                 <X size={18} weight="bold" />
               </button>
@@ -149,21 +149,21 @@ const MachineCatalog = () => {
                 {/* Content */}
                 <div className="flex flex-col gap-5 p-6 md:p-8">
                   <div>
-                    <span className="inline-block rounded-full bg-accent-soft px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-accent">
+                    <span className="inline-block rounded-full bg-accent/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-accent">
                       {selected.category === "Cutting" ? "Paper Cutting" : "Flexo Printing"}
                     </span>
                     <h3 className="mt-3 text-[20px]! font-semibold leading-snug sm:text-[22px]!">
                       {selected.name}
                     </h3>
-                    <p className="mt-2 text-sm text-secondary">{selected.description}</p>
+                    <p className="mt-2 text-sm text-text-secondary">{selected.description}</p>
                   </div>
 
                   {/* Key features */}
                   <div>
-                    <h4 className="text-[13px]! font-bold uppercase tracking-wide text-primary">Key Features</h4>
+                    <h4 className="text-[13px]! font-bold uppercase tracking-wide text-text-primary">Key Features</h4>
                     <ul className="mt-2 grid grid-cols-1 gap-1.5 sm:grid-cols-2">
                       {KEY_FEATURES.map((f) => (
-                        <li key={f} className="flex items-center gap-2 text-sm text-secondary">
+                        <li key={f} className="flex items-center gap-2 text-sm text-text-secondary">
                           <Check size={15} weight="bold" className="shrink-0 text-accent" /> {f}
                         </li>
                       ))}
@@ -172,12 +172,12 @@ const MachineCatalog = () => {
 
                   {/* Specs */}
                   <div>
-                    <h4 className="text-[13px]! font-bold uppercase tracking-wide text-primary">Specifications</h4>
+                    <h4 className="text-[13px]! font-bold uppercase tracking-wide text-text-primary">Specifications</h4>
                     <div className="mt-2 flex flex-col">
                       {SPECS.map((s) => (
-                        <div key={s.label} className="flex justify-between border-b border-theme py-1.5 text-sm last:border-0">
-                          <span className="text-secondary">{s.label}</span>
-                          <span className="font-semibold text-primary">{s.value}</span>
+                        <div key={s.label} className="flex justify-between border-b border-border py-1.5 text-sm last:border-0">
+                          <span className="text-text-secondary">{s.label}</span>
+                          <span className="font-semibold text-text-primary">{s.value}</span>
                         </div>
                       ))}
                     </div>
@@ -185,10 +185,10 @@ const MachineCatalog = () => {
 
                   {/* Applications */}
                   <div>
-                    <h4 className="text-[13px]! font-bold uppercase tracking-wide text-primary">Applications</h4>
+                    <h4 className="text-[13px]! font-bold uppercase tracking-wide text-text-primary">Applications</h4>
                     <div className="mt-2 flex flex-wrap gap-2">
                       {APPLICATIONS.map((a) => (
-                        <span key={a} className="rounded-full bg-soft px-3 py-1 text-xs text-secondary">{a}</span>
+                        <span key={a} className="rounded-full bg-soft px-3 py-1 text-xs text-text-secondary">{a}</span>
                       ))}
                     </div>
                   </div>

@@ -11,7 +11,7 @@ import Infrastructure from "@/components/pages/about/Infrastructure";
 import FactoryImages from "@/components/pages/about/FactoryImages";
 import LeadershipTeam from "@/components/pages/about/LeadershipTeam";
 import CustomerJourney from "@/components/pages/about/CustomerJourney";
-import AboutCTA from "@/components/pages/about/AboutCTA";
+import ContactCTA from "@/components/pages/home/ContactCTA";
 
 function About() {
   return (
@@ -31,7 +31,7 @@ function About() {
       {/* <Infrastructure /> */}
       {/* <FactoryImages /> */}
       {/* <LeadershipTeam /> */}
-      <AboutCTA />
+      <ContactCTA />
     </>
   );
 }

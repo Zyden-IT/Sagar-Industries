@@ -26,18 +26,16 @@ const KnowledgeFaq = () => {
   const f = FAQS[active];
 
   return (
-    <section id="faq" className="section-py scroll-mt-20 bg-theme">
+    <section id="faq" className="section-py scroll-mt-20 bg-bg">
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full bg-accent-soft px-3 py-1.5 text-[11px] font-bold uppercase tracking-[2px] text-accent">
-            <Question size={14} weight="bold" /> FAQ
-          </span>
+          <span className="eyebrow">FAQ</span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             Frequently Asked Questions
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Pick a question to see the answer — or reach out and we&apos;ll help
             with anything else.
           </p>
@@ -55,8 +53,8 @@ const KnowledgeFaq = () => {
                   onClick={() => setActive(i)}
                   className={`btn group flex cursor-pointer items-center gap-4 rounded-2xl border px-4 py-4 text-left transition duration-300 ${
                     on
-                      ? "border-transparent bg-orange-gradient text-white shadow-orange"
-                      : "border-theme bg-card text-primary hover:border-accent"
+                      ? "border-transparent bg-gradient-to-br from-primary to-secondary text-white shadow-orange"
+                      : "border-border bg-card text-text-primary hover:border-accent"
                   }`}
                 >
                   <span className={`stats-font text-lg font-bold ${on ? "text-white/90" : "text-accent"}`}>
@@ -76,7 +74,7 @@ const KnowledgeFaq = () => {
           </div>
 
           {/* Answer panel */}
-          <div className="relative flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card p-7 shadow-card md:p-9">
+          <div className="relative flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-card p-7 shadow-card md:p-9">
             {/* watermark number */}
             <span className="stats-font pointer-events-none absolute right-5 top-5 select-none text-[44px] font-bold leading-none text-accent/15">
               {pad(active + 1)}
@@ -91,25 +89,25 @@ const KnowledgeFaq = () => {
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                  <span className="text-[11px] font-bold uppercase tracking-[2px] text-accent">
+                  <span className="eyebrow">
                     Answer {pad(active + 1)}
                   </span>
                   <h3 className="mt-2 text-[19px]! font-bold! leading-snug sm:text-[22px]!">{f.q}</h3>
-                  <span className="mt-3 block h-[3px] w-10 rounded-full bg-orange-gradient" />
-                  <p className="mt-4 leading-relaxed text-secondary">{f.a}</p>
+                  <span className="mt-3 block h-[3px] w-10 rounded-full bg-gradient-to-br from-primary to-secondary" />
+                  <p className="mt-4 leading-relaxed text-text-secondary">{f.a}</p>
                 </motion.div>
               </AnimatePresence>
             </div>
 
             {/* contact CTA */}
-            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-theme pt-6">
+            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
               <div className="flex items-center gap-3">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent-soft text-accent">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent/10 text-accent">
                   <ChatCircleDots size={22} weight="bold" />
                 </span>
                 <div>
-                  <div className="text-[15px]! font-semibold text-primary">Still have questions?</div>
-                  <div className="text-sm text-secondary">Talk to our team for details and quotes.</div>
+                  <div className="text-[15px]! font-semibold text-text-primary">Still have questions?</div>
+                  <div className="text-sm text-text-secondary">Talk to our team for details and quotes.</div>
                 </div>
               </div>
               <Link href={Routes.contact.urlPath} className="btn-orange shrink-0">

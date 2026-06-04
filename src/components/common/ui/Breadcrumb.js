@@ -4,7 +4,7 @@ import { House, CaretRight } from "@phosphor-icons/react";
 
 const Breadcrumb = ({ title, trail = [] }) => {
   return (
-    <section className="relative overflow-hidden border-b border-theme">
+    <section className="relative overflow-hidden border-b border-border">
       {/* Banner background */}
       <Image
         src="/banner2.png"
@@ -26,13 +26,10 @@ const Breadcrumb = ({ title, trail = [] }) => {
       <div className="container relative py-20">
         <div className="max-w-4xl text-left">
           {/* Small Label */}
-          <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[3px] text-accent">
-            <span className="h-[2px] w-8 bg-accent" />
-            Sagar Industries
-          </span>
+          <span className="eyebrow mb-4">Sagar Industries</span>
 
           {/* Title */}
-          <h1 className="text-4xl font-semibold uppercase tracking-[-0.03em] text-primary sm:text-5xl">
+          <h1 className="text-4xl font-semibold uppercase tracking-[-0.03em] text-text-primary sm:text-5xl">
             {title}
           </h1>
 
@@ -49,13 +46,13 @@ const Breadcrumb = ({ title, trail = [] }) => {
                     <CaretRight
                       size={12}
                       weight="bold"
-                      className="text-secondary"
+                      className="text-text-secondary"
                     />
 
                     {item.href && !isLast ? (
                       <Link
                         href={item.href}
-                        className="text-secondary transition-colors hover:text-accent"
+                        className="text-text-secondary transition-colors hover:text-accent"
                       >
                         {item.label}
                       </Link>

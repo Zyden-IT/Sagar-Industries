@@ -22,14 +22,14 @@ const Downloads = () => {
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <span className="eyebrow">
             Downloads
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             Brochures & Spec Sheets
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Grab our brochures and machine datasheets to share with your team.
           </p>
         </div>
@@ -44,16 +44,16 @@ const Downloads = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
-              className="group flex items-center gap-4 rounded-[var(--radius-card)] border border-theme bg-card p-4 shadow-card transition duration-300 hover:border-accent hover:shadow-orange sm:p-5"
+              className="group flex items-center gap-4 rounded-[var(--radius-card)] border border-border bg-card p-4 shadow-card transition duration-300 hover:border-accent hover:shadow-orange sm:p-5"
             >
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent">
                 <FilePdf size={26} weight="regular" />
               </span>
               <div className="min-w-0 flex-1">
                 <h3 className="truncate text-[15px]! font-semibold leading-tight">{f.title}</h3>
-                <p className="mt-1 text-[12px]! text-secondary">{f.meta}</p>
+                <p className="mt-1 text-[12px]! text-text-secondary">{f.meta}</p>
               </div>
-              <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-orange-gradient px-4 py-2.5 text-[11px] font-bold uppercase tracking-wide text-white shadow-orange transition group-hover:scale-105">
+              <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-br from-primary to-secondary px-4 py-2.5 text-[11px] font-bold uppercase tracking-wide text-white shadow-orange transition group-hover:scale-105">
                 <DownloadSimple size={16} weight="bold" />
                 <span className="hidden sm:inline">Download</span>
               </span>

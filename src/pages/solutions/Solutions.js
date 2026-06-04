@@ -16,7 +16,7 @@ import KnowledgeFaq from "@/components/pages/knowledge/KnowledgeFaq";
 
 // Single closing CTA for the whole page (the per-block CTAs from the old
 // Industries / Smart Tools / Knowledge pages are intentionally consolidated).
-import KnowledgeCTA from "@/components/pages/knowledge/KnowledgeCTA";
+import ContactCTA from "@/components/pages/home/ContactCTA";
 
 function Solutions() {
   return (
@@ -41,7 +41,7 @@ function Solutions() {
       <KnowledgeFaq />
 
       {/* ── Closing CTA ────────────────────────────────────────────── */}
-      <KnowledgeCTA />
+      <ContactCTA />
     </>
   );
 }

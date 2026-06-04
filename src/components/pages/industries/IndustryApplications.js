@@ -89,19 +89,19 @@ const Step = ({ m, n }) => {
       </div>
 
       {/* Number badge (sits on the dashed rail) */}
-      <span className="relative z-10 mt-3 grid h-8 w-8 place-items-center rounded-full bg-orange-gradient text-[12px] font-bold text-white ring-4 ring-[var(--color-bg)]">
+      <span className="relative z-10 mt-3 grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-[12px] font-bold text-white ring-4 ring-[var(--color-bg)]">
         {pad(n)}
       </span>
 
       {/* Card */}
-      <div className="mt-4 flex w-full flex-1 flex-col rounded-[var(--radius-card)] border border-theme bg-card p-5 text-center shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange">
+      <div className="mt-4 flex w-full flex-1 flex-col rounded-[var(--radius-card)] border border-border bg-card p-5 text-center shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange">
         <h3 className="text-[14px]! font-bold! uppercase leading-tight">{m.industry}</h3>
-        <p className="mt-2 text-[12px]! leading-snug text-secondary">{m.desc}</p>
+        <p className="mt-2 text-[12px]! leading-snug text-text-secondary">{m.desc}</p>
 
         {/* application chips */}
         <ul className="mt-4 flex flex-col items-center gap-1.5">
           {m.apps.map((a) => (
-            <li key={a} className="rounded-full border border-theme bg-soft px-3 py-1 text-[11px]! font-medium text-secondary">
+            <li key={a} className="rounded-full border border-border bg-soft px-3 py-1 text-[11px]! font-medium text-text-secondary">
               {a}
             </li>
           ))}
@@ -113,23 +113,19 @@ const Step = ({ m, n }) => {
 
 const IndustryApplications = () => {
   return (
-    <section className="section-py bg-theme">
+    <section className="section-py bg-bg">
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[2px] text-accent">
-            <span className="h-px w-8 bg-accent/50" />
-            Applications
-            <span className="h-px w-8 bg-accent/50" />
-          </span>
+          <span className="eyebrow">Applications</span>
           <h2 className="text-[24px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[30px]! lg:text-[36px]!">
             Where Our <span className="text-accent">Machines</span> Are Used
           </h2>
           <span className="flex items-center gap-1.5">
-            <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
+            <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
             <span className="h-[6px] w-[6px] rounded-full bg-accent" />
           </span>
-          <p className="mt-1 text-secondary">
+          <p className="mt-1 text-text-secondary">
             Find your industry and the typical applications we power — along with
             the machine best suited to the job.
           </p>

@@ -82,7 +82,7 @@ const Badge = () => (
   <Link
     href={Routes.products.urlPath}
     aria-label="Explore our machines"
-    className="group relative grid h-24 w-24 place-items-center rounded-full bg-card shadow-card ring-1 ring-theme sm:h-28 sm:w-28"
+    className="group relative grid h-24 w-24 place-items-center rounded-full bg-card shadow-card ring-1 ring-border sm:h-28 sm:w-28"
   >
     <motion.div
       aria-hidden
@@ -105,7 +105,7 @@ const Badge = () => (
         </text>
       </svg>
     </motion.div>
-    <span className="grid h-12 w-12 place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition-transform duration-300 group-hover:scale-110 sm:h-14 sm:w-14">
+    <span className="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-orange transition-transform duration-300 group-hover:scale-110 sm:h-14 sm:w-14">
       <ArrowUpRightIcon size={20} weight="bold" />
     </span>
   </Link>
@@ -113,7 +113,7 @@ const Badge = () => (
 
 const CompanyIntro = () => {
   return (
-    <section className="section-py relative overflow-hidden bg-theme">
+    <section className="section-py relative overflow-hidden bg-soft">
       {/* Blueprint grid texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
@@ -133,7 +133,7 @@ const CompanyIntro = () => {
           {/* ── Left — image collage ──────────────────────────────── */}
           <motion.div {...fadeIn(-30)} className="relative mx-auto w-full max-w-[560px]">
             {/* accent blobs */}
-            <span aria-hidden className="absolute -left-5 -top-5 -z-0 h-28 w-28 rounded-[42%] bg-orange-gradient opacity-20 blur-md" />
+            <span aria-hidden className="absolute -left-5 -top-5 -z-0 h-28 w-28 rounded-[42%] bg-gradient-to-br from-primary to-secondary opacity-20 blur-md" />
             <span aria-hidden className="absolute -bottom-6 -right-5 -z-0 h-32 w-32 rounded-[42%] bg-accent/15 blur-lg" />
 
             <div className="relative grid h-[380px] grid-cols-5 grid-rows-2 gap-3 sm:h-[460px] sm:gap-4">
@@ -162,16 +162,14 @@ const CompanyIntro = () => {
           {/* ── Right — content ───────────────────────────────────── */}
           <motion.div {...fadeIn(30)} className="relative flex flex-col gap-5">
 
-            <span className="inline-flex w-fit items-center gap-2 text-[12px] font-bold uppercase tracking-[2px] text-accent">
-              <span className="font-black">{"//"}</span> About Us
-            </span>
+            <span className="eyebrow">About Us</span>
 
             <h2 className="text-[26px]! font-semibold leading-[1.15] tracking-[-0.01em] sm:text-[30px]! lg:text-[36px]!">
               Engineering <span className="text-accent">Excellence</span> Behind Every{" "}
               <span className="text-accent">Machine</span>
             </h2>
 
-            <p className="max-w-xl text-secondary">
+            <p className="max-w-xl text-text-secondary">
               Sagar Industries is a trusted manufacturer and exporter of Paper
               Reel to Sheet Cutting Machines and Flexo Printing Machines. From
               our facility in Ahmedabad, we combine precision engineering,
@@ -183,7 +181,7 @@ const CompanyIntro = () => {
             <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-6 sm:flex sm:flex-wrap sm:divide-x sm:divide-[var(--color-border)]">
               {STATS.map((s) => (
                 <div key={s.label} className="flex flex-col gap-2.5 sm:px-6 sm:first:pl-0">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent-soft text-accent">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent">
                     <s.icon size={20} weight="bold" />
                   </span>
                   {s.value !== undefined ? (
@@ -196,7 +194,7 @@ const CompanyIntro = () => {
                       {s.text}
                     </span>
                   )}
-                  <p className="text-xs text-secondary">{s.label}</p>
+                  <p className="text-xs text-text-secondary">{s.label}</p>
                 </div>
               ))}
             </div>

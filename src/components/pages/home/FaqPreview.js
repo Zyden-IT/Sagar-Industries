@@ -22,7 +22,7 @@ const FaqPreview = () => {
   const [open, setOpen] = useState(0);
 
   return (
-    <section className="section-py bg-theme">
+    <section className="section-py bg-bg">
       <div className="container">
         <div className="grid gap-10 lg:grid-cols-5 lg:gap-14">
           {/* Intro */}
@@ -33,23 +33,21 @@ const FaqPreview = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-2"
           >
-            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-accent-soft px-3 py-1.5 text-[11px] font-bold uppercase tracking-[2px] text-accent">
-              FAQ
-            </span>
+            <span className="eyebrow">FAQ</span>
             <h2 className="mt-3 text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
               Frequently Asked Questions
             </h2>
-            <p className="mt-3 max-w-sm text-secondary">
+            <p className="mt-3 max-w-sm text-text-secondary">
               Quick answers to the questions we hear most. Need something else?
               We&apos;re happy to help.
             </p>
 
-            <div className="mt-6 rounded-[var(--radius-card)] border border-theme bg-card p-6 shadow-card">
-              <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent-soft text-accent">
+            <div className="mt-6 rounded-[var(--radius-card)] border border-border bg-card p-6 shadow-card">
+              <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent/10 text-accent">
                 <ChatCircleDots size={24} weight="bold" />
               </span>
               <h3 className="mt-4 text-[16px]! font-semibold">Still have questions?</h3>
-              <p className="mt-1 text-sm text-secondary">Talk to our team for machine details and quotes.</p>
+              <p className="mt-1 text-sm text-text-secondary">Talk to our team for machine details and quotes.</p>
               <Link href={Routes.contact.urlPath} className="btn-orange mt-4 w-fit">
                 Contact Us <ArrowRight size={16} weight="bold" />
               </Link>
@@ -70,14 +68,14 @@ const FaqPreview = () => {
                 <div
                   key={f.q}
                   className={`overflow-hidden rounded-[var(--radius-card)] border bg-card shadow-card transition-colors ${
-                    isOpen ? "border-accent" : "border-theme"
+                    isOpen ? "border-accent" : "border-border"
                   }`}
                 >
                   <button
                     onClick={() => setOpen(isOpen ? -1 : i)}
                     className="btn flex w-full items-center justify-between gap-4 p-5 text-left"
                   >
-                    <span className="text-[15px] font-semibold text-primary">{f.q}</span>
+                    <span className="text-[15px] font-semibold text-text-primary">{f.q}</span>
                     <CaretDown
                       size={18}
                       weight="bold"
@@ -95,7 +93,7 @@ const FaqPreview = () => {
                         transition={{ duration: 0.3, ease: "easeOut" }}
                         className="overflow-hidden"
                       >
-                        <p className="px-5 pb-5 text-sm text-secondary">{f.a}</p>
+                        <p className="px-5 pb-5 text-sm text-text-secondary">{f.a}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>

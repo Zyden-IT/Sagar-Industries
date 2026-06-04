@@ -8,7 +8,7 @@ import { DownloadSimple, FilePdf } from "@phosphor-icons/react";
 
 const DownloadBrochure = () => {
   return (
-    <section className="section-py bg-theme">
+    <section className="section-py bg-bg">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -19,7 +19,7 @@ const DownloadBrochure = () => {
           style={{ background: "var(--hero-gradient)" }}
         >
           <div className="flex items-center gap-5">
-            <span className="hidden h-16 w-16 shrink-0 place-items-center rounded-2xl bg-accent-soft text-accent sm:grid">
+            <span className="hidden h-16 w-16 shrink-0 place-items-center rounded-2xl bg-accent/10 text-accent sm:grid">
               <FilePdf size={32} weight="bold" />
             </span>
             <div>

@@ -1,24 +1,36 @@
 // ─────────────────────────────────────────────────────────────────────
-// Home › Product Showcase — alternating feature rows.
-// Top: eyebrow + large headline (left) with a supporting line (right).
-// Below: each machine as an image↔content split row that alternates
-// sides. Content is eyebrow + heading + paragraph only (no links).
-// Theme colours throughout.
+// Home › Product Showcase — flagship machines as rich feature cards.
+// Each machine sits in a large theme card split into two halves:
+//   • Visual panel — product image on a tinted panel with a blueprint
+//     texture, an orange glow, a ghost index number and a floating spec chip.
+//   • Content — icon eyebrow, headline + gradient underline, description,
+//     feature pills, a 3-up stat-tile grid and a solid CTA.
+// Cards alternate sides. Colours/spacing come from the theme tokens.
 // ─────────────────────────────────────────────────────────────────────
 
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "@phosphor-icons/react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Scissors,
+  Printer,
+  CheckCircle,
+} from "@phosphor-icons/react";
 import { Routes } from "@/navigation/NavigationLib";
 
 const PRODUCTS = [
   {
-    eyebrow: "Product 01 — Cutting Series",
+    num: "01",
+    icon: Scissors,
+    eyebrow: "Cutting Series",
     image: "/p1.png",
     title: "Paper Roll To Sheet Cutting Machine",
     description:
       "Designed to convert paper rolls and reels into accurate sheets with smooth operation, flexible cutting length, and optional slitting and jogging attachments for advanced, high-volume production needs.",
+    highlight: { value: "8800 mm", label: "Max Cut Length" },
+    features: ["Flexible cut length", "Optional slitting", "Jogging attachment"],
     stats: [
       { value: "8800", label: "mm cut length" },
       { value: "2–9", label: "hp power" },
@@ -26,11 +38,15 @@ const PRODUCTS = [
     ],
   },
   {
-    eyebrow: "Product 02 — Flexo Series",
+    num: "02",
+    icon: Printer,
+    eyebrow: "Flexo Series",
     image: "/p2.png",
     title: "Flexo Printing Machine",
     description:
       "Built for clean, efficient and consistent printing on craft paper and corrugated board — with uniform ink flow, quick setup and configurations ranging from single colour to multi-colour.",
+    highlight: { value: "4+ Colours", label: "Print Stations" },
+    features: ["Uniform ink flow", "Quick setup", "Single → multi-colour"],
     stats: [
       { value: "4+", label: "print colours" },
       { value: "AC", label: "drive panel" },
@@ -48,15 +64,19 @@ const fade = (x = 0) => ({
 
 const ProductShowcase = () => {
   return (
-    <section className="section-py bg-theme">
-      <div className="container">
+    <section className="section-py relative overflow-hidden bg-bg">
+      {/* Ambient orange glow, top-right */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -right-32 -top-24 h-80 w-80 rounded-full bg-gradient-to-br from-primary to-secondary opacity-[0.07] blur-3xl"
+      />
+
+      <div className="container relative">
         {/* ── Header ─────────────────────────────────────────────── */}
         <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
           <motion.div {...fade(-30)} className="lg:col-span-8">
-            <span className="text-[11px] font-bold uppercase tracking-[2.5px] text-accent">
-              The Machines
-            </span>
-            <h2 className="mt-3 max-w-[640px] text-[28px]! font-semibold leading-[1.12] tracking-[-0.01em] sm:text-[34px]! lg:text-[42px]!">
+            <span className="eyebrow">The Machines</span>
+            <h2 className="mt-4 max-w-[640px] text-[28px]! font-semibold leading-[1.12] tracking-[-0.01em] sm:text-[34px]! lg:text-[42px]!">
               Two flagships. Built for the production lines of tomorrow.
             </h2>
           </motion.div>
@@ -64,7 +84,7 @@ const ProductShowcase = () => {
           <motion.div {...fade(30)} className="lg:col-span-4 lg:pb-2 lg:text-right">
             <Link
               href={Routes.products.urlPath}
-              className="group inline-flex items-center gap-2 text-[14px] font-semibold text-accent transition-colors hover:text-primary"
+              className="group inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-[13px] font-semibold text-text-primary shadow-card transition-all duration-300 hover:border-accent hover:text-accent"
             >
               View all products
               <ArrowRight
@@ -76,76 +96,139 @@ const ProductShowcase = () => {
           </motion.div>
         </div>
 
-        {/* ── Machine rows (alternating) ─────────────────────────── */}
-        <div className="mt-16 flex flex-col gap-16 lg:mt-20 lg:gap-24">
+        {/* ── Machine cards (alternating) ────────────────────────── */}
+        <div className="mt-14 flex flex-col gap-8 lg:mt-20 lg:gap-12">
           {PRODUCTS.map((p, i) => {
             const reverse = i % 2 === 1;
             return (
-              <div
+              <motion.article
                 key={p.title}
-                className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16"
+                {...fade(0)}
+                className="group relative grid overflow-hidden rounded-[var(--radius-card)] border border-border bg-card shadow-card transition-all duration-500 hover:border-accent hover:shadow-orange lg:grid-cols-2"
               >
-                {/* Image */}
-                <motion.div
-                  {...fade(reverse ? 40 : -40)}
-                  className={`relative overflow-hidden rounded-[var(--radius-card)] border border-theme bg-soft shadow-card ${reverse ? "lg:order-2" : ""
+                {/* ── Visual panel ──────────────────────────────── */}
+                <div
+                  className={`relative flex items-center justify-center overflow-hidden bg-bgdark p-8 sm:p-10 lg:min-h-[460px] ${reverse ? "lg:order-2" : ""
                     }`}
                 >
-                  <div className="group relative aspect-[4/3] w-full overflow-hidden">
+                  {/* Blueprint grid texture */}
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 opacity-50"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px)",
+                      backgroundSize: "38px 38px",
+                      maskImage:
+                        "radial-gradient(ellipse 80% 70% at 50% 45%, black 25%, transparent 100%)",
+                      WebkitMaskImage:
+                        "radial-gradient(ellipse 80% 70% at 50% 45%, black 25%, transparent 100%)",
+                    }}
+                  />
+                  {/* Orange glow behind the machine */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary to-secondary opacity-15 blur-3xl transition-opacity duration-500 group-hover:opacity-25"
+                  />
+
+                  {/* Product image */}
+                  <div className="relative aspect-[4/3] w-full max-w-[480px]">
                     <Image
                       src={p.image}
                       alt={p.title}
                       fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-contain transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 1024px) 90vw, 45vw"
+                      className="object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-[1.04]"
                     />
                   </div>
-                </motion.div>
 
-                {/* Content — eyebrow + heading + paragraph */}
-                <motion.div
-                  {...fade(reverse ? -40 : 40)}
-                  className={reverse ? "lg:order-1" : ""}
+                  {/* Floating highlight chip */}
+                  <div className="absolute bottom-5 left-5 flex items-center gap-3 rounded-xl border border-border bg-card/95 px-4 py-3 shadow-card backdrop-blur">
+                    <span className="grid h-9 w-9 place-items-center rounded-lg bg-accent/10 text-accent">
+                      <p.icon size={18} weight="bold" />
+                    </span>
+                    <span className="flex flex-col leading-tight">
+                      <span className="stats-font text-[15px] font-bold text-text-primary">
+                        {p.highlight.value}
+                      </span>
+                      <span className="text-[10px] uppercase tracking-[1.2px] text-text-secondary">
+                        {p.highlight.label}
+                      </span>
+                    </span>
+                  </div>
+                </div>
+
+                {/* ── Content ───────────────────────────────────── */}
+                <div
+                  className={`flex flex-col justify-center gap-5 p-7 sm:p-9 lg:p-12 ${reverse ? "lg:order-1" : ""
+                    }`}
                 >
-                  <span className="text-[11px] font-bold uppercase tracking-[2.5px] text-accent">
-                    {p.eyebrow}
+                  <span className="inline-flex w-fit items-center gap-2 rounded-full bg-accent/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[2px] text-accent">
+                    <p.icon size={14} weight="bold" />
+                    Product {p.num} — {p.eyebrow}
                   </span>
-                  <h3 className="mt-3 text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-                    {p.title}
-                  </h3>
-                  <span className="mt-4 block h-[3px] w-12 rounded-full bg-orange-gradient" />
-                  <p className="mt-5 max-w-md text-[15px] leading-[1.7] text-secondary">
+
+                  <div>
+                    <h3 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
+                      {p.title}
+                    </h3>
+                    <span className="mt-4 block h-[3px] w-12 rounded-full bg-gradient-to-br from-primary to-secondary" />
+                  </div>
+
+                  <p className="max-w-md text-[15px] leading-[1.7] text-text-secondary">
                     {p.description}
                   </p>
 
-                  {/* Stats */}
-                  <div className="mt-7 flex flex-wrap gap-x-8 gap-y-5 border-t border-theme pt-6 sm:gap-x-10">
+                  {/* Feature pills */}
+                  <div className="flex flex-wrap gap-2">
+                    {p.features.map((f) => (
+                      <span
+                        key={f}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-border bg-soft px-3 py-1.5 text-[12px] font-medium text-text-primary"
+                      >
+                        <CheckCircle size={14} weight="fill" className="text-accent" />
+                        {f}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Stat tiles */}
+                  <div className="grid grid-cols-3 gap-3">
                     {p.stats.map((s) => (
-                      <div key={s.label}>
-                        <div className="stats-font text-2xl font-bold leading-none text-primary sm:text-[28px]">
+                      <div
+                        key={s.label}
+                        className="rounded-xl border border-border bg-soft p-3.5 transition-colors duration-300 group-hover:border-accent/50"
+                      >
+                        <div className="stats-font text-xl font-bold leading-none text-text-primary sm:text-2xl">
                           {s.value}
                         </div>
-                        <div className="mt-1.5 text-[11px] font-medium uppercase tracking-[1.5px] text-secondary">
+                        <div className="mt-1.5 text-[10px] font-medium uppercase tracking-[1.2px] text-text-secondary">
                           {s.label}
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  {/* Link */}
-                  <Link
-                    href={Routes.products.urlPath}
-                    className="group mt-7 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[1.5px] text-primary transition-colors hover:text-accent"
-                  >
-                    Discover the machine
-                    <ArrowRight
-                      size={15}
-                      weight="bold"
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    />
-                  </Link>
-                </motion.div>
-              </div>
+                  {/* CTA */}
+                  <div className="mt-1 flex flex-wrap items-center gap-3">
+                    <Link href={Routes.products.urlPath} className="btn-orange">
+                      Discover the machine
+                      <ArrowRight size={16} weight="bold" />
+                    </Link>
+                    <Link
+                      href={Routes.contact.urlPath}
+                      className="group/q inline-flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-[1.5px] text-text-primary transition-colors hover:text-accent"
+                    >
+                      Request quote
+                      <ArrowUpRight
+                        size={15}
+                        weight="bold"
+                        className="transition-transform duration-300 group-hover/q:translate-x-0.5 group-hover/q:-translate-y-0.5"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              </motion.article>
             );
           })}
         </div>

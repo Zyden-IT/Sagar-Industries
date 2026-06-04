@@ -47,20 +47,20 @@ const PRODUCTS = [
 
 const ProductCategories = () => {
   return (
-    <section className="section-py bg-theme">
+    <section className="section-py bg-bg">
       <div className="container">
         {/* ── Header ─────────────────────────────────────────────── */}
         <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <div className="flex flex-col items-center gap-3">
+            <span className="eyebrow">
               Our Products
             </span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
               Two Core Machine Categories
             </h2>
           </div>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Built for the paper, packaging and printing industries
           </p>
         </div>
@@ -74,7 +74,7 @@ const ProductCategories = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.15, ease: "easeOut" }}
-              className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-orange"
+              className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-card shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-orange"
             >
               {/* Image */}
               <div className="relative h-56 overflow-hidden bg-soft">
@@ -98,14 +98,14 @@ const ProductCategories = () => {
                   {p.title}
                 </h3>
 
-                <p className="text-sm text-secondary">{p.description}</p>
+                <p className="text-sm text-text-secondary">{p.description}</p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {p.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full bg-soft px-3 py-1 text-xs font-medium text-secondary"
+                      className="rounded-full bg-soft px-3 py-1 text-xs font-medium text-text-secondary"
                     >
                       {t}
                     </span>
@@ -117,7 +117,7 @@ const ProductCategories = () => {
                   {p.features.map((f) => (
                     <li
                       key={f}
-                      className="flex items-center gap-3 border-b border-theme py-2.5 text-sm text-primary last:border-0"
+                      className="flex items-center gap-3 border-b border-border py-2.5 text-sm text-text-primary last:border-0"
                     >
                       <Check
                         size={16}

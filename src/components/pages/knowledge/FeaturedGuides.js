@@ -68,18 +68,18 @@ const GUIDES = [
 
 const FeaturedGuides = () => {
   return (
-    <section id="guides" className="section-py scroll-mt-20 bg-theme">
+    <section id="guides" className="section-py scroll-mt-20 bg-bg">
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <span className="eyebrow">
             Guides & Articles
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             Featured Reads
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Practical, jargon-free guides on choosing, running and maintaining
             paper, packaging and printing machinery.
           </p>
@@ -97,7 +97,7 @@ const FeaturedGuides = () => {
             >
               <Link
                 href={g.href}
-                className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
+                className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-card shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
               >
                 <div className="relative h-44 w-full overflow-hidden">
                   <Image
@@ -107,7 +107,7 @@ const FeaturedGuides = () => {
                     sizes="(max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute left-3 top-3 rounded-full bg-orange-gradient px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-orange">
+                  <span className="absolute left-3 top-3 rounded-full bg-gradient-to-br from-primary to-secondary px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-orange">
                     {g.tag}
                   </span>
                 </div>
@@ -115,9 +115,9 @@ const FeaturedGuides = () => {
                   <h3 className="text-[16px]! font-semibold leading-snug transition-colors group-hover:text-accent">
                     {g.title}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm text-secondary">{g.excerpt}</p>
-                  <div className="mt-4 flex items-center justify-between border-t border-theme pt-3">
-                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-secondary">
+                  <p className="mt-2 flex-1 text-sm text-text-secondary">{g.excerpt}</p>
+                  <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-text-secondary">
                       <Clock size={14} weight="bold" /> {g.read}
                     </span>
                     <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wide text-accent">

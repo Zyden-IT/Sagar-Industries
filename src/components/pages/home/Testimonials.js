@@ -79,9 +79,9 @@ const initials = (name) =>
     .join("");
 
 const Card = ({ review }) => (
-  <article className="flex h-full flex-col rounded-[var(--radius-card)] border border-theme bg-card p-7 shadow-card">
+  <article className="flex h-full flex-col rounded-[var(--radius-card)] border border-border bg-card p-7 shadow-card">
     <Quotes size={36} weight="fill" className="text-accent" />
-    <p className="mt-4 flex-1 text-[15px]! leading-relaxed text-secondary">
+    <p className="mt-4 flex-1 text-[15px]! leading-relaxed text-text-secondary">
       {review.quote}
     </p>
     <div className="mt-4 flex gap-1 text-accent">
@@ -89,13 +89,13 @@ const Card = ({ review }) => (
         <Star key={i} size={16} weight="fill" />
       ))}
     </div>
-    <div className="mt-5 flex items-center gap-4 border-t border-theme pt-5">
-      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-orange-gradient text-sm font-bold text-white">
+    <div className="mt-5 flex items-center gap-4 border-t border-border pt-5">
+      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-sm font-bold text-white">
         {initials(review.name)}
       </span>
       <div>
         <h3 className="text-[14px]! font-bold! leading-tight">{review.name}</h3>
-        <p className="text-[12px]! text-secondary">{review.role}</p>
+        <p className="text-[12px]! text-text-secondary">{review.role}</p>
         <p className="mt-0.5 text-[12px]! font-semibold text-accent">{review.company}</p>
       </div>
     </div>
@@ -163,18 +163,18 @@ const Testimonials = () => {
   const activeDot = (((index - total) % total) + total) % total;
 
   return (
-    <section className="section-py bg-soft">
+    <section className="section-py bg-bg">
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <span className="eyebrow">
             Testimonials
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             What Our Clients Say
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Trusted by leading businesses across industries for quality machines
             and exceptional support.
           </p>
@@ -190,14 +190,14 @@ const Testimonials = () => {
           <button
             onClick={prev}
             aria-label="Previous testimonials"
-            className="btn absolute left-0 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition hover:scale-110 sm:h-11 sm:w-11"
+            className="absolute left-0 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-orange transition hover:scale-110 sm:h-11 sm:w-11"
           >
             <CaretLeft size={20} weight="bold" />
           </button>
           <button
             onClick={next}
             aria-label="Next testimonials"
-            className="btn absolute right-0 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition hover:scale-110 sm:h-11 sm:w-11"
+            className="absolute right-0 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-orange transition hover:scale-110 sm:h-11 sm:w-11"
           >
             <CaretRight size={20} weight="bold" />
           </button>
@@ -235,36 +235,13 @@ const Testimonials = () => {
                   setIndex(total + i);
                 }}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`btn h-2.5 rounded-full transition-all duration-300 ${
-                  i === activeDot ? "w-6 bg-accent" : "w-2.5 bg-secondary/40 hover:bg-secondary"
-                }`}
+                className={`h-2.5 cursor-pointer rounded-full transition-all duration-300 ${i === activeDot ? "w-6 bg-accent" : "w-2.5 bg-border hover:bg-accent"
+                  }`}
               />
             ))}
           </div>
         </div>
 
-        {/* Stats — separate cards */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {STATS.map((s, i) => (
-            <motion.div
-              key={s.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.45, delay: (i % 4) * 0.1, ease: "easeOut" }}
-              className="group flex items-center gap-4 rounded-[var(--radius-card)] border border-theme bg-card p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-orange"
-            >
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
-                <s.icon size={24} weight="regular" />
-              </span>
-              <div>
-                <div className="stats-font text-2xl font-bold text-accent">{s.value}</div>
-                <h3 className="text-[14px]! font-semibold! leading-tight">{s.title}</h3>
-                <p className="text-[12px]! text-secondary">{s.sub}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

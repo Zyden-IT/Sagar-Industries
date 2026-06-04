@@ -91,10 +91,7 @@ const ImpactStats = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex flex-col gap-5"
           >
-            <span className="inline-flex w-fit items-center gap-2.5 text-[12px] font-bold uppercase tracking-[2.5px] text-accent">
-              <span className="h-2 w-2 rotate-45 bg-accent" />
-              Our Impact
-            </span>
+            <span className="eyebrow">Our Impact</span>
 
             <h2 className="text-[28px]! font-bold leading-[1.12] tracking-[-0.01em] text-white! sm:text-[34px]! lg:text-[42px]!">
               Powering Modern Paper Processing &amp; Printing

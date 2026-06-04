@@ -15,16 +15,16 @@ const STEPS = [
 ];
 
 const HowItWorks = () => (
-  <section className="section-py bg-theme">
+  <section className="section-py bg-bg">
     <div className="container">
       {/* Header */}
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-        <span className="text-xs font-bold uppercase tracking-[2px] text-accent">How It Works</span>
+        <span className="eyebrow">How It Works</span>
         <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
           From Numbers to the Right Machine
         </h2>
-        <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-        <p className="text-secondary">Four quick steps — each maps to a tool on this page.</p>
+        <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+        <p className="text-text-secondary">Four quick steps — each maps to a tool on this page.</p>
       </div>
 
       {/* Process flow */}
@@ -56,16 +56,16 @@ const HowItWorks = () => (
             >
               {/* node */}
               <div className="relative">
-                <span className="grid h-16 w-16 place-items-center rounded-full border-2 border-theme bg-card text-accent shadow-card transition-colors duration-300 group-hover:border-accent">
+                <span className="grid h-16 w-16 place-items-center rounded-full border-2 border-border bg-card text-accent shadow-card transition-colors duration-300 group-hover:border-accent">
                   <s.icon size={26} weight="bold" />
                 </span>
-                <span className="absolute -right-1 -top-1 grid h-7 w-7 place-items-center rounded-full bg-orange-gradient text-xs font-bold text-white shadow-orange">
+                <span className="absolute -right-1 -top-1 grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-xs font-bold text-white shadow-orange">
                   {i + 1}
                 </span>
               </div>
 
               <h3 className="mt-4 text-[15px]! font-bold! leading-tight">{s.title}</h3>
-              <p className="mt-1.5 max-w-[200px] text-sm leading-snug text-secondary">{s.desc}</p>
+              <p className="mt-1.5 max-w-[200px] text-sm leading-snug text-text-secondary">{s.desc}</p>
             </motion.div>
           ))}
         </div>

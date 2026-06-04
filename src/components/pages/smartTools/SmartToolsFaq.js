@@ -68,11 +68,11 @@ const SmartToolsFaq = () => {
         <div className="grid items-center gap-10 lg:grid-cols-[7fr_3fr]">
           {/* ── Left: FAQ ─────────────────────────────────────────────── */}
           <div>
-            <span className="text-xs font-bold uppercase tracking-[3px] text-accent">Got Questions?</span>
+            <span className="eyebrow">Got Questions?</span>
             <h2 className="mt-3 text-[30px]! font-bold uppercase leading-[1.05] tracking-[-0.01em] sm:text-[38px]! lg:text-[44px]!">
               Calculator <span className="text-accent">FAQs</span>
             </h2>
-            <p className="mt-4 max-w-lg text-secondary">
+            <p className="mt-4 max-w-lg text-text-secondary">
               Quick answers about using the tools, result accuracy, downloads
               and getting a quote.
             </p>
@@ -84,15 +84,15 @@ const SmartToolsFaq = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search question here"
-                className="w-full rounded-full border border-theme bg-card py-4 pl-6 pr-16 text-primary outline-none transition focus:border-accent"
+                className="w-full rounded-full border border-border bg-card py-4 pl-6 pr-16 text-text-primary outline-none transition focus:border-accent"
               />
-              <span className="absolute right-2 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-orange-gradient text-white shadow-orange">
+              <span className="absolute right-2 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-orange">
                 <MagnifyingGlass size={18} weight="bold" />
               </span>
             </form>
 
             {filtered.length === 0 ? (
-              <p className="mt-8 rounded-[var(--radius-card)] border border-theme bg-card p-6 text-secondary shadow-card">
+              <p className="mt-8 rounded-[var(--radius-card)] border border-border bg-card p-6 text-text-secondary shadow-card">
                 No questions match &ldquo;{query}&rdquo;. Try a different word.
               </p>
             ) : (
@@ -108,8 +108,8 @@ const SmartToolsFaq = () => {
                         aria-label={`Question ${pad(i + 1)}`}
                         className={`btn grid h-12 w-12 cursor-pointer place-items-center rounded-full text-sm font-bold transition ${
                           isActive
-                            ? "bg-orange-gradient text-white shadow-orange ring-4 ring-accent/20"
-                            : "border border-theme bg-card text-primary hover:border-accent"
+                            ? "bg-gradient-to-br from-primary to-secondary text-white shadow-orange ring-4 ring-accent/20"
+                            : "border border-border bg-card text-text-primary hover:border-accent"
                         }`}
                       >
                         {pad(i + 1)}
@@ -119,9 +119,9 @@ const SmartToolsFaq = () => {
                 </div>
 
                 {/* Question card */}
-                <div className="relative mt-6 overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card p-6 shadow-card md:p-8">
+                <div className="relative mt-6 overflow-hidden rounded-[var(--radius-card)] border border-border bg-card p-6 shadow-card md:p-8">
                   <span
-                    className="absolute left-0 top-0 h-1 rounded-r-full bg-orange-gradient transition-all duration-500"
+                    className="absolute left-0 top-0 h-1 rounded-r-full bg-gradient-to-br from-primary to-secondary transition-all duration-500"
                     style={{ width: `${((safePos + 1) / filtered.length) * 100}%` }}
                   />
 
@@ -135,7 +135,7 @@ const SmartToolsFaq = () => {
                         onClick={prev}
                         disabled={safePos <= 0}
                         aria-label="Previous question"
-                        className="btn grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-theme text-primary transition enabled:hover:border-accent disabled:cursor-not-allowed disabled:opacity-40"
+                        className="btn grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-border text-text-primary transition enabled:hover:border-accent disabled:cursor-not-allowed disabled:opacity-40"
                       >
                         <ArrowLeft size={16} weight="bold" />
                       </button>
@@ -143,7 +143,7 @@ const SmartToolsFaq = () => {
                         onClick={next}
                         disabled={safePos >= filtered.length - 1}
                         aria-label="Next question"
-                        className="btn grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white transition hover:scale-105 disabled:cursor-not-allowed disabled:opacity-40"
+                        className="btn grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-white transition hover:scale-105 disabled:cursor-not-allowed disabled:opacity-40"
                       >
                         <ArrowRight size={16} weight="bold" />
                       </button>
@@ -162,8 +162,8 @@ const SmartToolsFaq = () => {
                         {current.q}
                       </h3>
                       <div className="mt-3 flex gap-3">
-                        <span className="mt-2.5 h-[2px] w-6 shrink-0 rounded-full bg-orange-gradient" />
-                        <p className="leading-relaxed text-secondary">{current.a}</p>
+                        <span className="mt-2.5 h-[2px] w-6 shrink-0 rounded-full bg-gradient-to-br from-primary to-secondary" />
+                        <p className="leading-relaxed text-text-secondary">{current.a}</p>
                       </div>
                     </motion.div>
                   </AnimatePresence>

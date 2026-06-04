@@ -26,11 +26,11 @@ const TYPES = {
 };
 
 const selectCls =
-  "w-full rounded-[10px] border-[1.5px] border-theme bg-soft px-4 py-3 text-primary outline-none transition focus:border-accent";
+  "w-full rounded-[10px] border-[1.5px] border-border bg-soft px-4 py-3 text-text-primary outline-none transition focus:border-accent";
 
 const Field = ({ label, children }) => (
   <div className="flex flex-col gap-2">
-    <label className="text-sm font-semibold text-primary">{label}</label>
+    <label className="text-sm font-semibold text-text-primary">{label}</label>
     {children}
   </div>
 );
@@ -82,18 +82,16 @@ const SpecBuilder = () => {
     : "#";
 
   return (
-    <section id="spec" className="section-py bg-soft">
+    <section id="spec" className="section-py bg-bg">
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[2px] text-accent">
-            <ClipboardText size={16} weight="bold" /> Spec Builder
-          </span>
+          <span className="eyebrow">Spec Builder</span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             Build Your Machine Spec
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Put together your requirement in seconds — download it as a file or
             send it to us on WhatsApp for a fast quote.
           </p>
@@ -110,7 +108,7 @@ const SpecBuilder = () => {
           {/* Form */}
           <form
             onSubmit={build}
-            className="flex flex-col gap-5 rounded-[var(--radius-card)] border border-theme bg-card p-6 shadow-card md:p-7"
+            className="flex flex-col gap-5 rounded-[var(--radius-card)] border border-border bg-card p-6 shadow-card md:p-7"
           >
             <Field label="Machine">
               <select className={selectCls} value={machine} onChange={(e) => onMachine(e.target.value)}>
@@ -166,7 +164,7 @@ const SpecBuilder = () => {
                     ))}
                   </ul>
                   <div className="flex flex-wrap gap-3">
-                    <button onClick={download} className="btn inline-flex items-center gap-2 rounded-full bg-orange-gradient px-5 py-3 text-xs font-bold uppercase tracking-wide text-white">
+                    <button onClick={download} className="btn inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-primary to-secondary px-5 py-3 text-xs font-bold uppercase tracking-wide text-white">
                       <DownloadSimple size={16} weight="bold" /> Download .txt
                     </button>
                     <a href={waHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-xs font-bold uppercase tracking-wide text-white! transition hover:bg-white hover:text-[#161000]">

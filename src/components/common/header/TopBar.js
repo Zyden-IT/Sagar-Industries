@@ -65,7 +65,7 @@ const TopBar = () => {
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
-                className="grid h-7 w-7 place-items-center rounded-full bg-white/10 text-white! transition-colors duration-300 hover:bg-orange-gradient"
+                className="grid h-7 w-7 place-items-center rounded-full bg-white/10 text-white! transition-colors duration-300 hover:bg-gradient-to-br from-primary to-secondary"
               >
                 <s.icon className="h-[15px] w-[15px]" weight="fill" />
               </a>

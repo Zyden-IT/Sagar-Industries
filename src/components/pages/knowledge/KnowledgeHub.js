@@ -36,16 +36,16 @@ const Card = ({ r, n }) => {
   return (
     <Link
       href={r.href}
-      className="group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-card p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
     >
       <span className="stats-font absolute right-5 top-4 select-none text-[40px] font-bold leading-none text-accent/10 transition-colors duration-300 group-hover:text-accent/25">
         {pad(n)}
       </span>
-      <span className="mb-5 grid h-14 w-14 place-items-center rounded-2xl bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
+      <span className="mb-5 grid h-14 w-14 place-items-center rounded-2xl bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110">
         <Icon size={28} weight="regular" />
       </span>
       <h3 className="text-[17px]! font-bold! leading-tight transition-colors group-hover:text-accent">{r.title}</h3>
-      <p className="mt-2 flex-1 text-sm text-secondary">{r.desc}</p>
+      <p className="mt-2 flex-1 text-sm text-text-secondary">{r.desc}</p>
       <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-bold uppercase tracking-wide text-accent">
         Explore
         <ArrowRight size={14} weight="bold" className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -82,16 +82,12 @@ const KnowledgeHub = () => {
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[2px] text-accent">
-            <span className="h-px w-8 bg-accent/50" />
-            Knowledge
-            <span className="h-px w-8 bg-accent/50" />
-          </span>
+          <span className="eyebrow">Knowledge</span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             Knowledge Hub
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Guides, FAQs and resources from our engineering team to help you
             choose, run and maintain the right machine.
           </p>
@@ -103,14 +99,14 @@ const KnowledgeHub = () => {
           <button
             onClick={prev}
             aria-label="Previous"
-            className="btn absolute left-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition hover:scale-110"
+            className="btn absolute left-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-orange transition hover:scale-110"
           >
             <CaretLeft size={20} weight="bold" />
           </button>
           <button
             onClick={next}
             aria-label="Next"
-            className="btn absolute right-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition hover:scale-110"
+            className="btn absolute right-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-orange transition hover:scale-110"
           >
             <CaretRight size={20} weight="bold" />
           </button>

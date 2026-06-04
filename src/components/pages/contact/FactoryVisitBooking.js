@@ -47,16 +47,16 @@ const PERKS = [
 ];
 
 const selectCls =
-  "w-full rounded-[12px] border-[1.5px] border-theme bg-soft py-3.5 pl-11! pr-4 text-primary outline-none transition focus:border-accent";
+  "w-full rounded-[12px] border-[1.5px] border-border bg-soft py-3.5 pl-11! pr-4 text-text-primary outline-none transition focus:border-accent";
 const inputCls =
-  "w-full rounded-[12px] border-[1.5px] border-theme bg-soft py-3.5! pl-11! pr-4! text-primary outline-none transition focus:border-accent";
+  "w-full rounded-[12px] border-[1.5px] border-border bg-soft py-3.5! pl-11! pr-4! text-text-primary outline-none transition focus:border-accent";
 
 // Field with a leading icon.
 const IconField = ({ icon: Icon, children }) => (
   <div className="relative">
     <Icon
       size={18}
-      className="pointer-events-none absolute left-4 top-1/2 z-10 -translate-y-1/2 text-secondary"
+      className="pointer-events-none absolute left-4 top-1/2 z-10 -translate-y-1/2 text-text-secondary"
     />
     {children}
   </div>
@@ -105,7 +105,7 @@ const FactoryVisitBooking = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20" />
 
             <div className="relative flex h-full flex-col">
-              <span className="inline-flex w-fit items-center gap-2 rounded-full bg-orange-gradient px-4 py-2 text-[11px] font-bold uppercase tracking-[2px] text-white shadow-orange">
+              <span className="inline-flex w-fit items-center gap-2 rounded-full bg-gradient-to-br from-primary to-secondary px-4 py-2 text-[11px] font-bold uppercase tracking-[2px] text-white shadow-orange">
                 <Factory size={15} weight="bold" /> Factory Visit
               </span>
 
@@ -114,7 +114,7 @@ const FactoryVisitBooking = () => {
                 <br />
                 to <span className="text-accent">Our Facility</span>
               </h2>
-              <span className="mt-4 block h-1 w-16 rounded-full bg-orange-gradient" />
+              <span className="mt-4 block h-1 w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
 
               {/* Perks — icon + name inline, all three on one line at the bottom.
                  Right padding on lg keeps them clear of the rounded corner. */}
@@ -150,7 +150,7 @@ const FactoryVisitBooking = () => {
               <div className="flex min-h-[420px] flex-col items-center justify-center gap-4 text-center">
                 <CheckCircle size={56} weight="fill" className="text-accent" />
                 <h3 className="text-[20px]! font-semibold!">Visit request ready!</h3>
-                <p className="max-w-xs text-sm text-secondary">
+                <p className="max-w-xs text-sm text-text-secondary">
                   Send it on WhatsApp and we&apos;ll confirm your slot.
                 </p>
                 <a href={waLink} target="_blank" rel="noreferrer" className="btn-orange btn-lg">
@@ -158,7 +158,7 @@ const FactoryVisitBooking = () => {
                 </a>
                 <button
                   onClick={() => setSent(false)}
-                  className="btn text-xs font-semibold uppercase tracking-wide text-secondary hover:text-accent"
+                  className="btn text-xs font-semibold uppercase tracking-wide text-text-secondary hover:text-accent"
                 >
                   Edit details
                 </button>
@@ -167,15 +167,15 @@ const FactoryVisitBooking = () => {
               <>
                 {/* form header */}
                 <div className="flex items-start gap-4">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent-soft text-accent">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent/10 text-accent">
                     <CalendarCheck size={24} weight="regular" />
                   </span>
                   <div>
                     <h3 className="text-[20px]! font-bold! leading-tight sm:text-[22px]!">
                       Schedule Your Visit
                     </h3>
-                    <span className="mt-2 block h-1 w-12 rounded-full bg-orange-gradient" />
-                    <p className="mt-2 text-[13px]! text-secondary">
+                    <span className="mt-2 block h-1 w-12 rounded-full bg-gradient-to-br from-primary to-secondary" />
+                    <p className="mt-2 text-[13px]! text-text-secondary">
                       Fill in your details and our team will get in touch with you.
                     </p>
                   </div>
@@ -212,10 +212,10 @@ const FactoryVisitBooking = () => {
                   <div className="relative">
                     <PencilSimple
                       size={18}
-                      className="pointer-events-none absolute left-4 top-4 z-10 text-secondary"
+                      className="pointer-events-none absolute left-4 top-4 z-10 text-text-secondary"
                     />
                     <textarea
-                      className="w-full rounded-[12px] border-[1.5px] border-theme bg-soft py-3.5! pl-11! pr-4! text-primary outline-none transition focus:border-accent"
+                      className="w-full rounded-[12px] border-[1.5px] border-border bg-soft py-3.5! pl-11! pr-4! text-text-primary outline-none transition focus:border-accent"
                       rows={4}
                       placeholder="Anything specific you'd like to see?"
                       value={form.notes}
@@ -225,7 +225,7 @@ const FactoryVisitBooking = () => {
 
                   <button
                     type="submit"
-                    className="btn group relative mt-1 flex w-full items-center justify-center rounded-[14px] bg-orange-gradient py-4 text-sm font-bold uppercase tracking-[1.5px] text-white shadow-orange transition hover:shadow-[0_18px_40px_rgba(255,107,26,0.45)]"
+                    className="btn group relative mt-1 flex w-full items-center justify-center rounded-[14px] bg-gradient-to-br from-primary to-secondary py-4 text-sm font-bold uppercase tracking-[1.5px] text-white shadow-orange transition hover:shadow-[0_18px_40px_rgba(255,107,26,0.45)]"
                   >
                     Request Visit
                     <ArrowRight
@@ -235,10 +235,10 @@ const FactoryVisitBooking = () => {
                     />
                   </button>
 
-                  <div className="mt-1 flex items-center gap-3 rounded-[14px] bg-accent-soft p-4">
+                  <div className="mt-1 flex items-center gap-3 rounded-[14px] bg-accent/10 p-4">
                     <ShieldCheck size={26} weight="regular" className="shrink-0 text-accent" />
-                    <p className="text-[13px]! leading-snug text-secondary">
-                      <span className="font-bold text-primary">
+                    <p className="text-[13px]! leading-snug text-text-secondary">
+                      <span className="font-bold text-text-primary">
                         Your information is safe with us.
                       </span>{" "}
                       We respect your privacy.

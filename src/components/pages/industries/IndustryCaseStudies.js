@@ -99,14 +99,14 @@ const IndustryCaseStudies = () => {
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <span className="eyebrow">
             Case Studies
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             Real Results, Industry by Industry
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             See how businesses across sectors improved output, cut waste and
             recovered their investment with our machines.
           </p>
@@ -122,8 +122,8 @@ const IndustryCaseStudies = () => {
                 onClick={() => setActive(t)}
                 className={`btn shrink-0 cursor-pointer rounded-full px-4 py-2 text-[13px] font-semibold transition ${
                   on
-                    ? "bg-orange-gradient text-white shadow-orange"
-                    : "border border-theme bg-card text-primary hover:border-accent"
+                    ? "bg-gradient-to-br from-primary to-secondary text-white shadow-orange"
+                    : "border border-border bg-card text-text-primary hover:border-accent"
                 }`}
               >
                 {t}
@@ -143,7 +143,7 @@ const IndustryCaseStudies = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card shadow-card transition-colors duration-300 hover:border-accent hover:shadow-orange"
+                className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-card shadow-card transition-colors duration-300 hover:border-accent hover:shadow-orange"
               >
                 <div className="relative h-44 w-full overflow-hidden">
                   <Image
@@ -153,32 +153,32 @@ const IndustryCaseStudies = () => {
                     sizes="(max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute left-3 top-3 rounded-full bg-orange-gradient px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-orange">
+                  <span className="absolute left-3 top-3 rounded-full bg-gradient-to-br from-primary to-secondary px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-orange">
                     {s.industry}
                   </span>
                 </div>
 
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="text-[16px]! font-semibold leading-snug">{s.title}</h3>
-                  <p className="mt-2 flex-1 text-sm text-secondary">{s.summary}</p>
+                  <p className="mt-2 flex-1 text-sm text-text-secondary">{s.summary}</p>
 
                   {/* metric chips */}
                   <div className="mt-4 flex flex-wrap gap-2">
                     {s.metrics.map((m) => (
                       <span
                         key={m.label}
-                        className="inline-flex items-center gap-1.5 rounded-lg bg-accent-soft px-2.5 py-1.5 text-accent"
+                        className="inline-flex items-center gap-1.5 rounded-lg bg-accent/10 px-2.5 py-1.5 text-accent"
                       >
                         <TrendUp size={14} weight="bold" />
                         <span className="text-[13px] font-bold">{m.value}</span>
-                        <span className="text-[11px] font-medium text-secondary">{m.label}</span>
+                        <span className="text-[11px] font-medium text-text-secondary">{m.label}</span>
                       </span>
                     ))}
                   </div>
 
                   <Link
                     href={s.href}
-                    className="mt-4 inline-flex items-center gap-1 border-t border-theme pt-3 text-xs font-bold uppercase tracking-wide text-accent"
+                    className="mt-4 inline-flex items-center gap-1 border-t border-border pt-3 text-xs font-bold uppercase tracking-wide text-accent"
                   >
                     Read case study
                     <ArrowRight size={14} weight="bold" className="transition-transform duration-300 group-hover:translate-x-1" />

@@ -34,7 +34,7 @@ const CtaButton = ({ data, variant }) => {
   );
 };
 
-const CtaBand = ({ heading, subtitle, primary, secondary, trust = [], bg = "bg-theme" }) => (
+const CtaBand = ({ heading, subtitle, primary, secondary, trust = [], bg = "bg-bg" }) => (
   <section className={`section-py ${bg}`}>
     <div className="container">
       <motion.div

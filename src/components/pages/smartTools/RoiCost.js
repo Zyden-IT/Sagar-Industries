@@ -37,7 +37,7 @@ const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
 // ── Input with a leading icon ────────────────────────────────────────
 const IconField = ({ icon: Icon, label, value, onChange, step }) => (
   <div className="flex flex-col gap-2">
-    <span className="text-[13px] font-semibold text-primary">{label}</span>
+    <span className="text-[13px] font-semibold text-text-primary">{label}</span>
     <div className="relative">
       <Icon size={16} weight="bold" className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-accent" />
       <input
@@ -45,7 +45,7 @@ const IconField = ({ icon: Icon, label, value, onChange, step }) => (
         step={step}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-[10px] border-[1.5px] border-theme bg-soft py-3! pl-10! pr-3! font-semibold text-primary outline-none transition focus:border-accent"
+        className="w-full rounded-[10px] border-[1.5px] border-border bg-soft py-3! pl-10! pr-3! font-semibold text-text-primary outline-none transition focus:border-accent"
       />
     </div>
   </div>
@@ -62,12 +62,12 @@ const CostCard = ({ icon: Icon, title, cost, recommended }) => (
     }
   >
     {recommended && (
-      <span className="absolute right-0 top-0 rounded-bl-lg bg-orange-gradient px-3 py-1 text-[9px] font-bold uppercase tracking-wide text-white">
+      <span className="absolute right-0 top-0 rounded-bl-lg bg-gradient-to-br from-primary to-secondary px-3 py-1 text-[9px] font-bold uppercase tracking-wide text-white">
         Recommended
       </span>
     )}
     <div className="flex items-center gap-3">
-      <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${recommended ? "bg-orange-gradient text-white" : "bg-white/10 text-white/70"}`}>
+      <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${recommended ? "bg-gradient-to-br from-primary to-secondary text-white" : "bg-white/10 text-white/70"}`}>
         <Icon size={22} weight="bold" />
       </span>
       <div>
@@ -185,13 +185,11 @@ const RoiCost = () => {
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 text-center">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[2px] text-accent">
-            <Coins size={16} weight="bold" /> ROI &amp; Cost
-          </span>
+          <span className="eyebrow">ROI &amp; Cost</span>
           <h2 className="whitespace-nowrap text-[16px]! font-bold uppercase leading-[1.15] tracking-[-0.01em] sm:text-[28px]! lg:text-[36px]!">
             Manual vs <span className="text-accent">Automatic</span> — What Pays Off?
           </h2>
-          <p className="mt-2 max-w-2xl text-secondary">
+          <p className="mt-2 max-w-2xl text-text-secondary">
             Compare the monthly running cost of a manual and an automatic
             machine, and see how quickly the automatic pays back its extra price.
           </p>
@@ -206,14 +204,14 @@ const RoiCost = () => {
           className="mx-auto mt-12 grid max-w-6xl gap-6 lg:grid-cols-5"
         >
           {/* ── YOUR INPUTS ───────────────────────────────────────────── */}
-          <div className="rounded-[var(--radius-card)] border border-theme bg-card p-6 shadow-card md:p-7 lg:col-span-2">
+          <div className="rounded-[var(--radius-card)] border border-border bg-card p-6 shadow-card md:p-7 lg:col-span-2">
             <div className="flex items-center gap-3">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-orange-gradient text-white shadow-orange">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary text-white shadow-orange">
                 <Calculator size={22} weight="bold" />
               </span>
               <div>
-                <div className="text-base font-bold text-primary">Your Inputs</div>
-                <div className="text-xs text-secondary">Adjust the values to match your production.</div>
+                <div className="text-base font-bold text-text-primary">Your Inputs</div>
+                <div className="text-xs text-text-secondary">Adjust the values to match your production.</div>
               </div>
             </div>
 
@@ -226,13 +224,13 @@ const RoiCost = () => {
               <IconField icon={Package} label="Automatic machine price (₹)" value={autoPrice} onChange={setAutoPrice} />
             </div>
 
-            <p className="mt-5 flex items-center gap-2 text-xs text-secondary">
+            <p className="mt-5 flex items-center gap-2 text-xs text-text-secondary">
               <Info size={14} weight="bold" /> Defaults are editable estimates — adjust to your own figures.
             </p>
           </div>
 
           {/* ── COST COMPARISON (dark) ────────────────────────────────── */}
-          <div className="rounded-[var(--radius-card)] bg-primary p-6 text-white shadow-card md:p-7 lg:col-span-3">
+          <div className="rounded-[var(--radius-card)] bg-dark p-6 text-white shadow-card md:p-7 lg:col-span-3">
             <div className="text-xs font-bold uppercase tracking-wide text-white/50">Cost Comparison</div>
 
             {/* Manual vs Automatic */}
@@ -266,24 +264,24 @@ const RoiCost = () => {
         </motion.div>
 
         {/* ── Benefits bar ──────────────────────────────────────────────── */}
-        <div className="mx-auto mt-6 grid max-w-6xl gap-px overflow-hidden rounded-[var(--radius-card)] border border-theme bg-theme shadow-card sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-6 grid max-w-6xl gap-px overflow-hidden rounded-[var(--radius-card)] border border-border bg-bg shadow-card sm:grid-cols-2 lg:grid-cols-4">
           {BENEFITS.map((b) => (
             <div key={b.label} className="flex items-center gap-4 bg-card p-5">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent-soft text-accent">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent/10 text-accent">
                 <b.icon size={22} weight="bold" />
               </span>
               <div>
-                <div className="text-[11px] font-bold uppercase tracking-wide text-secondary">{b.label}</div>
+                <div className="text-[11px] font-bold uppercase tracking-wide text-text-secondary">{b.label}</div>
                 <div className="text-lg font-bold text-accent">{b.value}</div>
-                <div className="text-[11px] text-secondary">{b.sub}</div>
+                <div className="text-[11px] text-text-secondary">{b.sub}</div>
               </div>
             </div>
           ))}
         </div>
 
         {/* ── CTA bar ───────────────────────────────────────────────────── */}
-        <div className="mx-auto mt-6 flex max-w-6xl flex-wrap items-center justify-center gap-4 rounded-[var(--radius-card)] border border-theme bg-card p-5 shadow-card">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+        <div className="mx-auto mt-6 flex max-w-6xl flex-wrap items-center justify-center gap-4 rounded-[var(--radius-card)] border border-border bg-card p-5 shadow-card">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
             <Headset size={20} weight="bold" className="text-accent" /> Need exact pricing for your production?
           </span>
           <a href="/contact#inquiry" className="btn-orange inline-flex items-center gap-2">

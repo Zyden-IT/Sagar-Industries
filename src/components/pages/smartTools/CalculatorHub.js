@@ -29,38 +29,38 @@ const money = (n) => CONFIG.CURRENCY + Math.round(n).toLocaleString("en-IN");
 
 // ── Shared UI bits ───────────────────────────────────────────────────
 const selectCls =
-  "w-full rounded-[10px] border-[1.5px] border-theme bg-soft px-4 py-3 text-primary outline-none transition focus:border-accent";
+  "w-full rounded-[10px] border-[1.5px] border-border bg-soft px-4 py-3 text-text-primary outline-none transition focus:border-accent";
 
 const Field = ({ label, children }) => (
   <div className="flex flex-col gap-2">
-    <span className="text-sm font-semibold text-primary">{label}</span>
+    <span className="text-sm font-semibold text-text-primary">{label}</span>
     {children}
   </div>
 );
 
 const Panel = ({ children }) => (
-  <div className="rounded-[var(--radius-card)] bg-primary p-6 text-white md:p-7">
+  <div className="rounded-[var(--radius-card)] bg-card p-6 text-text-primary shadow-card md:p-7">
     {children}
   </div>
 );
 
 const Stat = ({ label, value }) => (
-  <div className="flex items-center justify-between border-b border-white/10 py-3 last:border-0">
-    <span className="text-sm text-white/70">{label}</span>
-    <span className="font-bold text-white">{value}</span>
+  <div className="flex items-center justify-between border-b border-border py-3 last:border-0">
+    <span className="text-sm text-text-secondary">{label}</span>
+    <span className="font-bold text-text-primary">{value}</span>
   </div>
 );
 
 const Empty = ({ children }) => (
   <div className="flex h-full min-h-[260px] flex-col items-center justify-center gap-3 text-center">
-    <Gear size={40} weight="duotone" className="text-white/40" />
-    <span className="max-w-xs text-sm text-white/60">{children}</span>
+    <Gear size={40} weight="duotone" className="text-text-secondary" />
+    <span className="max-w-xs text-sm text-text-secondary">{children}</span>
   </div>
 );
 
 const Grid = ({ form, result }) => (
   <div className="grid gap-6 lg:grid-cols-2">
-    <div className="rounded-[var(--radius-card)] border border-theme bg-card p-6 shadow-card md:p-7">
+    <div className="rounded-[var(--radius-card)] border border-border bg-card p-6 shadow-card md:p-7">
       {form}
     </div>
     {result}
@@ -115,17 +115,17 @@ function Yield() {
             <Empty>Enter roll length, sheet length and roll width to see the yield.</Empty>
           ) : (
             <>
-              <div className="text-xs uppercase tracking-wide text-white/50">Yield per Roll</div>
+              <div className="text-xs uppercase tracking-wide text-text-secondary">Yield per Roll</div>
               <div className="mt-3">
                 {STATS.map((s) => <Stat key={s.label} label={s.label} value={s.value} />)}
               </div>
               {wastePct > 2 && (
-                <div className="mt-4 rounded-[10px] border border-[#FFB4A0]/30 bg-[#FFB4A0]/10 p-4">
-                  <div className="mb-1.5 flex items-center gap-2 text-[#FFB4A0]">
+                <div className="mt-4 rounded-[10px] border border-warning/30 bg-warning/10 p-4">
+                  <div className="mb-1.5 flex items-center gap-2 text-warning">
                     <Warning size={16} weight="fill" />
                     <span className="text-xs font-bold uppercase tracking-wide">Note</span>
                   </div>
-                  <span className="text-xs text-white/75">
+                  <span className="text-xs text-text-secondary">
                     Trim wastage is over 2% — adjusting the sheet length can fit the roll more evenly and reduce offcut.
                   </span>
                 </div>
@@ -189,9 +189,9 @@ function Power() {
             <Empty>Enter a roll width and target speed to size the motor.</Empty>
           ) : (
             <>
-              <div className="text-xs uppercase tracking-wide text-white/50">Suggested Motor</div>
+              <div className="text-xs uppercase tracking-wide text-text-secondary">Suggested Motor</div>
               <div className="mt-2 text-4xl font-bold text-accent">{hp} HP</div>
-              <p className="mt-1 text-sm text-white/70">
+              <p className="mt-1 text-sm text-text-secondary">
                 For {mat.name} at {w}&quot; roll width and {s} sheets/min.
               </p>
               <div className="mt-4">
@@ -256,7 +256,7 @@ function Flexo() {
             <Empty>Enter a run length to estimate the ink cost.</Empty>
           ) : (
             <>
-              <div className="text-xs uppercase tracking-wide text-white/50">Ink &amp; Cost</div>
+              <div className="text-xs uppercase tracking-wide text-text-secondary">Ink &amp; Cost</div>
               <div className="mt-3">
                 <Stat label="Ink / piece" value={`${gramsPerPiece.toFixed(2)} g`} />
                 <Stat label="Total ink" value={`${totalKg.toFixed(2)} kg`} />
@@ -264,7 +264,7 @@ function Flexo() {
                 <Stat label="Cost / piece" value={`${CONFIG.CURRENCY}${perPiece.toFixed(3)}`} />
                 <Stat label="Colours" value={c} />
               </div>
-              <p className="mt-3 text-xs text-white/50">
+              <p className="mt-3 text-xs text-text-secondary">
                 Ink-only estimate — excludes plates, substrate and setup.
               </p>
             </>
@@ -305,7 +305,7 @@ function Reel() {
       }
       result={
         <Panel>
-          <div className="text-xs uppercase tracking-wide text-white/50">On the Reel</div>
+          <div className="text-xs uppercase tracking-wide text-text-secondary">On the Reel</div>
           <div
             className="stats-font mt-2 bg-clip-text text-3xl font-bold text-transparent"
             style={{ backgroundImage: "var(--orange-gradient)" }}
@@ -351,7 +351,7 @@ function Emi() {
       }
       result={
         <Panel>
-          <div className="text-xs uppercase tracking-wide text-white/50">Monthly EMI</div>
+          <div className="text-xs uppercase tracking-wide text-text-secondary">Monthly EMI</div>
           <div
             className="stats-font mt-2 bg-clip-text text-4xl font-bold text-transparent"
             style={{ backgroundImage: "var(--orange-gradient)" }}
@@ -413,7 +413,7 @@ function Throughput() {
           <Field label="Efficiency / OEE (%)"><input type="number" min="1" max="100" value={oee} onChange={(e) => setOee(e.target.value)} /></Field>
           <Field label="Changeover + downtime (min / day)"><input type="number" min="0" value={downtime} onChange={(e) => setDowntime(e.target.value)} /></Field>
           <Field label="Target output (sheets / day, 0 = ignore)"><input type="number" min="0" value={target} onChange={(e) => setTarget(e.target.value)} /></Field>
-          <p className="text-xs text-secondary sm:col-span-2">OEE accounts for real-world losses (jams, web breaks, slow runs). Adjust every field to your own line.</p>
+          <p className="text-xs text-text-secondary sm:col-span-2">OEE accounts for real-world losses (jams, web breaks, slow runs). Adjust every field to your own line.</p>
         </div>
       }
       result={
@@ -422,11 +422,11 @@ function Throughput() {
             <Empty>Enter machine speed, shift length and shifts to estimate capacity.</Empty>
           ) : (
             <>
-              <div className="text-xs uppercase tracking-wide text-white/50">Estimated Sheets / Day</div>
+              <div className="text-xs uppercase tracking-wide text-text-secondary">Estimated Sheets / Day</div>
               <div className="stats-font mt-2 bg-clip-text text-4xl font-bold text-transparent" style={{ backgroundImage: "var(--orange-gradient)" }}>{headline}</div>
               <div className="mt-3">{STATS.map((s) => <Stat key={s.label} label={s.label} value={s.value} />)}</div>
               {shortfall && (
-                <p className="mt-4 flex items-start gap-2 text-xs text-[#FFB4A0]">
+                <p className="mt-4 flex items-start gap-2 text-xs text-warning">
                   <Warning size={16} weight="fill" className="mt-px shrink-0" />
                   <span>Output is below your target. Add a shift, raise OEE, or cut changeover/downtime to close the gap.</span>
                 </p>
@@ -478,7 +478,7 @@ function RunningCost() {
           <Field label="Electricity tariff (₹ / unit)"><input type="number" step="0.5" value={tariff} onChange={(e) => setTariff(e.target.value)} /></Field>
           <Field label="Working days / month"><input type="number" min="1" max="31" value={days} onChange={(e) => setDays(e.target.value)} /></Field>
           <Field label="Output volume (sheets / day, optional)"><input type="number" min="0" value={volume} onChange={(e) => setVolume(e.target.value)} /></Field>
-          <p className="text-xs text-secondary sm:col-span-2">
+          <p className="text-xs text-text-secondary sm:col-span-2">
             Load factor is the average draw versus the motor&apos;s rated HP — most cutting machines sit around 50–70%. Tariff is a flat ₹/unit estimate; your actual bill may include slab rates and demand charges.
           </p>
         </div>
@@ -489,7 +489,7 @@ function RunningCost() {
             <Empty>Enter motor HP, running hours and tariff to estimate the power bill.</Empty>
           ) : (
             <>
-              <div className="text-xs uppercase tracking-wide text-white/50">Electricity Cost / Month</div>
+              <div className="text-xs uppercase tracking-wide text-text-secondary">Electricity Cost / Month</div>
               <div
                 className="stats-font mt-2 bg-clip-text text-4xl font-bold text-transparent"
                 style={{ backgroundImage: "var(--orange-gradient)" }}
@@ -552,7 +552,7 @@ function CostPerSheet() {
           <Field label="Machine price (₹)"><input type="number" min="0" value={machinePrice} onChange={(e) => setMachinePrice(e.target.value)} /></Field>
           <Field label="Machine life (sheets)"><input type="number" min="1" value={machineLife} onChange={(e) => setMachineLife(e.target.value)} /></Field>
           <Field label="Run quantity (sheets)"><input type="number" min="1" value={qty} onChange={(e) => setQty(e.target.value)} /></Field>
-          <p className="text-xs text-secondary sm:col-span-2">Defaults are editable estimates — adjust to your own figures.</p>
+          <p className="text-xs text-text-secondary sm:col-span-2">Defaults are editable estimates — adjust to your own figures.</p>
         </div>
       }
       result={
@@ -561,7 +561,7 @@ function CostPerSheet() {
             <Empty>Enter a run quantity to quote the job.</Empty>
           ) : (
             <>
-              <div className="text-xs uppercase tracking-wide text-white/50">Suggested price / sheet</div>
+              <div className="text-xs uppercase tracking-wide text-text-secondary">Suggested price / sheet</div>
               <div className="stats-font mt-2 bg-clip-text text-4xl font-bold text-transparent" style={{ backgroundImage: "var(--orange-gradient)" }}>{`₹${pricePerSheet.toFixed(3)}`}</div>
               <div className="mt-3">{STATS.map((s) => <Stat key={s.label} label={s.label} value={s.value} />)}</div>
             </>
@@ -576,12 +576,9 @@ function CostPerSheet() {
 const TABS = [
   { id: "throughput", label: "Throughput", icon: Gauge, Comp: Throughput },
   { id: "costsheet", label: "Cost / Sheet", icon: Receipt, Comp: CostPerSheet },
-  { id: "yield", label: "Sheet Yield", icon: Scissors, Comp: Yield },
-  { id: "power", label: "Power (HP)", icon: Lightning, Comp: Power },
   { id: "runningcost", label: "Running Cost", icon: Plug, Comp: RunningCost },
   { id: "flexo", label: "Flexo Cost", icon: Palette, Comp: Flexo },
   { id: "reel", label: "Reel Calculator", icon: Scroll, Comp: Reel },
-  { id: "emi", label: "EMI Calculator", icon: Bank, Comp: Emi },
 ];
 
 const CalculatorHub = () => {
@@ -593,14 +590,14 @@ const CalculatorHub = () => {
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <span className="eyebrow">
             Smart Tools
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             Interactive Engineering Tools
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Pick a tool, enter your numbers, get instant answers.
           </p>
         </div>
@@ -615,8 +612,8 @@ const CalculatorHub = () => {
                 onClick={() => setTab(t.id)}
                 className={`btn inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition ${
                   active
-                    ? "bg-orange-gradient text-white shadow-orange"
-                    : "border border-theme bg-card text-primary hover:border-accent"
+                    ? "bg-gradient-to-br from-primary to-secondary text-white shadow-orange"
+                    : "border border-border bg-card text-text-primary hover:border-accent"
                 }`}
               >
                 <t.icon size={18} weight="bold" />

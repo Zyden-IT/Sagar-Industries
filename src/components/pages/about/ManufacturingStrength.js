@@ -29,13 +29,11 @@ const ManufacturingStrength = () => {
           {/* Content */}
           <motion.div {...fadeIn(-30)} className="flex flex-col gap-6">
             <div className="flex flex-col gap-3">
-              <span className="inline-flex w-fit items-center gap-2 rounded-full bg-accent-soft px-3 py-1.5 text-[11px] font-bold uppercase tracking-[2px] text-accent">
-                Manufacturing Strength
-              </span>
+              <span className="eyebrow">Manufacturing Strength</span>
               <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
                 Engineered End-to-End, In-House
               </h2>
-              <p className="max-w-md text-secondary">
+              <p className="max-w-md text-text-secondary">
                 From raw steel to a finished, tested machine — we control every
                 stage of production to deliver consistent quality and reliable
                 performance.
@@ -45,12 +43,12 @@ const ManufacturingStrength = () => {
             <div className="flex flex-col gap-4">
               {STRENGTHS.map((s) => (
                 <div key={s.title} className="flex items-start gap-4">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent">
                     <s.icon size={22} weight="bold" />
                   </span>
                   <div>
                     <h3 className="text-[16px]! font-semibold sm:text-[17px]!">{s.title}</h3>
-                    <p className="mt-1 text-sm text-secondary">{s.desc}</p>
+                    <p className="mt-1 text-sm text-text-secondary">{s.desc}</p>
                   </div>
                 </div>
               ))}

@@ -19,18 +19,18 @@ const TERMS = [
 
 const IndustryGlossary = () => {
   return (
-    <section className="section-py bg-theme">
+    <section className="section-py bg-bg">
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <span className="eyebrow">
             Glossary
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             Industry Terms, Decoded
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             The common paper, packaging and printing terms you&apos;ll come
             across — explained in plain language.
           </p>
@@ -45,14 +45,14 @@ const IndustryGlossary = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45, delay: (i % 2) * 0.08, ease: "easeOut" }}
-              className="group flex items-start gap-4 rounded-[var(--radius-card)] border border-theme bg-card p-5 shadow-card transition duration-300 hover:border-accent hover:shadow-orange"
+              className="group flex items-start gap-4 rounded-[var(--radius-card)] border border-border bg-card p-5 shadow-card transition duration-300 hover:border-accent hover:shadow-orange"
             >
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-orange-gradient text-sm font-bold text-white shadow-orange">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary text-sm font-bold text-white shadow-orange">
                 {t.term.slice(0, 2).toUpperCase()}
               </span>
               <div>
                 <h3 className="text-[15px]! font-bold! leading-tight">{t.term}</h3>
-                <p className="mt-1.5 text-[13px]! leading-snug text-secondary">{t.def}</p>
+                <p className="mt-1.5 text-[13px]! leading-snug text-text-secondary">{t.def}</p>
               </div>
             </motion.div>
           ))}

@@ -46,13 +46,13 @@ const Hex = ({ icon: Icon, label, sub, index }) => (
       className="absolute inset-[2px] flex flex-col items-center justify-center gap-2 bg-card px-4 text-center transition-colors duration-300 group-hover:bg-[#ff6a0d]"
       style={HEX}
     >
-      <span className="grid h-11 w-11 place-items-center rounded-full bg-accent-soft text-accent transition-colors duration-300 group-hover:bg-white/20 group-hover:text-white">
+      <span className="grid h-11 w-11 place-items-center rounded-full bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-white/20 group-hover:text-white">
         <Icon size={22} weight="bold" />
       </span>
-      <span className="text-[13px] font-bold leading-tight text-primary transition-colors duration-300 group-hover:text-white">
+      <span className="text-[13px] font-bold leading-tight text-text-primary transition-colors duration-300 group-hover:text-white">
         {label}
       </span>
-      <span className="text-[10px] leading-tight text-secondary transition-colors duration-300 group-hover:text-white/85">
+      <span className="text-[10px] leading-tight text-text-secondary transition-colors duration-300 group-hover:text-white/85">
         {sub}
       </span>
     </div>
@@ -116,15 +116,11 @@ const IndustriesHoneycomb = ({
       <div className="container relative">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[2px] text-accent">
-            <span className="h-px w-6 bg-accent" />
-            {eyebrow}
-            <span className="h-px w-6 bg-accent" />
-          </span>
+          <span className="eyebrow">{eyebrow}</span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
             {titleLead} <span className="text-accent">{titleAccent}</span>
           </h2>
-          <p className="text-secondary">{subtitle}</p>
+          <p className="text-text-secondary">{subtitle}</p>
         </div>
 
         {/* Honeycomb */}

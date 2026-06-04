@@ -68,27 +68,23 @@ const REASONS = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="section-py bg-soft">
+    <section className="why-choose lg:py-[80px] md:py-[60px] py-[40px] bg-soft">
       <div className="container">
         {/* ── Header ─────────────────────────────────────────────── */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[3px] text-accent">
-            <span className="h-px w-8 bg-accent/50" />
-            Why Choose Us
-            <span className="h-px w-8 bg-accent/50" />
-          </span>
+          <span className="eyebrow">Why Choose Us</span>
           <h2 className="text-[24px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[30px]! lg:text-[36px]!">
             Engineering You Can <span className="text-accent">Rely On</span>
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             Decades of manufacturing expertise behind every machine we build for
             the paper, packaging and printing industries.
           </p>
         </div>
 
         {/* ── Hairline grid ──────────────────────────────────────── */}
-        <div className="mt-14 overflow-hidden rounded-[var(--radius-card)] border-l border-t border-theme lg:mt-16">
+        <div className="mt-14 overflow-hidden rounded-[var(--radius-card)] border-l border-t border-border lg:mt-16">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3">
             {REASONS.map((r, i) => (
               <motion.article
@@ -97,30 +93,30 @@ const WhyChooseUs = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.1, ease: "easeOut" }}
-                className="group relative flex min-h-[230px] flex-col border-b border-r border-theme p-7 transition-colors duration-300 hover:bg-card lg:min-h-[260px] lg:p-9"
+                className="group bg-bglight relative flex flex-col border-b border-r border-border p-6 transition-colors duration-300 hover:bg-bgdark lg:p-8"
               >
                 {/* top row — icon + spec tag */}
                 <div className="flex items-start justify-between gap-4">
-                  <span className="grid h-10 w-10 place-items-center rounded-lg bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110">
+                  <span className="grid h-10 w-10 place-items-center rounded-lg bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-110">
                     <r.icon size={20} weight="bold" />
                   </span>
-                  <span className="text-right text-[10px] font-medium uppercase tracking-[0.18em] text-secondary/70">
+                  <span className="text-right text-[10px] font-medium uppercase tracking-[0.18em] text-text-secondary/70">
                     {r.tag}
                   </span>
                 </div>
 
                 {/* title + description, pushed toward the lower half */}
                 <div className="mt-auto pt-10">
-                  <h3 className="text-[19px]! font-bold! leading-snug text-primary">
+                  <h3 className="text-[19px]! font-bold! leading-snug text-text-primary">
                     {r.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-secondary">
+                  <p className="mt-3 text-sm leading-relaxed text-text-secondary">
                     {r.description}
                   </p>
                 </div>
 
                 {/* accent underline drawing in on hover */}
-                <span className="pointer-events-none absolute bottom-0 left-0 h-[2px] w-0 bg-orange-gradient transition-all duration-300 group-hover:w-full" />
+                <span className="pointer-events-none absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-br from-primary to-secondary transition-all duration-300 group-hover:w-full" />
               </motion.article>
             ))}
           </div>

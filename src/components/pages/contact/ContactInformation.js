@@ -27,15 +27,15 @@ const ContactInformation = () => {
       <div className="container">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-[2px] text-accent">Contact Us</span>
+          <span className="eyebrow">Contact Us</span>
           <h2 className="text-[24px]! font-bold uppercase leading-[1.15] tracking-[-0.01em] sm:text-[30px]! lg:text-[36px]!">
             Get In <span className="text-accent">Touch</span>
           </h2>
           <span className="flex items-center gap-1.5">
-            <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
+            <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
             <span className="h-[6px] w-[6px] rounded-full bg-accent" />
           </span>
-          <p className="mt-1 max-w-xl text-secondary">
+          <p className="mt-1 max-w-xl text-text-secondary">
             Reach out for quotes, machine details, or expert guidance — we
             usually reply within a few hours on business days.
           </p>
@@ -59,25 +59,25 @@ const ContactInformation = () => {
                   className="group relative block h-full transition-transform duration-300 hover:-translate-y-1.5 [filter:drop-shadow(0_12px_24px_rgba(0,0,0,0.08))]"
                 >
                   {/* border layer (follows the cut) */}
-                  <span className="absolute inset-0 bg-theme transition-colors duration-300 group-hover:bg-accent" style={CUT} />
+                  <span className="absolute inset-0 bg-bg transition-colors duration-300 group-hover:bg-accent" style={CUT} />
                   {/* face */}
                   <span className="absolute inset-[1.5px] bg-card" style={CUT} />
 
                   {/* content */}
                   <div className="relative flex h-full flex-col gap-4 p-7">
                     {/* left accent stripe */}
-                    <span className="absolute left-0 top-7 h-11 w-1.5 rounded-r-full bg-orange-gradient" />
+                    <span className="absolute left-0 top-7 h-11 w-1.5 rounded-r-full bg-gradient-to-br from-primary to-secondary" />
 
-                    <span className="ml-1 grid h-14 w-14 place-items-center rounded-xl bg-accent-soft text-accent transition-colors duration-300 group-hover:bg-orange-gradient group-hover:text-white">
+                    <span className="ml-1 grid h-14 w-14 place-items-center rounded-xl bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-gradient-to-br from-primary to-secondary group-hover:text-white">
                       <c.icon size={26} weight="regular" />
                     </span>
 
                     <div className="ml-1">
-                      <p className="text-[11px] font-bold uppercase tracking-[2px] text-secondary">{c.label}</p>
-                      <p className={`mt-1 font-bold leading-snug text-primary ${c.break ? "break-all text-[15px]" : "whitespace-pre-line"}`}>
+                      <p className="text-[11px] font-bold uppercase tracking-[2px] text-text-secondary">{c.label}</p>
+                      <p className={`mt-1 font-bold leading-snug text-text-primary ${c.break ? "break-all text-[15px]" : "whitespace-pre-line"}`}>
                         {c.value}
                       </p>
-                      {c.note && <p className="mt-1 text-[12px] text-secondary/70">{c.note}</p>}
+                      {c.note && <p className="mt-1 text-[12px] text-text-secondary/70">{c.note}</p>}
                     </div>
 
                     {c.action && (

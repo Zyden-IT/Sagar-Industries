@@ -10,13 +10,10 @@ const SectionHeader = ({ eyebrow, title, subtitle, align = "center" }) => {
       }`}
     >
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-[2px]">
-          <span className="h-[2px] w-6 bg-accent inline-block" />
-          {eyebrow}
-        </span>
+        <span className="eyebrow">{eyebrow}</span>
       )}
       {title && <h2>{title}</h2>}
-      {subtitle && <p className={`text-secondary ${isCenter ? "max-w-xl" : ""}`}>{subtitle}</p>}
+      {subtitle && <p className={`text-text-secondary ${isCenter ? "max-w-xl" : ""}`}>{subtitle}</p>}
     </div>
   );
 };

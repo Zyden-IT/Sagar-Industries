@@ -52,23 +52,23 @@ const ItemRow = ({ item }) => {
   const left = item.side === "left";
   return (
     <div className={`flex items-start gap-4 ${left ? "" : "flex-row-reverse text-right"}`}>
-      <span className="grid h-16 w-16 shrink-0 place-items-center rounded-full border border-theme bg-card text-accent shadow-card">
+      <span className="grid h-16 w-16 shrink-0 place-items-center rounded-full border border-border bg-card text-accent shadow-card">
         <item.icon size={30} weight="regular" />
       </span>
       <div>
         <h3 className="text-[18px]! font-bold! uppercase tracking-wide">
           Our <span className="text-accent">{item.label}</span>
         </h3>
-        <p className="mt-1.5 text-sm leading-relaxed text-secondary">{item.desc}</p>
+        <p className="mt-1.5 text-sm leading-relaxed text-text-secondary">{item.desc}</p>
       </div>
     </div>
   );
 };
 
 const Pill = () => (
-  <span className="inline-flex items-center gap-2 rounded-full border border-theme bg-card px-5 py-2.5 shadow-card">
+  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 shadow-card">
     <ShieldCheck size={18} weight="fill" className="text-accent" />
-    <span className="text-sm font-bold uppercase tracking-wide text-primary">One Promise.</span>
+    <span className="text-sm font-bold uppercase tracking-wide text-text-primary">One Promise.</span>
     <span className="text-sm font-bold uppercase tracking-wide text-accent">Total Reliability.</span>
   </span>
 );
@@ -96,13 +96,11 @@ const MissionVision = () => {
       <div className="container relative">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[3px] text-accent">
-            <span className="h-px w-6 bg-accent" /> What Drives Us <span className="h-px w-6 bg-accent" />
-          </span>
+          <span className="eyebrow">What Drives Us</span>
           <h2 className="text-[26px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[32px]! lg:text-[40px]!">
             Our Driving Force
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
         </div>
 
         {/* ── Desktop radial ─────────────────────────────────────────── */}
@@ -112,7 +110,7 @@ const MissionVision = () => {
             <span
               key={s}
               aria-hidden="true"
-              className={`pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ${i === 1 ? "border border-dashed border-accent/25" : "border border-theme/60"}`}
+              className={`pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ${i === 1 ? "border border-dashed border-accent/25" : "border border-border/60"}`}
               style={{ height: s, width: s }}
             />
           ))}
@@ -171,7 +169,7 @@ const MissionVision = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
-                className="rounded-[var(--radius-card)] border border-theme bg-card p-5 shadow-card"
+                className="rounded-[var(--radius-card)] border border-border bg-card p-5 shadow-card"
               >
                 <ItemRow item={{ ...item, side: "left" }} />
               </motion.div>

@@ -19,17 +19,17 @@ const Bracket = ({ className }) => (
 
 const InteractiveMap = () => {
   return (
-    <section className="section-py bg-theme">
+    <section className="section-py bg-bg">
       <div className="container">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-[2px] text-accent">Find Us</span>
+          <div className="flex flex-col items-center gap-3">
+            <span className="eyebrow">Find Us</span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
               Visit Our Facility
             </h2>
           </div>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
         </div>
 
         {/* Bracket-framed map */}
@@ -47,7 +47,7 @@ const InteractiveMap = () => {
           <Bracket className="bottom-0 right-0 rounded-br-xl border-b-2 border-r-2" />
 
           {/* map */}
-          <div className="overflow-hidden rounded-[var(--radius-card)] border border-theme shadow-card">
+          <div className="overflow-hidden rounded-[var(--radius-card)] border border-border shadow-card">
             <iframe
               title="Sagar Industries location"
               src={MAP_EMBED}
@@ -60,13 +60,13 @@ const InteractiveMap = () => {
           {/* caption + directions */}
           <div className="mt-6 flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
             <div className="flex items-center gap-3">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent">
                 <MapPin size={24} weight="fill" />
               </span>
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-[2px] text-accent">Our Facility</p>
+                <p className="eyebrow">Our Facility</p>
                 <h3 className="text-[16px]! font-bold! leading-tight">Sagar Industries</h3>
-                <p className="mt-0.5 text-sm text-secondary">{ADDRESS}</p>
+                <p className="mt-0.5 text-sm text-text-secondary">{ADDRESS}</p>
               </div>
             </div>
 

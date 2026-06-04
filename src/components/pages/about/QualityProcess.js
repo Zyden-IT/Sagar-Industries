@@ -33,18 +33,18 @@ const STEPS = [
 
 const QualityProcess = () => {
   return (
-    <section className="section-py bg-soft">
+    <section className="section-py bg-bg">
       <div className="container">
         {/* ── Header (eyebrow above heading) ─────────────────────── */}
         <div className="flex flex-col items-center gap-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <span className="eyebrow">
             Quality Process
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
             Built With <span className="text-accent">Precision &amp; Quality</span>
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="max-w-2xl text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="max-w-2xl text-text-secondary">
             Every machine undergoes a rigorous manufacturing and quality control
             process to ensure reliable performance, precision, and long-term
             durability.
@@ -60,25 +60,25 @@ const QualityProcess = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-              className="group relative overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card p-7 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
+              className="group relative overflow-hidden rounded-[var(--radius-card)] border border-border bg-card p-7 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
             >
               {/* top accent line — grows on hover */}
-              <span className="absolute inset-x-0 top-0 h-[3px] w-0 bg-orange-gradient transition-all duration-300 group-hover:w-full" />
+              <span className="absolute inset-x-0 top-0 h-[3px] w-0 bg-gradient-to-br from-primary to-secondary transition-all duration-300 group-hover:w-full" />
 
               {/* ghost step number */}
-              <span className="stats-font pointer-events-none absolute right-4 top-2 select-none text-5xl font-bold leading-none text-primary opacity-[0.05] transition-opacity duration-300 group-hover:opacity-10">
+              <span className="stats-font pointer-events-none absolute right-4 top-2 select-none text-5xl font-bold leading-none text-text-primary opacity-[0.05] transition-opacity duration-300 group-hover:opacity-10">
                 {String(i + 1).padStart(2, "0")}
               </span>
 
               {/* icon badge */}
-              <span className="grid h-14 w-14 place-items-center rounded-2xl bg-accent-soft text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
+              <span className="grid h-14 w-14 place-items-center rounded-2xl bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
                 <s.icon size={26} weight="bold" />
               </span>
 
-              <h3 className="mt-5 text-[17px]! font-bold! leading-snug text-primary">
+              <h3 className="mt-5 text-[17px]! font-bold! leading-snug text-text-primary">
                 {s.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-secondary">
+              <p className="mt-2 text-sm leading-relaxed text-text-secondary">
                 {s.text}
               </p>
             </motion.div>

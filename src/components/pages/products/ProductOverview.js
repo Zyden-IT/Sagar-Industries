@@ -22,19 +22,19 @@ const line = "bg-[var(--color-border)]";
 
 const ProductOverview = () => {
   return (
-    <section className="section-py bg-theme">
+    <section className="section-py bg-bg">
       <div className="container">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-[2px] text-accent">
+          <div className="flex flex-col items-center gap-3">
+            <span className="eyebrow">
               Product Range
             </span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
               Sagar Industries Product Structure
             </h2>
           </div>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
         </div>
 
         {/* Tree */}
@@ -64,7 +64,7 @@ const ProductOverview = () => {
                 <span className={`hidden h-9 w-px sm:block ${line}`} />
 
                 {/* Category */}
-                <div className="rounded-xl bg-orange-gradient px-6 py-3.5 text-center font-bold text-white shadow-orange">
+                <div className="rounded-xl bg-gradient-to-br from-primary to-secondary px-6 py-3.5 text-center font-bold text-white shadow-orange">
                   {b.title}
                 </div>
 
@@ -76,7 +76,7 @@ const ProductOverview = () => {
                   {b.leaves.map((leaf) => (
                     <div
                       key={leaf}
-                      className="rounded-lg border border-l-4 border-theme border-l-accent bg-card px-5 py-3 text-center font-semibold text-primary shadow-card transition duration-300 hover:-translate-y-0.5 hover:shadow-orange"
+                      className="rounded-lg border border-l-4 border-border border-l-accent bg-card px-5 py-3 text-center font-semibold text-text-primary shadow-card transition duration-300 hover:-translate-y-0.5 hover:shadow-orange"
                     >
                       {leaf}
                     </div>

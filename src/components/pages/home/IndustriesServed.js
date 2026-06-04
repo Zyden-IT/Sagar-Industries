@@ -28,14 +28,14 @@ const STATS = [
 ];
 
 const SectorCard = ({ s }) => (
-  <div className="group flex w-full items-center gap-2.5 rounded-2xl border border-theme bg-card p-2.5 shadow-card transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:shadow-orange">
+  <div className="group flex w-full items-center gap-2.5 rounded-2xl border border-border bg-card p-2.5 shadow-card transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:shadow-orange">
     <span className="relative grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-xl bg-soft">
       <Image src={s.image} alt={s.title} fill sizes="48px" className="object-contain p-1.5 transition-transform duration-300 group-hover:scale-110" />
     </span>
     <div className="min-w-0">
       <div className="text-[8px] font-bold uppercase tracking-[1.5px] text-accent">Sector</div>
-      <h3 className="text-[12px]! font-bold! leading-tight text-primary">{s.title}</h3>
-      <p className="mt-0.5 line-clamp-2 text-[10px]! leading-snug text-secondary">{s.desc}</p>
+      <h3 className="text-[12px]! font-bold! leading-tight text-text-primary">{s.title}</h3>
+      <p className="mt-0.5 line-clamp-2 text-[10px]! leading-snug text-text-secondary">{s.desc}</p>
     </div>
   </div>
 );
@@ -44,8 +44,8 @@ const CenterHub = ({ size = "h-32 w-32 sm:h-40 sm:w-40" }) => (
   <div
     className={`relative grid ${size} place-items-center rounded-full p-[6px]`}
     style={{
-      background: "linear-gradient(160deg, #ff9a4d 0%, #ff6a0d 55%, #ef5f12 100%)",
-      boxShadow: "0 0 60px rgba(255,107,26,0.35), var(--shadow-card)",
+      background: "linear-gradient(160deg, #F9A45C 0%, #F5842A 50%, #ED282E 100%)",
+      boxShadow: "0 0 60px rgba(245,132,42,0.35), var(--shadow-card)",
     }}
   >
     <div className="grid h-full w-full place-items-center rounded-full bg-card px-4 text-center">
@@ -53,12 +53,12 @@ const CenterHub = ({ size = "h-32 w-32 sm:h-40 sm:w-40" }) => (
         <div className="text-[10px] font-bold uppercase tracking-[2.5px] text-accent sm:text-[11px]">
           Powering
         </div>
-        <div className="mt-1.5 text-[16px] font-bold leading-[1.12] text-primary sm:text-[19px]">
+        <div className="mt-1.5 text-[16px] font-bold leading-[1.12] text-text-primary sm:text-[19px]">
           Industries
           <br />
           Worldwide
         </div>
-        <span className="mx-auto mt-2.5 block h-[2px] w-8 rounded-full bg-orange-gradient" />
+        <span className="mx-auto mt-2.5 block h-[2px] w-8 rounded-full bg-gradient-to-br from-primary to-secondary" />
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@ const CenterHub = ({ size = "h-32 w-32 sm:h-40 sm:w-40" }) => (
 
 const IndustriesServed = () => {
   return (
-    <section className="section-py relative bg-theme">
+    <section className="section-py relative bg-bg">
       <div className="container">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
           {/* ── Left — copy + stats ──────────────────────────────── */}
@@ -77,17 +77,14 @@ const IndustriesServed = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex flex-col gap-5"
           >
-            <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[2px] text-accent">
-              <span className="h-px w-6 bg-accent" />
-              Industries Served
-            </span>
+            <span className="eyebrow">Industries Served</span>
 
             <h2 className="text-[26px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[32px]! lg:text-[40px]!">
               Powering Industries with{" "}
               <span className="text-accent">Precision &amp; Performance</span>
             </h2>
 
-            <p className="max-w-xl text-secondary">
+            <p className="max-w-xl text-text-secondary">
               Our paper cutting and flexo printing machines are trusted by
               businesses across a wide range of industries — engineered to keep
               packaging, printing and paper-processing lines running with
@@ -99,14 +96,14 @@ const IndustriesServed = () => {
               {STATS.map((s, i) => (
                 <div
                   key={s.label}
-                  className={`flex items-center gap-3 ${i > 0 ? "sm:border-l sm:border-theme sm:pl-8" : ""}`}
+                  className={`flex items-center gap-3 ${i > 0 ? "sm:border-l sm:border-border sm:pl-8" : ""}`}
                 >
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent">
                     <s.icon size={22} weight="bold" />
                   </span>
                   <div>
                     <div className="stats-font text-xl font-bold text-accent lg:text-2xl">{s.value}</div>
-                    <div className="text-[12px] text-secondary">{s.label}</div>
+                    <div className="text-[12px] text-text-secondary">{s.label}</div>
                   </div>
                 </div>
               ))}

@@ -36,16 +36,16 @@ const ROAD =
 
 const CustomerJourney = () => {
   return (
-    <section className="section-py bg-theme">
+    <section className="section-py bg-bg">
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-[2px] text-accent">Customer Journey</span>
+          <span className="eyebrow">Customer Journey</span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
             From Requirement to Installation
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-orange-gradient" />
-          <p className="text-secondary">
+          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
+          <p className="text-text-secondary">
             A simple, transparent process — follow the road from your first
             enquiry to a machine running on your floor.
           </p>
@@ -61,11 +61,11 @@ const CustomerJourney = () => {
           </svg>
 
           {/* Flag (start) */}
-          <span className="absolute z-10 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-orange-gradient text-white shadow-orange" style={{ left: "10%", top: "13.64%" }}>
+          <span className="absolute z-10 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-orange" style={{ left: "10%", top: "13.64%" }}>
             <Flag size={20} weight="fill" />
           </span>
           {/* Trophy (end) */}
-          <span className="absolute z-10 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-orange-gradient text-white shadow-orange" style={{ left: "90%", top: "77.27%" }}>
+          <span className="absolute z-10 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-orange" style={{ left: "90%", top: "77.27%" }}>
             <Trophy size={20} weight="fill" />
           </span>
 
@@ -80,12 +80,12 @@ const CustomerJourney = () => {
               className="group absolute z-10 -translate-x-1/2 -translate-y-1/2"
               style={{ left: s.x, top: s.y }}
             >
-              <div className="grid h-16 w-16 place-items-center rounded-full bg-card text-accent shadow-[0_6px_18px_rgba(0,0,0,0.15)] ring-1 ring-theme transition-transform duration-300 group-hover:scale-110">
+              <div className="grid h-16 w-16 place-items-center rounded-full bg-card text-accent shadow-[0_6px_18px_rgba(0,0,0,0.15)] ring-1 ring-border transition-transform duration-300 group-hover:scale-110">
                 <s.icon size={26} weight="bold" />
               </div>
               <div className="absolute left-1/2 top-[74px] w-48 -translate-x-1/2 text-center">
                 <h3 className="text-[13px]! font-bold! uppercase leading-tight">{s.title}</h3>
-                <p className="mt-1 text-[12px]! leading-snug text-secondary">{s.desc}</p>
+                <p className="mt-1 text-[12px]! leading-snug text-text-secondary">{s.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -104,12 +104,12 @@ const CustomerJourney = () => {
                 transition={{ duration: 0.4, delay: i * 0.06 }}
                 className="relative flex items-start gap-5"
               >
-                <span className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full bg-card text-accent shadow-card ring-1 ring-theme">
+                <span className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full bg-card text-accent shadow-card ring-1 ring-border">
                   <s.icon size={24} weight="bold" />
                 </span>
                 <div className="pt-1">
                   <h3 className="text-[15px]! font-semibold leading-snug">{s.title}</h3>
-                  <p className="mt-1 text-sm text-secondary">{s.desc}</p>
+                  <p className="mt-1 text-sm text-text-secondary">{s.desc}</p>
                 </div>
               </motion.div>
             ))}

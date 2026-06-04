@@ -28,9 +28,11 @@ const Squares = ({ side }) => (
   </div>
 );
 
-const ContactCTA = () => {
+// `bg` should match the section directly above this CTA so they read as one
+// block. Defaults to `bg-bg`, which in dark mode is distinct from the footer.
+const ContactCTA = ({ bg = "bg-bg" }) => {
   return (
-    <section className="section-py bg-theme">
+    <section className={`section-py ${bg}`}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
@@ -55,7 +57,7 @@ const ContactCTA = () => {
 
             <Link
               href={Routes.contact.urlPath}
-              className="group mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-[13px] font-bold uppercase tracking-[1.2px] text-primary shadow-card transition-transform duration-300 hover:-translate-y-0.5"
+              className="group mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-[13px] font-bold uppercase tracking-[1.2px] text-dark shadow-card transition-transform duration-300 hover:-translate-y-0.5"
             >
               Get Free Quote
 
