@@ -4,7 +4,6 @@ import Breadcrumb from "@/components/common/ui/Breadcrumb";
 import ContactInformation from "@/components/pages/contact/ContactInformation";
 import InquiryForm from "@/components/pages/contact/InquiryForm";
 import InteractiveMap from "@/components/pages/contact/InteractiveMap";
-import FactoryVisitBooking from "@/components/pages/contact/FactoryVisitBooking";
 import ContactPageCTA from "@/components/pages/contact/ContactPageCTA";
 
 function Contact() {
@@ -18,7 +17,6 @@ function Contact() {
       <ContactInformation />
       <InquiryForm />
       <InteractiveMap />
-      <FactoryVisitBooking />
       <ContactPageCTA />
     </>
   );

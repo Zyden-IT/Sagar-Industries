@@ -26,7 +26,6 @@ function Home() {
       <ManufacturingProcess />
       {/* <FacilityPreview /> */}
       {/* <FaqPreview /> */}
-      <FactoryVisitCTA />
       <Testimonials />
       <ContactCTA />
     </>
