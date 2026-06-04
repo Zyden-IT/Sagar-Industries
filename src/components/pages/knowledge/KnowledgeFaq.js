@@ -53,7 +53,7 @@ const KnowledgeFaq = () => {
                 <button
                   key={it.q}
                   onClick={() => setActive(i)}
-                  className={`group flex cursor-pointer items-center gap-4 rounded-2xl border px-4 py-4 text-left transition duration-300 ${
+                  className={`btn group flex cursor-pointer items-center gap-4 rounded-2xl border px-4 py-4 text-left transition duration-300 ${
                     on
                       ? "border-transparent bg-orange-gradient text-white shadow-orange"
                       : "border-theme bg-card text-primary hover:border-accent"

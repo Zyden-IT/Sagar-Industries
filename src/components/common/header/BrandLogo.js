@@ -5,12 +5,12 @@ const BrandLogo = () => {
   return (
     <Link href="/" className="flex items-center gap-2">
       <Image
-        src="/SagarIndustries-logo.png"
+        src="/SagarIndustries-logo.webp"
         alt="Sagar Industries"
-        width={140}
-        height={40}
+        width={180}
+        height={50}
         priority
-        className="h-8 w-auto sm:h-9 lg:h-10"
+        className="logo"
       />
     </Link>
   );

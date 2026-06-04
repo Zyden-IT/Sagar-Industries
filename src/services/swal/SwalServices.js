@@ -28,7 +28,7 @@ const Confirm = async (title, text, saveBtnText, cancelBtnText) => {
           <div class="swal-btns flex items-center gap-3 mt-5">
   <button 
     id="custom-confirm-btn" 
-    class="confirm-button px-5 py-2.5 rounded-lg font-medium
+    class="btn confirm-button px-5 py-2.5 rounded-lg font-medium
            bg-blue-600 hover:bg-blue-700
            text-white shadow-md transition-all duration-200
            focus:ring-2 focus:ring-blue-300">
@@ -37,7 +37,7 @@ const Confirm = async (title, text, saveBtnText, cancelBtnText) => {
 
   <button 
     id="custom-cancel-btn" 
-    class="cancel-button px-5 py-2.5 rounded-lg font-medium
+    class="btn cancel-button px-5 py-2.5 rounded-lg font-medium
            bg-gray-200 hover:bg-gray-300
            text-gray-800 shadow-md transition-all duration-200
            focus:ring-2 focus:ring-gray-300">
@@ -230,7 +230,7 @@ const SuccessWithAction = async (title, text, saveBtnText) => {
           <div class="swal-btns flex items-center gap-3 mt-5">
             <button 
               id="custom-successAction-btn" 
-              class="successAction-button px-4 py-2 rounded-lg font-medium
+              class="btn successAction-button px-4 py-2 rounded-lg font-medium
                     bg-green-600 hover:bg-green-700
                     text-white shadow-md transition-all duration-200
                     focus:ring-2 focus:ring-green-300"
@@ -282,7 +282,7 @@ const ErrorWithAction = async (title, text, saveBtnText) => {
           <div class="swal-btns flex items-center gap-3 mt-5">
             <button 
               id="custom-errorAction-btn" 
-              class="errorAction-button px-4 py-2 rounded-lg font-medium
+              class="btn errorAction-button px-4 py-2 rounded-lg font-medium
                     bg-red-500 hover:bg-red-700
                     text-white shadow-md transition-all duration-200
                     focus:ring-2 focus:ring-red-300"

@@ -120,7 +120,7 @@ const IndustryCaseStudies = () => {
               <button
                 key={t}
                 onClick={() => setActive(t)}
-                className={`shrink-0 cursor-pointer rounded-full px-4 py-2 text-[13px] font-semibold transition ${
+                className={`btn shrink-0 cursor-pointer rounded-full px-4 py-2 text-[13px] font-semibold transition ${
                   on
                     ? "bg-orange-gradient text-white shadow-orange"
                     : "border border-theme bg-card text-primary hover:border-accent"

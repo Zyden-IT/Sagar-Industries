@@ -59,7 +59,7 @@ const MachineCatalog = () => {
               <button
                 key={t.id}
                 onClick={() => setTab(t.id)}
-                className={`rounded-full px-6 py-3 text-sm font-semibold transition ${
+                className={`btn rounded-full px-6 py-3 text-sm font-semibold transition ${
                   active
                     ? "bg-orange-gradient text-white shadow-orange"
                     : "border border-theme bg-card text-primary hover:border-accent"
@@ -85,7 +85,7 @@ const MachineCatalog = () => {
               <button
                 key={m.slug}
                 onClick={() => setSelected(m)}
-                className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card text-left shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
+                className="btn group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-theme bg-card text-left shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
@@ -135,7 +135,7 @@ const MachineCatalog = () => {
               <button
                 onClick={() => setSelected(null)}
                 aria-label="Close"
-                className="absolute right-4 top-4 z-10 grid h-9 w-9 place-items-center rounded-full bg-card/90 text-primary shadow-card transition hover:bg-accent hover:text-white"
+                className="btn absolute right-4 top-4 z-10 grid h-9 w-9 place-items-center rounded-full bg-card/90 text-primary shadow-card transition hover:bg-accent hover:text-white"
               >
                 <X size={18} weight="bold" />
               </button>

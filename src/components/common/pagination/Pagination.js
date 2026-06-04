@@ -46,7 +46,7 @@ const Pagination = ({
                 <button
                     onClick={() => onPageChange(currentPage - 1)}
                     disabled={currentPage === 1 || totalPages === 0}
-                    className={`flex items-center justify-center min-w-[35px] h-[35px] text-[12px] font-medium rounded-lg transition-all duration-200 ${currentPage === 1 || totalPages === 0
+                    className={`btn flex items-center justify-center min-w-[35px] h-[35px] text-[12px] font-medium rounded-lg transition-all duration-200 ${currentPage === 1 || totalPages === 0
                         ? 'text-text-secondary cursor-not-allowed bg-soft'
                         : 'text-text-primary hover:bg-accent/10 hover:text-accent hover:border-accent/30 bg-card border border-border'
                         }`}
@@ -65,7 +65,7 @@ const Pagination = ({
                                 <button
                                     onClick={() => onPageChange(page)}
                                     disabled={totalPages === 0}
-                                    className={`min-w-[35px] h-[35px] text-[14px] font-semibold rounded-lg transition-all duration-200 ${currentPage === page
+                                    className={`btn min-w-[35px] h-[35px] text-[14px] font-semibold rounded-lg transition-all duration-200 ${currentPage === page
                                         ? 'bg-accent text-white shadow-orange hover:brightness-110'
                                         : totalPages === 0
                                             ? 'text-text-secondary bg-soft cursor-not-allowed'
@@ -82,7 +82,7 @@ const Pagination = ({
                 <button
                     onClick={() => onPageChange(currentPage + 1)}
                     disabled={currentPage === totalPages || totalPages === 0}
-                    className={`flex items-center justify-center min-w-[35px] h-[35px] text-[12px] font-medium rounded-lg transition-all duration-200 ${currentPage === totalPages || totalPages === 0
+                    className={`btn flex items-center justify-center min-w-[35px] h-[35px] text-[12px] font-medium rounded-lg transition-all duration-200 ${currentPage === totalPages || totalPages === 0
                         ? 'text-text-secondary cursor-not-allowed bg-soft'
                         : 'text-text-primary hover:bg-accent/10 hover:text-accent hover:border-accent/30 bg-card border border-border'
                         }`}

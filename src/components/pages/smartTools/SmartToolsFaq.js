@@ -106,7 +106,7 @@ const SmartToolsFaq = () => {
                         key={f.i}
                         onClick={() => setActive(f.i)}
                         aria-label={`Question ${pad(i + 1)}`}
-                        className={`grid h-12 w-12 cursor-pointer place-items-center rounded-full text-sm font-bold transition ${
+                        className={`btn grid h-12 w-12 cursor-pointer place-items-center rounded-full text-sm font-bold transition ${
                           isActive
                             ? "bg-orange-gradient text-white shadow-orange ring-4 ring-accent/20"
                             : "border border-theme bg-card text-primary hover:border-accent"
@@ -135,7 +135,7 @@ const SmartToolsFaq = () => {
                         onClick={prev}
                         disabled={safePos <= 0}
                         aria-label="Previous question"
-                        className="grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-theme text-primary transition enabled:hover:border-accent disabled:cursor-not-allowed disabled:opacity-40"
+                        className="btn grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-theme text-primary transition enabled:hover:border-accent disabled:cursor-not-allowed disabled:opacity-40"
                       >
                         <ArrowLeft size={16} weight="bold" />
                       </button>
@@ -143,7 +143,7 @@ const SmartToolsFaq = () => {
                         onClick={next}
                         disabled={safePos >= filtered.length - 1}
                         aria-label="Next question"
-                        className="grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white transition hover:scale-105 disabled:cursor-not-allowed disabled:opacity-40"
+                        className="btn grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white transition hover:scale-105 disabled:cursor-not-allowed disabled:opacity-40"
                       >
                         <ArrowRight size={16} weight="bold" />
                       </button>

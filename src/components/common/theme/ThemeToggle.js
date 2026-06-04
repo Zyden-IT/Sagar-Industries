@@ -37,7 +37,7 @@ const ThemeToggle = ({ className = "" }) => {
       onClick={toggle}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       title={isDark ? "Light mode" : "Dark mode"}
-      className={`relative grid h-10 w-10 shrink-0 cursor-pointer place-items-center overflow-hidden rounded-full border border-theme bg-soft transition-all duration-300 hover:scale-105 hover:border-accent ${className}`}
+      className={`btn relative grid h-10 w-10 shrink-0 cursor-pointer place-items-center overflow-hidden rounded-full border border-theme bg-soft transition-all duration-300 hover:scale-105 hover:border-accent ${className}`}
     >
       {/* Render the icon only after mount so SSR and first client render match.
          The icon is absolutely centred and cross-fades in place, so it never

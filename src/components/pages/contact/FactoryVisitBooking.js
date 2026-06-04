@@ -158,7 +158,7 @@ const FactoryVisitBooking = () => {
                 </a>
                 <button
                   onClick={() => setSent(false)}
-                  className="text-xs font-semibold uppercase tracking-wide text-secondary hover:text-accent"
+                  className="btn text-xs font-semibold uppercase tracking-wide text-secondary hover:text-accent"
                 >
                   Edit details
                 </button>
@@ -225,7 +225,7 @@ const FactoryVisitBooking = () => {
 
                   <button
                     type="submit"
-                    className="group relative mt-1 flex w-full items-center justify-center rounded-[14px] bg-orange-gradient py-4 text-sm font-bold uppercase tracking-[1.5px] text-white shadow-orange transition hover:shadow-[0_18px_40px_rgba(255,107,26,0.45)]"
+                    className="btn group relative mt-1 flex w-full items-center justify-center rounded-[14px] bg-orange-gradient py-4 text-sm font-bold uppercase tracking-[1.5px] text-white shadow-orange transition hover:shadow-[0_18px_40px_rgba(255,107,26,0.45)]"
                   >
                     Request Visit
                     <ArrowRight

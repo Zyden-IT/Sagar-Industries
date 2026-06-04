@@ -75,7 +75,7 @@ const FaqPreview = () => {
                 >
                   <button
                     onClick={() => setOpen(isOpen ? -1 : i)}
-                    className="flex w-full items-center justify-between gap-4 p-5 text-left"
+                    className="btn flex w-full items-center justify-between gap-4 p-5 text-left"
                   >
                     <span className="text-[15px] font-semibold text-primary">{f.q}</span>
                     <CaretDown

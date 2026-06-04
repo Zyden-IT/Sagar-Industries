@@ -152,7 +152,7 @@ const MachineRecommender = () => {
             <Field label="Production Volume (sheets / day)">
               <input type="number" min="1" step="1" placeholder="e.g. 4000" value={volume} onChange={(e) => setVolume(e.target.value)} />
             </Field>
-            <button type="submit" className="btn-orange btn-block mt-1 cursor-pointer">
+            <button type="submit" className="btn btn-orange btn-block mt-1 cursor-pointer">
               Calculate Recommendation
             </button>
           </form>

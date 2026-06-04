@@ -114,7 +114,7 @@ const Navbar = () => {
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
-              className="grid h-10 w-10 cursor-pointer place-items-center overflow-hidden rounded-lg border border-theme bg-soft text-primary transition-all hover:border-accent hover:text-accent active:scale-95 lg:hidden"
+              className="btn grid h-10 w-10 cursor-pointer place-items-center overflow-hidden rounded-lg border border-theme bg-soft text-primary transition-all hover:border-accent hover:text-accent active:scale-95 lg:hidden"
             >
               <AnimatePresence mode="wait" initial={false}>
                 {menuOpen ? (

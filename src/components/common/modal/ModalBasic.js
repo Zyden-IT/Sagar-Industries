@@ -103,7 +103,7 @@ function ModalBasic({
               type="button"
               aria-label="Close Modal"
               onClick={() => setModalOpen(false)}
-              className="absolute right-5 top-5 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-text-primary transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-white"
+              className="btn absolute right-5 top-5 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-text-primary transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-white"
             >
               <svg className="h-4 w-4" viewBox="0 0 16 16" fill="currentColor">
                 <path d="M7.95 6.536l4.242-4.243a1 1 0 111.415 1.414L9.364 7.95l4.243 4.242a1 1 0 11-1.415 1.415L7.95 9.364l-4.243 4.243a1 1 0 01-1.414-1.415L6.536 7.95 2.293 3.707a1 1 0 011.414-1.414L7.95 6.536z" />

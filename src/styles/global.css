@@ -6,50 +6,34 @@
 
   /* Colors */
 
-  --color-primary: #161000;
-  --color-accent: #ff6a0d;
-  --color-secondary: #C0C5CE;
+  --color-primary: #F5842A;
+  --color-secondary: #ED282E;
+  --color-dark: #16100c;
+  --color-bglight: #fdf9f6;
+  --color-bgdark: #f6f3ee;
+  --color-bghover: #f7f2ee;
 
-  --color-bg: #fdf9f6;
   --color-card: #FFFFFF;
-  --color-soft: #f6f3ee;
-
-  --color-text-primary: #161000;
-  --color-text-secondary: #6B7280;
-
-  --color-success: #2E5C8A;
-  --color-warning: #d40e14;
-
   --color-border: #D6D9DE;
-  --primary-shadow: 0 10px 30px rgba(26, 26, 26, 0.12);
-
-  /* Fonts */
 
   --font-heading: "Montserrat", sans-serif;
   --font-body: "Inter", sans-serif;
 
   --font-stats: "Space Grotesk", sans-serif;
 
-  /* Radius */
-
   --radius-card: 18px;
-
-  /* Shadows */
 
   --shadow-card:
     0 4px 20px rgba(0, 0, 0, 0.06);
-
   --shadow-orange:
     0 0 20px rgba(255, 107, 26, 0.25);
 
-  /* Gradient */
-
   --hero-gradient:
     linear-gradient(135deg, #1A1A1A, #2A2A2A);
-
   --orange-gradient:
-    linear-gradient(135deg, #ff6a0d, #d40e14);
-  /* Theme-aware decorative assets */
+    linear-gradient(135deg, #F5842A, #ED282E);
+  --orange-gradient-rev:
+    linear-gradient(135deg, #ED282E, #F5842A);
 
   --city-sketch: url('/city-sketch-light.svg');
 }
@@ -357,47 +341,28 @@ input[type='number'] {
    Modifiers: .btn-block (full width). Definitions below.
    =============================== */
 
-.btn-orange {
-
+.btn {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 10px;
-
   padding: 12px 24px;
-
   border-radius: 9999px;
-
   border: 1px solid transparent;
-
   font-family: var(--font-heading);
-
-  font-size: 13px;
-
+  font-size: 14px;
   font-weight: 700;
-
   line-height: 1;
-
   letter-spacing: 1.4px;
-
   text-transform: uppercase;
-
   white-space: nowrap;
-
   cursor: pointer;
-
   user-select: none;
-
   text-decoration: none;
-
   transition:
     background-color 0.2s ease-out,
     color 0.2s ease-out,
     border-color 0.2s ease-out,
-    box-shadow 0.2s ease-out,
     transform 0.2s ease-out;
 }
 
@@ -405,38 +370,18 @@ input[type='number'] {
 /* Primary — solid orange gradient */
 
 .btn-orange {
-
   background: var(--orange-gradient);
-
   color: #FFFFFF;
-
-  box-shadow: 0 10px 25px rgba(255, 107, 26, 0.30);
 }
 
 
 .btn-orange:hover {
-
+  background: var(--orange-gradient-rev);
   transform: translateY(-2px);
-
-  box-shadow: 0 18px 45px rgba(255, 107, 26, 0.45);
 }
-
 
 .btn-orange:active {
-
   transform: translateY(0);
-
-  box-shadow: 0 6px 18px rgba(255, 107, 26, 0.30);
-}
-
-
-/* Legacy alias used in older files — same as :hover */
-
-.btn-orange-hover:hover {
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 18px 45px rgba(255, 107, 26, 0.45);
 }
 
 
@@ -492,23 +437,6 @@ input[type='number'] {
     border-color 0.25s ease,
     transform 0.2s ease;
 }
-
-
-/* Orange */
-
-.btn-orange {
-
-  background: #ff6a0d;
-
-  color: #ffffff;
-}
-
-
-.btn-orange:hover {
-
-  background: linear-gradient(135deg, #ff6a0d, #d40e14);
-}
-
 
 /* Black */
 
@@ -603,18 +531,6 @@ html.dark .btn-outline:hover {
 }
 
 
-.btn-lg {
-
-  padding: 16px 30px;
-
-  font-size: 14px;
-
-  letter-spacing: 1.5px;
-
-  gap: 12px;
-}
-
-
 /* Layout modifier */
 
 .btn-block {
@@ -673,88 +589,12 @@ html.dark .btn-outline:hover {
 }
 
 
-/* Utility Classes */
-
-.bg-theme {
-  background: var(--color-bg);
-}
-
-.bg-card {
-  background: var(--color-card);
-}
-
-.text-primary {
-  color: var(--color-text-primary);
-}
-
-.text-secondary {
-  color: var(--color-text-secondary);
-}
-
-.border-theme {
-  border-color: var(--color-border);
-}
-
-.text-accent {
-  color: var(--color-accent);
-}
-
-.bg-accent {
-  background: var(--color-accent);
-}
-
-.bg-soft {
-  background: var(--color-soft);
-}
-
-.bg-primary {
-  background: var(--color-primary);
-}
-
-.bg-warning {
-  background: var(--color-warning);
-}
-
-.text-warning {
-  color: var(--color-warning);
-}
-
-.bg-accent-soft {
-  background: rgba(255, 107, 26, 0.10);
-}
-
-.bg-orange-gradient {
-  background: var(--orange-gradient);
-}
-
-.shadow-orange {
-  box-shadow: var(--shadow-orange);
-}
-
-.shadow-card {
-  box-shadow: var(--shadow-card);
-}
-
-.font-stats {
-  font-family: var(--font-stats);
-}
-
-.font-heading {
-  font-family: var(--font-heading);
-}
-
-
 /* Links */
 
 a {
-
   text-decoration: none;
-
   color: inherit;
 }
-
-
-/* Lists */
 
 ul,
 ol {
@@ -762,18 +602,10 @@ ol {
   list-style: none;
 }
 
-
-/* Images */
-
 img {
-
   max-width: 100%;
-
   display: block;
 }
-
-
-/* Hide Scrollbar (used by horizontal scrollable tab rows) */
 
 .hide-scrollbar {
   scrollbar-width: none;

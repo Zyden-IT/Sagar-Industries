@@ -190,14 +190,14 @@ const Testimonials = () => {
           <button
             onClick={prev}
             aria-label="Previous testimonials"
-            className="absolute left-0 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition hover:scale-110 sm:h-11 sm:w-11"
+            className="btn absolute left-0 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition hover:scale-110 sm:h-11 sm:w-11"
           >
             <CaretLeft size={20} weight="bold" />
           </button>
           <button
             onClick={next}
             aria-label="Next testimonials"
-            className="absolute right-0 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition hover:scale-110 sm:h-11 sm:w-11"
+            className="btn absolute right-0 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition hover:scale-110 sm:h-11 sm:w-11"
           >
             <CaretRight size={20} weight="bold" />
           </button>
@@ -235,7 +235,7 @@ const Testimonials = () => {
                   setIndex(total + i);
                 }}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
+                className={`btn h-2.5 rounded-full transition-all duration-300 ${
                   i === activeDot ? "w-6 bg-accent" : "w-2.5 bg-secondary/40 hover:bg-secondary"
                 }`}
               />

@@ -177,7 +177,7 @@ const UnitConverter = () => {
                 <button
                   onClick={reset}
                   aria-label="Reset converter"
-                  className="grid h-8 w-8 cursor-pointer place-items-center rounded-full border border-theme bg-white text-secondary transition hover:rotate-180 hover:border-accent hover:text-accent"
+                  className="btn grid h-8 w-8 cursor-pointer place-items-center rounded-full border border-theme bg-white text-secondary transition hover:rotate-180 hover:border-accent hover:text-accent"
                 >
                   <ArrowsClockwise size={16} weight="bold" />
                 </button>

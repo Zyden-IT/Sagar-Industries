@@ -103,14 +103,14 @@ const KnowledgeHub = () => {
           <button
             onClick={prev}
             aria-label="Previous"
-            className="absolute left-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition hover:scale-110"
+            className="btn absolute left-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition hover:scale-110"
           >
             <CaretLeft size={20} weight="bold" />
           </button>
           <button
             onClick={next}
             aria-label="Next"
-            className="absolute right-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition hover:scale-110"
+            className="btn absolute right-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition hover:scale-110"
           >
             <CaretRight size={20} weight="bold" />
           </button>
@@ -138,7 +138,7 @@ const KnowledgeHub = () => {
                 key={i}
                 onClick={() => setIndex(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
+                className={`btn h-2.5 rounded-full transition-all duration-300 ${
                   i === index ? "w-6 bg-accent" : "w-2.5 bg-secondary/40 hover:bg-secondary"
                 }`}
               />

@@ -613,7 +613,7 @@ const CalculatorHub = () => {
               <button
                 key={t.id}
                 onClick={() => setTab(t.id)}
-                className={`inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition ${
+                className={`btn inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition ${
                   active
                     ? "bg-orange-gradient text-white shadow-orange"
                     : "border border-theme bg-card text-primary hover:border-accent"

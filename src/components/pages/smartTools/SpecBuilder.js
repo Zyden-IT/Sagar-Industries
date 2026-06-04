@@ -131,7 +131,7 @@ const SpecBuilder = () => {
             <Field label="Extra Requirements">
               <textarea rows={3} placeholder="Any specific requirement…" value={notes} onChange={(e) => setNotes(e.target.value)} />
             </Field>
-            <button type="submit" className="btn-orange btn-block mt-1 cursor-pointer">
+            <button type="submit" className="btn btn-orange btn-block mt-1 cursor-pointer">
               Build My Spec
             </button>
           </form>
@@ -166,7 +166,7 @@ const SpecBuilder = () => {
                     ))}
                   </ul>
                   <div className="flex flex-wrap gap-3">
-                    <button onClick={download} className="inline-flex items-center gap-2 rounded-full bg-orange-gradient px-5 py-3 text-xs font-bold uppercase tracking-wide text-white">
+                    <button onClick={download} className="btn inline-flex items-center gap-2 rounded-full bg-orange-gradient px-5 py-3 text-xs font-bold uppercase tracking-wide text-white">
                       <DownloadSimple size={16} weight="bold" /> Download .txt
                     </button>
                     <a href={waHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-xs font-bold uppercase tracking-wide text-white! transition hover:bg-white hover:text-[#161000]">

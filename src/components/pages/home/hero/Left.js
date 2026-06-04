@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight, ArrowRightIcon, ArrowUpRightIcon } from "@phosphor-icons/react";
 import { Routes } from "@/navigation/NavigationLib";
 
 const Left = () => {
@@ -27,13 +27,13 @@ const Left = () => {
 
       {/* CTAs */}
       <div className="mt-3 flex flex-wrap items-center gap-4">
-        <Link href={Routes.products.urlPath} className="btn-orange btn-lg">
+        <Link href={Routes.products.urlPath} className="btn-orange btn">
           Explore Machines
-          <ArrowRight size={16} weight="bold" />
+          <ArrowRightIcon size={16} weight="bold" />
         </Link>
-        <Link href={Routes.contact.urlPath} className="btn-outline btn-lg">
+        <Link href={Routes.contact.urlPath} className="btn-outline btn">
           Request Quotation
-          <ArrowRight size={16} weight="bold" />
+          <ArrowUpRightIcon size={16} weight="bold" />
         </Link>
       </div>
     </div>

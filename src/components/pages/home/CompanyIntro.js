@@ -25,6 +25,7 @@ import {
   Medal,
   UsersThree,
   MapPin,
+  ArrowUpRightIcon,
 } from "@phosphor-icons/react";
 import { Routes } from "@/navigation/NavigationLib";
 
@@ -83,27 +84,29 @@ const Badge = () => (
     aria-label="Explore our machines"
     className="group relative grid h-24 w-24 place-items-center rounded-full bg-card shadow-card ring-1 ring-theme sm:h-28 sm:w-28"
   >
-    <motion.svg
+    <motion.div
       aria-hidden
-      viewBox="0 0 100 100"
       animate={{ rotate: 360 }}
       transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+      style={{ willChange: "transform" }}
       className="absolute inset-0 h-full w-full"
     >
-      <defs>
-        <path id="badgeArc" d="M50,50 m-35,0 a35,35 0 1,1 70,0 a35,35 0 1,1 -70,0" />
-      </defs>
-      <text
-        className="fill-[var(--color-text-secondary)]"
-        style={{ fontSize: "9.5px", fontWeight: 700, letterSpacing: "1.5px" }}
-      >
-        <textPath href="#badgeArc" startOffset="0%">
-          SAGAR INDUSTRIES • PRECISION •&nbsp;
-        </textPath>
-      </text>
-    </motion.svg>
-    <span className="grid h-11 w-11 place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
-      <ArrowUpRight size={20} weight="bold" />
+      <svg viewBox="0 0 100 100" className="h-full w-full">
+        <defs>
+          <path id="badgeArc" d="M50,50 m-35,0 a35,35 0 1,1 70,0 a35,35 0 1,1 -70,0" />
+        </defs>
+        <text
+          className="fill-[var(--color-text-secondary)]"
+          style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "1.5px" }}
+        >
+          <textPath href="#badgeArc" startOffset="0%">
+            SAGAR INDUSTRIES • PRECISION •&nbsp;
+          </textPath>
+        </text>
+      </svg>
+    </motion.div>
+    <span className="grid h-12 w-12 place-items-center rounded-full bg-orange-gradient text-white shadow-orange transition-transform duration-300 group-hover:scale-110 sm:h-14 sm:w-14">
+      <ArrowUpRightIcon size={20} weight="bold" />
     </span>
   </Link>
 );
@@ -180,7 +183,7 @@ const CompanyIntro = () => {
             <div className="mt-2 flex flex-wrap gap-y-6 divide-x divide-[var(--color-border)]">
               {STATS.map((s) => (
                 <div key={s.label} className="flex flex-col gap-2.5 px-6 first:pl-0">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent-soft text-accent">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-secondary text-dark/60">
                     <s.icon size={20} weight="bold" />
                   </span>
                   {s.value !== undefined ? (

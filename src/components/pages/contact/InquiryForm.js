@@ -168,7 +168,7 @@ const InquiryForm = () => {
                 <a href={waLink} target="_blank" rel="noreferrer" className="btn-orange btn-lg">
                   Send on WhatsApp <WhatsappLogo size={18} weight="fill" />
                 </a>
-                <button onClick={() => setSent(false)} className="text-xs font-semibold uppercase tracking-wide text-secondary hover:text-accent">
+                <button onClick={() => setSent(false)} className="btn text-xs font-semibold uppercase tracking-wide text-secondary hover:text-accent">
                   Edit details
                 </button>
               </div>
@@ -206,7 +206,7 @@ const InquiryForm = () => {
 
                 <button
                   type="submit"
-                  className="group relative mt-1 flex w-full items-center justify-center rounded-[14px] bg-orange-gradient py-4 text-sm font-bold uppercase tracking-[1.5px] text-white shadow-orange transition hover:shadow-[0_18px_40px_rgba(255,107,26,0.45)]"
+                  className="btn group relative mt-1 flex w-full items-center justify-center rounded-[14px] bg-orange-gradient py-4 text-sm font-bold uppercase tracking-[1.5px] text-white shadow-orange transition hover:shadow-[0_18px_40px_rgba(255,107,26,0.45)]"
                 >
                   Submit Inquiry
                   <ArrowRight size={20} weight="bold" className="absolute right-6 transition-transform duration-300 group-hover:translate-x-1" />
