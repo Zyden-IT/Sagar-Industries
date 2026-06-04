@@ -58,7 +58,7 @@ const CostCard = ({ icon: Icon, title, cost, recommended }) => (
     style={
       recommended
         ? { background: `${ACCENT}1a`, border: `1.5px solid ${ACCENT}` }
-        : { background: "rgba(255,255,255,0.05)", border: "1.5px solid rgba(255,255,255,0.1)" }
+        : { background: "var(--color-soft)", border: "1.5px solid var(--color-border)" }
     }
   >
     {recommended && (
@@ -67,26 +67,26 @@ const CostCard = ({ icon: Icon, title, cost, recommended }) => (
       </span>
     )}
     <div className="flex items-center gap-3">
-      <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${recommended ? "bg-gradient-to-br from-primary to-secondary text-white" : "bg-white/10 text-white/70"}`}>
+      <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${recommended ? "bg-gradient-to-br from-primary to-secondary text-white" : "bg-soft text-text-secondary"}`}>
         <Icon size={22} weight="bold" />
       </span>
       <div>
-        <div className={`text-sm font-bold ${recommended ? "text-accent" : "text-white"}`}>{title}</div>
-        <div className="text-[11px] text-white/50">Cost / month</div>
+        <div className={`text-sm font-bold ${recommended ? "text-accent" : "text-text-primary"}`}>{title}</div>
+        <div className="text-[11px] text-text-secondary">Cost / month</div>
       </div>
     </div>
-    <div className={`mt-3 text-3xl font-bold ${recommended ? "text-accent" : "text-white"}`}>{cost}</div>
+    <div className={`mt-3 text-3xl font-bold ${recommended ? "text-accent" : "text-text-primary"}`}>{cost}</div>
   </div>
 );
 
 // ── A row in the stat list ───────────────────────────────────────────
 const Row = ({ icon: Icon, label, value, accent }) => (
-  <div className="flex items-center gap-3 border-b border-white/10 py-3 last:border-0">
-    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-white/5 text-accent">
+  <div className="flex items-center gap-3 border-b border-border py-3 last:border-0">
+    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-soft text-accent">
       <Icon size={15} weight="bold" />
     </span>
-    <span className="flex-1 text-sm text-white/70">{label}</span>
-    <span className={`font-bold ${accent ? "text-accent" : "text-white"}`}>{value}</span>
+    <span className="flex-1 text-sm text-text-secondary">{label}</span>
+    <span className={`font-bold ${accent ? "text-accent" : "text-text-primary"}`}>{value}</span>
   </div>
 );
 
@@ -97,7 +97,7 @@ const Ring = ({ pct, value, unit }) => {
   return (
     <div className="relative grid place-items-center">
       <svg width="150" height="150" viewBox="0 0 150 150" className="-rotate-90">
-        <circle cx="75" cy="75" r={R} fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="10" />
+        <circle cx="75" cy="75" r={R} fill="none" stroke="var(--color-border)" strokeWidth="10" />
         <circle
           cx="75" cy="75" r={R} fill="none" stroke="url(#roiRing)" strokeWidth="10" strokeLinecap="round"
           strokeDasharray={C} strokeDashoffset={C * (1 - pct / 100)}
@@ -112,7 +112,7 @@ const Ring = ({ pct, value, unit }) => {
       </svg>
       <div className="absolute text-center">
         <div className="text-3xl font-bold text-accent">{value}</div>
-        <div className="text-[11px] font-bold uppercase tracking-wide text-white/60">{unit}</div>
+        <div className="text-[11px] font-bold uppercase tracking-wide text-text-secondary">{unit}</div>
       </div>
     </div>
   );
@@ -230,14 +230,14 @@ const RoiCost = () => {
           </div>
 
           {/* ── COST COMPARISON (dark) ────────────────────────────────── */}
-          <div className="rounded-[var(--radius-card)] bg-dark p-6 text-white shadow-card md:p-7 lg:col-span-3">
-            <div className="text-xs font-bold uppercase tracking-wide text-white/50">Cost Comparison</div>
+          <div className="rounded-[var(--radius-card)] bg-card p-6 text-text-primary shadow-card md:p-7 lg:col-span-3">
+            <div className="text-xs font-bold uppercase tracking-wide text-text-secondary">Cost Comparison</div>
 
             {/* Manual vs Automatic */}
             <div className="relative mt-4 flex gap-3">
               <CostCard icon={User} title="Manual" cost={money(manualMonth)} recommended={!autoRecommended} />
               <CostCard icon={Robot} title="Automatic" cost={money(autoMonth)} recommended={autoRecommended} />
-              <span className="absolute left-1/2 top-1/2 z-10 grid h-9 w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/20 bg-primary text-[11px] font-bold text-white">
+              <span className="absolute left-1/2 top-1/2 z-10 grid h-9 w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-border bg-primary text-[11px] font-bold text-white">
                 VS
               </span>
             </div>
@@ -257,7 +257,7 @@ const RoiCost = () => {
                 <div className="mt-3">
                   <Ring pct={ringPct} value={ringValue} unit={ringUnit} />
                 </div>
-                <p className="mt-3 text-xs leading-relaxed text-white/60">{tagline}</p>
+                <p className="mt-3 text-xs leading-relaxed text-text-secondary">{tagline}</p>
               </div>
             </div>
           </div>
