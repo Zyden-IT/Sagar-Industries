@@ -38,7 +38,7 @@ const InteractiveMap = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative mx-auto mt-14 max-w-4xl px-4 py-4 sm:px-5 sm:py-5"
+          className="relative mt-14 px-4 py-4 sm:px-5 sm:py-5"
         >
           {/* corner brackets */}
           <Bracket className="left-0 top-0 rounded-tl-xl border-l-2 border-t-2" />

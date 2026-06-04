@@ -180,10 +180,10 @@ const CompanyIntro = () => {
             </p>
 
             {/* Stats — icon over aligned number heading */}
-            <div className="mt-2 flex flex-wrap gap-y-6 divide-x divide-[var(--color-border)]">
+            <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-6 sm:flex sm:flex-wrap sm:divide-x sm:divide-[var(--color-border)]">
               {STATS.map((s) => (
-                <div key={s.label} className="flex flex-col gap-2.5 px-6 first:pl-0">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-secondary text-dark/60">
+                <div key={s.label} className="flex flex-col gap-2.5 sm:px-6 sm:first:pl-0">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent-soft text-accent">
                     <s.icon size={20} weight="bold" />
                   </span>
                   {s.value !== undefined ? (

@@ -57,9 +57,7 @@ export const SmartQuoteValidationRules = {
     ],
     phone: [
       { type: "require", message: "Phone number is required" },
-      { type: "number", message: "Phone must contain only digits" },
-      { type: "minLength", minLength: 10, message: "Phone must be at least 10 digits" },
-      { type: "maxLength", maxLength: 15, message: "Phone cannot exceed 15 digits" },
+      { type: "phone", message: "Please enter a valid phone number" },
     ],
     email: [
       { type: "require", message: "Email address is required" },

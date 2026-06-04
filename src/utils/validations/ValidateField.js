@@ -36,6 +36,20 @@ export const number = (value) => {
   }
 };
 
+export const phone = (value) => {
+  if (value === undefined || value === null || value.toString().trim() === "") {
+    return true;
+  }
+  const str = value.toString().trim();
+  // Allow an optional leading +, plus digits, spaces, hyphens and parentheses.
+  if (!/^\+?[\d\s\-()]+$/.test(str)) {
+    return false;
+  }
+  // Require a realistic count of actual digits (e.g. 10-digit India, +country code).
+  const digits = str.replace(/\D/g, "");
+  return digits.length >= 7 && digits.length <= 15;
+};
+
 export const alphabetic = (value) => {
   if (value === undefined || value === null || value.toString() === "") {
     return true;

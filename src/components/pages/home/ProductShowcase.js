@@ -88,9 +88,8 @@ const ProductShowcase = () => {
                 {/* Image */}
                 <motion.div
                   {...fade(reverse ? 40 : -40)}
-                  className={`relative overflow-hidden rounded-[var(--radius-card)] border border-theme bg-soft shadow-card ${
-                    reverse ? "lg:order-2" : ""
-                  }`}
+                  className={`relative overflow-hidden rounded-[var(--radius-card)] border border-theme bg-soft shadow-card ${reverse ? "lg:order-2" : ""
+                    }`}
                 >
                   <div className="group relative aspect-[4/3] w-full overflow-hidden">
                     <Image
@@ -120,7 +119,7 @@ const ProductShowcase = () => {
                   </p>
 
                   {/* Stats */}
-                  <div className="mt-7 flex flex-wrap gap-x-10 gap-y-5 border-t border-theme pt-6">
+                  <div className="mt-7 flex flex-wrap gap-x-8 gap-y-5 border-t border-theme pt-6 sm:gap-x-10">
                     {p.stats.map((s) => (
                       <div key={s.label}>
                         <div className="stats-font text-2xl font-bold leading-none text-primary sm:text-[28px]">

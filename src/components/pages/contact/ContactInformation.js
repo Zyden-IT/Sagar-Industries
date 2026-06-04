@@ -23,7 +23,7 @@ const CUT = { clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%,
 
 const ContactInformation = () => {
   return (
-    <section className="section-py bg-theme">
+    <section className="section-py bg-soft">
       <div className="container">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center">
@@ -42,7 +42,7 @@ const ContactInformation = () => {
         </div>
 
         {/* Angled accent cards */}
-        <div className="mx-auto mt-12 grid max-w-5xl items-stretch gap-6 sm:grid-cols-3">
+        <div className="mt-12 grid items-stretch gap-6 sm:grid-cols-3">
           {CARDS.map((c, i) => {
             const Tag = c.href ? "a" : "div";
             return (

@@ -7,8 +7,8 @@
 // Inputs use `pl-11!` / `py-3.5!` to beat the unlayered global input styles.
 // ─────────────────────────────────────────────────────────────────────
 
-import { useState } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import {
   PaperPlaneTilt,
@@ -28,8 +28,27 @@ import {
   Clock,
   Receipt,
 } from "@phosphor-icons/react";
+import Selector from "@/components/common/dropdown/CustomDropdown";
+import { isValidForm, validate } from "@/utils/validations/CommonValidator";
 
 const WHATSAPP = "919978311122";
+
+// Field-level rules consumed by our validation utility (utils/validations).
+const VALIDATION_RULES = {
+  name: [{ type: "require", message: "Please enter your name" }],
+  phone: [
+    { type: "require", message: "Please enter your phone number" },
+    { type: "phone", message: "Please enter a valid phone number" },
+  ],
+  email: [
+    { type: "require", message: "Please enter your email address" },
+    { type: "email", message: "Please enter a valid email address" },
+  ],
+  machine: [{ type: "require", message: "Please select a machine" }],
+  message: [{ type: "require", message: "Please enter your message" }],
+};
+
+
 const MACHINES = [
   "Paper Roll To Sheet Cutting Machine",
   "Flexo Printing Machine",
@@ -51,8 +70,6 @@ const TRUST = [
 
 const fieldCls =
   "w-full rounded-[12px] border-[1.5px] border-theme bg-soft py-3.5! pl-11! pr-4! text-primary outline-none transition focus:border-accent";
-const selectCls =
-  "w-full rounded-[12px] border-[1.5px] border-theme bg-soft py-3.5! pl-11! pr-10! text-primary outline-none transition focus:border-accent";
 
 const IconField = ({ icon: Icon, children }) => (
   <div className="relative">
@@ -61,10 +78,47 @@ const IconField = ({ icon: Icon, children }) => (
   </div>
 );
 
+// Inline validation message shown beneath a field.
+const FieldError = ({ message }) =>
+  message ? <p className="mt-1.5 text-[12px]! font-medium text-red-500">{message}</p> : null;
+
 const InquiryForm = () => {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", machine: MACHINES[0], message: "" });
+  const router = useRouter();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    machine: "",
+    message: "",
+  });
   const [sent, setSent] = useState(false);
-  const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+  const [validState, setValidState] = useState({ isValid: true, error: {} });
+
+  // Re-validate a field once it already has an error so the message clears as
+  // the user corrects it.
+  const set = (k) => (e) => {
+    const next = { ...form, [k]: e.target.value };
+    setForm(next);
+    if (validState.error[k]) {
+      setValidState(validate(k, next, VALIDATION_RULES, validState));
+    }
+  };
+
+  // Validate on blur — surfaces the error text as the user leaves a field.
+  const onBlur = (k) => () =>
+    setValidState(validate(k, form, VALIDATION_RULES, validState));
+
+  // Preselect the machine from the ?machine= query (e.g. from the Selection
+  // Guide "Inquire Now" buttons) and scroll the form into view.
+  useEffect(() => {
+    if (!router.isReady) return;
+    const m = router.query.machine;
+    if (m && MACHINES.includes(m)) {
+      setForm((f) => ({ ...f, machine: m }));
+      document.getElementById("inquiry")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [router.isReady, router.query.machine]);
+
 
   const waText =
     `New inquiry from the website:%0A` +
@@ -77,8 +131,20 @@ const InquiryForm = () => {
 
   const submit = (e) => {
     e.preventDefault();
+
+    const result = isValidForm(
+      form,
+      VALIDATION_RULES,
+      validState
+    );
+
+    setValidState(result);
+
+    if (!result.isValid) return;
+
     setSent(true);
   };
+
 
   return (
     <section id="inquiry" className="section-py scroll-mt-20 bg-soft">
@@ -175,33 +241,109 @@ const InquiryForm = () => {
             ) : (
               <form onSubmit={submit} className="flex flex-col gap-4">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <IconField icon={User}>
-                    <input className={fieldCls} type="text" required placeholder="Your name" value={form.name} onChange={set("name")} />
-                  </IconField>
-                  <IconField icon={Phone}>
-                    <input className={fieldCls} type="tel" required placeholder="Phone number" value={form.phone} onChange={set("phone")} />
-                  </IconField>
+                  <div>
+                    <IconField icon={User}>
+                      <input
+                        className={fieldCls}
+                        type="text"
+                        placeholder="Your name"
+                        value={form.name}
+                        onChange={set("name")}
+                        onBlur={onBlur("name")}
+                      />
+                    </IconField>
+                    <FieldError message={validState.error.name} />
+                  </div>
+                  <div>
+                    <IconField icon={Phone}>
+                      <input
+                        className={fieldCls}
+                        type="tel"
+                        placeholder="Phone number"
+                        value={form.phone}
+                        onChange={set("phone")}
+                        onBlur={onBlur("phone")}
+                      />
+                    </IconField>
+                    <FieldError message={validState.error.phone} />
+                  </div>
                 </div>
 
-                <IconField icon={EnvelopeSimple}>
-                  <input className={fieldCls} type="email" required placeholder="Email address" value={form.email} onChange={set("email")} />
-                </IconField>
+                <div>
+                  <IconField icon={EnvelopeSimple}>
+                    <input
+                      className={fieldCls}
+                      type="email"
+                      placeholder="Email address"
+                      value={form.email}
+                      onChange={set("email")}
+                      onBlur={onBlur("email")}
+                    />
+                  </IconField>
+                  <FieldError message={validState.error.email} />
+                </div>
 
-                <IconField icon={Stack}>
-                  <select className={selectCls} value={form.machine} onChange={set("machine")}>
-                    {MACHINES.map((m) => <option key={m}>{m}</option>)}
-                  </select>
-                </IconField>
+                <div>
+                  <IconField icon={Stack}>
+                    <Selector
+                      options={MACHINES.map((m) => ({
+                        label: m,
+                        value: m,
+                      }))}
+                      value={
+                        form.machine
+                          ? {
+                            label: form.machine,
+                            value: form.machine,
+                          }
+                          : null
+                      }
+                      placeholder="Select Machine"
+                      className={validState.error.machine ? "error" : ""}
+                      onChange={(selected) => {
+                        const value = selected?.value || "";
 
-                <div className="relative">
-                  <PencilSimple size={18} className="pointer-events-none absolute left-4 top-4 z-10 text-secondary" />
-                  <textarea
-                    className="w-full rounded-[12px] border-[1.5px] border-theme bg-soft py-3.5! pl-11! pr-4! text-primary outline-none transition focus:border-accent"
-                    rows={5}
-                    placeholder="Your message / requirement"
-                    value={form.message}
-                    onChange={set("message")}
-                  />
+                        const next = {
+                          ...form,
+                          machine: value,
+                        };
+
+                        setForm(next);
+
+                        if (validState.error.machine) {
+                          setValidState(
+                            validate(
+                              "machine",
+                              next,
+                              VALIDATION_RULES,
+                              validState
+                            )
+                          );
+                        }
+                      }}
+                    />
+                  </IconField>
+
+                  <FieldError message={validState.error.machine} />
+                </div>
+
+                <div>
+                  <div className="relative">
+                    <PencilSimple
+                      size={18}
+                      className="pointer-events-none absolute left-4 top-4 z-10 text-secondary"
+                    />
+                    <textarea
+                      className="w-full rounded-[12px] border-[1.5px] border-theme bg-soft py-3.5! pl-11! pr-4! text-primary outline-none transition focus:border-accent"
+                      rows={5}
+                      placeholder="Your message / requirement"
+                      value={form.message}
+                      onChange={set("message")}
+                      onBlur={onBlur("message")}
+                    />
+                  </div>
+
+                  <FieldError message={validState.error.message} />
                 </div>
 
                 <button

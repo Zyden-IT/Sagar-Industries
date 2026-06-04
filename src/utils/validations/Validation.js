@@ -1,4 +1,4 @@
-import { compare, email, number, required, uniqueIdentifier, isvalidPassword, maxLength, minLength, maxProspects, minEndDate, maxSum, distinct, isFormatPassword, isValidateURL, space, alphabetic, alphanumericText } from './ValidateField'
+import { compare, email, number, phone, required, uniqueIdentifier, isvalidPassword, maxLength, minLength, maxProspects, minEndDate, maxSum, distinct, isFormatPassword, isValidateURL, space, alphabetic, alphanumericText } from './ValidateField'
 
 export function ValidateAll(state, rules) {
   let result = {
@@ -77,6 +77,12 @@ export function ValidateField(value, fieldRules, state) {
           break;
         case 'number':
           if (!number(value)) {
+            result.isvalid = false;
+            result.message = rule.message
+          }
+          break;
+        case 'phone':
+          if (!phone(value)) {
             result.isvalid = false;
             result.message = rule.message
           }
