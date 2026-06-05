@@ -128,33 +128,6 @@ const MachineComparison = () => {
           </div>
         </motion.div>
 
-        {/* ── Recommender CTA bar ────────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mx-auto mt-6 flex max-w-5xl flex-col items-center justify-between gap-4 rounded-[var(--radius-card)] border border-border bg-card p-5 shadow-card sm:flex-row sm:px-7"
-        >
-          <div className="flex items-center gap-4 text-center sm:text-left">
-            <span className="hidden h-12 w-12 shrink-0 place-items-center rounded-full bg-accent/10 text-accent sm:grid">
-              <Sparkle size={24} weight="bold" />
-            </span>
-            <div>
-              <h3 className="text-[15px]! font-bold! leading-tight sm:text-[16px]!">Not sure which fits?</h3>
-              <p className="mt-0.5 text-sm text-text-secondary">
-                Get a personalized recommendation from our experts.
-              </p>
-            </div>
-          </div>
-          <Link
-            href="#recommender"
-            className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-br from-primary to-secondary px-6 py-3.5 text-[12px] font-bold uppercase tracking-wide text-white! shadow-orange transition hover:scale-105"
-          >
-            Use the Machine Recommender
-            <ArrowRight size={16} weight="bold" className="transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

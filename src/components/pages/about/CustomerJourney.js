@@ -55,9 +55,9 @@ const CustomerJourney = () => {
         <div className="relative mt-8 hidden aspect-[1200/880] w-full lg:block">
           <svg viewBox="0 0 1200 880" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
             {/* asphalt */}
-            <path d={ROAD} fill="none" stroke="#4B4B4B" strokeWidth="46" strokeLinecap="round" strokeLinejoin="round" />
+            <path d={ROAD} fill="none" stroke="#4B4B4B" strokeWidth="30" strokeLinecap="round" strokeLinejoin="round" />
             {/* dashed centre line */}
-            <path d={ROAD} fill="none" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeDasharray="16 24" />
+            <path d={ROAD} fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeDasharray="16 24" />
           </svg>
 
           {/* Flag (start) */}

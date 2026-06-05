@@ -65,6 +65,55 @@ const ItemRow = ({ item }) => {
   );
 };
 
+// Compact, centred card used in the mobile/tablet "2 top · machine · 2 bottom"
+// layout — icon on top so two fit comfortably side by side on small screens.
+const ItemCard = ({ item, i }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 18 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
+    className="flex h-full flex-col items-center rounded-[var(--radius-card)] border border-border bg-card p-4 text-center shadow-card"
+  >
+    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-border bg-soft text-accent shadow-card">
+      <item.icon size={24} weight="regular" />
+    </span>
+    <h3 className="mt-2.5 text-[14px]! font-bold! uppercase tracking-wide">
+      Our <span className="text-accent">{item.label}</span>
+    </h3>
+    <p className="mt-1 text-[12px] leading-relaxed text-text-secondary">{item.desc}</p>
+  </motion.div>
+);
+
+// One pair of converging spokes for a gap between a card row and the machine.
+// Lives in a fixed-height row so the geometry is deterministic and the dots sit
+// exactly on the card edge. `from` = which edge the dots touch.
+const Connectors = ({ from }) => {
+  const cardY = from === "top" ? 0 : 100; // edge that touches the cards
+  const hubY = from === "top" ? 100 : 0; // edge that meets the machine
+  return (
+    <div className="relative h-11 sm:h-12">
+      <svg
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <line x1="25" y1={cardY} x2="50" y2={hubY} stroke="#ff6a0d" strokeWidth="2" strokeOpacity="0.55" vectorEffect="non-scaling-stroke" />
+        <line x1="75" y1={cardY} x2="50" y2={hubY} stroke="#ff6a0d" strokeWidth="2" strokeOpacity="0.55" vectorEffect="non-scaling-stroke" />
+      </svg>
+      {[25, 75].map((x) => (
+        <span
+          key={x}
+          aria-hidden="true"
+          className={`absolute h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-accent shadow-card ${from === "top" ? "top-0 -translate-y-1/2" : "bottom-0 translate-y-1/2"}`}
+          style={{ left: `${x}%` }}
+        />
+      ))}
+    </div>
+  );
+};
+
 const Pill = () => (
   <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 shadow-card">
     <ShieldCheck size={18} weight="fill" className="text-accent" />
@@ -156,25 +205,42 @@ const MissionVision = () => {
           </div>
         </div>
 
-        {/* ── Mobile / tablet ────────────────────────────────────────── */}
-        <div className="mt-12 lg:hidden">
-          <div className="mb-10 flex justify-center">
-            <Machine className="h-[200px] w-full max-w-[320px]" />
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2">
-            {ITEMS.map((item, i) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
-                className="rounded-[var(--radius-card)] border border-border bg-card p-5 shadow-card"
-              >
-                <ItemRow item={{ ...item, side: "left" }} />
-              </motion.div>
+        {/* ── Mobile / tablet — 2 cards top · machine · 2 cards bottom ── */}
+        <div className="mx-auto mt-10 max-w-[560px] lg:hidden">
+          {/* top two */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            {ITEMS.slice(0, 2).map((item, i) => (
+              <ItemCard key={item.label} item={item} i={i} />
             ))}
           </div>
+
+          {/* connectors: top cards → machine */}
+          <Connectors from="top" />
+
+          {/* centre machine with concentric rings */}
+          <div className="relative flex h-[170px] items-center justify-center sm:h-[200px]">
+            {[240, 180].map((s, i) => (
+              <span
+                key={s}
+                aria-hidden="true"
+                className={`pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ${i === 0 ? "border border-dashed border-accent/25" : "border border-border/60"}`}
+                style={{ height: s, width: s }}
+              />
+            ))}
+            <Machine className="relative h-[140px] w-[230px] sm:h-[160px] sm:w-[260px]" />
+          </div>
+
+          {/* connectors: machine → bottom cards */}
+          <Connectors from="bottom" />
+
+          {/* bottom two */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            {ITEMS.slice(2, 4).map((item, i) => (
+              <ItemCard key={item.label} item={item} i={i + 2} />
+            ))}
+          </div>
+
+          {/* pill */}
           <div className="mt-8 flex justify-center">
             <Pill />
           </div>

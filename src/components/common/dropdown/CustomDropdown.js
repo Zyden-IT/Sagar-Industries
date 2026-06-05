@@ -5,12 +5,19 @@ const DropdownIndicator = (props) => {
   return (
     components.DropdownIndicator && (
       <components.DropdownIndicator {...props}>
-        <CaretDownIcon size={16} weight="bold" className="text-text-primary" />
+        <CaretDownIcon
+          size={16}
+          weight="bold"
+          className={`text-text-secondary transition-transform duration-200 ${props.selectProps.menuIsOpen ? "rotate-180" : ""}`}
+        />
       </components.DropdownIndicator>
     )
   );
 };
 
+// Theme-driven styles — every colour is a CSS var from global.css, so the
+// dropdown adapts to light/dark automatically and matches the site inputs
+// (bg-soft surface · 1.5px border · 10px radius · accent focus ring).
 const customStyles = {
   container: (base) => ({
     ...base,
@@ -18,34 +25,38 @@ const customStyles = {
   }),
 
   control: (base, state) => {
-    const hasError = state.selectProps.className && state.selectProps.className.includes("error");
+    const hasError =
+      state.selectProps.className && state.selectProps.className.includes("error");
 
     return {
       ...base,
-      minHeight: "45px",
-      height: "45px",
-      backgroundColor: "rgba(var(--color-muted-rgb), 0.4)",
+      minHeight: "46px",
+      backgroundColor: "var(--color-soft)",
       borderRadius: "10px",
-      padding: "0 10px",
-      fontSize: "16px",
-      fontFamily: "Jost, sans-serif",
-      color: "var(--color-text)",
+      padding: "0 6px",
+      fontSize: "15px",
+      fontFamily: "var(--font-body), Inter, sans-serif",
+      color: "var(--color-text-primary)",
       cursor: "pointer",
+      transition: "border-color 0.2s ease, box-shadow 0.2s ease",
 
-      border: hasError ? "1.5px solid #ff0000" : "1.5px solid var(--color-border)",
+      border: hasError
+        ? "1.5px solid var(--color-secondary)"
+        : `1.5px solid ${state.isFocused ? "var(--color-accent)" : "var(--color-border)"}`,
 
-      boxShadow: "none",
+      boxShadow: state.isFocused
+        ? "0 0 0 4px rgba(245, 132, 42, 0.15)"
+        : "none",
 
       "&:hover": {
-        borderColor: hasError ? "#ff0000" : "",
+        borderColor: hasError ? "var(--color-secondary)" : "var(--color-accent)",
       },
     };
   },
 
   valueContainer: (base) => ({
     ...base,
-    height: "45px",
-    padding: "0",
+    padding: "2px 8px",
     display: "flex",
     alignItems: "center",
   }),
@@ -54,19 +65,19 @@ const customStyles = {
     ...base,
     margin: 0,
     padding: 0,
-    color: "var(--color-text)",
+    color: "var(--color-text-primary)",
   }),
 
   singleValue: (base) => ({
     ...base,
-    color: "var(--color-text)",
-    fontSize: "16px",
+    color: "var(--color-text-primary)",
+    fontSize: "15px",
   }),
 
   placeholder: (base) => ({
     ...base,
-    color: "var(--color-text)",
-    opacity: 0.55,
+    color: "var(--color-text-secondary)",
+    opacity: 0.7,
     fontSize: "14px",
   }),
 
@@ -76,7 +87,7 @@ const customStyles = {
 
   dropdownIndicator: (base) => ({
     ...base,
-    padding: "0 6px",
+    padding: "0 8px",
   }),
 
   menu: (base) => ({
@@ -84,7 +95,9 @@ const customStyles = {
     backgroundColor: "var(--color-card)",
     borderRadius: "12px",
     border: "1px solid var(--color-border)",
+    boxShadow: "var(--shadow-card)",
     marginTop: "6px",
+    overflow: "hidden",
     zIndex: 999999,
   }),
 
@@ -96,19 +109,23 @@ const customStyles = {
   option: (base, { isFocused, isSelected }) => ({
     ...base,
     fontSize: "14px",
-    fontFamily: "Jost, sans-serif",
+    fontFamily: "var(--font-body), Inter, sans-serif",
     padding: "10px 14px",
     borderRadius: "8px",
     cursor: "pointer",
-    transition: "all 0.2s ease",
+    transition: "all 0.15s ease",
 
     backgroundColor: isSelected
-      ? "rgba(var(--color-primary-rgb, 0,184,229), 0.4)"
+      ? "var(--color-accent)"
       : isFocused
-        ? "rgba(var(--color-muted-rgb), 0.95)"
+        ? "var(--color-bghover)"
         : "transparent",
 
-    color: isSelected ? "var(--color-heading)" : "var(--color-text)",
+    color: isSelected ? "#ffffff" : "var(--color-text-primary)",
+
+    "&:active": {
+      backgroundColor: isSelected ? "var(--color-accent)" : "var(--color-bghover)",
+    },
   }),
 };
 

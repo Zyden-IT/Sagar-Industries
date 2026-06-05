@@ -189,11 +189,8 @@ h5,
 h6 {
 
   font-family: var(--font-heading);
-
   text-transform: uppercase;
-
   letter-spacing: 1px;
-
   color: var(--color-text-primary);
 }
 
@@ -212,7 +209,6 @@ li {
 .stat-number,
 .price,
 .counter {
-
   font-family: "Space Grotesk", sans-serif;
 }
 
@@ -220,75 +216,101 @@ li {
 
 h1 {
 
-  font-size: clamp(2rem, 1.583rem + 1.85vw, 3.25rem);
+  font-size: 48px;
   /* 32px (mobile) → 52px (desktop) */
-
-  line-height: 1.1;
-
+  line-height: 1.4;
   font-weight: 700;
 }
 
 
 h2 {
 
-  font-size: clamp(1.75rem, 1.5rem + 1.11vw, 2.5rem);
+  font-size: 40px;
   /* 28px → 40px */
-
   line-height: 1.15;
-
   font-weight: 600;
 }
 
 
 h3 {
-
-  font-size: clamp(1.375rem, 1.208rem + 0.74vw, 1.875rem);
+  font-size: 32px;
   /* 22px → 30px */
-
   line-height: 1.2;
-
   font-weight: 600;
 }
 
 
 h4 {
-
-  font-size: clamp(1.1875rem, 1.083rem + 0.46vw, 1.5rem);
+  font-size: 26px;
   /* 19px → 24px */
-
   line-height: 1.3;
-
   font-weight: 600;
 }
 
 
 h5 {
-
-  font-size: clamp(1.0625rem, 1rem + 0.28vw, 1.25rem);
+  font-size: 20px;
   /* 17px → 20px */
-
   line-height: 1.35;
-
   font-weight: 600;
 }
 
 
 h6 {
-
-  font-size: clamp(0.9375rem, 0.896rem + 0.185vw, 1.0625rem);
+  font-size: 18px;
   /* 15px → 17px */
-
   line-height: 1.4;
-
   font-weight: 600;
 }
 
+p,
+a {
+  font-size: 18px;
+  line-height: 1.6;
+}
 
-/* Heading highlight — the accent word(s) inside any heading render as the
-   brand orange→red gradient instead of flat orange. Applies site-wide, so
-   every existing `<span class="text-accent">` inside an h1–h6 is upgraded
-   automatically. Use `.text-gradient` directly for the same effect elsewhere.
-   Kept unlayered so it wins over Tailwind's `.text-accent` color utility. */
+@media only screen and (max-width: 1024px) {
+  h1 {
+
+    font-size: 40px;
+    /* 32px (mobile) → 52px (desktop) */
+  }
+
+
+  h2 {
+
+    font-size: 34px;
+    /* 28px → 40px */
+  }
+
+
+  h3 {
+    font-size: 28px;
+    /* 22px → 30px */
+  }
+
+
+  h4 {
+    font-size: 24px;
+    /* 19px → 24px */
+  }
+
+
+  h5 {
+    font-size: 20px;
+    /* 17px → 20px */
+  }
+
+
+  h6 {
+    font-size: 18px;
+  }
+
+  p,
+  a {
+    font-size: 16px;
+  }
+}
 
 .text-gradient,
 :is(h1, h2, h3, h4, h5, h6) .text-accent {
@@ -309,13 +331,7 @@ h6 {
 
   p,
   a {
-    font-size: clamp(0.9375rem, 0.875rem + 0.2vw, 1rem);
-    /* 15px (mobile) → 16px (desktop) */
-
-    line-height: 1.6;
-
     font-weight: 400;
-
     color: var(--color-text-secondary);
   }
 }
@@ -708,6 +724,7 @@ img {
 }
 
 @layer utilities {
+
   /* Standard section vertical rhythm: 40px mobile · 60px tablet · 80px laptop+ */
   .section-py {
     @apply py-[40px] md:py-[60px] lg:py-[80px];

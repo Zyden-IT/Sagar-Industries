@@ -37,17 +37,17 @@ const Hex = ({ icon: Icon, label, sub, index }) => (
     whileInView={{ opacity: 1, scale: 1 }}
     viewport={{ once: true, amount: 0.4 }}
     transition={{ duration: 0.4, delay: index * 0.06, ease: "easeOut" }}
-    className="group relative h-[184px] w-[160px] transition-transform duration-300 hover:-translate-y-1.5"
+    className="group relative h-[160px] w-[140px] transition-[transform,filter] duration-300 [filter:drop-shadow(0_10px_18px_rgba(22,16,12,0.12))] hover:-translate-y-2 hover:[filter:drop-shadow(0_16px_26px_rgba(245,132,42,0.40))] sm:h-[184px] sm:w-[160px]"
   >
-    {/* border layer — visible hex border, fills orange on hover */}
-    <div className="absolute inset-0 bg-[var(--color-border)] transition-colors duration-300 group-hover:bg-[#ff6a0d]" style={HEX} />
+    {/* border layer — visible hex edge, fills with the brand gradient on hover */}
+    <div className="absolute inset-0 bg-[var(--color-border)] transition-all duration-300 group-hover:bg-[linear-gradient(135deg,#F5842A,#ED282E)]" style={HEX} />
     {/* face */}
     <div
-      className="absolute inset-[2px] flex flex-col items-center justify-center gap-2 bg-card px-4 text-center transition-colors duration-300 group-hover:bg-[#ff6a0d]"
+      className="absolute inset-[2px] flex flex-col items-center justify-center gap-2 bg-card px-4 text-center transition-all duration-300 group-hover:bg-[linear-gradient(135deg,#F5842A,#ED282E)]"
       style={HEX}
     >
-      <span className="grid h-11 w-11 place-items-center rounded-full bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-white/20 group-hover:text-white">
-        <Icon size={22} weight="bold" />
+      <span className="grid h-12 w-12 place-items-center rounded-full bg-accent/10 text-accent ring-1 ring-accent/20 transition-all duration-300 group-hover:bg-white/20 group-hover:text-white group-hover:ring-white/40">
+        <Icon size={23} weight="bold" />
       </span>
       <span className="text-[13px] font-bold leading-tight text-text-primary transition-colors duration-300 group-hover:text-white">
         {label}
@@ -83,8 +83,8 @@ export const HoneycombGrid = ({ items }) => {
         )}
       </div>
 
-      {/* Mobile hex grid */}
-      <div className="grid grid-cols-2 justify-items-center gap-3 sm:grid-cols-3 md:hidden">
+      {/* Mobile hex grid — centred wrap so any trailing cell stays balanced */}
+      <div className="flex flex-wrap justify-center gap-3 md:hidden">
         {items.map((it, i) => (
           <Hex key={it.label} {...it} index={i} />
         ))}
@@ -124,8 +124,15 @@ const IndustriesHoneycomb = ({
         </div>
 
         {/* Honeycomb */}
-        <div className="mt-14">
-          <HoneycombGrid items={industries} />
+        <div className="relative mt-14">
+          {/* soft accent glow behind the comb */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[640px] max-w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-[120px]"
+          />
+          <div className="relative">
+            <HoneycombGrid items={industries} />
+          </div>
         </div>
       </div>
     </section>

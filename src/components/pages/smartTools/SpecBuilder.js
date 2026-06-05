@@ -11,6 +11,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ClipboardText, DownloadSimple, WhatsappLogo } from "@phosphor-icons/react";
+import Selector from "@/components/common/dropdown/CustomDropdown";
 
 const WHATSAPP = "919978311122";
 
@@ -24,9 +25,6 @@ const TYPES = {
   "Paper Roll To Sheet Cutting Machine": ["Manual", "Semi Automatic", "Automatic", "High Speed", "Heavy Duty"],
   "Flexo Printing Machine": ["Single Colour", "Two Colour", "Three Colour", "Four Colour", "Multi Colour"],
 };
-
-const selectCls =
-  "w-full rounded-[10px] border-[1.5px] border-border bg-soft px-4 py-3 text-text-primary outline-none transition focus:border-accent";
 
 const Field = ({ label, children }) => (
   <div className="flex flex-col gap-2">
@@ -111,14 +109,20 @@ const SpecBuilder = () => {
             className="flex flex-col gap-5 rounded-[var(--radius-card)] border border-border bg-card p-6 shadow-card md:p-7"
           >
             <Field label="Machine">
-              <select className={selectCls} value={machine} onChange={(e) => onMachine(e.target.value)}>
-                {MACHINES.map((m) => <option key={m}>{m}</option>)}
-              </select>
+              <Selector
+                options={MACHINES.map((m) => ({ label: m, value: m }))}
+                value={{ label: machine, value: machine }}
+                placeholder="Select machine"
+                onChange={(selected) => onMachine(selected?.value || MACHINES[0])}
+              />
             </Field>
             <Field label="Type">
-              <select className={selectCls} value={type} onChange={(e) => setType(e.target.value)}>
-                {TYPES[machine].map((t) => <option key={t}>{t}</option>)}
-              </select>
+              <Selector
+                options={TYPES[machine].map((t) => ({ label: t, value: t }))}
+                value={{ label: type, value: type }}
+                placeholder="Select type"
+                onChange={(selected) => setType(selected?.value || TYPES[machine][0])}
+              />
             </Field>
             <Field label="Machine Size / Width">
               <input type="text" placeholder='e.g. 55"' value={size} onChange={(e) => setSize(e.target.value)} />
@@ -134,8 +138,8 @@ const SpecBuilder = () => {
             </button>
           </form>
 
-          {/* Summary */}
-          <div className="rounded-[var(--radius-card)] bg-primary p-6 text-white md:p-7" aria-live="polite">
+          {/* Summary — styled like the Smart Tools result panel */}
+          <div className="rounded-[var(--radius-card)] bg-card p-6 text-text-primary shadow-card md:p-7" aria-live="polite">
             <AnimatePresence mode="wait">
               {!built ? (
                 <motion.div
@@ -143,8 +147,8 @@ const SpecBuilder = () => {
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="flex h-full min-h-[300px] flex-col items-center justify-center gap-3 text-center"
                 >
-                  <ClipboardText size={40} weight="duotone" className="text-white/40" />
-                  <span className="max-w-xs text-sm text-white/60">
+                  <ClipboardText size={40} weight="duotone" className="text-text-secondary" />
+                  <span className="max-w-xs text-sm text-text-secondary">
                     Fill in your requirement and build the spec to download or share it.
                   </span>
                 </motion.div>
@@ -154,20 +158,20 @@ const SpecBuilder = () => {
                   initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                   className="flex flex-col gap-5"
                 >
-                  <div className="text-xs uppercase tracking-wide text-white/50">Your Spec Summary</div>
+                  <div className="text-xs uppercase tracking-wide text-text-secondary">Your Spec Summary</div>
                   <ul className="flex flex-col">
                     {built.rows.map(([label, value]) => (
-                      <li key={label} className="flex items-start justify-between gap-4 border-b border-white/10 py-3 last:border-0">
-                        <span className="shrink-0 text-sm text-white/60">{label}</span>
-                        <strong className="text-right font-semibold text-white">{value}</strong>
+                      <li key={label} className="flex items-start justify-between gap-4 border-b border-border py-3 last:border-0">
+                        <span className="shrink-0 text-sm text-text-secondary">{label}</span>
+                        <strong className="text-right font-semibold text-text-primary">{value}</strong>
                       </li>
                     ))}
                   </ul>
                   <div className="flex flex-wrap gap-3">
-                    <button onClick={download} className="btn inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-primary to-secondary px-5 py-3 text-xs font-bold uppercase tracking-wide text-white">
-                      <DownloadSimple size={16} weight="bold" /> Download .txt
+                    <button onClick={download} className="btn btn-orange">
+                      <DownloadSimple size={16} weight="bold" /> Download
                     </button>
-                    <a href={waHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-xs font-bold uppercase tracking-wide text-white! transition hover:bg-white hover:text-[#161000]">
+                    <a href={waHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-xs font-bold uppercase tracking-wide text-text-primary transition hover:border-accent hover:text-accent">
                       <WhatsappLogo size={16} weight="fill" /> Send on WhatsApp
                     </a>
                   </div>
