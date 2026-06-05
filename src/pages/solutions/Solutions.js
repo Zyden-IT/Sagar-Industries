@@ -29,7 +29,7 @@ function Solutions() {
       />
 
       {/* ── Industries ─────────────────────────────────────────────── */}
-      <IndustriesServed />
+      {/* <IndustriesServed /> */}
       <IndustryApplications />
 
       {/* ── Smart Tools ────────────────────────────────────────────── */}

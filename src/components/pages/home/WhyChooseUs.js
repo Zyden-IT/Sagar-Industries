@@ -71,9 +71,9 @@ const WhyChooseUs = () => {
     <section className="why-choose lg:py-[80px] md:py-[60px] py-[40px] bg-soft">
       <div className="container">
         {/* ── Header ─────────────────────────────────────────────── */}
-        <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
+        <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 text-center">
           <span className="eyebrow">Why Choose Us</span>
-          <h2 className="text-[24px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[30px]! lg:text-[36px]!">
+          <h2 className="text-[24px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[30px]! lg:whitespace-nowrap lg:text-[36px]!">
             A Machine Manufacturer You Can <span className="text-accent">Rely On</span>
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />

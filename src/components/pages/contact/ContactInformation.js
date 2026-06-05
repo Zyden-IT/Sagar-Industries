@@ -59,7 +59,7 @@ const ContactInformation = () => {
                   className="group relative block h-full transition-transform duration-300 hover:-translate-y-1.5 [filter:drop-shadow(0_12px_24px_rgba(0,0,0,0.08))]"
                 >
                   {/* border layer (follows the cut) */}
-                  <span className="absolute inset-0 bg-bg transition-colors duration-300 group-hover:bg-accent" style={CUT} />
+                  <span className="absolute inset-0 bg-bg" style={CUT} />
                   {/* face */}
                   <span className="absolute inset-[1.5px] bg-card" style={CUT} />
 
@@ -73,7 +73,7 @@ const ContactInformation = () => {
                     </span>
 
                     <div className="ml-1">
-                      <p className="text-[11px] font-bold uppercase tracking-[2px] text-text-secondary">{c.label}</p>
+                      <p className="eyebrow text-[13px]!">{c.label}</p>
                       <p className={`mt-1 font-bold leading-snug text-text-primary ${c.break ? "break-all text-[15px]" : "whitespace-pre-line"}`}>
                         {c.value}
                       </p>

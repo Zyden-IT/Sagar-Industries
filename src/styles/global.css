@@ -387,6 +387,25 @@ textarea::placeholder {
   opacity: 0.7;
 }
 
+/* react-select renders a real <input> for its search box. Stop the global
+   input styles (border / orange focus glow) from bleeding onto it, and remove
+   the orange focus glow from the control itself. !important beats the inline
+   emotion styles react-select applies. */
+.custom-input input,
+.custom-input input:focus,
+.cdd__input,
+.cdd__input-container input {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.cdd__control,
+.cdd__control--is-focused {
+  box-shadow: none !important;
+}
+
 
 /* Remove Number Input Arrows */
 
@@ -608,6 +627,18 @@ html.dark .btn-outline:hover {
 }
 
 
+.btn-lg {
+
+  padding: 15px 32px;
+
+  font-size: 15px;
+
+  letter-spacing: 1.5px;
+
+  gap: 10px;
+}
+
+
 /* Layout modifier */
 
 .btn-block {
@@ -704,7 +735,7 @@ img {
 
 
 .industries-marquee {
-  animation: industriesScroll 32s linear infinite;
+  animation: industriesScroll 70s linear infinite;
   width: max-content;
   will-change: transform;
 }

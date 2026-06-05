@@ -134,6 +134,19 @@ const Selector = (props) => {
     ? [{ label: "Select All", value: "*" }, ...props.options]
     : props.options;
 
+  // Let callers extend (not replace) the theme styles per slot — each override
+  // receives the already-themed base so defaults are preserved. Used e.g. by
+  // icon-prefixed fields that need extra left padding to clear the icon.
+  const styleOverrides = props.styles || {};
+  const mergedStyles = { ...customStyles };
+  Object.keys(styleOverrides).forEach((slot) => {
+    const themed = customStyles[slot];
+    const override = styleOverrides[slot];
+    mergedStyles[slot] = (base, state) =>
+      override(themed ? themed(base, state) : base, state);
+  });
+  mergedStyles.menuPortal = (base) => ({ ...base, zIndex: 999999 });
+
   return (
     <span
       className="d-inline-block custom-input"
@@ -148,10 +161,8 @@ const Selector = (props) => {
         options={optionsList}
         menuPortalTarget={typeof window !== "undefined" ? document.body : null}
         menuPosition="fixed"
-        styles={{
-          ...customStyles,
-          menuPortal: (base) => ({ ...base, zIndex: 999999 }),
-        }}
+        classNamePrefix="cdd"
+        styles={mergedStyles}
         onChange={(selected) => {
           if (
             selected !== null &&

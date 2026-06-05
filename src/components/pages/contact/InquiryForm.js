@@ -297,6 +297,23 @@ const InquiryForm = () => {
                       }
                       placeholder="Select Machine"
                       className={validState.error.machine ? "error" : ""}
+                      // clear the prefixed Stack icon (matches inputs' pl-11)
+                      // and drop the orange focus border / glow (keep red error)
+                      styles={{
+                        valueContainer: (base) => ({ ...base, paddingLeft: "34px" }),
+                        control: (base, state) => {
+                          const hasError = state.selectProps.className?.includes("error");
+                          const borderColor = hasError
+                            ? "var(--color-secondary)"
+                            : "var(--color-border)";
+                          return {
+                            ...base,
+                            borderColor,
+                            boxShadow: "none",
+                            "&:hover": { borderColor },
+                          };
+                        },
+                      }}
                       onChange={(selected) => {
                         const value = selected?.value || "";
 
@@ -343,12 +360,9 @@ const InquiryForm = () => {
                   <FieldError message={validState.error.message} />
                 </div>
 
-                <button
-                  type="submit"
-                  className="btn group relative mt-1 flex w-full items-center justify-center rounded-[14px] bg-gradient-to-br from-primary to-secondary py-4 text-sm font-bold uppercase tracking-[1.5px] text-white shadow-orange transition hover:shadow-[0_18px_40px_rgba(255,107,26,0.45)]"
-                >
+                <button type="submit" className="btn-orange btn btn-block btn-lg group mt-1">
                   Submit Inquiry
-                  <ArrowRight size={20} weight="bold" className="absolute right-6 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowRight size={18} weight="bold" className="transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
 
                 {/* Trust badges */}
