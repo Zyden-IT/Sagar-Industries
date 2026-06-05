@@ -13,6 +13,7 @@ function Products() {
       <PageSEO page="products" />
       <Breadcrumb
         title="Products"
+        description="Explore our complete range of paper cutting and flexo printing machines — engineered for durability, precision, and consistent high-volume production."
         trail={[{ label: "Home", href: "/" }, { label: "Products" }]}
       />
       <ProductCategories />

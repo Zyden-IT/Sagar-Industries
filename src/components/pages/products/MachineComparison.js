@@ -46,11 +46,9 @@ const toneStyle = (tone) => (tone === "green" ? { color: GREEN } : undefined);
 const checkColor = (tone, side) =>
   tone === "green" ? GREEN : tone === "accent" ? "#ff6a0d" : side === "manual" ? "#ff6a0d" : GREEN;
 
-const ValueCell = ({ data, side, highlight, borderB }) => (
+const ValueCell = ({ data, side, borderB }) => (
   <div
-    className={`flex items-center gap-2.5 px-5 py-4 text-sm ${borderB} ${
-      highlight ? "border-x border-border bg-card" : "bg-card"
-    }`}
+    className={`flex items-center gap-2.5 border-l border-border bg-card px-5 py-4 text-sm ${borderB}`}
   >
     <CheckCircle size={18} weight="fill" className="shrink-0" style={{ color: checkColor(data.tone, side) }} />
     <span className={`font-medium ${toneText(data.tone, side)}`} style={toneStyle(data.tone)}>
@@ -86,17 +84,18 @@ const MachineComparison = () => {
         >
           <div className="min-w-[680px] overflow-hidden rounded-2xl border border-border shadow-card">
             <div className="grid grid-cols-[1.2fr_1fr_1fr]">
-              {/* Header row */}
+              {/* Header row — Feature is the label column; the two machine
+                 columns are styled identically so neither reads as "preferred". */}
               <div className="flex items-center gap-2.5 bg-primary px-5 py-4 text-white">
                 <ListChecks size={20} weight="bold" className="text-accent" />
                 <span className="font-bold uppercase tracking-wide">Feature</span>
               </div>
-              <div className="flex items-center gap-2.5 bg-gradient-to-br from-primary to-secondary px-5 py-4 text-white">
-                <HandTap size={20} weight="bold" />
+              <div className="flex items-center gap-2.5 border-l border-white/15 bg-gradient-to-br from-primary to-secondary px-5 py-4 text-white">
+                <HandTap size={20} weight="bold" className="text-white" />
                 <span className="font-bold uppercase tracking-wide">Manual Machine</span>
               </div>
-              <div className="flex items-center gap-2.5 bg-primary px-5 py-4 text-white">
-                <ChartLineUp size={20} weight="bold" className="text-accent" />
+              <div className="flex items-center gap-2.5 border-l border-white/15 bg-gradient-to-br from-primary to-secondary px-5 py-4 text-white">
+                <ChartLineUp size={20} weight="bold" className="text-white" />
                 <span className="font-bold uppercase tracking-wide">Automatic Machine</span>
               </div>
 
@@ -112,15 +111,10 @@ const MachineComparison = () => {
                       </span>
                       <span className="text-sm font-bold text-text-primary">{r.feature}</span>
                     </div>
-                    {/* Manual cell (highlighted column) */}
-                    <ValueCell data={r.manual} side="manual" highlight borderB={borderB} />
+                    {/* Manual cell */}
+                    <ValueCell data={r.manual} side="manual" borderB={borderB} />
                     {/* Automatic cell */}
-                    <div className={`flex items-center gap-2.5 bg-card px-5 py-4 text-sm ${borderB}`}>
-                      <CheckCircle size={18} weight="fill" className="shrink-0" style={{ color: checkColor(r.auto.tone, "auto") }} />
-                      <span className={`font-medium ${toneText(r.auto.tone, "auto")}`} style={toneStyle(r.auto.tone)}>
-                        {r.auto.t}
-                      </span>
-                    </div>
+                    <ValueCell data={r.auto} side="auto" borderB={borderB} />
                   </div>
                 );
               })}

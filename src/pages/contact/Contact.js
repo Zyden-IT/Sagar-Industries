@@ -11,6 +11,7 @@ function Contact() {
       <PageSEO page="contact" />
       <Breadcrumb
         title="Contact Us"
+        description="Get in touch with Sagar Industries for product enquiries, custom machine configurations, or expert support — we're here to help your production run smoother."
         trail={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
       <ContactInformation />

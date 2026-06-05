@@ -24,6 +24,7 @@ function Solutions() {
       <PageSEO page="solutions" />
       <Breadcrumb
         title="Solutions"
+        description="Discover the industries we serve, plan your investment with our smart tools, and explore buying guides, FAQs, and resources — all in one place."
         trail={[{ label: "Home", href: "/" }, { label: "Solutions" }]}
       />
 

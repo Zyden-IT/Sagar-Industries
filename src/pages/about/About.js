@@ -19,6 +19,7 @@ function About() {
       <PageSEO page="about" />
       <Breadcrumb
         title="About Us"
+        description="Sagar Industries manufactures and exports precision paper roll-to-sheet cutting machines and flexo printing machines, engineered for the packaging, corrugated, and commercial printing industries."
         trail={[{ label: "Home", href: "/" }, { label: "About" }]}
       />
       <AboutIntro />

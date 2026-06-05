@@ -29,14 +29,14 @@ const ITEMS = [
     label: "Values",
     desc: "Integrity, innovation, quality and customer satisfaction drive everything we do.",
     side: "left",
-    pos: "left-0 bottom-[150px]",
+    pos: "left-0 bottom-[110px]",
   },
   {
     icon: Handshake,
     label: "Promise",
     desc: "Trusted machines. Stronger partnerships. Sustainable growth.",
     side: "right",
-    pos: "right-0 bottom-[150px]",
+    pos: "right-0 bottom-[110px]",
   },
 ];
 
@@ -227,7 +227,7 @@ const MissionVision = () => {
                 style={{ height: s, width: s }}
               />
             ))}
-            <Machine className="relative h-[140px] w-[230px] sm:h-[160px] sm:w-[260px]" />
+            <Machine className="relative h-[200px] w-[300px] sm:h-[200px] sm:w-[300px]" />
           </div>
 
           {/* connectors: machine → bottom cards */}
