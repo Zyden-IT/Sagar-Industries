@@ -103,12 +103,12 @@ const IndustryCaseStudies = () => {
             Case Studies
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-            Real Results, Industry by Industry
+            Real <span className="text-accent">Results</span>, Industry by Industry
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
-            See how businesses across sectors improved output, cut waste and
-            recovered their investment with our machines.
+            See how our machines lifted output, cut waste and paid back fast
+            across industries.
           </p>
         </div>
 

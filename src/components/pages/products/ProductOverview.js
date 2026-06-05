@@ -31,7 +31,7 @@ const ProductOverview = () => {
               Product Range
             </span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-              Sagar Industries Product Structure
+              Sagar Industries <span className="text-accent">Product Structure</span>
             </h2>
           </div>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />

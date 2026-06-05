@@ -78,13 +78,12 @@ const SmartToolsCalculator = () => {
           >
             <span className="eyebrow">Smart Tools</span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
-              Calculate Your Returns Before You Invest
+              Calculate Your <span className="text-accent">Machine ROI</span> Before You Invest
             </h2>
             <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
             <p className="max-w-md text-text-secondary">
-              Not sure which machine pays off fastest? Use our free smart tools to
-              estimate ROI, running cost, output and more — make a confident,
-              data-backed decision.
+              Use our free smart tools to estimate ROI, running cost and output,
+              then choose your machine with confidence.
             </p>
 
             {/* tool chips */}

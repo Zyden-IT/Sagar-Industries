@@ -70,12 +70,12 @@ const WhyChooseMachines = () => {
           <div className="flex flex-col items-center gap-3">
             <span className="eyebrow">Why Choose Us</span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
-              Why Choose Our Machines
+              Why Choose Our <span className="text-accent">Machines</span>
             </h2>
           </div>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
-            Built with precision. Trusted worldwide. Designed for your success.
+            Precision-engineered machines from a trusted manufacturer and exporter.
           </p>
         </div>
 

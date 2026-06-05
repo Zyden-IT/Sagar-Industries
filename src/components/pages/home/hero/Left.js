@@ -8,18 +8,16 @@ const Left = () => {
       {/* Eyebrow */}
       <span className="eyebrow">Manufacturer &amp; Exporter of Industrial Machinery</span>
 
-      {/* Headline — restrained, balanced scale */}
-      <h1 className="max-w-[560px] text-[24px]! font-semibold leading-[1.15] tracking-[-0.01em] sm:text-[28px]! lg:text-[26px]! xl:text-[32px]!">
-        <span className="block">Precision Machines For</span>
-        <span className="block text-accent">Paper, Packaging &amp;</span>
-        <span className="block">Printing Industries</span>
+      {/* Headline — keyword-led, restrained scale */}
+      <h1 className="max-w-[560px]">
+        <span className="block">Paper Cutting &amp;</span>
+        <span className="block text-accent">Flexo Printing Machines</span>
       </h1>
 
       {/* Description */}
       <p className="max-w-[480px] text-[15px] leading-[1.7] text-text-secondary sm:text-base lg:text-[17px]">
-        Sagar Industries manufactures Paper Roll To Sheet Cutting Machines and
-        Flexo Printing Machines — engineered for accuracy, efficiency and
-        industrial-grade performance.
+        Sagar Industries manufactures and exports precision paper cutting and
+        flexo printing machines built for accuracy and durability.
       </p>
 
       {/* CTAs */}

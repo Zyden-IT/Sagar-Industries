@@ -16,7 +16,7 @@ const WA =
 
 const ToolsCTA = () => {
   return (
-    <section className="section-py bg-soft">
+    <section className="section-pb bg-soft">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -29,7 +29,7 @@ const ToolsCTA = () => {
           <div className="pointer-events-none absolute -left-16 -top-16 h-64 w-64 rounded-full bg-accent/20 blur-3xl" />
           <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-5">
             <h2 className="text-[24px]! font-semibold leading-[1.2] text-white! sm:text-[30px]!">
-              Still Deciding? Talk to an Engineer
+              Still Deciding? Talk to an <span className="text-accent">Engineer</span>
             </h2>
             <p className="text-white/75">
               Send us your numbers or your spec and we&apos;ll recommend the right

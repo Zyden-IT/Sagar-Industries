@@ -35,7 +35,7 @@ const FaqPreview = () => {
           >
             <span className="eyebrow">FAQ</span>
             <h2 className="mt-3 text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-              Frequently Asked Questions
+              Frequently Asked <span className="text-accent">Questions</span>
             </h2>
             <p className="mt-3 max-w-sm text-text-secondary">
               Quick answers to the questions we hear most. Need something else?

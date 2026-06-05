@@ -119,12 +119,12 @@ const SelectionGuide = () => {
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
           <span className="eyebrow">Selection Guide</span>
           <h2 className="text-[24px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[30px]! lg:text-[36px]!">
-            Which Machine Is Right For You?
+            Which <span className="text-accent">Machine</span> Is Right For You?
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
-            Answer a few simple needs and we&apos;ll help you choose the perfect
-            solution for your business.
+            Tell us your needs and we&apos;ll match you with the right cutting
+            or flexo printing machine.
           </p>
         </div>
 

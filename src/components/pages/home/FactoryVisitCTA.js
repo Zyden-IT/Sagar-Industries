@@ -17,7 +17,7 @@ const PERKS = [
 
 const FactoryVisitCTA = () => {
   return (
-    <section className="section-py bg-soft">
+    <section className="section-pb bg-soft">
       <div className="container">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
           {/* ── Left — copy ───────────────────────────────────────── */}
@@ -30,7 +30,7 @@ const FactoryVisitCTA = () => {
           >
             <span className="eyebrow">Factory Visit</span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
-              See Our Machines in Action
+              See Our Machines in <span className="text-accent">Action</span>
             </h2>
             <p className="max-w-md text-text-secondary">
               The best way to choose a machine is to see it run. Visit our

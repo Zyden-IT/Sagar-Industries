@@ -26,11 +26,12 @@ const Downloads = () => {
             Downloads
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-            Brochures & Spec Sheets
+            Brochures & <span className="text-accent">Spec Sheets</span>
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
-            Grab our brochures and machine datasheets to share with your team.
+            Download our brochures and machine spec sheets to share with your
+            team.
           </p>
         </div>
 

@@ -24,11 +24,11 @@ const DownloadBrochure = () => {
             </span>
             <div>
               <h2 className="text-[22px]! font-semibold leading-[1.2] text-white! sm:text-[26px]!">
-                Download Our Product Brochure
+                Download Our <span className="text-accent">Product Brochure</span>
               </h2>
               <p className="mt-1 max-w-xl text-white/70">
-                Full machine specifications, sizes, capabilities and options — in
-                one PDF.
+                Full specifications, sizes and options for our machines — in one
+                PDF.
               </p>
             </div>
           </div>

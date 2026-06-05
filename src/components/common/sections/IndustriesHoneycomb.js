@@ -95,9 +95,9 @@ export const HoneycombGrid = ({ items }) => {
 
 const IndustriesHoneycomb = ({
   eyebrow = "Industries Served",
-  titleLead = "Powering Multiple Industries with",
-  titleAccent = "Precision & Performance",
-  subtitle = "Our paper cutting and flexo printing machines are trusted by businesses across a wide range of industries.",
+  titleLead = "Industries We Serve with",
+  titleAccent = "Precision Machines",
+  subtitle = "Our paper cutting and flexo printing machines are trusted across packaging, printing and paper converting.",
   industries = DEFAULT_INDUSTRIES,
   bg = "bg-soft",
 }) => {

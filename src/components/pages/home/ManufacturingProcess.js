@@ -54,11 +54,11 @@ const ManufacturingProcess = () => {
             How We Work
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-            From Idea to Installation
+            How We <span className="text-accent">Build Your Machine</span>
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
-            A proven, end-to-end process that turns your requirement into a
+            A proven, in-house process that turns your requirement into a
             reliable, production-ready machine.
           </p>
         </div>

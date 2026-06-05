@@ -6,7 +6,7 @@ const IndustriesServed = () => (
     eyebrow="At a Glance"
     titleLead="The Sectors We"
     titleAccent="Serve"
-    subtitle="A quick look at the industries our cutting and flexo printing machines power — scroll down for the applications and recommended machine for each."
+    subtitle="The industries our paper cutting and flexo printing machines power across India and beyond."
   />
 );
 

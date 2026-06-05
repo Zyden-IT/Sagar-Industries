@@ -9,7 +9,8 @@
   --color-primary: #F5842A;
   --color-secondary: #ED282E;
   --color-dark: #16100c;
-  --color-eyebrow: var(--color-secondary); /* section sub-heading / eyebrow text */
+  --color-eyebrow: var(--color-secondary);
+  /* section sub-heading / eyebrow text */
   --color-bglight: #fdf9f6;
   --color-bgdark: #f6f3ee;
   --color-bghover: #f7f2ee;
@@ -58,6 +59,10 @@
   --city-sketch: url('/city-sketch-light.svg');
 }
 
+.bg-grain {
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.04) 1px, transparent 0px);
+  background-size: 4px 4px;
+}
 
 /* Breadcrumb banner — uses per-instance --bc-img-light / --bc-img-dark set inline.
    Each <Breadcrumb> passes its own image pair via inline CSS vars; this rule
@@ -93,16 +98,22 @@ html.dark {
   /* Soft, elevated charcoal scale — deliberately NOT pure black. Lightness
      ramps so surfaces read with depth: page < inset(soft) is darker, cards
      sit lighter (elevated), mirroring the light theme's white-on-cream feel. */
-  --color-bglight: #1C1D24;                 /* page / default section surface  */
+  --color-bglight: #1C1D24;
+  /* page / default section surface  */
   --color-bg: var(--color-bglight);
-  --color-bgdark: #131419;                  /* darker alternating section strap */
-  --color-soft: var(--color-bgdark);        /* inset / soft surface, inputs    */
-  --color-bghover: #2A2C36;                 /* hover surface                   */
-  --color-card: #24262F;                    /* elevated cards — lightest tone  */
+  --color-bgdark: #131419;
+  /* darker alternating section strap */
+  --color-soft: var(--color-bgdark);
+  /* inset / soft surface, inputs    */
+  --color-bghover: #2A2C36;
+  /* hover surface                   */
+  --color-card: #24262F;
+  /* elevated cards — lightest tone  */
 
   --color-text-primary: #F3F4F6;
   --color-text-secondary: #9BA1AC;
-  --color-eyebrow: #FF6F61;                 /* lighter coral-red — legible on dark */
+  --color-eyebrow: #FF6F61;
+  /* lighter coral-red — legible on dark */
   --primary-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 
   --color-border: #2F313B;
@@ -209,67 +220,86 @@ li {
 
 h1 {
 
-  font-size: clamp(2.5rem, 1.5rem + 3vw, 4rem);
-  /* 40px → 64px */
+  font-size: clamp(2rem, 1.583rem + 1.85vw, 3.25rem);
+  /* 32px (mobile) → 52px (desktop) */
 
   line-height: 1.1;
 
-  font-weight: 400;
+  font-weight: 700;
 }
 
 
 h2 {
 
-  font-size: clamp(2rem, 1.25rem + 2.25vw, 3rem);
-  /* 32px → 48px */
+  font-size: clamp(1.75rem, 1.5rem + 1.11vw, 2.5rem);
+  /* 28px → 40px */
 
   line-height: 1.15;
 
-  font-weight: 400;
+  font-weight: 600;
 }
 
 
 h3 {
 
-  font-size: clamp(1.625rem, 1.125rem + 1.5vw, 2.25rem);
-  /* 26px → 36px */
+  font-size: clamp(1.375rem, 1.208rem + 0.74vw, 1.875rem);
+  /* 22px → 30px */
 
   line-height: 1.2;
 
-  font-weight: 400;
+  font-weight: 600;
 }
 
 
 h4 {
 
-  font-size: clamp(1.25rem, 1rem + 0.75vw, 1.75rem);
-  /* 20px → 28px */
+  font-size: clamp(1.1875rem, 1.083rem + 0.46vw, 1.5rem);
+  /* 19px → 24px */
 
   line-height: 1.3;
 
-  font-weight: 500;
+  font-weight: 600;
 }
 
 
 h5 {
 
-  font-size: clamp(1.125rem, 1rem + 0.4vw, 1.375rem);
-  /* 18px → 22px */
+  font-size: clamp(1.0625rem, 1rem + 0.28vw, 1.25rem);
+  /* 17px → 20px */
 
   line-height: 1.35;
 
-  font-weight: 500;
+  font-weight: 600;
 }
 
 
 h6 {
 
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  /* 16px → 18px */
+  font-size: clamp(0.9375rem, 0.896rem + 0.185vw, 1.0625rem);
+  /* 15px → 17px */
 
   line-height: 1.4;
 
   font-weight: 600;
+}
+
+
+/* Heading highlight — the accent word(s) inside any heading render as the
+   brand orange→red gradient instead of flat orange. Applies site-wide, so
+   every existing `<span class="text-accent">` inside an h1–h6 is upgraded
+   automatically. Use `.text-gradient` directly for the same effect elsewhere.
+   Kept unlayered so it wins over Tailwind's `.text-accent` color utility. */
+
+.text-gradient,
+:is(h1, h2, h3, h4, h5, h6) .text-accent {
+
+  background: var(--orange-gradient);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 
@@ -678,8 +708,15 @@ img {
 }
 
 @layer utilities {
+  /* Standard section vertical rhythm: 40px mobile · 60px tablet · 80px laptop+ */
   .section-py {
-    @apply py-[28px] md:py-[40px] lg:py-[56px];
+    @apply py-[40px] md:py-[60px] lg:py-[80px];
+  }
+
+  /* CTA bands sit flush to the previous section (no top padding) but keep the
+     same bottom rhythm: 40px mobile · 60px tablet · 80px laptop+ */
+  .section-pb {
+    @apply pt-0 pb-[40px] md:pb-[60px] lg:pb-[80px];
   }
 }
 

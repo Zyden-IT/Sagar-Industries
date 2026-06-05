@@ -2,9 +2,9 @@ const ApplicationMapping = () => {
   return (
     <section className="section-py">
       <div className="container">
-        <h2>Application Mapping</h2>
+        <h2>Match Machines to <span className="text-accent">Applications</span></h2>
         <p className="text-text-secondary mt-3">
-          Placeholder for the "Application Mapping" section. Build out its UI here.
+          See which cutting and flexo printing machine fits each production application.
         </p>
       </div>
     </section>

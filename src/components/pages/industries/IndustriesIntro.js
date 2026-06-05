@@ -109,8 +109,8 @@ const IndustriesIntro = () => {
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
-            From paper mills to packaging plants, our machines run across a wide
-            range of industries — built to each sector&apos;s needs.
+            Our paper cutting and flexo printing machines power industries from
+            paper mills to packaging plants.
           </p>
         </div>
 

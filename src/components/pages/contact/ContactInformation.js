@@ -36,8 +36,8 @@ const ContactInformation = () => {
             <span className="h-[6px] w-[6px] rounded-full bg-accent" />
           </span>
           <p className="mt-1 max-w-xl text-text-secondary">
-            Reach out for quotes, machine details, or expert guidance — we
-            usually reply within a few hours on business days.
+            Contact our team for machine quotes, specifications and expert
+            guidance — we usually reply within a few hours.
           </p>
         </div>
 

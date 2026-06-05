@@ -40,13 +40,12 @@ const MaintenanceTips = () => {
               Maintenance
             </span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-              Keep Your Machine in Top Shape
+              Keep Your Machine in <span className="text-accent">Top Shape</span>
             </h2>
             <span className="mx-auto h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary lg:mx-0" />
             <p className="text-text-secondary">
-              A few minutes of regular care prevents costly downtime and keeps
-              output consistent. Follow this simple routine and reach out to our
-              service team whenever you need a hand.
+              A little regular care prevents costly downtime and keeps output
+              consistent. Follow this routine to extend your machine&apos;s life.
             </p>
           </motion.div>
 

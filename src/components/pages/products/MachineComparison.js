@@ -67,12 +67,12 @@ const MachineComparison = () => {
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 text-center">
           <span className="eyebrow">Quick Comparison</span>
           <h2 className="text-[24px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[30px]! md:whitespace-nowrap lg:text-[34px]!">
-            Manual vs Automatic at a Glance
+            Manual vs Automatic <span className="text-accent">at a Glance</span>
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
-            Compare key features side-by-side to choose the right solution for
-            your production needs.
+            Compare manual and automatic paper cutting machines to pick the
+            right fit for your output.
           </p>
         </div>
 

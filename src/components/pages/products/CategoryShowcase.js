@@ -13,7 +13,7 @@ const CategoryShowcase = () => {
           <div className="flex flex-col items-center gap-3">
             <span className="eyebrow">Categories</span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-              Two Core Machine Categories
+              Cutting & <span className="text-accent">Flexo Printing Machines</span>
             </h2>
           </div>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />

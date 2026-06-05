@@ -157,7 +157,7 @@ const TechnologyShowcase = () => {
             Smart Tools
           </span>
           <h2 className="text-[22px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:whitespace-nowrap sm:text-[28px]! lg:text-[34px]!">
-            Technology That Powers Every Machine
+            Technology That Powers <span className="text-accent">Every Machine</span>
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">

@@ -171,12 +171,12 @@ const Testimonials = () => {
             Testimonials
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-            What Our Clients Say
+            What Our <span className="text-accent">Clients Say</span>
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
-            Trusted by leading businesses across industries for quality machines
-            and exceptional support.
+            Trusted across India and abroad for reliable machines and
+            dependable after-sales support.
           </p>
         </div>
 

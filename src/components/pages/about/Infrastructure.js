@@ -33,13 +33,13 @@ const Infrastructure = () => {
               Infrastructure
             </span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-              A Facility Built for Precision
+              A Facility Built for <span className="text-accent">Precision</span>
             </h2>
           </div>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="max-w-xl text-text-secondary">
-            Every stage of machine-building happens across dedicated, well-equipped
-            units within our manufacturing facility.
+            Every stage of building our paper cutting and flexo printing machines
+            happens across dedicated, well-equipped in-house units.
           </p>
         </div>
 

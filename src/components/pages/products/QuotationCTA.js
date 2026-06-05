@@ -10,7 +10,7 @@ const WA =
 const QuotationCTA = () => (
   <CtaBand
     heading="Request a Quotation"
-    subtitle="Tell us your requirement and we'll recommend the right machine with detailed specifications and pricing."
+    subtitle="Share your requirement and get the right cutting or flexo printing machine with specs and pricing."
     primary={{ label: "Get a Quote", href: Routes.contact.urlPath }}
     secondary={{ label: "WhatsApp Us", href: WA, external: true, icon: WhatsappLogo }}
     trust={["Custom Machine Solutions", "Fast Turnaround", "Best Price Guarantee"]}

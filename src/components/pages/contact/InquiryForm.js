@@ -175,9 +175,8 @@ const InquiryForm = () => {
               </div>
 
               <p className="max-w-md text-text-secondary">
-                Share a few details about your production and the machine
-                you&apos;re interested in. Our team will get back to you with the
-                right recommendation and a quotation.
+                Tell us about your production and the machine you need. We&apos;ll
+                reply with the right recommendation and a quotation.
               </p>
 
               {/* Stats strip */}

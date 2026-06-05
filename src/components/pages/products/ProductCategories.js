@@ -56,12 +56,12 @@ const ProductCategories = () => {
               Our Products
             </span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-              Two Core Machine Categories
+              Our Core <span className="text-accent">Machine Lines</span>
             </h2>
           </div>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
-            Built for the paper, packaging and printing industries
+            Paper roll to sheet cutting and flexo printing machines, built in-house.
           </p>
         </div>
 

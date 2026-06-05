@@ -79,16 +79,13 @@ const AboutIntro = () => {
             <span className="eyebrow">About Us</span>
 
             <h2 className="text-[26px]! font-bold leading-[1.15] tracking-[-0.01em] sm:text-[32px]! lg:text-[40px]!">
-              Trusted Manufacturer of Paper Cutting &amp; Flexo Printing Machines
+              Trusted Manufacturer of <span className="text-accent">Paper Cutting &amp; Flexo Printing</span> Machines
             </h2>
 
             <p className="max-w-xl text-text-secondary">
-              Sagar Industries specializes in manufacturing advanced Paper Reel
-              to Sheet Cutting Machines and Flexo Printing Machines engineered
-              for performance, reliability, and long-term value. From packaging
-              and corrugated board production to commercial printing and paper
-              processing, our machines help businesses streamline operations and
-              achieve superior results.
+              Sagar Industries manufactures and exports precision paper roll to
+              sheet cutting machines and flexo printing machines for packaging,
+              corrugated board, and commercial printing.
             </p>
             <p className="max-w-xl text-text-secondary">
               Built with precision and backed by industry expertise, every

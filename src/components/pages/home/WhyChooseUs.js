@@ -74,12 +74,12 @@ const WhyChooseUs = () => {
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
           <span className="eyebrow">Why Choose Us</span>
           <h2 className="text-[24px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[30px]! lg:text-[36px]!">
-            Engineering You Can <span className="text-accent">Rely On</span>
+            A Machine Manufacturer You Can <span className="text-accent">Rely On</span>
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
-            Decades of manufacturing expertise behind every machine we build for
-            the paper, packaging and printing industries.
+            In-house engineering and 20+ years of expertise behind every paper
+            cutting and flexo printing machine we build.
           </p>
         </div>
 

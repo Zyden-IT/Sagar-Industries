@@ -9,7 +9,7 @@ const WA =
 const ContactPageCTA = () => (
   <CtaBand
     heading="We're a Call or Message Away"
-    subtitle="Reach our team directly for quick answers, pricing and availability."
+    subtitle="Talk to our team for quick answers on machines, pricing and availability."
     primary={{ label: "Call +91 99783 11122", href: "tel:+919978311122", external: true, icon: Phone }}
     secondary={{ label: "WhatsApp Us", href: WA, external: true, icon: WhatsappLogo }}
     trust={["Replies Within 24 Hrs", "No-Obligation Quotes", "Expert Support"]}

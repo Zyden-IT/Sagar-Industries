@@ -45,9 +45,8 @@ const QualityProcess = () => {
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="max-w-2xl text-text-secondary">
-            Every machine undergoes a rigorous manufacturing and quality control
-            process to ensure reliable performance, precision, and long-term
-            durability.
+            Every machine follows a rigorous manufacturing and quality control
+            process for reliable performance and long-term durability.
           </p>
         </div>
 
@@ -64,11 +63,6 @@ const QualityProcess = () => {
             >
               {/* top accent line — grows on hover */}
               <span className="absolute inset-x-0 top-0 h-[3px] w-0 bg-gradient-to-br from-primary to-secondary transition-all duration-300 group-hover:w-full" />
-
-              {/* ghost step number */}
-              <span className="stats-font pointer-events-none absolute right-4 top-2 select-none text-5xl font-bold leading-none text-text-primary opacity-[0.05] transition-opacity duration-300 group-hover:opacity-10">
-                {String(i + 1).padStart(2, "0")}
-              </span>
 
               {/* icon badge */}
               <span className="grid h-14 w-14 place-items-center rounded-2xl bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-white">

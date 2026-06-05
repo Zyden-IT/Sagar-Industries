@@ -94,13 +94,12 @@ const ImpactStats = () => {
             <span className="eyebrow">Our Impact</span>
 
             <h2 className="text-[28px]! font-bold leading-[1.12] tracking-[-0.01em] text-white! sm:text-[34px]! lg:text-[42px]!">
-              Powering Modern Paper Processing &amp; Printing
+              Powering Modern <span className="text-accent">Paper Processing &amp; Printing</span>
             </h2>
 
             <p className="max-w-xl text-[15px] leading-[1.7] text-white/70">
-              Sagar Industries delivers precision-engineered machinery designed
-              to help manufacturers increase productivity, maintain quality, and
-              achieve reliable performance in every production cycle.
+              As a trusted machine manufacturer and exporter, we help producers
+              boost productivity and achieve reliable performance in every cycle.
             </p>
           </motion.div>
 

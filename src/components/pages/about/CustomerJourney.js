@@ -36,13 +36,13 @@ const ROAD =
 
 const CustomerJourney = () => {
   return (
-    <section className="section-py bg-bg">
+    <section className="section-py bg-bgdark">
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
           <span className="eyebrow">Customer Journey</span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
-            From Requirement to Installation
+            From Requirement to <span className="text-accent">Installation</span>
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
@@ -52,7 +52,7 @@ const CustomerJourney = () => {
         </div>
 
         {/* ── Desktop: winding road ──────────────────────────────── */}
-        <div className="relative mx-auto mt-14 hidden aspect-[1200/880] w-full max-w-[1100px] lg:block">
+        <div className="relative mt-8 hidden aspect-[1200/880] w-full lg:block">
           <svg viewBox="0 0 1200 880" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
             {/* asphalt */}
             <path d={ROAD} fill="none" stroke="#4B4B4B" strokeWidth="46" strokeLinecap="round" strokeLinejoin="round" />

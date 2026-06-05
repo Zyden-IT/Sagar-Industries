@@ -76,12 +76,12 @@ const FeaturedGuides = () => {
             Guides & Articles
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-            Featured Reads
+            Featured <span className="text-accent">Reads</span>
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
-            Practical, jargon-free guides on choosing, running and maintaining
-            paper, packaging and printing machinery.
+            Practical guides on choosing, running and maintaining paper cutting
+            and flexo printing machines.
           </p>
         </div>
 

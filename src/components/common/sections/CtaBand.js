@@ -35,7 +35,7 @@ const CtaButton = ({ data, variant }) => {
 };
 
 const CtaBand = ({ heading, subtitle, primary, secondary, trust = [], bg = "bg-bg" }) => (
-  <section className={`section-py ${bg}`}>
+  <section className={`section-pb ${bg}`}>
     <div className="container">
       <motion.div
         initial={{ opacity: 0, y: 28 }}

@@ -25,7 +25,7 @@ const WhatsappInquiry = () => {
             <WhatsappLogo size={36} weight="fill" />
           </span>
           <h2 className="text-[22px]! font-semibold leading-[1.2] sm:text-[26px]!">
-            Need a Quick Answer?
+            Need a <span className="text-accent">Quick Answer?</span>
           </h2>
           <p className="max-w-md text-text-secondary">
             Message our team on WhatsApp for instant help with machine details,

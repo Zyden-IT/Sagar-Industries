@@ -32,7 +32,6 @@ import { Routes } from "@/navigation/NavigationLib";
 // ── Stats (edit here) ────────────────────────────────────────────────
 const STATS = [
   { icon: Wrench, value: 500, suffix: "+", label: "Machines Installed" },
-  { icon: Medal, value: 20, suffix: "+", label: "Years Experience" },
   { icon: UsersThree, value: 100, suffix: "+", label: "Industrial Clients" },
   { icon: MapPin, text: "Pan India", label: "Support" },
 ];
@@ -165,16 +164,13 @@ const CompanyIntro = () => {
             <span className="eyebrow">About Us</span>
 
             <h2 className="text-[26px]! font-semibold leading-[1.15] tracking-[-0.01em] sm:text-[30px]! lg:text-[36px]!">
-              Engineering <span className="text-accent">Excellence</span> Behind Every{" "}
-              <span className="text-accent">Machine</span>
+              Paper &amp; Flexo <span className="text-accent">Machine Manufacturer</span>
             </h2>
 
             <p className="max-w-xl text-text-secondary">
-              Sagar Industries is a trusted manufacturer and exporter of Paper
-              Reel to Sheet Cutting Machines and Flexo Printing Machines. From
-              our facility in Ahmedabad, we combine precision engineering,
-              quality materials and decades of expertise to build machinery that
-              keeps paper, packaging and printing businesses running worldwide.
+              Sagar Industries is a trusted manufacturer and exporter of paper
+              roll to sheet cutting machines and flexo printing machines, built
+              with precision engineering and 20+ years of expertise.
             </p>
 
             {/* Stats — icon over aligned number heading */}
@@ -201,12 +197,8 @@ const CompanyIntro = () => {
 
             {/* CTAs */}
             <div className="mt-4 flex flex-wrap items-center gap-4">
-              <Link href={Routes.products.urlPath} className="btn-orange btn-lg">
-                Explore Our Machines
-                <ArrowRight size={16} weight="bold" />
-              </Link>
-              <Link href={Routes.contact.urlPath} className="btn-outline btn-lg">
-                Request a Quote
+              <Link href={Routes.products.urlPath} className="btn-orange btn">
+                ABOUT US
                 <ArrowRight size={16} weight="bold" />
               </Link>
             </div>

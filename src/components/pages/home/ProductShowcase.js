@@ -77,14 +77,14 @@ const ProductShowcase = () => {
           <motion.div {...fade(-30)} className="lg:col-span-8">
             <span className="eyebrow">The Machines</span>
             <h2 className="mt-4 max-w-[640px] text-[28px]! font-semibold leading-[1.12] tracking-[-0.01em] sm:text-[34px]! lg:text-[42px]!">
-              Two flagships. Built for the production lines of tomorrow.
+              Our Paper Cutting &amp; <span className="text-accent">Flexo Printing Machines</span>
             </h2>
           </motion.div>
 
           <motion.div {...fade(30)} className="lg:col-span-4 lg:pb-2 lg:text-right">
             <Link
               href={Routes.products.urlPath}
-              className="group inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-[13px] font-semibold text-text-primary shadow-card transition-all duration-300 hover:border-accent hover:text-accent"
+              className="btn-orange btn"
             >
               View all products
               <ArrowRight
@@ -209,24 +209,6 @@ const ProductShowcase = () => {
                     ))}
                   </div>
 
-                  {/* CTA */}
-                  <div className="mt-1 flex flex-wrap items-center gap-3">
-                    <Link href={Routes.products.urlPath} className="btn-orange">
-                      Discover the machine
-                      <ArrowRight size={16} weight="bold" />
-                    </Link>
-                    <Link
-                      href={Routes.contact.urlPath}
-                      className="group/q inline-flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-[1.5px] text-text-primary transition-colors hover:text-accent"
-                    >
-                      Request quote
-                      <ArrowUpRight
-                        size={15}
-                        weight="bold"
-                        className="transition-transform duration-300 group-hover/q:translate-x-0.5 group-hover/q:-translate-y-0.5"
-                      />
-                    </Link>
-                  </div>
                 </div>
               </motion.article>
             );

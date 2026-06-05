@@ -42,12 +42,12 @@ const MachineCatalog = () => {
           <div className="flex flex-col items-center gap-3">
             <span className="eyebrow">Our Machines</span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-              Explore Our Range
+              Explore Our <span className="text-accent">Machine Range</span>
             </h2>
           </div>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="max-w-xl text-text-secondary">
-            Choose a category, then click any machine to view its full details.
+            Browse our paper cutting and flexo printing machines by category.
           </p>
         </div>
 

@@ -8,9 +8,8 @@ import { Routes } from "@/navigation/NavigationLib";
 const Squares = ({ side }) => (
   <div
     aria-hidden
-    className={`pointer-events-none absolute top-1/2 hidden -translate-y-1/2 md:block ${
-      side === "left" ? "-left-[170px]" : "-right-[170px]"
-    }`}
+    className={`pointer-events-none absolute top-1/2 hidden -translate-y-1/2 md:block ${side === "left" ? "-left-[170px]" : "-right-[170px]"
+      }`}
   >
     <div className="relative h-[300px] w-[300px]">
       {[0, 1, 2, 3, 4, 5].map((i) => {
@@ -32,7 +31,7 @@ const Squares = ({ side }) => (
 // block. Defaults to `bg-bg`, which in dark mode is distinct from the footer.
 const ContactCTA = ({ bg = "bg-bg" }) => {
   return (
-    <section className={`section-py ${bg}`}>
+    <section className={`section-pb ${bg}`}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 28 }}

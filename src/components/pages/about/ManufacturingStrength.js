@@ -31,12 +31,11 @@ const ManufacturingStrength = () => {
             <div className="flex flex-col gap-3">
               <span className="eyebrow">Manufacturing Strength</span>
               <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-                Engineered End-to-End, In-House
+                Engineered End-to-End, <span className="text-accent">In-House</span>
               </h2>
               <p className="max-w-md text-text-secondary">
-                From raw steel to a finished, tested machine — we control every
-                stage of production to deliver consistent quality and reliable
-                performance.
+                From raw steel to a finished, tested machine, in-house
+                manufacturing lets us control every stage for consistent quality.
               </p>
             </div>
 

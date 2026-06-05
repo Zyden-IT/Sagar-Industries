@@ -126,8 +126,8 @@ const IndustryApplications = () => {
             <span className="h-[6px] w-[6px] rounded-full bg-accent" />
           </span>
           <p className="mt-1 text-text-secondary">
-            Find your industry and the typical applications we power — along with
-            the machine best suited to the job.
+            Find your industry, its key applications and the recommended cutting
+            or printing machine.
           </p>
         </div>
 

@@ -98,7 +98,7 @@ const MissionVision = () => {
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
           <span className="eyebrow">What Drives Us</span>
           <h2 className="text-[26px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[32px]! lg:text-[40px]!">
-            Our Driving Force
+            Our <span className="text-accent">Driving Force</span>
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
         </div>

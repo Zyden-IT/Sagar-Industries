@@ -40,13 +40,13 @@ const FactoryImages = () => {
               Factory Images
             </span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-              Inside Our Facility
+              Inside Our <span className="text-accent">Facility</span>
             </h2>
           </div>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="max-w-xl text-text-secondary">
-            A look inside the units where every Sagar Industries machine is built,
-            tested and shipped.
+            A look inside the units where our paper cutting and flexo printing
+            machines are built, tested and shipped.
           </p>
         </div>
 

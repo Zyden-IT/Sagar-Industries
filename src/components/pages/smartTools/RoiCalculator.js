@@ -73,7 +73,7 @@ const RoiCalculator = () => {
             ROI Calculator
           </span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
-            Estimate Your Return on Investment
+            Estimate Your <span className="text-accent">Return on Investment</span>
           </h2>
           <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">

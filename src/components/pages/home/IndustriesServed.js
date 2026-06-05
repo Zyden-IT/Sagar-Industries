@@ -7,40 +7,40 @@
 // orbit. Below lg the diagram collapses to a card grid. Theme colours.
 // ─────────────────────────────────────────────────────────────────────
 
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Buildings, Gear, Medal } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react";
+import { Routes } from "@/navigation/NavigationLib";
 
 // pos = card anchor (% of orbit box) · pt = matching SVG point (0–100)
 // image = product photo from /public (swap the i#.png if the product differs)
 const SECTORS = [
   { image: "/i1.png", title: "Packaging", desc: "Smart solutions for modern packaging needs.", pos: { top: "7%", left: "50%" }, pt: { x: 50, y: 9 } },
-  { image: "/i2.png", title: "Corrugated Board", desc: "Precision machines for stronger, smarter boards.", pos: { top: "37%", left: "88%" }, pt: { x: 88, y: 37 } },
-  { image: "/i3.png", title: "Industrial Materials", desc: "Versatile machines for a wide range of materials.", pos: { top: "88%", left: "76%" }, pt: { x: 76, y: 88 } },
-  { image: "/i4.png", title: "Paper Converting", desc: "Efficient converting solutions for paper excellence.", pos: { top: "88%", left: "24%" }, pt: { x: 24, y: 88 } },
-  { image: "/i5.png", title: "Commercial Printing", desc: "High-quality printing for every application.", pos: { top: "37%", left: "12%" }, pt: { x: 12, y: 37 } },
+  { image: "/i2.png", title: "Corrugated Board", desc: "Precision machines for stronger, smarter boards.", pos: { top: "37%", left: "84%" }, pt: { x: 84, y: 37 } },
+  { image: "/i3.png", title: "Industrial Materials", desc: "Versatile machines for a wide range of materials.", pos: { top: "88%", left: "74%" }, pt: { x: 74, y: 88 } },
+  { image: "/i4.png", title: "Paper Converting", desc: "Efficient converting solutions for paper excellence.", pos: { top: "88%", left: "26%" }, pt: { x: 26, y: 88 } },
+  { image: "/i5.png", title: "Commercial Printing", desc: "High-quality printing for every application.", pos: { top: "37%", left: "16%" }, pt: { x: 16, y: 37 } },
 ];
 
-const STATS = [
-  { icon: Buildings, value: "15+", label: "Industries Served" },
-  { icon: Gear, value: "500+", label: "Installations" },
-  { icon: Medal, value: "20+", label: "Years Experience" },
-];
-
-const SectorCard = ({ s }) => (
-  <div className="group flex w-full items-center gap-2.5 rounded-2xl border border-border bg-card p-2.5 shadow-card transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:shadow-orange">
-    <span className="relative grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-xl bg-soft">
-      <Image src={s.image} alt={s.title} fill sizes="48px" className="object-contain p-1.5 transition-transform duration-300 group-hover:scale-110" />
+// `large` = the roomier variant used in the mobile/tablet grid (more legible
+// text + icon). The compact default is used inside the desktop orbit cards.
+const SectorCard = ({ s, large = false }) => (
+  <div className="group flex h-full w-full items-center gap-3 rounded-2xl border border-border bg-card p-2.5 shadow-card transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:shadow-orange">
+    <span
+      className={`relative grid shrink-0 place-items-center overflow-hidden rounded-xl bg-soft ${large ? "h-14 w-14" : "h-12 w-12"
+        }`}
+    >
+      <Image src={s.image} alt={s.title} fill sizes={large ? "56px" : "48px"} className="object-contain p-1.5 transition-transform duration-300 group-hover:scale-110" />
     </span>
     <div className="min-w-0">
-      <div className="text-[8px] font-bold uppercase tracking-[1.5px] text-accent">Sector</div>
-      <h3 className="text-[12px]! font-bold! leading-tight text-text-primary">{s.title}</h3>
-      <p className="mt-0.5 line-clamp-2 text-[10px]! leading-snug text-text-secondary">{s.desc}</p>
+      <h3 className={`font-bold! leading-tight text-text-primary ${large ? "text-[14px]! sm:text-[15px]!" : "text-[12px]!"}`}>{s.title}</h3>
+      <p className={`mt-0.5 leading-snug text-text-secondary ${large ? "text-[12px]!" : "text-[10px]!"}`}>{s.desc}</p>
     </div>
   </div>
 );
 
-const CenterHub = ({ size = "h-32 w-32 sm:h-40 sm:w-40" }) => (
+const CenterHub = ({ size = "h-30 w-30 sm:h-30 sm:w-30" }) => (
   <div
     className={`relative grid ${size} place-items-center rounded-full p-[6px]`}
     style={{
@@ -49,16 +49,14 @@ const CenterHub = ({ size = "h-32 w-32 sm:h-40 sm:w-40" }) => (
     }}
   >
     <div className="grid h-full w-full place-items-center rounded-full bg-card px-4 text-center">
-      <div>
-        <div className="text-[10px] font-bold uppercase tracking-[2.5px] text-accent sm:text-[11px]">
-          Powering
-        </div>
-        <div className="mt-1.5 text-[16px] font-bold leading-[1.12] text-text-primary sm:text-[19px]">
-          Industries
-          <br />
-          Worldwide
-        </div>
-        <span className="mx-auto mt-2.5 block h-[2px] w-8 rounded-full bg-gradient-to-br from-primary to-secondary" />
+      <div className="flex flex-col items-center">
+        <Image
+          src="/SagarIndustries-logo.webp"
+          alt="Sagar Industries"
+          width={150}
+          height={42}
+          className="h-auto w-[85%] object-contain"
+        />
       </div>
     </div>
   </div>
@@ -68,7 +66,7 @@ const IndustriesServed = () => {
   return (
     <section className="section-py relative bg-bg">
       <div className="container">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-6">
           {/* ── Left — copy + stats ──────────────────────────────── */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -80,34 +78,22 @@ const IndustriesServed = () => {
             <span className="eyebrow">Industries Served</span>
 
             <h2 className="text-[26px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[32px]! lg:text-[40px]!">
-              Powering Industries with{" "}
-              <span className="text-accent">Precision &amp; Performance</span>
+              Machines for{" "}
+              <span className="text-accent">Every Industry</span>
             </h2>
 
-            <p className="max-w-xl text-text-secondary">
-              Our paper cutting and flexo printing machines are trusted by
-              businesses across a wide range of industries — engineered to keep
-              packaging, printing and paper-processing lines running with
-              accuracy and reliability.
+            <p className="max-w-md text-text-secondary">
+              Our paper cutting and flexo printing machines power packaging,
+              corrugated board, printing and paper converting lines.
             </p>
 
-            {/* stats strip */}
-            <div className="mt-2 flex flex-wrap gap-x-8 gap-y-4">
-              {STATS.map((s, i) => (
-                <div
-                  key={s.label}
-                  className={`flex items-center gap-3 ${i > 0 ? "sm:border-l sm:border-border sm:pl-8" : ""}`}
-                >
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent">
-                    <s.icon size={22} weight="bold" />
-                  </span>
-                  <div>
-                    <div className="stats-font text-xl font-bold text-accent lg:text-2xl">{s.value}</div>
-                    <div className="text-[12px] text-text-secondary">{s.label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <Link
+              href={Routes.solutions.urlPath}
+              className="btn-orange btn-lg mt-1 w-fit"
+            >
+              Explore Solutions
+              <ArrowRight size={18} weight="bold" />
+            </Link>
           </motion.div>
 
           {/* ── Right — orbital diagram (lg+) ────────────────────── */}
@@ -116,7 +102,7 @@ const IndustriesServed = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative mx-auto hidden aspect-square w-full max-w-[560px] lg:block"
+            className="relative mx-auto hidden aspect-square w-full max-w-[600px] lg:block"
           >
             {/* connector spokes + dotted orbit */}
             <svg
@@ -127,7 +113,7 @@ const IndustriesServed = () => {
               <circle
                 cx="50"
                 cy="50"
-                r="44"
+                r="40"
                 fill="none"
                 stroke="var(--color-border)"
                 strokeWidth="0.4"
@@ -142,7 +128,7 @@ const IndustriesServed = () => {
                 const len = Math.hypot(dx, dy) || 1;
                 const ux = dx / len;
                 const uy = dy / len;
-                const hw = 16.5; // card half-width
+                const hw = 15.2; // card half-width (≈170px in the 560px box)
                 const hh = 6.2; // card half-height
                 const t =
                   Math.min(hw / (Math.abs(ux) || 1e-6), hh / (Math.abs(uy) || 1e-6)) + 3.4;
@@ -176,7 +162,7 @@ const IndustriesServed = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.4, delay: 0.2 + i * 0.1, ease: "easeOut" }}
                 style={{ top: s.pos.top, left: s.pos.left }}
-                className="absolute w-[185px] -translate-x-1/2 -translate-y-1/2"
+                className="absolute w-[200px] -translate-x-1/2 -translate-y-1/2"
               >
                 <SectorCard s={s} />
               </motion.div>
@@ -190,10 +176,8 @@ const IndustriesServed = () => {
 
           {/* ── Right — collapsed grid (below lg) ────────────────── */}
           <div className="lg:hidden">
-            <div className="mb-8 flex justify-center">
-              <CenterHub size="h-28 w-28" />
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
+            {/* flex-wrap keeps the trailing card centred instead of orphaned */}
+            <div className="flex flex-wrap justify-center gap-3.5 sm:gap-4">
               {SECTORS.map((s) => (
                 <motion.div
                   key={s.title}
@@ -201,8 +185,9 @@ const IndustriesServed = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="w-full sm:w-[calc(50%-0.5rem)]"
                 >
-                  <SectorCard s={s} />
+                  <SectorCard s={s} large />
                 </motion.div>
               ))}
             </div>
