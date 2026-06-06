@@ -19,7 +19,7 @@ const Breadcrumb = ({
       ></div>
       <div className="bg-grain absolute inset-0 opacity-60 pointer-events-none"></div>
 
-      <div className="container relative py-20">
+      <div className="container relative py-12 sm:py-16 lg:py-20">
         <div className="max-w-4xl text-left">
           {/* Breadcrumb */}
           {trail.length > 0 && (

@@ -114,7 +114,7 @@ const IndustriesServed = () => (
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
             The Sectors We <span className="text-accent">Serve</span>
           </h2>
-          <p className="text-text-secondary lg:whitespace-nowrap">
+          <p className="text-text-secondary xl:whitespace-nowrap">
             The industries our paper cutting and flexo printing machines power
             across India and beyond.
           </p>

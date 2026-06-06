@@ -41,7 +41,7 @@ const KnowledgeFaq = () => {
         </div>
 
         {/* Split explorer */}
-        <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-[1fr_1.25fr] lg:gap-8">
+        <div className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-5 sm:mt-10 lg:mt-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-8">
           {/* Question list */}
           <div className="flex flex-col gap-2.5">
             {FAQS.map((it, i) => {
@@ -50,15 +50,15 @@ const KnowledgeFaq = () => {
                 <button
                   key={it.q}
                   onClick={() => setActive(i)}
-                  className={`btn group flex cursor-pointer items-center gap-4 rounded-2xl border px-4 py-4 text-left transition duration-300 ${on
+                  className={`btn group flex cursor-pointer items-center gap-3 whitespace-normal rounded-2xl border px-3.5 py-3.5 text-left transition duration-300 sm:gap-4 sm:px-4 sm:py-4 ${on
                     ? "border-transparent bg-gradient-to-br from-primary to-secondary text-white shadow-orange"
                     : "border-border bg-card text-text-primary hover:border-accent"
                     }`}
                 >
-                  <span className={`stats-font text-lg font-bold ${on ? "text-white/90" : "text-accent"}`}>
+                  <span className={`stats-font text-base font-bold sm:text-lg ${on ? "text-white/90" : "text-accent"}`}>
                     {pad(i + 1)}
                   </span>
-                  <span className="flex-1 text-sm font-semibold leading-snug">{it.q}</span>
+                  <span className="min-w-0 flex-1 whitespace-normal break-words text-[13px] font-semibold leading-snug sm:text-sm">{it.q}</span>
                   <CaretRight
                     size={16}
                     weight="bold"
@@ -71,7 +71,7 @@ const KnowledgeFaq = () => {
           </div>
 
           {/* Answer panel */}
-          <div className="relative flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-card p-7 shadow-card md:p-9">
+          <div className="relative flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-card p-5 shadow-card sm:p-7 md:p-9">
             {/* watermark number */}
             {/* <span className="stats-font pointer-events-none absolute right-5 top-5 select-none text-[44px] font-bold leading-none text-accent/15">
               {pad(active + 1)}
@@ -89,15 +89,15 @@ const KnowledgeFaq = () => {
                   <span className="eyebrow">
                     Answer {pad(active + 1)}
                   </span>
-                  <h3 className="mt-2 text-[19px]! font-bold! leading-snug sm:text-[22px]!">{f.q}</h3>
+                  <h3 className="mt-2 text-[17px]! font-bold! leading-snug sm:text-[22px]!">{f.q}</h3>
                   <span className="mt-3 block h-[3px] w-10 rounded-full bg-gradient-to-br from-primary to-secondary" />
-                  <p className="mt-4 leading-relaxed text-text-secondary">{f.a}</p>
+                  <p className="mt-4 text-sm leading-relaxed text-text-secondary sm:text-base">{f.a}</p>
                 </motion.div>
               </AnimatePresence>
             </div>
 
             {/* contact CTA */}
-            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
+            <div className="mt-7 flex flex-col gap-4 border-t border-border pt-6 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
               <div className="flex items-center gap-3">
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent/10 text-accent">
                   <ChatCircleDots size={22} weight="bold" />
@@ -107,7 +107,7 @@ const KnowledgeFaq = () => {
                   <div className="text-sm text-text-secondary">Talk to our team for details and quotes.</div>
                 </div>
               </div>
-              <Link href={Routes.contact.urlPath} className="btn-orange shrink-0">
+              <Link href={Routes.contact.urlPath} className="btn-orange w-full justify-center sm:w-auto sm:shrink-0">
                 Contact Us <ArrowRight size={16} weight="bold" />
               </Link>
             </div>

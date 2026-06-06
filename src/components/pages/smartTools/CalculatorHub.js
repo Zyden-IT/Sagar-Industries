@@ -602,7 +602,7 @@ const CalculatorHub = () => {
         </div>
 
         {/* Tabs */}
-        <div className="hide-scrollbar mt-10 flex gap-2 overflow-x-auto pb-2">
+        <div className="hide-scrollbar mt-10 flex gap-2 overflow-x-auto pb-2 md:flex-wrap md:justify-center md:overflow-visible">
           {TABS.map((t) => {
             const active = t.id === tab;
             return (

@@ -45,11 +45,11 @@ const ContactCTA = ({ bg = "bg-bg" }) => {
           <Squares side="right" />
 
           <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-4">
-            <h2 className="text-[26px]! font-bold leading-[1.15] tracking-[-0.01em] text-white! sm:text-[32px]! lg:whitespace-nowrap lg:text-[40px]!">
+            <h2 className="text-[26px]! font-bold leading-[1.15] tracking-[-0.01em] text-white! sm:text-[32px]! lg:text-[40px]! xl:whitespace-nowrap">
               Ready to Upgrade Your Production?
             </h2>
 
-            <p className="text-[15px] text-white/85 lg:whitespace-nowrap">
+            <p className="text-[15px] text-white/85 xl:whitespace-nowrap">
               Get expert guidance and a customized quotation for your machinery
               needs.
             </p>

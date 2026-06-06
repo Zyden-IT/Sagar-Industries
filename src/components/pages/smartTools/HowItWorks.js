@@ -43,7 +43,7 @@ const HowItWorks = () => (
           />
         ))}
 
-        <div className="grid gap-10 md:grid-cols-4 md:gap-6">
+        <div className="grid gap-10 sm:grid-cols-2 sm:gap-8 md:grid-cols-4 md:gap-6">
           {STEPS.map((s, i) => (
             <motion.div
               key={s.title}

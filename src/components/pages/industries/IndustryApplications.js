@@ -156,7 +156,7 @@ const IndustryApplications = () => {
           <h2 className="">
             Where Our <span className="text-accent">Machines</span> Are Used
           </h2>
-          <p className="mt-1 text-text-secondary lg:whitespace-nowrap">
+          <p className="mt-1 text-text-secondary xl:whitespace-nowrap">
             Find your industry, its key applications and the recommended cutting
             or printing machine.
           </p>
@@ -250,10 +250,21 @@ const IndustryApplications = () => {
           })}
         </div>
 
-        {/* ── < XL : responsive grid fallback ──────────────────────────────
-            < md  : 1 column (phones)
-            md–xl : 2 columns (tablets / small laptops)               */}
-        <div className="mt-10 grid gap-x-8 gap-y-10 md:grid-cols-2 md:gap-y-12 xl:hidden">
+        {/* ── < XL : responsive fallback ───────────────────────────────────
+            One clean, centred column for phones, tablets AND laptops — the
+            circle sits beside the text (stacked on the smallest phones) with
+            full width per card, so nothing gets squeezed. The connected
+            zig-zag vine takes over at xl. No cramped 2-up laptop stage.   */}
+        <div className="relative mx-auto mt-10 grid max-w-3xl gap-y-10 sm:gap-y-12 xl:hidden">
+          {/* Vertical connector spine — the < xl echo of the desktop vine. It
+              runs down the centre of the circle lane (circle = 104px → centre
+              at 52px) and is hidden behind each opaque photo circle, so it
+              reads as a line linking one circle to the next. Hidden on the
+              smallest phones, where the circle stacks above the text (no lane). */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute bottom-0 left-[52px] top-[52px] z-0 hidden w-[2.5px] -translate-x-1/2 rounded-full bg-gradient-to-b from-primary via-secondary to-transparent sm:block"
+          />
           {MAP.map((m, i) => (
             <motion.div
               key={m.industry}
@@ -261,7 +272,7 @@ const IndustryApplications = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45, delay: (i % 2) * 0.06, ease: "easeOut" }}
-              className="flex flex-col items-start gap-4 sm:flex-row"
+              className="relative z-10 flex flex-col items-start gap-4 sm:flex-row"
             >
               <motion.div
                 initial={{ scale: 0.6, opacity: 0 }}

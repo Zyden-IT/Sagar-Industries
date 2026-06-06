@@ -234,7 +234,7 @@ const RoiCost = () => {
             <div className="text-xs font-bold uppercase tracking-wide text-text-secondary">Cost Comparison</div>
 
             {/* Manual vs Automatic */}
-            <div className="relative mt-4 flex gap-3">
+            <div className="relative mt-4 flex flex-col gap-3 sm:flex-row">
               <CostCard icon={User} title="Manual" cost={money(manualMonth)} recommended={!autoRecommended} />
               <CostCard icon={Robot} title="Automatic" cost={money(autoMonth)} recommended={autoRecommended} />
               <span className="absolute left-1/2 top-1/2 z-10 grid h-9 w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-border bg-primary text-[11px] font-bold text-white">
