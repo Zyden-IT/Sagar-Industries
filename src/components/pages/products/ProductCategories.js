@@ -76,7 +76,7 @@ const ProductCategories = () => {
               className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-card shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-orange"
             >
               {/* Image */}
-              <div className="relative h-56 overflow-hidden bg-soft">
+              <div className="relative h-70 overflow-hidden bg-soft">
                 <Image
                   src={p.image}
                   alt={p.title}

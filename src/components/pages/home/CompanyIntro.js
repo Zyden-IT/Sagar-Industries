@@ -38,10 +38,10 @@ const STATS = [
 
 // ── Collage images ───────────────────────────────────────────────────
 const COLLAGE = [
-  { src: "/gallery1.jpg", span: "col-span-3" },
-  { src: "/gallery2.jpg", span: "col-span-2" },
+  { src: "/collage1.jpg", span: "col-span-3" },
+  { src: "/machine-use-1.png", span: "col-span-2" },
   { src: "/gallery3.jpg", span: "col-span-2" },
-  { src: "/gallery4.jpg", span: "col-span-3" },
+  { src: "/machine-use-4.png", span: "col-span-3" },
 ];
 
 // Count-up number that animates when scrolled into view

@@ -113,7 +113,7 @@ const Guide = ({ g, index }) => (
 
 const SelectionGuide = () => {
   return (
-    <section className="section-py bg-soft">
+    <section className="section-py !pt-6 bg-soft">
       <div className="container">
         {/* Header */}
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 text-center">

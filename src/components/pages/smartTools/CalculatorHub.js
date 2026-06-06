@@ -609,9 +609,9 @@ const CalculatorHub = () => {
               <button
                 key={t.id}
                 onClick={() => setTab(t.id)}
-                className={`btn inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition ${active
-                    ? "bg-gradient-to-br from-primary to-secondary text-white shadow-orange"
-                    : "border border-border bg-card text-text-primary hover:border-accent"
+                className={`btn inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-2 !text-sm font-semibold transition ${active
+                  ? "bg-gradient-to-br from-primary to-secondary text-white shadow-orange"
+                  : "border border-border bg-card text-text-primary hover:border-accent"
                   }`}
               >
                 <t.icon size={18} weight="bold" />
