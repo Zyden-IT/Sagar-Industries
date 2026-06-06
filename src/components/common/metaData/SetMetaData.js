@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { SITE } from '@/utils/seo'
+// theme-color now follows the brand token from SITE.themeColor
 
 /**
  * Centralised <Head> wrapper.
@@ -72,7 +73,7 @@ export default function SetMetaData({
             <meta name='twitter:image' content={image} />
 
             {/* Theme + brand */}
-            <meta name='theme-color' content='#00B8E5' />
+            <meta name='theme-color' content={SITE.themeColor} />
             <meta name='application-name' content={SITE.shortName} />
 
             {/* JSON-LD */}

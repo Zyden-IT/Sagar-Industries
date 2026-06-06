@@ -5,7 +5,7 @@
 // Used by <PageSEO page="<key>" /> — see src/components/common/metaData/PageSEO.js
 //
 // Schema for each entry (all fields optional except `title` and `description`):
-//   title         string  — page title; rendered as `Title | Bhavyam Metals`
+//   title         string  — page title; rendered as `Title | Sagar Industries`
 //   description   string  — meta description (~150 chars)
 //   ogImage       string  — absolute URL or path under /public; falls back to SITE.defaultOgImage
 //   ogType        string  — "website" | "article" (default "website")
@@ -24,19 +24,19 @@ import {
 export const PAGE_SEO = {
     // ─── Home ────────────────────────────────────────────────────────
     home: {
-        title: 'TMT Bars & Structural Steel Supplier',
+        title: 'Paper Cutting & Flexo Printing Machine Manufacturer',
         description:
-            'Bhavyam Metals is a trusted steel supplier in Gujarat, India. We offer TMT bars, structural steel, MS pipes, and industrial steel for building and industry projects. Get Quote within 2 hours.',
-        ogImage: '/og/home.jpg',
+            'Sagar Industries manufactures and exports precision paper roll-to-sheet cutting machines and flexo printing machines — cutting length up to 9300 mm, 3–5 HP and up to 4 colours. Built to spec for paper, packaging and printing.',
+        ogImage: '/banner.png',
         jsonLd: [organizationSchema(), websiteSchema(), localBusinessSchema()],
     },
 
     // ─── About ───────────────────────────────────────────────────────
     about: {
-        title: 'About Us — Trusted Steel Supplier',
+        title: 'About Us — Machine Manufacturer & Exporter',
         description:
-            'Family-owned steel supplier in Ahmedabad with over 15 years of experience. We deliver quality steel across India to builders, contractors, and large-scale projects.',
-        ogImage: '/og/about.jpg',
+            'Learn about Sagar Industries — an Ahmedabad-based manufacturer and exporter of paper cutting and flexo printing machines, engineered for accuracy, durability and the packaging, corrugated and printing industries.',
+        ogImage: '/company-intro.png',
         jsonLd: [
             organizationSchema(),
             breadcrumbSchema([
@@ -48,10 +48,10 @@ export const PAGE_SEO = {
 
     // ─── Products ────────────────────────────────────────────────────
     products: {
-        title: 'Steel Products — TMT, Beams, Pipes & More',
+        title: 'Our Machines — Paper Cutting & Flexo Printing',
         description:
-            'Explore our complete steel range. TMT bars from leading brands, structural beams, MS plates, MS / GI / SS pipes, fasteners, wire rods, and steel coils for every project size.',
-        ogImage: '/og/products.jpg',
+            'Explore our machine range: paper roll-to-sheet cutting machines (manual & automatic) and flexo printing machines up to 4 colours, with cutting lengths up to 9300 mm and custom sizes built to spec.',
+        ogImage: '/product1.png',
         jsonLd: [
             breadcrumbSchema([
                 { name: 'Home', path: '/' },
@@ -65,7 +65,7 @@ export const PAGE_SEO = {
         title: 'Solutions — Industries, Smart Tools & Knowledge',
         description:
             'Explore the industries Sagar Industries serves, use our free smart calculators to plan your investment, and browse buying guides, FAQs and resources — all in one place.',
-        ogImage: '/og/industries.jpg',
+        ogImage: '/banner1.png',
         jsonLd: [
             breadcrumbSchema([
                 { name: 'Home', path: '/' },
@@ -76,10 +76,10 @@ export const PAGE_SEO = {
 
     // ─── Contact ─────────────────────────────────────────────────────
     contact: {
-        title: 'Contact Us — Get a Steel Quote',
+        title: 'Contact Us — Request a Machine Quote',
         description:
-            'Get in touch with Bhavyam Metals for steel quotes, orders, or expert advice. Office in Ahmedabad. Call, WhatsApp, or send a quote request — we reply within 2 hours on business days.',
-        ogImage: '/og/contact.jpg',
+            'Get in touch with Sagar Industries for machine quotes, custom configurations and expert support. Visit our facility in Gota, Ahmedabad, or call, email or send an enquiry — we usually reply within a few hours.',
+        ogImage: '/banner2.png',
         jsonLd: [
             localBusinessSchema(),
             breadcrumbSchema([
@@ -93,7 +93,7 @@ export const PAGE_SEO = {
     notFound: {
         title: 'Page Not Found',
         description:
-            'This page does not exist. Visit our steel products, free calculators, or contact us for help.',
+            'This page does not exist. Browse our paper cutting and flexo printing machines, or contact Sagar Industries for help.',
         noindex: true,
     },
 }

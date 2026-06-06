@@ -1,36 +1,32 @@
 // ─────────────────────────────────────────────────────────────────────
-// Site-wide SEO config — Bhavyam Metals
+// Site-wide SEO config — Sagar Industries
 // Update this file once per environment / brand change.
 // Per-page meta lives in `src/config/pageSeo.js`.
 // ─────────────────────────────────────────────────────────────────────
 
 export const SITE = {
-    name: 'Bhavyam Metals',
-    shortName: 'Bhavyam',
-    url: 'https://www.bhavyammetals.com', // ← update to production domain before deploy
+    name: 'Sagar Industries',
+    shortName: 'Sagar Industries',
+    url: 'https://www.sagarindustries.in', // ← update to production domain before deploy
     defaultTitle:
-        'Bhavyam Metals — Premium TMT Bars, Structural Steel & Industrial Steel Supplier',
+        'Sagar Industries — Paper Cutting & Flexo Printing Machine Manufacturer',
     defaultDescription:
-        'Trusted steel supplier in Gujarat, India. Premium TMT bars (Fe 415, Fe 500, Fe 550, Fe 550D, CRS), structural steel, MS pipes & industrial steel for construction, infrastructure & manufacturing projects.',
-    defaultOgImage: '/og/bhavyam-default.jpg',
+        'Sagar Industries manufactures and exports precision paper roll-to-sheet cutting machines and flexo printing machines (up to 9300 mm, 3–5 HP, up to 4 colours) for the paper, packaging, corrugated and printing industries. Based in Ahmedabad, Gujarat, India.',
+    defaultOgImage: '/banner.png',
     locale: 'en_IN',
-    email: 'info@bhavyammetals.com',
-    phone: '+919999999999',
+    email: 'sagarindustries310@gmail.com',
+    phone: '+919978311122',
     address: {
-        street: 'Bhavyam Metals, Bhuyangdev',
+        street: '301/2, V.K. Estate, Nr. Brahmani Foundry, Gota',
         locality: 'Ahmedabad',
         region: 'Gujarat',
-        postalCode: '380061',
+        postalCode: '382481',
         country: 'IN',
     },
     founded: '2010',
-    social: {
-        linkedin: 'https://www.linkedin.com/company/bhavyam-metals',
-        facebook: 'https://www.facebook.com/bhavyammetals',
-        instagram: 'https://www.instagram.com/bhavyammetals',
-        youtube: 'https://www.youtube.com/@bhavyammetals',
-    },
-    themeColor: '#ff6a0d',
+    // Add official profile URLs here when available — they feed schema `sameAs`.
+    social: {},
+    themeColor: '#F5842A',
 }
 
 // ─── JSON-LD schema helpers ──────────────────────────────────────────
@@ -41,7 +37,7 @@ export const organizationSchema = () => ({
     '@id': `${SITE.url}/#organization`,
     name: SITE.name,
     url: SITE.url,
-    logo: `${SITE.url}/Zyden-logo.png`,
+    logo: `${SITE.url}/SagarIndustries-logo.png`,
     description: SITE.defaultDescription,
     email: SITE.email,
     telephone: SITE.phone,
@@ -54,7 +50,9 @@ export const organizationSchema = () => ({
         postalCode: SITE.address.postalCode,
         addressCountry: SITE.address.country,
     },
-    sameAs: Object.values(SITE.social),
+    ...(Object.values(SITE.social).length
+        ? { sameAs: Object.values(SITE.social) }
+        : {}),
 })
 
 export const websiteSchema = () => ({
@@ -74,10 +72,10 @@ export const websiteSchema = () => ({
 
 export const localBusinessSchema = () => ({
     '@context': 'https://schema.org',
-    '@type': 'Store',
+    '@type': 'LocalBusiness',
     '@id': `${SITE.url}/#local`,
     name: SITE.name,
-    image: `${SITE.url}/Zyden-logo.png`,
+    image: `${SITE.url}${SITE.defaultOgImage}`,
     url: SITE.url,
     telephone: SITE.phone,
     email: SITE.email,

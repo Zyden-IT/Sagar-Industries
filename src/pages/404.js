@@ -1,8 +1,12 @@
 import React from 'react'
+import PageSEO from '@/components/common/metaData/PageSEO'
 
 function PageNotFound() {
     return (
-        <div>404</div>
+        <>
+            <PageSEO page='notFound' />
+            <div>404</div>
+        </>
     )
 }
 
