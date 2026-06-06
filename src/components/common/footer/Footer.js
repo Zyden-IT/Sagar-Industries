@@ -53,11 +53,11 @@ const Footer = () => {
           <div className="">
             <Link href={Routes.home.urlPath} className="inline-block">
               <Image
-                src="/SagarIndustries-logo.png"
+                src="/SagarIndustries-dark.webp"
                 alt="Sagar Industries"
-                width={180}
-                height={50}
-                className="h-12 w-auto"
+                width={200}
+                height={60}
+                className=""
               />
             </Link>
 

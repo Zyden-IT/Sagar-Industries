@@ -251,7 +251,7 @@ const Navbar = () => {
                 onClick={() => setMenuOpen(false)}
                 className="btn-orange btn"
               >
-                Get Quote
+                Contact Us
                 <ArrowUpRight size={16} weight="bold" />
               </Link>
             </motion.div>
