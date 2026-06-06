@@ -28,9 +28,9 @@ const PRODUCTS = [
     image: "/p1.png",
     title: "Paper Roll To Sheet Cutting Machine",
     description:
-      "Designed to convert paper rolls and reels into accurate sheets with smooth operation, flexible cutting length, and optional slitting and jogging attachments for advanced, high-volume production needs.",
+      "Designed to convert paper rolls and reels into accurate sheets with smooth operation, flexible cutting length, and optional slitting and jogging attachments for advanced, high-volume production needs. Available in two variants — manual and automatic.",
     highlight: { value: "8800 mm", label: "Max Cut Length" },
-    features: ["Flexible cut length", "Optional slitting", "Jogging attachment"],
+    features: ["Manual & automatic variants", "Flexible cut length", "Optional slitting"],
     stats: [
       { value: "8800", label: "mm cut length" },
       { value: "2–9", label: "hp power" },
