@@ -28,13 +28,9 @@ const ContactInformation = () => {
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center">
           <span className="eyebrow">Contact Us</span>
-          <h2 className="text-[24px]! font-bold uppercase leading-[1.15] tracking-[-0.01em] sm:text-[30px]! lg:text-[36px]!">
+          <h2 className="">
             Get In <span className="text-accent">Touch</span>
           </h2>
-          <span className="flex items-center gap-1.5">
-            <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
-            <span className="h-[6px] w-[6px] rounded-full bg-accent" />
-          </span>
           <p className="mt-1 max-w-xl text-text-secondary">
             Contact our team for machine quotes, specifications and expert
             guidance — we usually reply within a few hours.

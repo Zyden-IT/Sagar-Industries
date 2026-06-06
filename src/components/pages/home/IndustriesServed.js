@@ -77,7 +77,7 @@ const IndustriesServed = () => {
           >
             <span className="eyebrow">Industries Served</span>
 
-            <h2 className="text-[26px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[32px]! lg:text-[40px]!">
+            <h2 className="">
               Machines for{" "}
               <span className="text-accent">Every Industry</span>
             </h2>

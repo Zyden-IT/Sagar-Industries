@@ -103,7 +103,7 @@ const Guide = ({ g, index }) => (
     {/* CTA */}
     <Link
       href={Routes.contact.urlPath}
-      className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-br from-primary to-secondary py-4 text-[13px] font-bold uppercase tracking-wide text-white! shadow-orange transition hover:scale-[1.02]"
+      className="btn btn-orange mt-5"
     >
       Inquire Now
       <ArrowRight size={16} weight="bold" className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -118,10 +118,9 @@ const SelectionGuide = () => {
         {/* Header */}
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 text-center">
           <span className="eyebrow">Selection Guide</span>
-          <h2 className="text-[24px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[30px]! lg:whitespace-nowrap lg:text-[36px]!">
+          <h2 className="uppercase leading-[1.1] tracking-[-0.01em] lg:whitespace-nowrap">
             Which <span className="text-accent">Machine</span> Is Right For You?
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary lg:whitespace-nowrap">
             Tell us your needs and we&apos;ll match you with the right cutting
             or flexo printing machine.

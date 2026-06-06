@@ -31,10 +31,9 @@ const KnowledgeFaq = () => {
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
           <span className="eyebrow">FAQ</span>
-          <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
+          <h2 className="">
             Frequently Asked <span className="text-accent">Questions</span>
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
             Pick a question to see the answer — or reach out and we&apos;ll help
             with anything else.
@@ -51,11 +50,10 @@ const KnowledgeFaq = () => {
                 <button
                   key={it.q}
                   onClick={() => setActive(i)}
-                  className={`btn group flex cursor-pointer items-center gap-4 rounded-2xl border px-4 py-4 text-left transition duration-300 ${
-                    on
-                      ? "border-transparent bg-gradient-to-br from-primary to-secondary text-white shadow-orange"
-                      : "border-border bg-card text-text-primary hover:border-accent"
-                  }`}
+                  className={`btn group flex cursor-pointer items-center gap-4 rounded-2xl border px-4 py-4 text-left transition duration-300 ${on
+                    ? "border-transparent bg-gradient-to-br from-primary to-secondary text-white shadow-orange"
+                    : "border-border bg-card text-text-primary hover:border-accent"
+                    }`}
                 >
                   <span className={`stats-font text-lg font-bold ${on ? "text-white/90" : "text-accent"}`}>
                     {pad(i + 1)}
@@ -64,9 +62,8 @@ const KnowledgeFaq = () => {
                   <CaretRight
                     size={16}
                     weight="bold"
-                    className={`shrink-0 transition-transform duration-300 ${
-                      on ? "translate-x-0.5 text-white" : "text-accent opacity-0 group-hover:opacity-100"
-                    }`}
+                    className={`shrink-0 transition-transform duration-300 ${on ? "translate-x-0.5 text-white" : "text-accent opacity-0 group-hover:opacity-100"
+                      }`}
                   />
                 </button>
               );
@@ -76,9 +73,9 @@ const KnowledgeFaq = () => {
           {/* Answer panel */}
           <div className="relative flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-card p-7 shadow-card md:p-9">
             {/* watermark number */}
-            <span className="stats-font pointer-events-none absolute right-5 top-5 select-none text-[44px] font-bold leading-none text-accent/15">
+            {/* <span className="stats-font pointer-events-none absolute right-5 top-5 select-none text-[44px] font-bold leading-none text-accent/15">
               {pad(active + 1)}
-            </span>
+            </span> */}
 
             <div className="relative flex-1">
               <AnimatePresence mode="wait">

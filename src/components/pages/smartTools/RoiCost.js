@@ -186,7 +186,7 @@ const RoiCost = () => {
         {/* Header */}
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 text-center">
           <span className="eyebrow">ROI &amp; Cost</span>
-          <h2 className="whitespace-nowrap text-[16px]! font-bold uppercase leading-[1.15] tracking-[-0.01em] sm:text-[28px]! lg:text-[36px]!">
+          <h2 className="">
             Manual vs <span className="text-accent">Automatic</span> — What Pays Off?
           </h2>
           <p className="mt-2 max-w-2xl text-text-secondary">

@@ -120,9 +120,9 @@ const Content = ({ m, n }) => {
           <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-border bg-card text-accent">
             <Icon size={18} weight="regular" />
           </span>
-          <h3 className="text-[15px]! font-bold! uppercase leading-tight tracking-[0.02em]">{m.industry}</h3>
+          <h3 className="text-[18px]! font-bold! uppercase leading-tight tracking-[0.02em]">{m.industry}</h3>
         </div>
-        <p className="mt-2.5 text-[13px]! leading-relaxed text-text-secondary">{m.desc}</p>
+        <p className="mt-2.5 text-[16px]! leading-relaxed text-text-secondary">{m.desc}</p>
         <ul className="mt-3 flex flex-wrap gap-1.5">
           {m.apps.map((a) => (
             <li key={a} className="rounded-full border border-border bg-soft px-2.5 py-1 text-[11px]! font-medium text-text-secondary">
@@ -130,13 +130,6 @@ const Content = ({ m, n }) => {
             </li>
           ))}
         </ul>
-        <Link
-          href={Routes.products.urlPath}
-          className="group/link mt-3 inline-flex items-center gap-1.5 text-[11px]! font-semibold uppercase tracking-[0.08em] text-accent"
-        >
-          <ArrowRight size={12} weight="bold" className="transition-transform duration-300 group-hover/link:translate-x-1" />
-          {m.machine}
-        </Link>
       </div>
     </div>
   );
@@ -160,13 +153,9 @@ const IndustryApplications = () => {
         {/* Header */}
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 text-center">
           <span className="eyebrow">Applications</span>
-          <h2 className="text-[24px]! font-bold uppercase leading-[1.1] tracking-[-0.01em] sm:text-[30px]! lg:whitespace-nowrap lg:text-[36px]!">
+          <h2 className="">
             Where Our <span className="text-accent">Machines</span> Are Used
           </h2>
-          <span className="flex items-center gap-1.5">
-            <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
-            <span className="h-[6px] w-[6px] rounded-full bg-accent" />
-          </span>
           <p className="mt-1 text-text-secondary lg:whitespace-nowrap">
             Find your industry, its key applications and the recommended cutting
             or printing machine.

@@ -170,10 +170,9 @@ const Testimonials = () => {
           <span className="eyebrow">
             Testimonials
           </span>
-          <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
+          <h2 className="">
             What Our <span className="text-accent">Clients Say</span>
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
             Trusted across India and abroad for reliable machines and
             dependable after-sales support.

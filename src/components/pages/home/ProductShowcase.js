@@ -76,7 +76,7 @@ const ProductShowcase = () => {
         <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
           <motion.div {...fade(-30)} className="lg:col-span-8">
             <span className="eyebrow">The Machines</span>
-            <h2 className="mt-4 max-w-[640px] text-[28px]! font-semibold leading-[1.12] tracking-[-0.01em] sm:text-[34px]! lg:text-[42px]!">
+            <h2 className="mt-4 max-w-[640px] ">
               Our Paper Cutting &amp; <span className="text-accent">Flexo Printing Machines</span>
             </h2>
           </motion.div>
@@ -97,7 +97,7 @@ const ProductShowcase = () => {
         </div>
 
         {/* ── Machine cards (alternating) ────────────────────────── */}
-        <div className="mt-14 flex flex-col gap-8 lg:mt-20 lg:gap-12">
+        <div className="mt-8 flex flex-col gap-8 lg:mt-10 lg:gap-12">
           {PRODUCTS.map((p, i) => {
             const reverse = i % 2 === 1;
             return (

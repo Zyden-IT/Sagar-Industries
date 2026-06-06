@@ -25,11 +25,10 @@ const InteractiveMap = () => {
         <div className="flex flex-col items-center gap-3 text-center">
           <div className="flex flex-col items-center gap-3">
             <span className="eyebrow">Find Us</span>
-            <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
+            <h2 className="">
               Visit Our <span className="text-accent">Facility</span>
             </h2>
           </div>
-          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
         </div>
 
         {/* Bracket-framed map */}

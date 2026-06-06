@@ -78,7 +78,7 @@ const AboutIntro = () => {
           <motion.div {...fade(30)} className="flex flex-col gap-5">
             <span className="eyebrow">About Us</span>
 
-            <h2 className="text-[26px]! font-bold leading-[1.15] tracking-[-0.01em] sm:text-[32px]! lg:text-[40px]!">
+            <h2 className="">
               Trusted Manufacturer of <span className="text-accent">Paper Cutting &amp; Flexo Printing</span> Machines
             </h2>
 

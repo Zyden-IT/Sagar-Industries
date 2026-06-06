@@ -85,10 +85,9 @@ const SpecBuilder = () => {
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
           <span className="eyebrow">Spec Builder</span>
-          <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
+          <h2 className="">
             Build Your <span className="text-accent">Machine Spec</span>
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
             Put together your requirement in seconds — download it as a file or
             send it to us on WhatsApp for a fast quote.

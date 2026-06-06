@@ -80,7 +80,7 @@ const IconField = ({ icon: Icon, children }) => (
 
 // Inline validation message shown beneath a field.
 const FieldError = ({ message }) =>
-  message ? <p className="mt-1.5 text-[12px]! font-medium text-red-500">{message}</p> : null;
+  message ? <p className="text-[12px]! font-medium text-red-500">{message}</p> : null;
 
 const InquiryForm = () => {
   const router = useRouter();
@@ -147,7 +147,7 @@ const InquiryForm = () => {
 
 
   return (
-    <section id="inquiry" className="section-py scroll-mt-20 bg-soft">
+    <section id="inquiry" className="section-py !pt-0 scroll-mt-20 bg-soft">
       <div className="container">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
           {/* ── Left: intro ───────────────────────────────────────────── */}
@@ -171,7 +171,6 @@ const InquiryForm = () => {
                   Tell Us What <br className="hidden sm:block" />
                   You <span className="text-accent">Need</span>
                 </h2>
-                <span className="mt-4 block h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
               </div>
 
               <p className="max-w-md text-text-secondary">
@@ -203,7 +202,7 @@ const InquiryForm = () => {
                     href={`https://wa.me/${WHATSAPP}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-1 inline-flex items-center gap-1 text-[12px] font-bold uppercase tracking-wide text-accent transition-all hover:gap-2"
+                    className="mt-1 inline-flex items-center gap-1 !text-[12px] font-bold uppercase tracking-wide text-accent transition-all hover:gap-2"
                   >
                     Chat on WhatsApp <ArrowRight size={13} weight="bold" />
                   </a>

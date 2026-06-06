@@ -41,10 +41,9 @@ const CustomerJourney = () => {
         {/* Header */}
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
           <span className="eyebrow">Customer Journey</span>
-          <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
+          <h2 className="">
             From Requirement to <span className="text-accent">Installation</span>
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
             A simple, transparent process — follow the road from your first
             enquiry to a machine running on your floor.

@@ -593,10 +593,9 @@ const CalculatorHub = () => {
           <span className="eyebrow">
             Smart Tools
           </span>
-          <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
+          <h2 className="">
             Interactive <span className="text-accent">Engineering Tools</span>
           </h2>
-          <span className="h-[3px] w-16 rounded-full bg-gradient-to-br from-primary to-secondary" />
           <p className="text-text-secondary">
             Pick a tool, enter your numbers, get instant answers.
           </p>
@@ -610,11 +609,10 @@ const CalculatorHub = () => {
               <button
                 key={t.id}
                 onClick={() => setTab(t.id)}
-                className={`btn inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition ${
-                  active
+                className={`btn inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition ${active
                     ? "bg-gradient-to-br from-primary to-secondary text-white shadow-orange"
                     : "border border-border bg-card text-text-primary hover:border-accent"
-                }`}
+                  }`}
               >
                 <t.icon size={18} weight="bold" />
                 {t.label}

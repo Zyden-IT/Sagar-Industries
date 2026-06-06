@@ -163,7 +163,7 @@ const CompanyIntro = () => {
 
             <span className="eyebrow">About Us</span>
 
-            <h2 className="text-[26px]! font-semibold leading-[1.15] tracking-[-0.01em] sm:text-[30px]! lg:text-[36px]!">
+            <h2 className="">
               Paper &amp; Flexo <span className="text-accent">Machine Manufacturer</span>
             </h2>
 

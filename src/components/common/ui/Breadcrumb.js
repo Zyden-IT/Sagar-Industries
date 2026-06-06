@@ -67,7 +67,7 @@ const Breadcrumb = ({
           )}
 
           {/* Title */}
-          <h1 className="text-4xl font-semibold uppercase tracking-[-0.03em] text-text-primary sm:text-5xl">
+          <h1 className="text-text-primary">
             {title}
           </h1>
 
