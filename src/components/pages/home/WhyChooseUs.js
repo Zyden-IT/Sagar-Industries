@@ -77,7 +77,7 @@ const WhyChooseUs = () => {
             A Machine Manufacturer You Can <span className="text-accent">Rely On</span>
           </h2>
           <p className="text-text-secondary">
-            In-house engineering and 20+ years of expertise behind every paper
+            In-house engineering and 5+ years of expertise behind every paper
             cutting and flexo printing machine we build.
           </p>
         </div>

@@ -17,19 +17,19 @@ import {
 
 const STATS = [
   {
-    value: 15,
+    value: 5,
     suffix: "+",
     label: "Years of Experience",
     desc: "Trusted expertise in manufacturing paper cutting and flexo printing machines.",
   },
   {
-    value: 500,
+    value: 250,
     suffix: "+",
     label: "Machines Delivered",
     desc: "Successfully installed machines helping businesses improve production efficiency.",
   },
   {
-    value: 100,
+    value: 90,
     suffix: "+",
     label: "Satisfied Clients",
     desc: "Building lasting partnerships through quality products and dedicated support.",

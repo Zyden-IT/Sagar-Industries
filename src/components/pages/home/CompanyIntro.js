@@ -31,8 +31,8 @@ import { Routes } from "@/navigation/NavigationLib";
 
 // ── Stats (edit here) ────────────────────────────────────────────────
 const STATS = [
-  { icon: Wrench, value: 500, suffix: "+", label: "Machines Installed" },
-  { icon: UsersThree, value: 100, suffix: "+", label: "Industrial Clients" },
+  { icon: Wrench, value: 250, suffix: "+", label: "Machines Installed" },
+  { icon: UsersThree, value: 90, suffix: "+", label: "Industrial Clients" },
   { icon: MapPin, text: "Pan India", label: "Support" },
 ];
 
@@ -170,7 +170,7 @@ const CompanyIntro = () => {
             <p className="max-w-xl text-text-secondary">
               Sagar Industries is a trusted manufacturer and exporter of paper
               roll to sheet cutting machines and flexo printing machines, built
-              with precision engineering and 20+ years of expertise.
+              with precision engineering and 5+ years of expertise.
             </p>
 
             {/* Stats — icon over aligned number heading */}

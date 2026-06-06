@@ -13,7 +13,7 @@ const MILES = [
   { year: "2013", title: "Growing Capacity", desc: "Expanded our facility and added Flexo Printing machine manufacturing.", x: "30%", y: "26.67%", type: "peak" },
   { year: "2017", title: "Engineering Depth", desc: "Strengthened in-house design, fabrication and quality testing.", x: "50%", y: "66.67%", type: "valley" },
   { year: "2021", title: "Going Global", desc: "Began exporting our machines to international clients.", x: "70%", y: "26.67%", type: "peak" },
-  { year: "Today", title: "Trusted Partner", desc: "500+ machines installed across paper, packaging & printing.", x: "90%", y: "66.67%", type: "valley" },
+  { year: "Today", title: "Trusted Partner", desc: "250+ machines installed across paper, packaging & printing.", x: "90%", y: "66.67%", type: "valley" },
 ];
 
 const TRACK_PATH =
