@@ -128,13 +128,6 @@ const ProductCategories = () => {
                   ))}
                 </ul>
 
-                {/* CTA */}
-                <Link
-                  href={Routes.products.urlPath}
-                  className="btn-orange btn-block mt-auto"
-                >
-                  View Specifications
-                </Link>
               </div>
             </motion.div>
           ))}

@@ -6,44 +6,39 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin } from "@phosphor-icons/react";
+import { MapPin, Phone, EnvelopeSimple, Clock } from "@phosphor-icons/react";
 import { Routes } from "@/navigation/NavigationLib";
 
 const COLUMNS = [
-  {
-    title: "Company",
-    links: [
-      { label: "About Sagar Industries", href: Routes.about.urlPath },
-      { label: "Manufacturer & Exporter", href: Routes.about.urlPath },
-      { label: "Quality Machines", href: Routes.products.urlPath },
-    ],
-  },
-  {
-    title: "Products",
-    links: [
-      { label: "Paper Roll To Sheet Cutting Machine", href: Routes.products.urlPath },
-      { label: "Manual Machine", href: Routes.products.urlPath },
-      { label: "Automatic Machine", href: Routes.products.urlPath },
-      { label: "Flexo Printing Machine", href: Routes.products.urlPath },
-    ],
-  },
   {
     title: "Quick Links",
     links: [
       { label: "Home", href: Routes.home.urlPath },
       { label: "About", href: Routes.about.urlPath },
+      { label: "Products", href: Routes.products.urlPath },
       { label: "Solutions", href: Routes.solutions.urlPath },
       { label: "Contact", href: Routes.contact.urlPath },
     ],
   },
+];
+
+const CONTACTS = [
   {
-    title: "Industries",
-    links: [
-      { label: "Paper", href: Routes.solutions.urlPath },
-      { label: "Packaging", href: Routes.solutions.urlPath },
-      { label: "Printing", href: Routes.solutions.urlPath },
-      { label: "Corrugated Board", href: Routes.solutions.urlPath },
-    ],
+    icon: Phone,
+    label: "+91 99783 11122",
+    href: "tel:+919978311122",
+  },
+  {
+    icon: EnvelopeSimple,
+    label: "sagarindustries310@gmail.com",
+    href: "mailto:sagarindustries310@gmail.com",
+  },
+  {
+    icon: MapPin,
+    label:
+      "301/2, V.K. Estate, Nr. Brahmani Foundry, Gota, Ahmedabad - 382481, Gujarat, India",
+    href: "https://maps.app.goo.gl/WgjEM2jFssRzuDwY8",
+    external: true,
   },
 ];
 
@@ -53,9 +48,9 @@ const Footer = () => {
   return (
     <footer className="bg-[#0D0D0D] text-white/70">
       <div className="container py-14 lg:py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+        <div className="grid gap-10 md:grid-cols-3 lg:gap-8">
           {/* Brand */}
-          <div className="lg:col-span-4">
+          <div className="">
             <Link href={Routes.home.urlPath} className="inline-block">
               <Image
                 src="/SagarIndustries-logo.png"
@@ -70,16 +65,11 @@ const Footer = () => {
               Manufacturer &amp; Exporter of Paper Roll To Sheet Cutting Machines
               and Flexo Printing Machines.
             </div>
-
-            <div className="mt-4 inline-flex items-center gap-2 font-semibold text-accent">
-              <MapPin size={18} weight="fill" />
-              Gota, Ahmedabad, Gujarat
-            </div>
           </div>
 
           {/* Link columns */}
           {COLUMNS.map((col) => (
-            <div key={col.title} className="lg:col-span-2">
+            <div key={col.title} className="">
               <div className="text-base font-bold text-white">{col.title}</div>
               <span className="mt-2 block h-[3px] w-8 rounded-full bg-gradient-to-br from-primary to-secondary" />
 
@@ -88,7 +78,7 @@ const Footer = () => {
                   <li key={l.label}>
                     <Link
                       href={l.href}
-                      className="text-sm transition-colors hover:text-accent!"
+                      className="!text-[16px] transition-colors hover:text-accent!"
                     >
                       {l.label}
                     </Link>
@@ -97,6 +87,43 @@ const Footer = () => {
               </ul>
             </div>
           ))}
+
+          {/* Contact details */}
+          <div className="">
+            <div className="text-base font-bold text-white">Contact</div>
+            <span className="mt-2 block h-[3px] w-8 rounded-full bg-gradient-to-br from-primary to-secondary" />
+
+            <ul className="mt-5 flex flex-col gap-3 text-white/55">
+              {CONTACTS.map((c) => (
+                <li key={c.label}>
+                  {c.href ? (
+                    <a
+                      href={c.href}
+                      target={c.external ? "_blank" : undefined}
+                      rel={c.external ? "noopener noreferrer" : undefined}
+                      className="inline-flex items-start gap-2.5 !text-[16px] transition-colors hover:text-accent!"
+                    >
+                      <c.icon
+                        size={18}
+                        weight="fill"
+                        className="shrink-0 text-accent"
+                      />
+                      {c.label}
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-start gap-2.5 !text-[16px]">
+                      <c.icon
+                        size={18}
+                        weight="fill"
+                        className="shrink-0 text-accent"
+                      />
+                      {c.label}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 

@@ -20,7 +20,6 @@ const NAV_LINKS = [
   { label: "About", href: Routes.about.urlPath },
   { label: "Products", href: Routes.products.urlPath },
   { label: "Solutions", href: Routes.solutions.urlPath },
-  { label: "Contact", href: Routes.contact.urlPath },
 ];
 
 const SOCIALS = [
@@ -117,7 +116,7 @@ const Navbar = () => {
               <div className="flex items-center gap-2 sm:gap-3">
                 <motion.div whileTap={{ scale: 0.95 }} className="hidden sm:inline-flex">
                   <Link href={Routes.contact.urlPath} className="btn-orange btn">
-                    Get Quote
+                    Contact Us
                     <ArrowUpRight size={16} weight="bold" />
                   </Link>
                 </motion.div>

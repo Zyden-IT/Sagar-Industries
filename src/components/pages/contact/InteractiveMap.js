@@ -9,8 +9,9 @@ import { MapPin, NavigationArrow } from "@phosphor-icons/react";
 
 const ADDRESS =
   "301/2, V.K. Estate, Nr. Brahmani Foundry, Gota, Ahmedabad - 382481";
-const MAP_EMBED = `https://maps.google.com/maps?q=${encodeURIComponent(ADDRESS)}&z=15&output=embed`;
-const DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS)}`;
+const MAP_EMBED =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229.38667746157333!2d72.54128334876617!3d23.090255293835305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e83b2809940ed%3A0x1d4a9ae2583d9b95!2sSagar%20Industries!5e0!3m2!1sen!2sin!4v1780723579816!5m2!1sen!2sin";
+const DIRECTIONS = "https://maps.app.goo.gl/WgjEM2jFssRzuDwY8";
 
 // L-shaped accent bracket for a corner.
 const Bracket = ({ className }) => (
