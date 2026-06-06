@@ -7,7 +7,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Question, CaretRight, ChatCircleDots, ArrowRight } from "@phosphor-icons/react";
+import { Question, CaretRight, CaretDown, ChatCircleDots, ArrowRight } from "@phosphor-icons/react";
 import { Routes } from "@/navigation/NavigationLib";
 
 const FAQS = [
@@ -23,6 +23,7 @@ const pad = (n) => String(n).padStart(2, "0");
 
 const KnowledgeFaq = () => {
   const [active, setActive] = useState(0);
+  const [mobileOpen, setMobileOpen] = useState(0);
   const f = FAQS[active];
 
   return (
@@ -40,8 +41,71 @@ const KnowledgeFaq = () => {
           </p>
         </div>
 
-        {/* Split explorer */}
-        <div className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-5 sm:mt-10 lg:mt-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-8">
+        {/* Mobile: accordion — answer expands directly beneath each question */}
+        <div className="mx-auto mt-8 flex max-w-2xl flex-col gap-2.5 sm:mt-10 lg:hidden">
+          {FAQS.map((it, i) => {
+            const on = i === mobileOpen;
+            return (
+              <div
+                key={it.q}
+                className={`overflow-hidden rounded-2xl border transition-colors duration-300 ${on ? "border-accent bg-card shadow-card" : "border-border bg-card"
+                  }`}
+              >
+                <button
+                  onClick={() => setMobileOpen(on ? -1 : i)}
+                  aria-expanded={on}
+                  className="btn flex w-full cursor-pointer items-center gap-3 whitespace-normal px-3.5 py-3.5 text-left transition sm:gap-4 sm:px-4 sm:py-4"
+                >
+                  <span className="stats-font w-6 shrink-0 text-center text-base font-bold leading-none text-accent sm:w-7 sm:text-lg">
+                    {pad(i + 1)}
+                  </span>
+                  <span className="min-w-0 flex-1 whitespace-normal break-words text-[13px] font-semibold leading-snug text-text-primary sm:text-sm">{it.q}</span>
+                  <CaretDown
+                    size={16}
+                    weight="bold"
+                    className={`shrink-0 text-accent transition-transform duration-300 ${on ? "rotate-180" : ""}`}
+                  />
+                </button>
+                <AnimatePresence initial={false}>
+                  {on && (
+                    <motion.div
+                      key="panel"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-3.5 pb-4 pl-[3.125rem] sm:px-4 sm:pb-5 sm:pl-[3.75rem]">
+                        <span className="block h-[3px] w-10 rounded-full bg-gradient-to-br from-primary to-secondary" />
+                        <p className="mt-3 text-sm leading-relaxed text-text-secondary">{it.a}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+
+          {/* contact CTA (mobile) */}
+          <div className="mt-4 flex flex-col gap-4 rounded-[var(--radius-card)] border border-border bg-card p-5 shadow-card">
+            <div className="flex items-center gap-3">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent/10 text-accent">
+                <ChatCircleDots size={22} weight="bold" />
+              </span>
+              <div>
+                <div className="text-[15px]! font-semibold text-text-primary">Still have questions?</div>
+                <div className="text-sm text-text-secondary">Talk to our team for details and quotes.</div>
+              </div>
+            </div>
+            <Link href={Routes.contact.urlPath} className="btn-orange w-full justify-center">
+              Contact Us <ArrowRight size={16} weight="bold" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Desktop: split explorer */}
+        <div className="mx-auto mt-8 hidden max-w-5xl grid-cols-1 gap-5 sm:mt-10 lg:mt-12 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-8">
           {/* Question list */}
           <div className="flex flex-col gap-2.5">
             {FAQS.map((it, i) => {
@@ -55,7 +119,7 @@ const KnowledgeFaq = () => {
                     : "border-border bg-card text-text-primary hover:border-accent"
                     }`}
                 >
-                  <span className={`stats-font text-base font-bold sm:text-lg ${on ? "text-white/90" : "text-accent"}`}>
+                  <span className={`stats-font w-6 shrink-0 text-center text-base font-bold leading-none sm:w-7 sm:text-lg ${on ? "text-white/90" : "text-accent"}`}>
                     {pad(i + 1)}
                   </span>
                   <span className="min-w-0 flex-1 whitespace-normal break-words text-[13px] font-semibold leading-snug sm:text-sm">{it.q}</span>

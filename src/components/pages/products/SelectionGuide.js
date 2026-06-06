@@ -25,6 +25,7 @@ import { Routes } from "@/navigation/NavigationLib";
 const GUIDES = [
   {
     icon: Scissors,
+    machine: "Paper Roll To Sheet Cutting Machine",
     titleLead: "Choose",
     titleAccent: " Paper Roll To Sheet Cutting Machine",
     titleTail: " if…",
@@ -38,6 +39,7 @@ const GUIDES = [
   },
   {
     icon: Palette,
+    machine: "Flexo Printing Machine",
     titleLead: "Choose ",
     titleAccent: "Flexo Printing Machine",
     titleTail: " if…",
@@ -100,9 +102,13 @@ const Guide = ({ g, index }) => (
       </div>
     </div>
 
-    {/* CTA */}
+    {/* CTA — deep-links to the contact form with this machine preselected */}
     <Link
-      href={Routes.contact.urlPath}
+      href={{
+        pathname: Routes.contact.urlPath,
+        query: { machine: g.machine },
+        hash: "inquiry",
+      }}
       className="btn btn-orange mt-5"
     >
       Inquire Now
