@@ -126,9 +126,9 @@ const ManufacturingProcess = () => {
                     transition={{ duration: 0.4, delay: i * 0.06, ease: "easeOut" }}
                     className="group relative flex items-start gap-4 overflow-hidden rounded-[var(--radius-card)] border border-border bg-card p-5 shadow-card transition duration-300 hover:border-accent hover:shadow-orange"
                   >
-                    <span className="stats-font pointer-events-none absolute -right-1 -top-3 select-none text-[60px] font-bold leading-none text-accent/10">
+                    {/* <span className="stats-font pointer-events-none absolute -right-1 -top-3 select-none text-[60px] font-bold leading-none text-accent/10">
                       {i + 1}
-                    </span>
+                    </span> */}
 
                     <span className="relative grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent/10 text-accent">
                       <s.icon size={24} weight="regular" />
