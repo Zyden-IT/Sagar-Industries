@@ -27,7 +27,7 @@ function Home() {
       {/* <FacilityPreview /> */}
       {/* <FaqPreview /> */}
       {/* <Testimonials /> */}
-      <ContactCTA />
+      <ContactCTA bg="bg-soft" />
     </>
   );
 }
