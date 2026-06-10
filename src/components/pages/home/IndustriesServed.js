@@ -10,17 +10,25 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight } from "@phosphor-icons/react";
+import {
+  ArrowRight,
+  Package,
+  Stack,
+  Cube,
+  Scroll,
+  Printer,
+} from "@phosphor-icons/react";
 import { Routes } from "@/navigation/NavigationLib";
 
 // pos = card anchor (% of orbit box) · pt = matching SVG point (0–100)
-// image = product photo from /public (swap the i#.png if the product differs)
+// All five cards lie on a single equal-radius ring around the hub (each ~38
+// units from centre, mirror-symmetric L↔R) so the spacing reads evenly.
 const SECTORS = [
-  { image: "/i1.png", title: "Packaging", desc: "Smart solutions for modern packaging needs.", pos: { top: "7%", left: "50%" }, pt: { x: 50, y: 9 } },
-  { image: "/i2.png", title: "Corrugated Board", desc: "Precision machines for stronger, smarter boards.", pos: { top: "37%", left: "84%" }, pt: { x: 84, y: 37 } },
-  { image: "/i3.png", title: "Industrial Materials", desc: "Versatile machines for a wide range of materials.", pos: { top: "88%", left: "74%" }, pt: { x: 74, y: 88 } },
-  { image: "/i4.png", title: "Paper Converting", desc: "Efficient converting solutions for paper excellence.", pos: { top: "88%", left: "26%" }, pt: { x: 26, y: 88 } },
-  { image: "/i5.png", title: "Commercial Printing", desc: "High-quality printing for every application.", pos: { top: "37%", left: "16%" }, pt: { x: 16, y: 37 } },
+  { icon: Package, title: "Packaging", desc: "Smart solutions for modern packaging needs.", pos: { top: "12%", left: "50%" }, pt: { x: 50, y: 12 } },
+  { icon: Stack, title: "Corrugated Board", desc: "Precision machines for stronger boards.", pos: { top: "38%", left: "84%" }, pt: { x: 84, y: 38 } },
+  { icon: Cube, title: "Industrial Materials", desc: "Versatile machines for a wide range of materials.", pos: { top: "80%", left: "74%" }, pt: { x: 74, y: 80 } },
+  { icon: Scroll, title: "Paper Converting", desc: "Efficient solutions for paper converting.", pos: { top: "80%", left: "26%" }, pt: { x: 26, y: 80 } },
+  { icon: Printer, title: "Commercial Printing", desc: "High-quality printing for every application.", pos: { top: "38%", left: "16%" }, pt: { x: 16, y: 38 } },
 ];
 
 // `large` = the roomier variant used in the mobile/tablet grid (more legible
@@ -28,10 +36,10 @@ const SECTORS = [
 const SectorCard = ({ s, large = false }) => (
   <div className="group flex h-full w-full items-center gap-3 rounded-2xl border border-border bg-card p-2.5 shadow-card transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:shadow-orange">
     <span
-      className={`relative grid shrink-0 place-items-center overflow-hidden rounded-xl bg-soft ${large ? "h-14 w-14" : "h-12 w-12"
+      className={`grid shrink-0 place-items-center rounded-xl bg-accent/10 text-accent ring-1 ring-accent/20 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-secondary group-hover:text-white group-hover:ring-transparent ${large ? "h-14 w-14" : "h-12 w-12"
         }`}
     >
-      <Image src={s.image} alt={s.title} fill sizes={large ? "56px" : "48px"} className="object-contain p-1.5 transition-transform duration-300 group-hover:scale-110" />
+      <s.icon size={large ? 26 : 22} weight="bold" />
     </span>
     <div className="min-w-0">
       <h3 className={`font-bold! leading-tight text-text-primary ${large ? "text-[14px]! sm:text-[15px]!" : "text-[12px]!"}`}>{s.title}</h3>
@@ -102,7 +110,7 @@ const IndustriesServed = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative mx-auto hidden aspect-square w-full max-w-[600px] lg:block"
+             className="relative mx-auto hidden aspect-square w-full max-w-[600px] lg:block"
           >
             {/* connector spokes + dotted orbit */}
             <svg

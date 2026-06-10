@@ -38,10 +38,11 @@ const STATS = [
 
 // ── Collage images ───────────────────────────────────────────────────
 const COLLAGE = [
-  { src: "/collage1.jpg", span: "col-span-3" },
-  { src: "/machine-use-1.png", span: "col-span-2" },
-  { src: "/gallery3.jpg", span: "col-span-2" },
-  { src: "/machine-use-4.png", span: "col-span-3" },
+  { src: "/automatic.png", span: "col-span-3" },
+  { src: "/manual.png", span: "col-span-2" },
+  { src: "/machine3.1.png", span: "col-span-2" },
+  // extra left/top padding pushes the machine away from the centre badge
+  { src: "/flexo2.png", span: "col-span-3", pad: " pt-10" },
 ];
 
 // Count-up number that animates when scrolled into view
@@ -139,14 +140,14 @@ const CompanyIntro = () => {
               {COLLAGE.map((img, i) => (
                 <div
                   key={img.src}
-                  className={`relative overflow-hidden rounded-3xl shadow-card ${img.span}`}
+                  className={`relative overflow-hidden rounded-3xl bg-white shadow-card ${img.span}`}
                 >
                   <Image
                     src={img.src}
                     alt="Sagar Industries team and facility"
                     fill
                     sizes="(max-width: 1024px) 50vw, 25vw"
-                    className="object-cover"
+                    className={`object-contain ${img.pad || "p-2.5"}`}
                   />
                 </div>
               ))}
@@ -174,9 +175,9 @@ const CompanyIntro = () => {
             </p>
 
             {/* Stats — icon over aligned number heading */}
-            <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-6 sm:flex sm:flex-wrap sm:divide-x sm:divide-[var(--color-border)]">
+            <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-6 sm:flex sm:flex-nowrap sm:divide-x sm:divide-[var(--color-border)]">
               {STATS.map((s) => (
-                <div key={s.label} className="flex flex-col gap-2.5 sm:px-6 sm:first:pl-0">
+                <div key={s.label} className="flex flex-col gap-2.5 sm:px-4 sm:first:pl-0 lg:px-5">
                   <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/10 text-accent">
                     <s.icon size={20} weight="bold" />
                   </span>
@@ -197,7 +198,7 @@ const CompanyIntro = () => {
 
             {/* CTAs */}
             <div className="mt-4 flex flex-wrap items-center gap-4">
-              <Link href={Routes.products.urlPath} className="btn-orange btn">
+              <Link href={Routes.about.urlPath} className="btn-orange btn">
                 ABOUT US
                 <ArrowRight size={16} weight="bold" />
               </Link>

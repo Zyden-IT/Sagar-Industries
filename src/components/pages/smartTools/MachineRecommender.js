@@ -37,7 +37,7 @@ const NAME = Object.fromEntries(MATERIALS.map((m) => [m.key, m.name]));
 const DELICATE = ["wood-veneer", "sponge", "epe-foam", "rexine"];
 
 const selectCls =
-  "w-full rounded-[10px] border-[1.5px] border-border bg-soft px-4 py-3 text-text-primary outline-none transition focus:border-accent";
+  "w-full rounded-[10px] border-[1.5px] border-border bg-input px-4 py-3 text-text-primary outline-none transition focus:border-accent";
 
 const Field = ({ label, children }) => (
   <div className="flex flex-col gap-2">

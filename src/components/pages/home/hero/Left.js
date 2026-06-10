@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { ArrowRight, ArrowRightIcon, ArrowUpRightIcon } from "@phosphor-icons/react";
+import { ArrowRightIcon } from "@phosphor-icons/react";
 import { Routes } from "@/navigation/NavigationLib";
 
 const Left = () => {
   return (
-    <div className="flex flex-col gap-5 lg:col-span-5 xl:col-span-6">
+    <div className="flex shrink-0 flex-col gap-4 sm:gap-5 lg:col-span-5 xl:col-span-6">
       {/* Eyebrow */}
-      <span className="eyebrow">Manufacturer &amp; Exporter of Industrial Machinery</span>
+      <span className="eyebrow tracking-[1.4px]! md:whitespace-nowrap">Manufacturer &amp; Exporter of Paper Reel To Sheet Cutting Machine</span>
 
       {/* Headline — keyword-led, restrained scale */}
       <h1 className="max-w-[600px]">
@@ -14,8 +14,8 @@ const Left = () => {
       </h1>
 
       {/* Description */}
-      <p className="max-w-[480px] text-[15px] leading-[1.7] text-text-secondary sm:text-base lg:text-[17px]">
-        Paper roll-to-sheet cutting and flexographic printing machines — designed, fabricated and run-tested under one roof.
+      <p className="max-w-[640px] text-[15px] leading-[1.7] text-text-secondary sm:text-base lg:text-[17px]">
+        Paper reel to sheet cutting machine Flexo printing machine - built for accuracy, speed and consistent output.
       </p>
 
       {/* CTAs */}

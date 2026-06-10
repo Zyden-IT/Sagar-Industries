@@ -29,7 +29,7 @@ const money = (n) => CONFIG.CURRENCY + Math.round(n).toLocaleString("en-IN");
 
 // ── Shared UI bits ───────────────────────────────────────────────────
 const selectCls =
-  "w-full rounded-[10px] border-[1.5px] border-border bg-soft px-4 py-3 text-text-primary outline-none transition focus:border-accent";
+  "w-full cursor-pointer rounded-[10px] border-[1.5px] border-input-border bg-input px-4 py-3 text-text-primary outline-none shadow-[inset_0_1px_2px_rgba(0,0,0,0.06)] transition focus:border-accent";
 
 const Field = ({ label, children }) => (
   <div className="flex flex-col gap-2">
@@ -575,7 +575,7 @@ function CostPerSheet() {
 // ── Tabs ─────────────────────────────────────────────────────────────
 const TABS = [
   { id: "throughput", label: "Throughput", icon: Gauge, Comp: Throughput },
-  { id: "costsheet", label: "Cost / Sheet", icon: Receipt, Comp: CostPerSheet },
+  // { id: "costsheet", label: "Cost / Sheet", icon: Receipt, Comp: CostPerSheet },
   { id: "runningcost", label: "Running Cost", icon: Plug, Comp: RunningCost },
   { id: "flexo", label: "Flexo Cost", icon: Palette, Comp: Flexo },
   { id: "reel", label: "Reel Calculator", icon: Scroll, Comp: Reel },

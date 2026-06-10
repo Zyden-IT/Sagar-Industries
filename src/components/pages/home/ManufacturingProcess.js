@@ -65,7 +65,7 @@ const ManufacturingProcess = () => {
         {/* Steps */}
         <div className="mt-14 lg:mt-16">
           {/* ── Desktop: connected horizontal flow (lg+) ─────────────── */}
-          <div className="hidden items-stretch gap-2 lg:flex xl:gap-3">
+          <div className="hidden items-stretch gap-2 xl:flex xl:gap-3">
             {STEPS.map((s, i) => {
               const last = i === STEPS.length - 1;
               return (
@@ -114,7 +114,7 @@ const ManufacturingProcess = () => {
           </div>
 
           {/* ── Mobile / tablet: stacked flow with down-arrows ───────── */}
-          <div className="mx-auto flex max-w-md flex-col lg:hidden">
+          <div className="mx-auto flex max-w-md flex-col xl:hidden">
             {STEPS.map((s, i) => {
               const last = i === STEPS.length - 1;
               return (

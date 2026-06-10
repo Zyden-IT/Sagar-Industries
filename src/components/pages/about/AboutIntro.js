@@ -45,7 +45,7 @@ const AboutIntro = () => {
             {/* main image */}
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-card lg:w-[88%]">
               <Image
-                src="/gallery8.jpg"
+                src="/about5.png"
                 alt="Sagar Industries manufacturing facility"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
@@ -59,7 +59,7 @@ const AboutIntro = () => {
               style={{ borderColor: "var(--color-card)" }}
             >
               <Image
-                src="/gallery9.jpg"
+                src="/about4.png"
                 alt="Sagar Industries machine operation"
                 fill
                 sizes="(max-width: 1024px) 50vw, 22vw"
@@ -96,7 +96,7 @@ const AboutIntro = () => {
         </div>
 
         {/* ── Feature cards ──────────────────────────────────────── */}
-        <div className="mt-16 grid gap-6 md:grid-cols-3 lg:mt-20">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:mt-20">
           {CARDS.map((c, i) => (
             <motion.div
               key={c.title}
@@ -107,7 +107,7 @@ const AboutIntro = () => {
               className="group rounded-[var(--radius-card)] border border-border bg-card p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-orange"
             >
               <div className="flex items-start justify-between gap-4">
-                <h3 className="max-w-[70%] text-[18px]! font-bold! leading-snug sm:text-[20px]!">
+                <h3 className="min-w-0 flex-1 text-[18px]! font-bold! leading-snug sm:text-[20px]!">
                   {c.title}
                 </h3>
                 <c.icon

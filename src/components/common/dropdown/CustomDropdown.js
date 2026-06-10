@@ -31,7 +31,7 @@ const customStyles = {
     return {
       ...base,
       minHeight: "46px",
-      backgroundColor: "var(--color-soft)",
+      backgroundColor: "var(--color-input)",
       borderRadius: "10px",
       padding: "0 6px",
       fontSize: "15px",

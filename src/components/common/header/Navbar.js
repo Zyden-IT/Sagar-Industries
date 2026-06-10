@@ -22,10 +22,12 @@ const NAV_LINKS = [
   { label: "Solutions", href: Routes.solutions.urlPath },
 ];
 
+// Placeholder links — point to each platform's homepage until the client's
+// own profile URLs are available. Swap the hrefs here when they're ready.
 const SOCIALS = [
-  { icon: FacebookLogo, href: "#", label: "Facebook" },
-  { icon: InstagramLogo, href: "#", label: "Instagram" },
-  { icon: LinkedinLogo, href: "#", label: "LinkedIn" },
+  { icon: FacebookLogo, href: "https://www.facebook.com", label: "Facebook" },
+  { icon: InstagramLogo, href: "https://www.instagram.com", label: "Instagram" },
+  { icon: LinkedinLogo, href: "https://www.linkedin.com", label: "LinkedIn" },
 ];
 
 const Navbar = () => {
@@ -239,6 +241,8 @@ const Navbar = () => {
                   <a
                     key={s.label}
                     href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={s.label}
                     className="grid h-10 w-10 place-items-center rounded-full border border-border text-text-secondary transition-all hover:border-accent hover:text-accent"
                   >

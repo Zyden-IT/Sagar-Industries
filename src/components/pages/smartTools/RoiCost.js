@@ -45,7 +45,7 @@ const IconField = ({ icon: Icon, label, value, onChange, step }) => (
         step={step}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-[10px] border-[1.5px] border-border bg-soft py-3! pl-10! pr-3! font-semibold text-text-primary outline-none transition focus:border-accent"
+        className="w-full rounded-[10px] border-[1.5px] border-border bg-input py-3! pl-10! pr-3! font-semibold text-text-primary outline-none transition focus:border-accent"
       />
     </div>
   </div>

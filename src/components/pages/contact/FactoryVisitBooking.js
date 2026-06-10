@@ -47,9 +47,9 @@ const PERKS = [
 ];
 
 const selectCls =
-  "w-full rounded-[12px] border-[1.5px] border-border bg-soft py-3.5 pl-11! pr-4 text-text-primary outline-none transition focus:border-accent";
+  "w-full rounded-[12px] border-[1.5px] border-border bg-input py-3.5 pl-11! pr-4 text-text-primary outline-none transition focus:border-accent";
 const inputCls =
-  "w-full rounded-[12px] border-[1.5px] border-border bg-soft py-3.5! pl-11! pr-4! text-text-primary outline-none transition focus:border-accent";
+  "w-full rounded-[12px] border-[1.5px] border-border bg-input py-3.5! pl-11! pr-4! text-text-primary outline-none transition focus:border-accent";
 
 // Field with a leading icon.
 const IconField = ({ icon: Icon, children }) => (
@@ -215,7 +215,7 @@ const FactoryVisitBooking = () => {
                       className="pointer-events-none absolute left-4 top-4 z-10 text-text-secondary"
                     />
                     <textarea
-                      className="w-full rounded-[12px] border-[1.5px] border-border bg-soft py-3.5! pl-11! pr-4! text-text-primary outline-none transition focus:border-accent"
+                      className="w-full rounded-[12px] border-[1.5px] border-border bg-input py-3.5! pl-11! pr-4! text-text-primary outline-none transition focus:border-accent"
                       rows={4}
                       placeholder="Anything specific you'd like to see?"
                       value={form.notes}

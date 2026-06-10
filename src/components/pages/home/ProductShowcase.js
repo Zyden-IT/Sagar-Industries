@@ -25,7 +25,10 @@ const PRODUCTS = [
     num: "01",
     icon: Scissors,
     eyebrow: "Cutting Series",
-    image: "/p1.png",
+    images: [
+      { src: "/automatic-wb.png", label: "Manual" },
+      { src: "/manual-wb.png", label: "Automatic" },
+    ],
     title: "Paper Roll To Sheet Cutting Machine",
     description:
       "Designed to convert paper rolls and reels into accurate sheets with smooth operation, flexible cutting length, and optional slitting and jogging attachments for advanced, high-volume production needs. Available in two variants — manual and automatic.",
@@ -41,7 +44,10 @@ const PRODUCTS = [
     num: "02",
     icon: Printer,
     eyebrow: "Flexo Series",
-    image: "/p2.png",
+    images: [
+      { src: "/flexo2--wb.png", label: "Two Colour" },
+      { src: "/flexo4-wb-r.png", label: "Four Colour" },
+    ],
     title: "Flexo Printing Machine",
     description:
       "Built for clean, efficient and consistent printing on craft paper and corrugated board — with uniform ink flow, quick setup and configurations ranging from single colour to multi-colour.",
@@ -131,16 +137,42 @@ const ProductShowcase = () => {
                     className="pointer-events-none absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary to-secondary opacity-15 blur-3xl transition-opacity duration-500 group-hover:opacity-25"
                   />
 
-                  {/* Product image */}
-                  <div className="relative aspect-[4/3] w-full max-w-[480px]">
-                    <Image
-                      src={p.image}
-                      alt={p.title}
-                      fill
-                      sizes="(max-width: 1024px) 90vw, 45vw"
-                      className="object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-[1.04]"
-                    />
-                  </div>
+                  {/* Product image(s) — staggered: 1st top-left, 2nd bottom-right */}
+                  {p.images ? (
+                    <div className="relative flex w-full max-w-[500px] flex-col gap-4">
+                      {p.images.map((img, idx) => {
+                        const right = idx % 2 === 1;
+                        return (
+                          <div key={img.src} className={`w-[70%] ${right ? "self-end" : "self-start"}`}>
+                            <div className="relative aspect-[16/10] w-full">
+                              <Image
+                                src={img.src}
+                                alt={`${p.title} — ${img.label}`}
+                                fill
+                                sizes="(max-width: 1024px) 60vw, 30vw"
+                                className="object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-[1.03]"
+                              />
+                            </div>
+                            <span
+                              className={`mt-1 block text-[11px] font-bold uppercase tracking-[1.5px] text-text-secondary ${right ? "text-right" : "text-left"}`}
+                            >
+                              {img.label}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <div className="relative aspect-[4/3] w-full max-w-[480px]">
+                      <Image
+                        src={p.image}
+                        alt={p.title}
+                        fill
+                        sizes="(max-width: 1024px) 90vw, 45vw"
+                        className="object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-[1.04]"
+                      />
+                    </div>
+                  )}
 
                   {/* Floating highlight chip */}
                   <div className="absolute bottom-5 left-5 flex items-center gap-3 rounded-xl border border-border bg-card/95 px-4 py-3 shadow-card backdrop-blur">

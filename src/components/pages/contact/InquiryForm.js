@@ -69,7 +69,7 @@ const TRUST = [
 ];
 
 const fieldCls =
-  "w-full rounded-[12px] border-[1.5px] border-border bg-soft py-3.5! pl-11! pr-4! text-text-primary outline-none transition focus:border-accent";
+  "w-full rounded-[12px] border-[1.5px] border-border bg-input py-3.5! pl-11! pr-4! text-text-primary outline-none transition focus:border-accent";
 
 const IconField = ({ icon: Icon, children }) => (
   <div className="relative">
@@ -347,7 +347,7 @@ const InquiryForm = () => {
                       className="pointer-events-none absolute left-4 top-4 z-10 text-text-secondary"
                     />
                     <textarea
-                      className="w-full rounded-[12px] border-[1.5px] border-border bg-soft py-3.5! pl-11! pr-4! text-text-primary outline-none transition focus:border-accent"
+                      className="w-full rounded-[12px] border-[1.5px] border-border bg-input py-3.5! pl-11! pr-4! text-text-primary outline-none transition focus:border-accent"
                       rows={5}
                       placeholder="Your message / requirement"
                       value={form.message}

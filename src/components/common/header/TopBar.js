@@ -11,15 +11,15 @@ import {
   SealCheck,
   FacebookLogo,
   InstagramLogo,
-  YoutubeLogo,
   LinkedinLogo,
 } from "@phosphor-icons/react";
 
+// Placeholder links — point to each platform's homepage until the client's
+// own profile URLs are available. Swap the hrefs here when they're ready.
 const SOCIALS = [
-  { icon: FacebookLogo, href: "#", label: "Facebook" },
-  { icon: InstagramLogo, href: "#", label: "Instagram" },
-  { icon: YoutubeLogo, href: "#", label: "YouTube" },
-  { icon: LinkedinLogo, href: "#", label: "LinkedIn" },
+  { icon: FacebookLogo, href: "https://www.facebook.com", label: "Facebook" },
+  { icon: InstagramLogo, href: "https://www.instagram.com", label: "Instagram" },
+  { icon: LinkedinLogo, href: "https://www.linkedin.com", label: "LinkedIn" },
 ];
 
 const Divider = () => <span className="h-4 w-px bg-white/15" />;
@@ -64,6 +64,8 @@ const TopBar = () => {
               <a
                 key={s.label}
                 href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={s.label}
                 className="grid h-7 w-7 place-items-center rounded-full bg-white/10 text-white! transition-colors duration-300 hover:bg-gradient-to-br from-primary to-secondary"
               >
