@@ -92,7 +92,7 @@ const CustomerJourney = () => {
 
         {/* ── Mobile: vertical list ──────────────────────────────── */}
         <div className="relative mt-12 lg:hidden">
-          <div className="absolute left-7 top-2 h-full w-0.5 bg-[var(--color-border)]" />
+          <div className="absolute left-7 top-2 h-[95%] w-0.5 bg-[var(--color-border)]" />
           <div className="flex flex-col gap-7">
             {STEPS.map((s, i) => (
               <motion.div

@@ -52,7 +52,7 @@ const Counter = ({ value, suffix = "" }) => {
   return (
     <span
       ref={ref}
-      className="stats-font text-[44px] font-bold leading-none text-white sm:text-5xl lg:text-[56px]"
+      className="stats-font text-[36px] font-bold leading-none text-white sm:text-5xl lg:text-[56px]"
     >
       <motion.span>{rounded}</motion.span>
       {suffix}
@@ -82,7 +82,7 @@ const ImpactStats = () => {
       />
 
       <div className="container relative">
-        <div className="grid items-center gap-12 py-16 lg:grid-cols-2 lg:gap-16 lg:py-24">
+        <div className="grid items-center gap-8 py-16 lg:grid-cols-2 lg:gap-16 lg:py-24">
           {/* ── Left — copy ──────────────────────────────────────── */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -104,7 +104,7 @@ const ImpactStats = () => {
           </motion.div>
 
           {/* ── Right — stats ────────────────────────────────────── */}
-          <div className="grid gap-x-8 gap-y-10 sm:grid-cols-3">
+          <div className="grid gap-x-8 gap-y-8 sm:grid-cols-3">
             {STATS.map((s, i) => (
               <motion.div
                 key={s.label}

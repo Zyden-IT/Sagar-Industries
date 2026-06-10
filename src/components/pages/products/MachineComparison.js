@@ -134,7 +134,7 @@ const MachineComparison = () => {
                 </div>
                 {/* Manual / Automatic side by side */}
                 <div className="grid grid-cols-2">
-                  <div className="flex flex-col gap-2 px-4 py-3.5">
+                  <div className="flex flex-col gap-2 px-3 py-3.5">
                     <span className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-text-secondary">
                       <HandTap size={14} weight="bold" className="text-accent" /> Manual
                     </span>
