@@ -54,11 +54,15 @@ const customStyles = {
     };
   },
 
+  // Keep only the padding tweak — don't force `display`. react-select uses
+  // `grid` for single-select (so the value + hidden search input share one
+  // cell and the value truncates with an ellipsis) and `flex` for multi.
+  // Forcing `flex` here broke single-select truncation, overflowing the
+  // control on narrow/mobile widths.
   valueContainer: (base) => ({
     ...base,
     padding: "2px 8px",
-    display: "flex",
-    alignItems: "center",
+    overflow: "hidden",
   }),
 
   input: (base) => ({

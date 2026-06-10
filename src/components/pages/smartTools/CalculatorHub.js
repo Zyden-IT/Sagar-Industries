@@ -577,13 +577,15 @@ const TABS = [
   { id: "throughput", label: "Throughput", icon: Gauge, Comp: Throughput },
   // { id: "costsheet", label: "Cost / Sheet", icon: Receipt, Comp: CostPerSheet },
   { id: "runningcost", label: "Running Cost", icon: Plug, Comp: RunningCost },
-  { id: "flexo", label: "Flexo Cost", icon: Palette, Comp: Flexo },
+  // { id: "flexo", label: "Flexo Cost", icon: Palette, Comp: Flexo },
   { id: "reel", label: "Reel Calculator", icon: Scroll, Comp: Reel },
 ];
 
 const CalculatorHub = () => {
   const [tab, setTab] = useState("throughput");
-  const Active = TABS.find((t) => t.id === tab).Comp;
+  // Fall back to the first tab if the active id isn't in TABS (e.g. a tab was
+  // commented out while its id lingered in state across a hot reload).
+  const Active = (TABS.find((t) => t.id === tab) || TABS[0]).Comp;
 
   return (
     <section id="calculator" className="section-py bg-soft">
