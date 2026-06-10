@@ -6,6 +6,8 @@ import { encryptionAPI } from "../../utils/Encryption.js";
 import { APIURL } from "./ApiEndPoints.js";
 
 
+
+
 // common get request with encryption and one parameter
 export function axiosGet(url, param) {
     return axiosInstance.get(APIURL + url.replace("{0}", (IsEncryption) ? encryptionAPI(param, 0) : param));
@@ -60,31 +62,20 @@ export function axiosGetWithencryption(url, param) {
 
 export function axiosPostWithencryption(url, request, isFormData) {
     let loginUser = getAuthProps();
+  
+    var data = { data: (IsEncryption) ? encryptionAPI(request, 1) : request };
+
+    let headers = {};
     if (loginUser) {
-        // if (isTokenExist()) {
-        var data = { data: (IsEncryption) ? encryptionAPI(request, 1) : request };
-        if (isFormData) {
-            let headers = {
-                Authorization: `Bearer ${loginUser.token}`,
-                'content-type': 'multipart/form-data',
-            };
-
-            return axiosInstance.post(APIURL + url, request, { headers });
-
-        }
-        let headers = {
-            Authorization: `Bearer ${loginUser.token}`,
-        };
-
-        return axiosInstance.post(APIURL + url, data, { headers });
-        // } else {
-        //     window.location.href = "/";
-        // }
-
+        headers.Authorization = `Bearer ${loginUser.token}`;
     }
-    else {
-        window.location.href = "/";
+
+    if (isFormData) {
+        headers['content-type'] = 'multipart/form-data';
+        return axiosInstance.post(APIURL + url, request, { headers });
     }
+
+    return axiosInstance.post(APIURL + url, data, { headers });
 }
 
 // common post request with encryption

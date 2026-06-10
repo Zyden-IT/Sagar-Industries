@@ -30,8 +30,13 @@ import {
 } from "@phosphor-icons/react";
 import Selector from "@/components/common/dropdown/CustomDropdown";
 import { isValidForm, validate } from "@/utils/validations/CommonValidator";
+import sendEmailServices from "@/services/axios/apiServices/sendEmailService";
+import { SwalService } from "@/services/swal/SwalServices";
 
 const WHATSAPP = "919978311122";
+
+
+const emailService = new sendEmailServices();
 
 // Field-level rules consumed by our validation utility (utils/validations).
 const VALIDATION_RULES = {
@@ -92,6 +97,7 @@ const InquiryForm = () => {
     message: "",
   });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [validState, setValidState] = useState({ isValid: true, error: {} });
 
   // Re-validate a field once it already has an error so the message clears as
@@ -129,20 +135,39 @@ const InquiryForm = () => {
     `Message: ${form.message}`;
   const waLink = `https://wa.me/${WHATSAPP}?text=${waText}`;
 
-  const submit = (e) => {
+  // Validate, then send the inquiry to the backend so the admin gets an email.
+  // On success we flip to the "sent" confirmation (which also offers WhatsApp).
+  const submit = async (e) => {
     e.preventDefault();
 
-    const result = isValidForm(
-      form,
-      VALIDATION_RULES,
-      validState
-    );
-
+    const result = isValidForm(form, VALIDATION_RULES, validState);
     setValidState(result);
-
     if (!result.isValid) return;
 
-    setSent(true);
+    const request = {
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      machine: form.machine,
+      message: form.message,
+      adminEmail: process.env.NEXT_PUBLIC_ADMIN_EMAIL,
+    };
+
+    setLoading(true);
+    try {
+      const response = await emailService.sendInquiryToAdminForSagarIndustries(request);
+
+      if (response?.statusCode === 200) {
+        SwalService.Success(response?.message || "Your inquiry has been sent successfully.");
+        setSent(true);
+      } else {
+        SwalService.Error(response?.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      SwalService.Error("Unable to send your inquiry right now. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
 
@@ -359,8 +384,12 @@ const InquiryForm = () => {
                   <FieldError message={validState.error.message} />
                 </div>
 
-                <button type="submit" className="btn-orange btn btn-block btn-lg group mt-1">
-                  Submit Inquiry
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="btn-orange btn btn-block btn-lg group mt-1 disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  {loading ? "Sending..." : "Submit Inquiry"}
                   <ArrowRight size={18} weight="bold" className="transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
 
