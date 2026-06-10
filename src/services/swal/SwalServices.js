@@ -19,12 +19,12 @@ const Confirm = async (title, text, saveBtnText, cancelBtnText) => {
     html: `
       <div class="swal-success-wrapper flex items-start gap-5 w-full">
         <div class="w-[50px] h-[50px] p-2.5 rounded-full bg-white flex items-center justify-center shadow-xs">
-          <i class="fi fi-ss-interrogation text-blue-500 !text-[25px] !h-[25px]"></i>
+          <i class="ph ph-question-mark text-blue-500" style="font-size:25px"></i>
         </div>
 
         <div class="flex-1">
-          <h3 class="text-[18px] font-semibold text-blue-500 m-0 mb-[5px]">${title || "Do you want to continue?"}</h3>
-          <p class="text-[14px] text-gray-600 m-0 leading-snug">${text}</p>
+          <h3 class="!text-[18px] font-semibold text-blue-500 m-0 mb-[5px]">${title || "Do you want to continue?"}</h3>
+          <p class="!text-[14px] text-gray-600 m-0 leading-snug">${text}</p>
           <div class="swal-btns flex items-center gap-3 mt-5">
   <button 
     id="custom-confirm-btn" 
@@ -87,16 +87,16 @@ const Alert = async (text, title) => {
     html: `
       <div class="swal-success-wrapper flex items-start gap-5 w-full">
         <div class="w-[50px] h-[50px] p-2.5 rounded-full bg-white flex items-center justify-center shadow-xs">
-          <i class="fi fi-ss-exclamation text-orange-400 !text-[25px] !h-[25px]"></i>
+          <i class="ph ph-warning text-orange-400" style="font-size:25px"></i>
         </div>
 
         <div class="flex-1">
-          <h3 class="text-[18px] font-semibold text-orange-400 m-0 mb-[5px]">${title || "Alert"}</h3>
-          <p class="text-[14px] text-gray-600 m-0 leading-snug">${text}</p>
+          <h3 class="!text-[18px] font-semibold text-orange-400 m-0 mb-[5px]">${title || "Alert"}</h3>
+          <p class="!text-[14px] text-gray-600 m-0 leading-snug">${text}</p>
         </div>
 
         <div class="w-5 text-[20px] text-gray-400 hover:text-gray-600 cursor-pointer" id="custom-swal-close">
-          <i class="fi fi-rr-cross-small !text-[20px] !leading-tight !h-[20px]"></i>
+          <i class="ph ph-x" style="font-size:20px"></i>
         </div>
       </div>
     `,
@@ -127,16 +127,16 @@ const Success = async (text, title) => {
     html: `
       <div class="swal-success-wrapper flex items-start gap-5 w-full">
         <div class="w-[50px] h-[50px] p-2.5 rounded-full bg-white flex items-center justify-center shadow-xs">
-          <i class="fi fi-ss-check-circle text-green-600 !text-[25px] !h-[25px]"></i>
+          <i class="ph ph-check-circle text-green-600" style="font-size:25px"></i>
         </div>
 
         <div class="flex-1">
-          <h3 class="text-[18px] font-semibold text-green-600 m-0 mb-[5px]">${title || "Success"}</h3>
-          <p class="text-[14px] text-gray-600 m-0 leading-snug">${text || ''}</p>
+          <h3 class="!text-[18px] font-semibold text-green-600 m-0 mb-[5px]">${title || "Success"}</h3>
+          <p class="!text-[14px] text-gray-600 m-0 leading-snug">${text || ''}</p>
         </div>
 
         <div class="w-5 text-[20px] text-gray-400 hover:text-gray-600 cursor-pointer" id="custom-swal-close">
-          <i class="fi fi-rr-cross-small !text-[20px] !leading-tight !h-[20px]"></i>
+          <i class="ph ph-x" style="font-size:20px"></i>
         </div>
       </div>
     `,
@@ -158,7 +158,7 @@ const Success = async (text, title) => {
 };
 
 
-const Error = async (title, text) => {
+const Error = async (text) => {
   await MySwal.fire({
     toast: true,
     position: 'top-end',
@@ -168,16 +168,16 @@ const Error = async (title, text) => {
     html: `
       <div class="swal-success-wrapper flex items-start gap-5 w-full">
         <div class="w-[50px] h-[50px] p-2.5 rounded-full bg-white flex items-center justify-center shadow-xs">
-          <i class="fi fi-ss-cross-circle text-red-500 !text-[25px] !h-[25px]"></i>
+          <i class="ph ph-x-circle text-red-500" style="font-size:25px"></i>
         </div>
 
         <div class="flex-1">
-          <h3 class="text-[18px] font-semibold text-red-500 m-0 mb-[5px]">${title || "Error"}</h3>
-          <p class="text-[14px] text-gray-600 m-0 leading-snug">${text}</p>
+          <h3 class="!text-[18px] font-semibold text-red-500 m-0 mb-[5px]">Error</h3>
+          <p class="!text-[14px] text-gray-600 m-0 leading-snug">${text}</p>
         </div>
 
         <div class="w-5 text-[20px] text-gray-400 hover:text-gray-600 cursor-pointer" id="custom-swal-close">
-          <i class="fi fi-rr-cross-small !text-[20px] !leading-tight !h-[20px]"></i>
+          <i class="ph ph-x" style="font-size:20px"></i>
         </div>
       </div>
     `,
@@ -221,12 +221,12 @@ const SuccessWithAction = async (title, text, saveBtnText) => {
     html: `
       <div class="swal-success-wrapper flex items-start gap-5 w-full">
         <div class="w-[50px] h-[50px] p-2.5 rounded-full bg-white flex items-center justify-center shadow-xs">
-          <i class="fi fi-ss-check-circle text-green-600 !text-[25px] !h-[25px]"></i>
+          <i class="ph ph-check-circle text-green-600" style="font-size:25px"></i>
         </div>
 
         <div class="flex-1">
-          <h3 class="text-[18px] font-semibold text-green-600 m-0 mb-[5px]">${title || "Do you want to continue?"}</h3>
-          <p class="text-[14px] text-gray-600 m-0 leading-snug">${text}</p>
+          <h3 class="!text-[18px] font-semibold text-green-600 m-0 mb-[5px]">${title || "Do you want to continue?"}</h3>
+          <p class="!text-[14px] text-gray-600 m-0 leading-snug">${text}</p>
           <div class="swal-btns flex items-center gap-3 mt-5">
             <button 
               id="custom-successAction-btn" 
@@ -273,12 +273,12 @@ const ErrorWithAction = async (title, text, saveBtnText) => {
     html: `
       <div class="swal-error-wrapper flex items-start gap-5 w-full">
         <div class="w-[50px] h-[50px] p-2.5 rounded-full bg-white flex items-center justify-center shadow-xs">
-          <i class="fi fi-ss-cross-circle text-red-500 !text-[25px] !h-[25px]"></i>
+          <i class="ph ph-x-circle text-red-500" style="font-size:25px"></i>
         </div>
 
         <div class="flex-1">
-          <h3 class="text-[18px] font-semibold text-red-500 m-0 mb-[5px]">${title || "Do you want to continue?"}</h3>
-          <p class="text-[14px] text-gray-600 m-0 leading-snug">${text}</p>
+          <h3 class="!text-[18px] font-semibold text-red-500 m-0 mb-[5px]">${title || "Do you want to continue?"}</h3>
+          <p class="!text-[14px] text-gray-600 m-0 leading-snug">${text}</p>
           <div class="swal-btns flex items-center gap-3 mt-5">
             <button 
               id="custom-errorAction-btn" 

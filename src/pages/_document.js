@@ -31,6 +31,12 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap"
             rel="stylesheet"
           />
+
+          {/* Phosphor icon web font — used by SweetAlert toasts (SwalServices) */}
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+          />
         </Head>
 
         <body className="bg-card">
