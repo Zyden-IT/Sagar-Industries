@@ -38,14 +38,14 @@ const ContactCTA = ({ bg = "bg-bg" }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-[var(--radius-card)] px-6 py-16 text-center shadow-orange md:px-12 md:py-24"
+          className="relative overflow-hidden rounded-[var(--radius-card)] px-6 py-10 text-center shadow-orange md:px-12 md:py-24"
           style={{ background: "var(--orange-gradient)" }}
         >
           <Squares side="left" />
           <Squares side="right" />
 
           <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-4">
-            <h2 className="text-[26px]! font-bold leading-[1.15] tracking-[-0.01em] text-white! sm:text-[32px]! lg:text-[40px]! xl:whitespace-nowrap">
+            <h2 className="text-[24px]! font-bold leading-[1.15] tracking-[-0.01em] text-white! sm:text-[32px]! lg:text-[40px]! xl:whitespace-nowrap">
               Ready to Upgrade Your Production?
             </h2>
 

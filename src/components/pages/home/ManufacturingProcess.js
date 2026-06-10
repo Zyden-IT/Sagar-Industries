@@ -63,7 +63,7 @@ const ManufacturingProcess = () => {
         </div>
 
         {/* Steps */}
-        <div className="mt-14 lg:mt-16">
+        <div className="mt-8 lg:mt-16">
           {/* ── Desktop: connected horizontal flow (lg+) ─────────────── */}
           <div className="hidden items-stretch gap-2 xl:flex xl:gap-3">
             {STEPS.map((s, i) => {

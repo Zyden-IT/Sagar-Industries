@@ -201,7 +201,7 @@ const RoiCost = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mx-auto mt-12 grid max-w-6xl gap-6 lg:grid-cols-5"
+          className="mx-auto mt-8 grid max-w-6xl gap-6 lg:grid-cols-5"
         >
           {/* ── YOUR INPUTS ───────────────────────────────────────────── */}
           <div className="rounded-[var(--radius-card)] border border-border bg-card p-6 shadow-card md:p-7 lg:col-span-2">

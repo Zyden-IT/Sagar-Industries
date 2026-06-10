@@ -50,7 +50,7 @@ const QualityProcess = () => {
         </div>
 
         {/* ── 4 process cards ────────────────────────────────────── */}
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((s, i) => (
             <motion.div
               key={s.title}

@@ -279,20 +279,23 @@ a {
 @media only screen and (max-width: 1024px) {
   h1 {
 
-    font-size: 40px;
+    font-size: 32px;
+    line-height: 1.3;
     /* 32px (mobile) → 52px (desktop) */
   }
 
 
   h2 {
 
-    font-size: 34px;
+    font-size: 26px;
+    line-height: 1.3;
     /* 28px → 40px */
   }
 
 
   h3 {
-    font-size: 28px;
+    font-size: 22px;
+    line-height: 1.3;
     /* 22px → 30px */
   }
 
@@ -316,6 +319,14 @@ a {
   p,
   a {
     font-size: 15px;
+  }
+
+  .btn-orange,
+  .btn-black,
+  .btn-white,
+  .btn-outline {
+    font-size: 13px !important;
+    padding: 10px 20px !important;
   }
 }
 

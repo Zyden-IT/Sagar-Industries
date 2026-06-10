@@ -136,14 +136,13 @@ const MachineCatalog = () => {
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
             Explore Our <span className="text-accent">Machine Range</span>
           </h2>
-          <span className="h-[3px] w-20 rounded-full bg-gradient-to-r from-primary to-secondary" />
           <p className="max-w-xl text-text-secondary">
             Browse our paper cutting and flexo printing machines by category.
           </p>
         </div>
 
         {/* 30 / 70 split */}
-        <div className="mt-12 grid gap-5 lg:gap-6 md:grid-cols-[2fr_3fr] lg:grid-cols-[minmax(0,30%)_minmax(0,70%)]">
+        <div className="mt-8 grid gap-5 lg:gap-6 md:grid-cols-[2fr_3fr] lg:grid-cols-[minmax(0,30%)_minmax(0,70%)]">
           {/* ── LEFT — sticky filter panel ───────────────────────────── */}
           <aside className="lg:sticky lg:top-24 lg:self-start">
             <div className="rounded-[24px] border border-border bg-card/80 p-4 shadow-card backdrop-blur-xl sm:p-5">
@@ -308,8 +307,8 @@ const MachineCatalog = () => {
                     </span>
                     <div className="flex items-center gap-2.5">
                       <span className="stats-font text-sm font-bold text-text-primary">
-                          <span className="text-accent">{pad(idx + 1)}</span>
-                          <span className="text-text-secondary"> / {pad(catMachines.length)}</span>
+                        <span className="text-accent">{pad(idx + 1)}</span>
+                        <span className="text-text-secondary"> / {pad(catMachines.length)}</span>
                       </span>
                       {/* <div className="flex gap-1.5">
                         <button

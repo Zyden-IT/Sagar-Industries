@@ -105,8 +105,8 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* title + description, pushed toward the lower half */}
-                <div className="mt-auto pt-10">
-                  <h3 className="text-[19px]! font-bold! leading-snug text-text-primary">
+                <div className="mt-auto lg:pt-10 pt-[25px]">
+                  <h3 className="text-[18px]! font-bold! leading-snug text-text-primary/80">
                     {r.title}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-text-secondary">

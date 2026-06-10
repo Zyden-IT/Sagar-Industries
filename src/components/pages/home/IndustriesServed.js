@@ -74,14 +74,14 @@ const IndustriesServed = () => {
   return (
     <section className="section-py relative bg-bg">
       <div className="container">
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-6">
+        <div className="grid items-center gap-[25px] lg:grid-cols-[1fr_1fr] lg:gap-6">
           {/* ── Left — copy + stats ──────────────────────────────── */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-3"
           >
             <span className="eyebrow">Industries Served</span>
 
@@ -110,7 +110,7 @@ const IndustriesServed = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-             className="relative mx-auto hidden aspect-square w-full max-w-[600px] lg:block"
+            className="relative mx-auto hidden aspect-square w-full max-w-[600px] lg:block"
           >
             {/* connector spokes + dotted orbit */}
             <svg

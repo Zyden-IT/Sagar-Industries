@@ -134,7 +134,7 @@ const SelectionGuide = () => {
         </div>
 
         {/* Cards */}
-        <div className="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-2">
+        <div className="mx-auto mt-8 grid max-w-5xl gap-8 md:grid-cols-2">
           {GUIDES.map((g, i) => (
             <Guide key={g.titleAccent} g={g} index={i} />
           ))}

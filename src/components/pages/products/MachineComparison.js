@@ -76,7 +76,7 @@ const MachineComparison = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.12 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mx-auto mt-12 max-w-5xl"
+          className="mx-auto mt-8 max-w-5xl"
         >
           {/* ── Table (md and up) ─────────────────────────────────── */}
           <div className="hidden overflow-hidden rounded-2xl border border-border bg-card shadow-sm md:block">

@@ -83,7 +83,7 @@ const SpecBuilder = () => {
     <section id="spec" className="section-py bg-bg">
       <div className="container">
         {/* Header */}
-        <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
+        <div className="flex flex-col items-center gap-3 text-center">
           <span className="eyebrow">Spec Builder</span>
           <h2 className="">
             Build Your <span className="text-accent">Machine Spec</span>
@@ -100,12 +100,12 @@ const SpecBuilder = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-2"
+          className="mt-8 grid gap-8 lg:grid-cols-2"
         >
           {/* Form */}
           <form
             onSubmit={build}
-            className="flex flex-col gap-5 rounded-[var(--radius-card)] border border-border bg-card p-6 shadow-card md:p-7"
+            className="flex flex-col gap-5 rounded-[var(--radius-card)] border border-border bg-card p-5 shadow-card md:p-7"
           >
             <Field label="Machine">
               <Selector
@@ -138,7 +138,7 @@ const SpecBuilder = () => {
           </form>
 
           {/* Summary — styled like the Smart Tools result panel */}
-          <div className="rounded-[var(--radius-card)] bg-card p-6 text-text-primary shadow-card md:p-7" aria-live="polite">
+          <div className="rounded-[var(--radius-card)] bg-card p-5 text-text-primary shadow-card md:p-7" aria-live="polite">
             <AnimatePresence mode="wait">
               {!built ? (
                 <motion.div

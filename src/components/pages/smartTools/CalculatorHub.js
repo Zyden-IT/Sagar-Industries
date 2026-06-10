@@ -609,7 +609,7 @@ const CalculatorHub = () => {
               <button
                 key={t.id}
                 onClick={() => setTab(t.id)}
-                className={`btn inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-2 !text-sm font-semibold transition ${active
+                className={`btn inline-flex shrink-0 items-center gap-2 rounded-full !px-3 !py-[8px] !text-[13px] font-semibold transition ${active
                   ? "bg-gradient-to-br from-primary to-secondary text-white shadow-orange"
                   : "border border-border bg-card text-text-primary hover:border-accent"
                   }`}
@@ -629,7 +629,7 @@ const CalculatorHub = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="mt-6"
+            className="mt-4"
           >
             <Active />
           </motion.div>
