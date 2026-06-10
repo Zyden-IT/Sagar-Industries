@@ -20,7 +20,7 @@ const Hero = () => {
       {/* fine grain texture */}
       <div className="bg-grain absolute inset-0 opacity-60 pointer-events-none"></div>
       <div className="container relative">
-        <div className="flex min-h-[calc(100dvh-64px)] flex-col justify-center gap-6 py-6 sm:py-8 lg:grid lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-16 xl:gap-14">
+        <div className="flex min-h-[calc(100dvh-64px)] flex-col justify-center gap-6 py-8 sm:py-8 lg:grid lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-16 xl:gap-14">
           <Left />
           <Right />
         </div>
