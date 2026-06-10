@@ -39,7 +39,7 @@ const AboutIntro = () => {
     <section className="section-py bg-bg">
       <div className="container">
         {/* ── Top: collage + copy ────────────────────────────────── */}
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
           {/* Left — overlapping image collage */}
           <motion.div {...fade(-30)} className="relative pb-16 sm:pb-20 lg:pb-10">
             {/* main image */}
@@ -96,7 +96,7 @@ const AboutIntro = () => {
         </div>
 
         {/* ── Feature cards ──────────────────────────────────────── */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:mt-20">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:mt-20">
           {CARDS.map((c, i) => (
             <motion.div
               key={c.title}
