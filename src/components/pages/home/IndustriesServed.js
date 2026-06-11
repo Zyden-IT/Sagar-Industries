@@ -34,29 +34,32 @@ const SECTORS = [
 // `large` = the roomier variant used in the mobile/tablet grid (more legible
 // text + icon). The compact default is used inside the desktop orbit cards.
 const SectorCard = ({ s, large = false }) => (
-  <div className="group flex h-full w-full items-center gap-3 rounded-2xl border border-border bg-card p-2.5 shadow-card transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:shadow-orange">
+  <div
+    className={`group flex h-full w-full items-center border border-border bg-card shadow-card transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:shadow-orange ${large ? "gap-3 rounded-2xl p-2.5" : "gap-[2cqw] rounded-[2.7cqw] p-[1.7cqw]"
+      }`}
+  >
     <span
-      className={`grid shrink-0 place-items-center rounded-xl bg-accent/10 text-accent ring-1 ring-accent/20 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-secondary group-hover:text-white group-hover:ring-transparent ${large ? "h-14 w-14" : "h-12 w-12"
+      className={`grid shrink-0 place-items-center bg-accent/10 text-accent ring-1 ring-accent/20 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-secondary group-hover:text-white group-hover:ring-transparent ${large ? "h-14 w-14 rounded-xl" : "h-[8cqw] w-[8cqw] rounded-[2cqw] text-[3.6cqw]"
         }`}
     >
-      <s.icon size={large ? 26 : 22} weight="bold" />
+      <s.icon size={large ? 26 : "1em"} weight="bold" />
     </span>
     <div className="min-w-0">
-      <h3 className={`font-bold! leading-tight text-text-primary ${large ? "text-[14px]! sm:text-[15px]!" : "text-[12px]!"}`}>{s.title}</h3>
-      <p className={`mt-0.5 leading-snug text-text-secondary ${large ? "text-[12px]!" : "text-[10px]!"}`}>{s.desc}</p>
+      <h3 className={`font-bold! leading-tight text-text-primary ${large ? "text-[14px]! sm:text-[15px]!" : "text-[2cqw]!"}`}>{s.title}</h3>
+      <p className={`mt-0.5 leading-snug text-text-secondary ${large ? "text-[12px]!" : "text-[1.6cqw]!"}`}>{s.desc}</p>
     </div>
   </div>
 );
 
-const CenterHub = ({ size = "h-30 w-30 sm:h-30 sm:w-30" }) => (
+const CenterHub = ({ size = "h-[20cqw] w-[20cqw]" }) => (
   <div
-    className={`relative grid ${size} place-items-center rounded-full p-[6px]`}
+    className={`relative grid ${size} place-items-center rounded-full p-[1cqw]`}
     style={{
       background: "linear-gradient(160deg, #F9A45C 0%, #F5842A 50%, #ED282E 100%)",
       boxShadow: "0 0 60px rgba(245,132,42,0.35), var(--shadow-card)",
     }}
   >
-    <div className="grid h-full w-full place-items-center rounded-full bg-card px-4 text-center">
+    <div className="grid h-full w-full place-items-center rounded-full bg-card px-[2.7cqw] text-center">
       <div className="flex flex-col items-center">
         <Image
           src="/SagarIndustries-logo.webp"
@@ -110,7 +113,7 @@ const IndustriesServed = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative mx-auto hidden aspect-square w-full max-w-[600px] lg:block"
+            className="relative mx-auto hidden aspect-square w-full max-w-[600px] @container lg:block"
           >
             {/* connector spokes + dotted orbit */}
             <svg
@@ -170,7 +173,7 @@ const IndustriesServed = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.4, delay: 0.2 + i * 0.1, ease: "easeOut" }}
                 style={{ top: s.pos.top, left: s.pos.left }}
-                className="absolute w-[200px] -translate-x-1/2 -translate-y-1/2"
+                className="absolute w-[32cqw] -translate-x-1/2 -translate-y-1/2"
               >
                 <SectorCard s={s} />
               </motion.div>

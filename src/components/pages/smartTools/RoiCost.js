@@ -184,7 +184,7 @@ const RoiCost = () => {
     <section id="roi" className="section-py bg-soft">
       <div className="container">
         {/* Header */}
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 text-center">
+        <div className="mx-auto flex max-w-4xl flex-col items-start gap-3 text-left lg:items-center lg:text-center">
           <span className="eyebrow">ROI &amp; Cost</span>
           <h2 className="">
             Manual vs <span className="text-accent">Automatic</span> — What Pays Off?

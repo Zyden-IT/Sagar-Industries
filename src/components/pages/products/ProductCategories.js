@@ -59,7 +59,7 @@ const ProductCategories = () => {
     <section className="section-py bg-bg">
       <div className="container">
         {/* ── Header ─────────────────────────────────────────────── */}
-        <div className="flex flex-col items-center gap-3 text-center">
+        <div className="flex flex-col items-start gap-3 text-left lg:items-center lg:text-center">
           <span className="eyebrow">Our Products</span>
           <h2 className="">
             Our Core <span className="text-accent">Machine Lines</span>

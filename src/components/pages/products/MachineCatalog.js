@@ -131,7 +131,7 @@ const MachineCatalog = () => {
 
       <div className="container relative">
         {/* Header */}
-        <div className="flex flex-col items-center gap-3 text-center">
+        <div className="flex flex-col items-start gap-3 text-left lg:items-center lg:text-center">
           <span className="eyebrow">Our Machines</span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
             Explore Our <span className="text-accent">Machine Range</span>

@@ -111,7 +111,7 @@ const UnitConverter = () => {
     <section id="converter" className="section-py bg-bg">
       <div className="container">
         {/* Header */}
-        <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
+        <div className="mx-auto flex max-w-2xl flex-col items-start gap-3 text-left lg:items-center lg:text-center">
           <span className="eyebrow">Engineer&apos;s Toolkit</span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
             Quick <span className="text-accent">Unit Converter</span>

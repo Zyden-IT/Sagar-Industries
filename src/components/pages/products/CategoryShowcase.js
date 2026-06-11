@@ -9,8 +9,8 @@ const CategoryShowcase = () => {
   return (
     <section className="section-py bg-bg">
       <div className="container">
-        <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-start gap-3 text-left lg:items-center lg:text-center">
+          <div className="flex flex-col items-start gap-3 lg:items-center">
             <span className="eyebrow">Categories</span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
               Cutting & <span className="text-accent">Flexo Printing Machines</span>

@@ -48,9 +48,9 @@ const Footer = () => {
   return (
     <footer className="bg-[#0D0D0D] text-white/70">
       <div className="container py-14 lg:py-16">
-        <div className="grid gap-10 md:grid-cols-3 lg:gap-8">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[1.1fr_0.7fr_1.3fr] lg:gap-8">
           {/* Brand */}
-          <div className="">
+          <div className="sm:col-span-2 md:col-span-1">
             <Link href={Routes.home.urlPath} className="inline-block">
               <Image
                 src="/SagarIndustries-dark.webp"
@@ -101,23 +101,23 @@ const Footer = () => {
                       href={c.href}
                       target={c.external ? "_blank" : undefined}
                       rel={c.external ? "noopener noreferrer" : undefined}
-                      className="inline-flex items-start gap-2.5 !text-[16px] transition-colors hover:text-accent!"
+                      className="flex items-start gap-2.5 !text-[16px] transition-colors hover:text-accent!"
                     >
                       <c.icon
                         size={18}
                         weight="fill"
-                        className="shrink-0 text-accent"
+                        className="mt-0.5 shrink-0 text-accent"
                       />
-                      {c.label}
+                      <span className="min-w-0 break-words">{c.label}</span>
                     </a>
                   ) : (
-                    <span className="inline-flex items-start gap-2.5 !text-[16px]">
+                    <span className="flex items-start gap-2.5 !text-[16px]">
                       <c.icon
                         size={18}
                         weight="fill"
-                        className="shrink-0 text-accent"
+                        className="mt-0.5 shrink-0 text-accent"
                       />
-                      {c.label}
+                      <span className="min-w-0 break-words">{c.label}</span>
                     </span>
                   )}
                 </li>

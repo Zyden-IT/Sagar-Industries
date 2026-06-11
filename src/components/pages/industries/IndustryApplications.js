@@ -151,7 +151,7 @@ const IndustryApplications = () => {
     <section className="section-py overflow-hidden bg-bg">
       <div className="container">
         {/* Header */}
-        <div className="md:mx-auto flex max-w-5xl flex-col md:items-center gap-3 md:text-center">
+        <div className="lg:mx-auto flex max-w-5xl flex-col lg:items-center gap-3 lg:text-center">
           <span className="eyebrow">Applications</span>
           <h2 className="">
             Where Our <span className="text-accent">Machines</span> Are Used

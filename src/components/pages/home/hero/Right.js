@@ -50,7 +50,7 @@ const Right = () => {
 
       <div className="relative mx-auto min-h-[200px] w-full max-w-[1300px] flex-1 origin-center scale-100 lg:aspect-[5/4] lg:min-h-0 lg:flex-none lg:scale-105 xl:scale-130">
         <Image
-          src="/hero10.png"
+          src="/hero15.png"
           alt="Paper roll to sheet cutting and flexo printing machine"
           fill
           priority

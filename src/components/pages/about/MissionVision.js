@@ -144,7 +144,7 @@ const MissionVision = () => {
 
       <div className="container relative">
         {/* Header */}
-        <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
+        <div className="mx-auto flex max-w-2xl flex-col items-start gap-3 text-left lg:items-center lg:text-center">
           <span className="eyebrow">What Drives Us</span>
           <h2 className="">
             Our <span className="text-accent">Driving Force</span>

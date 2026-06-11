@@ -66,8 +66,8 @@ const WhyChooseMachines = () => {
 
       <div className="container relative">
         {/* Header */}
-        <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-start gap-3 text-left lg:items-center lg:text-center">
+          <div className="flex flex-col items-start gap-3 lg:items-center">
             <span className="eyebrow">Why Choose Us</span>
             <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[34px]!">
               Why Choose Our <span className="text-accent">Machines</span>

@@ -60,7 +60,7 @@ const MachineComparison = () => {
     <section className="section-py bg-soft">
       <div className="container">
         {/* ── Header ─────────────────────────────────────────────── */}
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 text-center">
+        <div className="mx-auto flex max-w-4xl flex-col items-start gap-3 text-left lg:items-center lg:text-center">
           <span className="eyebrow">Quick Comparison</span>
           <h2 className="font-bold uppercase leading-[1.1] tracking-[-0.01em]">
             Manual vs Automatic <span className="text-accent">at a Glance</span>

@@ -122,7 +122,7 @@ const SelectionGuide = () => {
     <section className="section-py !pt-6 bg-soft">
       <div className="container">
         {/* Header */}
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 text-center">
+        <div className="mx-auto flex max-w-4xl flex-col items-start gap-3 text-left lg:items-center lg:text-center">
           <span className="eyebrow">Selection Guide</span>
           <h2 className="uppercase leading-[1.1] tracking-[-0.01em] lg:whitespace-nowrap">
             Which <span className="text-accent">Machine</span> Is Right For You?

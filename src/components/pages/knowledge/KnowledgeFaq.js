@@ -30,7 +30,7 @@ const KnowledgeFaq = () => {
     <section id="faq" className="section-py scroll-mt-20 bg-bg">
       <div className="container">
         {/* Header */}
-        <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
+        <div className="mx-auto flex max-w-2xl flex-col items-start gap-3 text-left lg:items-center lg:text-center">
           <span className="eyebrow">FAQ</span>
           <h2 className="">
             Frequently Asked <span className="text-accent">Questions</span>

@@ -27,7 +27,7 @@ const PRODUCTS = [
     eyebrow: "Cutting Series",
     images: [
       { src: "/automatic-wb.png", label: "Manual" },
-      { src: "/manual-wb.png", label: "Automatic" },
+      { src: "/hero14.png", label: "Automatic" },
     ],
     title: "Paper Roll To Sheet Cutting Machine",
     description:
@@ -139,12 +139,15 @@ const ProductShowcase = () => {
 
                   {/* Product image(s) — staggered: 1st top-left, 2nd bottom-right */}
                   {p.images ? (
-                    <div className="relative flex w-full max-w-[500px] flex-col gap-4">
+                    <div className="relative flex w-full max-w-[600px] flex-col gap-6">
                       {p.images.map((img, idx) => {
                         const right = idx % 2 === 1;
                         return (
-                          <div key={img.src} className={`w-[70%] ${right ? "self-end" : "self-start"}`}>
-                            <div className="relative aspect-[16/10] w-full">
+                          <div
+                            key={img.src}
+                            className={`flex w-full items-center gap-5 ${right ? "flex-row-reverse" : ""}`}
+                          >
+                            <div className="relative aspect-[16/10] flex-1">
                               <Image
                                 src={img.src}
                                 alt={`${p.title} — ${img.label}`}
@@ -153,11 +156,13 @@ const ProductShowcase = () => {
                                 className="object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-[1.03]"
                               />
                             </div>
-                            <span
-                              className={`mt-1 block text-[11px] font-bold uppercase tracking-[1.5px] text-text-secondary ${right ? "text-right" : "text-left"}`}
+                            <motion.span
+                              animate={{ scale: [1, 1.08, 1] }}
+                              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                              className="inline-flex shrink-0 items-center rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[1.5px] text-accent shadow-sm"
                             >
                               {img.label}
-                            </span>
+                            </motion.span>
                           </div>
                         );
                       })}
@@ -175,7 +180,7 @@ const ProductShowcase = () => {
                   )}
 
                   {/* Floating highlight chip */}
-                  <div className="absolute bottom-5 left-5 flex items-center gap-3 rounded-xl border border-border bg-card/95 px-4 py-3 shadow-card backdrop-blur">
+                  <div className="absolute bottom-5 left-5 hidden items-center gap-3 rounded-xl border border-border bg-card/95 px-4 py-3 shadow-card backdrop-blur md:flex">
                     <span className="grid h-9 w-9 place-items-center rounded-lg bg-accent/10 text-accent">
                       <p.icon size={18} weight="bold" />
                     </span>

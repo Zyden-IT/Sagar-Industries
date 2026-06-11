@@ -39,7 +39,7 @@ const CustomerJourney = () => {
     <section className="section-py bg-bgdark">
       <div className="container">
         {/* Header */}
-        <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
+        <div className="mx-auto flex max-w-2xl flex-col items-start gap-3 text-left lg:items-center lg:text-center">
           <span className="eyebrow">Customer Journey</span>
           <h2 className="">
             From Requirement to <span className="text-accent">Installation</span>

@@ -81,7 +81,7 @@ const KnowledgeHub = () => {
     <section className="section-py bg-soft">
       <div className="container">
         {/* Header */}
-        <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
+        <div className="mx-auto flex max-w-2xl flex-col items-start gap-3 text-left lg:items-center lg:text-center">
           <span className="eyebrow">Knowledge</span>
           <h2 className="text-[24px]! font-semibold leading-[1.2] tracking-[-0.01em] sm:text-[28px]! lg:text-[32px]!">
             Knowledge <span className="text-accent">Hub</span>

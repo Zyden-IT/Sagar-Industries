@@ -21,7 +21,7 @@ const Downloads = () => {
     <section id="downloads" className="section-py scroll-mt-20 bg-soft">
       <div className="container">
         {/* Header */}
-        <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
+        <div className="mx-auto flex max-w-2xl flex-col items-start gap-3 text-left lg:items-center lg:text-center">
           <span className="eyebrow">
             Downloads
           </span>

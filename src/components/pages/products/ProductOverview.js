@@ -25,8 +25,8 @@ const ProductOverview = () => {
     <section className="section-py bg-bg">
       <div className="container">
         {/* Header */}
-        <div className="flex flex-col items-center gap-3 text-center">
-          <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-start gap-3 text-left lg:items-center lg:text-center">
+          <div className="flex flex-col items-start gap-3 lg:items-center">
             <span className="eyebrow">
               Product Range
             </span>
