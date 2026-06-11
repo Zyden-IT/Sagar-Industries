@@ -27,7 +27,7 @@ const PRODUCTS = [
     eyebrow: "Cutting Series",
     images: [
       { src: "/automatic-wb.png", label: "Manual" },
-      { src: "/hero14.png", label: "Automatic" },
+      { src: "/hero15.png", label: "Automatic" },
     ],
     title: "Paper Roll To Sheet Cutting Machine",
     description:
@@ -170,7 +170,7 @@ const ProductShowcase = () => {
                   ) : (
                     <div className="relative aspect-[4/3] w-full max-w-[480px]">
                       <Image
-                        src={p.image}
+                        src={p.img}
                         alt={p.title}
                         fill
                         sizes="(max-width: 1024px) 90vw, 45vw"
