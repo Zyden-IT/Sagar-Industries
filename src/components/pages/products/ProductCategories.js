@@ -24,7 +24,7 @@ import {
 const PRODUCTS = [
   {
     num: "01",
-    image: "/manual-wb.png",
+    image: "/hero15.png",
     title: "Paper Roll To Sheet Cutting Machine",
     description:
       "Designed to convert paper rolls/reels into accurate sheets with smooth operation, flexible cutting length, and optional attachments for advanced production needs.",

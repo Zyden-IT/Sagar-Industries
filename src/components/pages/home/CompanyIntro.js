@@ -39,7 +39,7 @@ const STATS = [
 // ── Collage images ───────────────────────────────────────────────────
 const COLLAGE = [
   { src: "/automatic.png", span: "col-span-3" },
-  { src: "/hero16.png", span: "col-span-2" },
+  { src: "/hero15.png", span: "col-span-2" },
   { src: "/machine3.1.png", span: "col-span-2" },
   // extra left/top padding pushes the machine away from the centre badge
   { src: "/flexo2.png", span: "col-span-3", pad: " pt-10" },

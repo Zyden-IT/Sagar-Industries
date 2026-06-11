@@ -124,7 +124,7 @@ const Pill = () => (
 
 const Machine = ({ className }) => (
   <div className={`relative ${className}`}>
-    <Image src="/manual-wb.png" alt="Sagar Industries machine" fill sizes="440px" className="object-contain" />
+    <Image src="/hero15.png" alt="Sagar Industries machine" fill sizes="440px" className="object-contain" />
   </div>
 );
 
