@@ -14,7 +14,6 @@ import Testimonials from "@/components/pages/home/Testimonials";
 import ContactCTA from "@/components/pages/home/ContactCTA";
 
 function Home() {
-  
   return (
     <>
       <PageSEO page="home" />
