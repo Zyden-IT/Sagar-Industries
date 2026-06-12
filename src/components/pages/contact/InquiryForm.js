@@ -62,7 +62,7 @@ const MACHINES = [
 
 const STATS = [
   { icon: Medal, value: "5+", l1: "Years", l2: "Experience" },
-  { icon: Globe, value: "250+", l1: "Installations", l2: "Worldwide" },
+  { icon: Globe, value: "2000+", l1: "Installations", l2: "Worldwide" },
   { icon: Lightbulb, value: "100%", l1: "Custom Machine", l2: "Solutions" },
   { icon: Headset, value: "PAN INDIA", l1: "Sales & Service", l2: "Support" },
 ];

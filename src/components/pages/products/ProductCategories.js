@@ -31,7 +31,7 @@ const PRODUCTS = [
     tags: ["Manual Machine", "Automatic Machine"],
     features: [
       { icon: Ruler, text: "25 mm to 8800 mm cutting length" },
-      { icon: ArrowsOut, text: '25" to 75" and more machine sizes' },
+      { icon: ArrowsOut, text: '25" to 85" machine sizes' },
       { icon: Lightning, text: "2 HP to 9 HP power requirement" },
       { icon: Scissors, text: "Slitting and jogging attachments available" },
       { icon: Stack, text: "Supports multiple industrial materials" },

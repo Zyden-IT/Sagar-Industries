@@ -48,7 +48,7 @@ export const KEY_FEATURES = [
 
 export const SPECS = [
   { label: "Cutting Length", value: "25 mm – 8800 mm" },
-  { label: "Machine Width", value: '25" – 75"' },
+  { label: "Machine Width", value: '25" – 85"' },
   { label: "Power Requirement", value: "2 HP – 9 HP" },
 ];
 

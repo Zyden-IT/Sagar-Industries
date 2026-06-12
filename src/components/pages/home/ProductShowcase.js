@@ -37,7 +37,7 @@ const PRODUCTS = [
     stats: [
       { value: "8800", label: "mm cut length" },
       { value: "2–9", label: "hp power" },
-      { value: "75″", label: "max size" },
+      { value: "85″", label: "max size" },
     ],
   },
   {

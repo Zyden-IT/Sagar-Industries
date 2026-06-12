@@ -65,9 +65,9 @@ const REVIEWS = [
 ];
 
 const STATS = [
-  { icon: UsersThree, value: "90+", title: "Happy Clients", sub: "Across India & Abroad" },
+  { icon: UsersThree, value: "400+", title: "Happy Clients", sub: "Across India & Abroad" },
   { icon: ShieldCheck, value: "98%", title: "Client Retention", sub: "Through Trust & Support" },
-  { icon: SealCheck, value: "250+", title: "Machines Delivered", sub: "With Proven Performance" },
+  { icon: SealCheck, value: "2000+", title: "Machines Delivered", sub: "With Proven Performance" },
   { icon: Headset, value: "24/7", title: "After-Sales Support", sub: "Always Here to Help" },
 ];
 

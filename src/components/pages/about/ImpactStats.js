@@ -23,13 +23,13 @@ const STATS = [
     desc: "Trusted expertise in manufacturing paper cutting and flexo printing machines.",
   },
   {
-    value: 250,
+    value: 2000,
     suffix: "+",
     label: "Machines Delivered",
     desc: "Successfully installed machines helping businesses improve production efficiency.",
   },
   {
-    value: 90,
+    value: 400,
     suffix: "+",
     label: "Satisfied Clients",
     desc: "Building lasting partnerships through quality products and dedicated support.",

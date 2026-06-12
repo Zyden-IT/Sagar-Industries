@@ -31,8 +31,8 @@ import { Routes } from "@/navigation/NavigationLib";
 
 // ── Stats (edit here) ────────────────────────────────────────────────
 const STATS = [
-  { icon: Wrench, value: 250, suffix: "+", label: "Machines Installed" },
-  { icon: UsersThree, value: 90, suffix: "+", label: "Industrial Clients" },
+  { icon: Wrench, value: 2000, suffix: "+", label: "Machines Installed" },
+  { icon: UsersThree, value: 400, suffix: "+", label: "Industrial Clients" },
   { icon: MapPin, text: "Pan India", label: "Support" },
 ];
 
