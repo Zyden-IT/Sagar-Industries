@@ -129,9 +129,29 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="container py-5 text-center text-sm text-white/45">
-          © {year}&nbsp;Sagar Industries. All rights reserved. · Manufacturer &amp;
-          Exporter of Industrial Machines.
+        <div className="container flex flex-col items-center justify-between gap-3 py-5 text-sm text-white/45 md:flex-row">
+          <div className="text-center md:text-left">
+            © {year}&nbsp;Sagar Industries. All rights reserved. · Manufacturer
+            &amp; Exporter of Industrial Machines.
+          </div>
+
+          <div className="flex shrink-0 items-center gap-2.5">
+            Developed by
+            <a
+              href="https://www.zyden-it.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80"
+            >
+              <Image
+                src="/Zyden.svg"
+                alt="Zyden IT Solutions"
+                width={67}
+                height={18}
+                className="h-[18px] w-auto"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
